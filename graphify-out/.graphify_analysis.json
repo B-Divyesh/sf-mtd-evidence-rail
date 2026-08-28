@@ -1,0 +1,325 @@
+{
+  "communities": {
+    "0": [
+      "axe_core_playwright",
+      "package",
+      "package_devdependencies",
+      "package_devdependencies_axe_core_playwright",
+      "package_devdependencies_playwright_test",
+      "package_devdependencies_sharp",
+      "package_devdependencies_typescript",
+      "package_devdependencies_vite",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_assets",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_start",
+      "package_scripts_test",
+      "package_scripts_test_e2e",
+      "package_type",
+      "package_version",
+      "playwright_test",
+      "sharp",
+      "typescript",
+      "vite"
+    ],
+    "1": [
+      "ref_dom",
+      "ref_dom_iterable",
+      "ref_es2022",
+      "ref_frontend_src",
+      "ref_tests",
+      "ref_vite_config_ts",
+      "tsconfig",
+      "tsconfig_compileroptions",
+      "tsconfig_compileroptions_allowimportingtsextensions",
+      "tsconfig_compileroptions_isolatedmodules",
+      "tsconfig_compileroptions_lib",
+      "tsconfig_compileroptions_module",
+      "tsconfig_compileroptions_moduledetection",
+      "tsconfig_compileroptions_moduleresolution",
+      "tsconfig_compileroptions_noemit",
+      "tsconfig_compileroptions_skiplibcheck",
+      "tsconfig_compileroptions_strict",
+      "tsconfig_compileroptions_target",
+      "tsconfig_compileroptions_usedefineforclassfields",
+      "tsconfig_include"
+    ],
+    "2": [
+      "frontend_src_main",
+      "frontend_src_main_appbanner",
+      "frontend_src_main_apppage",
+      "frontend_src_main_currentrecords",
+      "frontend_src_main_dialogs",
+      "frontend_src_main_importrow",
+      "frontend_src_main_importrows",
+      "frontend_src_main_licenseinactive",
+      "frontend_src_main_money",
+      "frontend_src_main_normalisedate",
+      "frontend_src_main_prettydate",
+      "frontend_src_main_quarter",
+      "frontend_src_main_quarterfor",
+      "frontend_src_main_quarteroptions",
+      "frontend_src_main_readcsv",
+      "frontend_src_main_recorditem",
+      "frontend_src_main_setformerror",
+      "frontend_src_main_splitcsv",
+      "frontend_src_main_workspaceresponse"
+    ],
+    "3": [
+      "frontend_src_main_api",
+      "frontend_src_main_bindapp",
+      "frontend_src_main_closedialog",
+      "frontend_src_main_confirmimport",
+      "frontend_src_main_escapehtml",
+      "frontend_src_main_exportpack",
+      "frontend_src_main_ispaid",
+      "frontend_src_main_linkevidence",
+      "frontend_src_main_loadrecords",
+      "frontend_src_main_message",
+      "frontend_src_main_offlinenotice",
+      "frontend_src_main_opendialog",
+      "frontend_src_main_removeevidence",
+      "frontend_src_main_renderrecords",
+      "frontend_src_main_saverecord",
+      "frontend_src_main_setnotice"
+    ],
+    "4": [
+      "next",
+      "request",
+      "router",
+      "src_main",
+      "src_main_api_rate_limit_returns_retry_after",
+      "src_main_app",
+      "src_main_health",
+      "src_main_health_reports_build_sha",
+      "src_main_main",
+      "src_main_rs_intoresponse",
+      "src_main_rs_response",
+      "src_main_rs_state",
+      "src_main_security_headers",
+      "src_main_shutdown_signal",
+      "src_main_test_app"
+    ],
+    "5": [
+      "option",
+      "src_routes",
+      "src_routes_exportrecord",
+      "src_routes_import_records",
+      "src_routes_importinput",
+      "src_routes_insert_record",
+      "src_routes_periodquery",
+      "src_routes_record",
+      "src_routes_recordinput",
+      "src_routes_rs_sqlitepool",
+      "src_routes_rs_string",
+      "src_routes_validate",
+      "vec"
+    ],
+    "6": [
+      "apiresult",
+      "headermap",
+      "query",
+      "src_routes_check_workspace",
+      "src_routes_create_record",
+      "src_routes_delete_record",
+      "src_routes_delete_workspace",
+      "src_routes_export_pack",
+      "src_routes_get_workspace",
+      "src_routes_rs_response",
+      "src_routes_rs_state",
+      "src_routes_workspace"
+    ],
+    "7": [
+      "e",
+      "json",
+      "path",
+      "src_routes_add_evidence",
+      "src_routes_error",
+      "src_routes_evidenceinput",
+      "src_routes_internal",
+      "src_routes_remove_evidence",
+      "statuscode",
+      "value"
+    ],
+    "8": [
+      "frontend_src_main_bindroutes",
+      "frontend_src_main_footer",
+      "frontend_src_main_header",
+      "frontend_src_main_icon",
+      "frontend_src_main_landing",
+      "frontend_src_main_legal",
+      "frontend_src_main_notfound",
+      "frontend_src_main_render"
+    ],
+    "9": [
+      "src_main_appstate",
+      "src_main_rs_sqlitepool",
+      "src_main_rs_string",
+      "src_routes_create_demo",
+      "src_routes_create_workspace",
+      "src_routes_now",
+      "src_routes_rs_intoresponse"
+    ],
+    "10": [
+      "frontend_src_main_apierror",
+      "frontend_src_main_deleteworkspace",
+      "frontend_src_main_workspacekey"
+    ],
+    "11": [
+      "frontend_src_main_bindlicensebuttons",
+      "frontend_src_main_capturelicense",
+      "frontend_src_main_verifylicense"
+    ],
+    "12": [
+      "scripts_optimise_assets",
+      "scripts_optimise_assets_source"
+    ],
+    "13": [
+      "pkg_mtd_evidence_rail"
+    ],
+    "14": [
+      "playwright_config"
+    ],
+    "15": [
+      "tests_product_spec"
+    ],
+    "16": [
+      "vite_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.08695652173913043,
+    "1": 0.1,
+    "2": 0.17543859649122806,
+    "3": 0.36666666666666664,
+    "4": 0.19047619047619047,
+    "5": 0.3333333333333333,
+    "6": 0.45454545454545453,
+    "7": 0.37777777777777777,
+    "8": 0.42857142857142855,
+    "9": 0.38095238095238093,
+    "10": 1.0,
+    "11": 0.6666666666666666,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0
+  },
+  "gods": [
+    {
+      "id": "src_main_appstate",
+      "label": "AppState",
+      "degree": 16
+    },
+    {
+      "id": "frontend_src_main_bindapp",
+      "label": "bindApp()",
+      "degree": 15
+    },
+    {
+      "id": "src_routes_add_evidence",
+      "label": "add_evidence()",
+      "degree": 14
+    },
+    {
+      "id": "frontend_src_main_apppage",
+      "label": "appPage()",
+      "degree": 13
+    },
+    {
+      "id": "src_routes_error",
+      "label": "error()",
+      "degree": 13
+    },
+    {
+      "id": "src_routes_workspace",
+      "label": "workspace()",
+      "degree": 13
+    },
+    {
+      "id": "src_routes_remove_evidence",
+      "label": "remove_evidence()",
+      "degree": 13
+    },
+    {
+      "id": "src_routes_check_workspace",
+      "label": "check_workspace()",
+      "degree": 12
+    },
+    {
+      "id": "src_routes_import_records",
+      "label": "import_records()",
+      "degree": 12
+    },
+    {
+      "id": "tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 12
+    }
+  ],
+  "surprises": [
+    {
+      "source": "add_evidence()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "create_record()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "delete_record()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "delete_workspace()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "export_pack()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}
