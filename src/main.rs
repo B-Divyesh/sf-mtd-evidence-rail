@@ -1,6 +1,7 @@
 mod routes;
 
 use axum::{
+    body::Body,
     extract::{DefaultBodyLimit, Request, State},
     http::{header, HeaderValue, StatusCode},
     middleware::{self, Next},
@@ -9,15 +10,11 @@ use axum::{
     Router,
 };
 use sqlx::sqlite::SqlitePoolOptions;
-use std::{
-    collections::HashMap,
-    env,
-    net::SocketAddr,
-    path::PathBuf,
-    sync::Arc,
-    time::{Duration, Instant},
+use std::{env, net::SocketAddr, path::PathBuf, time::Duration};
+use tokio::{net::TcpListener, signal};
+use tower_governor::{
+    governor::GovernorConfigBuilder, key_extractor::SmartIpKeyExtractor, GovernorLayer,
 };
-use tokio::{net::TcpListener, signal, sync::Mutex};
 use tower_http::{
     compression::CompressionLayer,
     services::{ServeDir, ServeFile},
@@ -27,7 +24,6 @@ use tower_http::{
 #[derive(Clone)]
 pub struct AppState {
     pub db: sqlx::SqlitePool,
-    limiter: Arc<Mutex<HashMap<String, (Instant, u32)>>>,
     pub build_sha: String,
 }
 
@@ -56,11 +52,7 @@ async fn main() {
     sqlx::migrate!().run(&db).await.expect("run migrations");
     let build_sha = env::var("BUILD_SHA").unwrap_or_else(|_| "dev".into());
     tracing::info!(port, database = %db_path.display(), build_sha, "configuration ready; local database generated if absent; no secret configuration required");
-    let state = AppState {
-        db,
-        limiter: Default::default(),
-        build_sha,
-    };
+    let state = AppState { db, build_sha };
     let app = app(state);
     let listener = TcpListener::bind(("0.0.0.0", port))
         .await
@@ -75,6 +67,20 @@ async fn main() {
 }
 
 pub fn app(state: AppState) -> Router {
+    let governor_conf = GovernorConfigBuilder::default()
+        .per_millisecond(50)
+        .burst_size(40)
+        .key_extractor(SmartIpKeyExtractor)
+        .finish()
+        .expect("valid rate limit");
+    let governor_limiter = governor_conf.limiter().clone();
+    tokio::spawn(async move {
+        let mut cleanup = tokio::time::interval(Duration::from_secs(60));
+        loop {
+            cleanup.tick().await;
+            governor_limiter.retain_recent();
+        }
+    });
     let api = Router::new()
         .route("/demo", post(routes::create_demo))
         .route("/records", post(routes::create_record))
@@ -95,7 +101,15 @@ pub fn app(state: AppState) -> Router {
                 .get(routes::get_workspace),
         )
         .layer(DefaultBodyLimit::max(8 * 1024 * 1024))
-        .layer(middleware::from_fn_with_state(state.clone(), rate_limit));
+        .layer(GovernorLayer::new(governor_conf).error_handler(|_| {
+            let mut response =
+                Response::new(Body::from("Too many requests. Try again in one second."));
+            *response.status_mut() = StatusCode::TOO_MANY_REQUESTS;
+            response
+                .headers_mut()
+                .insert(header::RETRY_AFTER, HeaderValue::from_static("1"));
+            response
+        }));
 
     let static_dir = env::var("STATIC_DIR").unwrap_or_else(|_| "dist".into());
     let index = PathBuf::from(&static_dir).join("index.html");
@@ -111,35 +125,6 @@ pub fn app(state: AppState) -> Router {
 
 async fn health(State(state): State<AppState>) -> impl IntoResponse {
     axum::Json(serde_json::json!({"status":"ok", "build_sha":state.build_sha}))
-}
-
-async fn rate_limit(State(state): State<AppState>, request: Request, next: Next) -> Response {
-    let key = request
-        .headers()
-        .get("x-forwarded-for")
-        .and_then(|v| v.to_str().ok())
-        .and_then(|v| v.split(',').next())
-        .unwrap_or("local")
-        .trim()
-        .to_string();
-    let now = Instant::now();
-    let mut map = state.limiter.lock().await;
-    map.retain(|_, (start, _)| now.duration_since(*start) < Duration::from_secs(5));
-    let item = map.entry(key).or_insert((now, 0));
-    if now.duration_since(item.0) >= Duration::from_secs(1) {
-        *item = (now, 0);
-    }
-    item.1 += 1;
-    if item.1 > 40 {
-        return (
-            StatusCode::TOO_MANY_REQUESTS,
-            [(header::RETRY_AFTER, "1")],
-            "Too many requests. Try again in one second.",
-        )
-            .into_response();
-    }
-    drop(map);
-    next.run(request).await
 }
 
 async fn security_headers(request: Request, next: Next) -> Response {
@@ -200,7 +185,6 @@ mod tests {
         sqlx::migrate!().run(&db).await.unwrap();
         app(AppState {
             db,
-            limiter: Default::default(),
             build_sha: "test-sha".into(),
         })
     }
