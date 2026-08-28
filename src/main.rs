@@ -47,11 +47,15 @@ async fn main() {
     std::fs::create_dir_all(&data_dir).expect("create data directory");
     let db_path = PathBuf::from(&data_dir).join("evidence-rail.sqlite");
     let db_url = format!("sqlite://{}?mode=rwc", db_path.display());
-    let connect_options: SqliteConnectOptions = db_url
+    let mut connect_options: SqliteConnectOptions = db_url
         .parse::<SqliteConnectOptions>()
         .expect("valid database path")
         .foreign_keys(true)
         .busy_timeout(Duration::from_secs(10));
+    let sqlite_vfs = env::var("SQLITE_VFS").ok();
+    if let Some(vfs) = &sqlite_vfs {
+        connect_options = connect_options.vfs(vfs.clone());
+    }
     let db = SqlitePoolOptions::new()
         .max_connections(1)
         .connect_with(connect_options)
@@ -59,7 +63,7 @@ async fn main() {
         .expect("open database");
     sqlx::migrate!().run(&db).await.expect("run migrations");
     let build_sha = env::var("BUILD_SHA").unwrap_or_else(|_| "dev".into());
-    tracing::info!(port, database = %db_path.display(), build_sha, "configuration ready; local database generated if absent; no secret configuration required");
+    tracing::info!(port, database = %db_path.display(), sqlite_vfs = sqlite_vfs.as_deref().unwrap_or("platform default"), build_sha, "configuration ready; local database generated if absent; no secret configuration required");
     let billing_base =
         env::var("SOCIOBOT_API_BASE").unwrap_or_else(|_| "https://api.sociobot.in/api/v1".into());
     let state = AppState {

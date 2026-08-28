@@ -11,7 +11,7 @@ cleanup() {
 trap cleanup EXIT
 
 start_server() {
-  STATIC_DIR="$repo_dir/dist" DATA_DIR="$tmp_dir/data" PORT=8200 \
+  STATIC_DIR="$repo_dir/dist" DATA_DIR="$tmp_dir/data" SQLITE_VFS=unix-none PORT=8200 \
     "$repo_dir/target/debug/mtd-evidence-rail" >"$tmp_dir/server.log" 2>&1 &
   server_pid=$!
   for _ in $(seq 1 80); do
