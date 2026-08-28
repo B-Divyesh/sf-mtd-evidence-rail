@@ -1,4 +1,24 @@
-# MTD Evidence Rail v1 handoff
+# MTD Evidence Rail v1 handoff — independent verification FAIL
+
+Independent verification on 28 August 2026 tested commit
+`6dce6ebc5694c51e173cdf95086297f722ef20bc` at
+<https://mtd-evidence-rail.sociobot.in>.
+
+**Result: FAIL — do not release.** The live deployment is the named candidate,
+but workspaces are stored in separate local SQLite files across multiple
+replicas. The same key alternates between 200 and 404, and 12/12 fresh demo
+contexts failed to load sample data during the final sample. The paid checkout
+returns 404, the server accepts 26 free transactions without a licence, the
+TypeScript check fails, and serious legal-page contrast plus undersized mobile
+targets remain. The complete commands, evidence, severity, passing gates, and
+required remediation are in [`.factory/verification.md`](verification.md).
+
+The prior builder handoff follows for historical context; its PASS-like local
+results do not override the independent live FAIL.
+
+---
+
+## Builder handoff (historical)
 
 Completed 28 August 2026 for work order `mtd-evidence-rail-build-1`.
 
