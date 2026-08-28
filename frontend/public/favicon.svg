@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MTD Evidence Rail">
+  <rect width="64" height="64" rx="14" fill="#092a32"/>
+  <path d="M10 44c12-2 15-17 27-17 8 0 10 7 17 7" fill="none" stroke="#e8bf62" stroke-width="5" stroke-linecap="round"/>
+  <path d="M13 49h39M18 42v12m10-18v18m10-22v22m10-22v22" stroke="#f4efe2" stroke-width="2"/>
+  <circle cx="48" cy="18" r="7" fill="#e35f3d"/>
+</svg>

@@ -1,0 +1,21 @@
+{
+  "name": "mtd-evidence-rail",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "start": "cargo run --release",
+    "test": "npm run build && cargo test && playwright test",
+    "test:e2e": "playwright test",
+    "assets": "node scripts/optimise-assets.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "@playwright/test": "1.58.2",
+    "sharp": "0.34.3",
+    "typescript": "5.9.2",
+    "vite": "7.1.3"
+  }
+}

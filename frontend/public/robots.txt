@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mtd-evidence-rail.sociobot.in/sitemap.xml
