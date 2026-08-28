@@ -30,6 +30,5 @@ active workspace key.
 **Start for real** opens `/app`, where a separate private key is created. Demo
 records are never copied into the private workspace.
 
-The backend refuses expired demo keys. Database cascade deletion removes demo
-records when their workspace is deleted; periodic physical cleanup is listed as
-a post-v1 operations task.
+The backend refuses expired demo keys. Each new demo also removes expired demo
+workspaces and their records through database cascade deletion.

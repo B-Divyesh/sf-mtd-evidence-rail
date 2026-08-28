@@ -25,8 +25,8 @@ test('@claim:no-account starts a private workspace without sign-in', async ({ pa
   await page.getByRole('link', { name: 'Start a private workspace' }).click();
   await expect(page).toHaveURL(/\/app$/);
   await expect(page.getByRole('heading', { level: 1, name: 'Prepare your quarter record' })).toBeVisible();
-  expect(await page.evaluate(() => localStorage.getItem('mtd-evidence-rail:workspace'))).toMatch(/^[a-f0-9]{64}$/);
   await expect(page.getByText('No transactions in this quarter')).toBeVisible();
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('mtd-evidence-rail:workspace'))).toMatch(/^[a-f0-9]{64}$/);
 });
 
 test('@claim:csv-matching bank CSV review flags likely matches', async ({ page }) => {
