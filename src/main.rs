@@ -9,8 +9,8 @@ use axum::{
     routing::{get, post},
     Router,
 };
-use sqlx::sqlite::SqlitePoolOptions;
-use std::{env, net::SocketAddr, path::PathBuf, time::Duration};
+use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
+use std::{env, net::SocketAddr, path::PathBuf, sync::Arc, time::Duration};
 use tokio::{net::TcpListener, signal};
 use tower_governor::{
     governor::GovernorConfigBuilder, key_extractor::SmartIpKeyExtractor, GovernorLayer,
@@ -25,6 +25,9 @@ use tower_http::{
 pub struct AppState {
     pub db: sqlx::SqlitePool,
     pub build_sha: String,
+    pub billing_base: String,
+    pub http: reqwest::Client,
+    pub write_lock: Arc<tokio::sync::Mutex<()>>,
 }
 
 #[tokio::main]
@@ -44,15 +47,31 @@ async fn main() {
     std::fs::create_dir_all(&data_dir).expect("create data directory");
     let db_path = PathBuf::from(&data_dir).join("evidence-rail.sqlite");
     let db_url = format!("sqlite://{}?mode=rwc", db_path.display());
+    let connect_options: SqliteConnectOptions = db_url
+        .parse::<SqliteConnectOptions>()
+        .expect("valid database path")
+        .foreign_keys(true)
+        .busy_timeout(Duration::from_secs(10));
     let db = SqlitePoolOptions::new()
-        .max_connections(8)
-        .connect(&db_url)
+        .max_connections(1)
+        .connect_with(connect_options)
         .await
         .expect("open database");
     sqlx::migrate!().run(&db).await.expect("run migrations");
     let build_sha = env::var("BUILD_SHA").unwrap_or_else(|_| "dev".into());
     tracing::info!(port, database = %db_path.display(), build_sha, "configuration ready; local database generated if absent; no secret configuration required");
-    let state = AppState { db, build_sha };
+    let billing_base =
+        env::var("SOCIOBOT_API_BASE").unwrap_or_else(|_| "https://api.sociobot.in/api/v1".into());
+    let state = AppState {
+        db,
+        build_sha,
+        billing_base,
+        http: reqwest::Client::builder()
+            .timeout(Duration::from_secs(8))
+            .build()
+            .expect("build HTTP client"),
+        write_lock: Arc::new(tokio::sync::Mutex::new(())),
+    };
     let app = app(state);
     let listener = TcpListener::bind(("0.0.0.0", port))
         .await
@@ -128,9 +147,28 @@ async fn health(State(state): State<AppState>) -> impl IntoResponse {
 }
 
 async fn security_headers(request: Request, next: Next) -> Response {
-    let cache_static =
-        request.uri().path().starts_with("/assets/") || request.uri().path().starts_with("/fonts/");
+    let path = request.uri().path().to_owned();
+    let method = request.method().clone();
+    let cache_immutable = path.starts_with("/assets/index-");
+    let cache_public = path.starts_with("/assets/") || path.starts_with("/fonts/");
     let mut response = next.run(request).await;
+    let known_page = matches!(
+        path.as_str(),
+        "/" | "/demo" | "/app" | "/privacy" | "/terms"
+    );
+    if method == axum::http::Method::GET
+        && response.status() == StatusCode::OK
+        && !known_page
+        && !path.starts_with("/api/")
+        && !path.starts_with("/assets/")
+        && !path.starts_with("/fonts/")
+        && !matches!(
+            path.as_str(),
+            "/health" | "/favicon.svg" | "/apple-touch-icon.png" | "/robots.txt" | "/sitemap.xml"
+        )
+    {
+        *response.status_mut() = StatusCode::NOT_FOUND;
+    }
     let headers = response.headers_mut();
     headers.insert(
         "x-content-type-options",
@@ -147,8 +185,10 @@ async fn security_headers(request: Request, next: Next) -> Response {
     headers.insert("content-security-policy", HeaderValue::from_static("default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'"));
     headers.insert(
         header::CACHE_CONTROL,
-        HeaderValue::from_static(if cache_static {
+        HeaderValue::from_static(if cache_immutable {
             "public, max-age=31536000, immutable"
+        } else if cache_public {
+            "public, max-age=3600, must-revalidate"
         } else {
             "no-cache"
         }),
@@ -186,6 +226,9 @@ mod tests {
         app(AppState {
             db,
             build_sha: "test-sha".into(),
+            billing_base: "http://127.0.0.1:9/api/v1".into(),
+            http: reqwest::Client::new(),
+            write_lock: Arc::new(tokio::sync::Mutex::new(())),
         })
     }
 
@@ -211,25 +254,118 @@ mod tests {
     #[tokio::test]
     async fn api_rate_limit_returns_retry_after() {
         let service = test_app().await;
-        let mut last = StatusCode::OK;
-        let mut retry_after = None;
-        for _ in 0..45 {
+        for hop in 0..40 {
             let response = service
                 .clone()
                 .oneshot(
                     Request::builder()
-                        .method("POST")
-                        .uri("/api/demo")
-                        .header("x-forwarded-for", "203.0.113.8")
+                        .uri("/api/workspace")
+                        .header("x-forwarded-for", format!("203.0.113.8, 10.0.0.{hop}"))
                         .body(Body::empty())
                         .unwrap(),
                 )
                 .await
                 .unwrap();
-            last = response.status();
-            retry_after = response.headers().get(header::RETRY_AFTER).cloned();
+            assert_eq!(response.status(), StatusCode::UNAUTHORIZED);
         }
-        assert_eq!(last, StatusCode::TOO_MANY_REQUESTS);
-        assert_eq!(retry_after.unwrap(), "1");
+        let limited = service
+            .clone()
+            .oneshot(
+                Request::builder()
+                    .uri("/api/workspace")
+                    .header("x-forwarded-for", "203.0.113.8, 192.0.2.99")
+                    .body(Body::empty())
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+        assert_eq!(limited.status(), StatusCode::TOO_MANY_REQUESTS);
+        assert_eq!(limited.headers().get(header::RETRY_AFTER).unwrap(), "1");
+
+        let other_client = service
+            .oneshot(
+                Request::builder()
+                    .uri("/api/workspace")
+                    .header("x-forwarded-for", "198.51.100.4, 192.0.2.99")
+                    .body(Body::empty())
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+        assert_eq!(other_client.status(), StatusCode::UNAUTHORIZED);
+    }
+
+    #[tokio::test]
+    async fn unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated() {
+        let service = test_app().await;
+        let missing = service
+            .clone()
+            .oneshot(
+                Request::builder()
+                    .uri("/not-a-page")
+                    .body(Body::empty())
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+        assert_eq!(missing.status(), StatusCode::NOT_FOUND);
+
+        let hero = service
+            .oneshot(
+                Request::builder()
+                    .uri("/assets/evidence-rail-hero.webp")
+                    .body(Body::empty())
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+        assert_eq!(
+            hero.headers().get(header::CACHE_CONTROL).unwrap(),
+            "public, max-age=3600, must-revalidate"
+        );
+    }
+
+    #[tokio::test]
+    async fn workspace_deletion_removes_records_evidence_and_audit() {
+        let db = SqlitePoolOptions::new()
+            .max_connections(1)
+            .connect("sqlite::memory:")
+            .await
+            .unwrap();
+        sqlx::migrate!().run(&db).await.unwrap();
+        sqlx::query("PRAGMA foreign_keys = ON")
+            .execute(&db)
+            .await
+            .unwrap();
+        sqlx::query("INSERT INTO workspaces(id,is_demo,created_at) VALUES('delete-me',0,0)")
+            .execute(&db)
+            .await
+            .unwrap();
+        sqlx::query("INSERT INTO records(id,workspace_id,kind,record_date,description,amount_pence,category,source,evidence_name,evidence_mime,evidence_data,created_at,updated_at) VALUES('record','delete-me','expense','2026-04-06','Receipt',100,'Office','manual','receipt.txt','text/plain',X'74657374',0,0)")
+            .execute(&db)
+            .await
+            .unwrap();
+        sqlx::query("INSERT INTO audit_log(workspace_id,record_id,action,detail,created_at) VALUES('delete-me','record','evidence_linked','Evidence file linked',0)")
+            .execute(&db)
+            .await
+            .unwrap();
+
+        sqlx::query("DELETE FROM workspaces WHERE id='delete-me'")
+            .execute(&db)
+            .await
+            .unwrap();
+
+        let record_count: (i64,) =
+            sqlx::query_as("SELECT COUNT(*) FROM records WHERE workspace_id='delete-me'")
+                .fetch_one(&db)
+                .await
+                .unwrap();
+        let audit_count: (i64,) =
+            sqlx::query_as("SELECT COUNT(*) FROM audit_log WHERE workspace_id='delete-me'")
+                .fetch_one(&db)
+                .await
+                .unwrap();
+        assert_eq!(record_count.0, 0);
+        assert_eq!(audit_count.0, 0);
     }
 }

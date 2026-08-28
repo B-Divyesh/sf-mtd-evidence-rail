@@ -8,9 +8,10 @@ use axum::{
 };
 use base64::Engine;
 use serde::{Deserialize, Serialize};
+use sha2::{Digest, Sha256};
 use sqlx::FromRow;
 use std::io::{Cursor, Write};
-use time::OffsetDateTime;
+use time::{Date, Month, OffsetDateTime};
 use uuid::Uuid;
 use zip::{write::SimpleFileOptions, CompressionMethod, ZipWriter};
 
@@ -246,7 +247,31 @@ pub async fn get_workspace(
     ))
 }
 
-fn validate(input: &RecordInput) -> ApiResult<()> {
+fn parse_date(value: &str) -> ApiResult<Date> {
+    let mut parts = value.split('-');
+    let year = parts.next().and_then(|v| v.parse::<i32>().ok());
+    let month = parts
+        .next()
+        .and_then(|v| v.parse::<u8>().ok())
+        .and_then(|v| Month::try_from(v).ok());
+    let day = parts.next().and_then(|v| v.parse::<u8>().ok());
+    if parts.next().is_some() {
+        return Err(error(
+            StatusCode::BAD_REQUEST,
+            "Enter a real calendar date.",
+        ));
+    }
+    match (year, month, day) {
+        (Some(year), Some(month), Some(day)) => Date::from_calendar_date(year, month, day)
+            .map_err(|_| error(StatusCode::BAD_REQUEST, "Enter a real calendar date.")),
+        _ => Err(error(
+            StatusCode::BAD_REQUEST,
+            "Enter a real calendar date.",
+        )),
+    }
+}
+
+fn validate(input: &RecordInput) -> ApiResult<Date> {
     if !matches!(input.kind.as_str(), "expense" | "income") {
         return Err(error(StatusCode::BAD_REQUEST, "Choose expense or income."));
     }
@@ -256,9 +281,10 @@ fn validate(input: &RecordInput) -> ApiResult<()> {
     {
         return Err(error(
             StatusCode::BAD_REQUEST,
-            "Enter the date as YYYY-MM-DD.",
+            "Enter a real calendar date.",
         ));
     }
+    let date = parse_date(&input.record_date)?;
     if input.description.trim().is_empty() || input.description.chars().count() > 120 {
         return Err(error(
             StatusCode::BAD_REQUEST,
@@ -277,15 +303,128 @@ fn validate(input: &RecordInput) -> ApiResult<()> {
             "Enter a category under 40 characters.",
         ));
     }
+    Ok(date)
+}
+
+fn quarter_bounds(date: Date) -> (String, String) {
+    let year = date.year();
+    let (start_year, start_month, start_day, end_year, end_month, end_day) = match date.month() {
+        Month::April | Month::May | Month::June => (year, 4, 6, year, 7, 5),
+        Month::July | Month::August | Month::September => (year, 7, 6, year, 10, 5),
+        Month::October | Month::November | Month::December => (year, 10, 6, year + 1, 1, 5),
+        Month::January | Month::February | Month::March => {
+            if date.month() == Month::January && date.day() <= 5 {
+                (year - 1, 10, 6, year, 1, 5)
+            } else {
+                (year, 1, 6, year, 4, 5)
+            }
+        }
+    };
+    (
+        format!("{start_year:04}-{start_month:02}-{start_day:02}"),
+        format!("{end_year:04}-{end_month:02}-{end_day:02}"),
+    )
+}
+
+fn quarter_bounds_for_record(date: Date) -> (String, String) {
+    if date.month() == Month::April && date.day() <= 5 {
+        return (
+            format!("{:04}-01-06", date.year()),
+            format!("{:04}-04-05", date.year()),
+        );
+    }
+    quarter_bounds(date)
+}
+
+async fn has_paid_access(state: &AppState, headers: &HeaderMap) -> ApiResult<bool> {
+    let Some(token) = headers
+        .get("x-license-key")
+        .and_then(|value| value.to_str().ok())
+        .map(str::trim)
+        .filter(|value| !value.is_empty() && value.len() <= 4096)
+    else {
+        return Ok(false);
+    };
+    let token_hash = format!("{:x}", Sha256::digest(token.as_bytes()));
+    let cached: Option<(i64, i64)> =
+        sqlx::query_as("SELECT valid, checked_at FROM license_cache WHERE token_hash=?")
+            .bind(&token_hash)
+            .fetch_optional(&state.db)
+            .await
+            .map_err(internal)?;
+    if matches!(cached, Some((1, checked)) if now() - checked < 86_400) {
+        return Ok(true);
+    }
+
+    let response = state
+        .http
+        .get(format!(
+            "{}/products/mtd-evidence-rail/verify",
+            state.billing_base.trim_end_matches('/')
+        ))
+        .query(&[("license", token)])
+        .send()
+        .await
+        .map_err(|err| {
+            tracing::warn!(error = %err, "licence verification unavailable");
+            error(
+                StatusCode::SERVICE_UNAVAILABLE,
+                "Paid access could not be checked. Try again in a moment.",
+            )
+        })?;
+    if !response.status().is_success() {
+        return Err(error(
+            StatusCode::SERVICE_UNAVAILABLE,
+            "Paid access could not be checked. Try again in a moment.",
+        ));
+    }
+    #[derive(Deserialize)]
+    struct Verdict {
+        valid: bool,
+    }
+    let verdict: Verdict = response.json().await.map_err(internal)?;
+    sqlx::query("INSERT INTO license_cache(token_hash,valid,checked_at) VALUES(?,?,?) ON CONFLICT(token_hash) DO UPDATE SET valid=excluded.valid, checked_at=excluded.checked_at")
+        .bind(token_hash)
+        .bind(i64::from(verdict.valid))
+        .bind(now())
+        .execute(&state.db)
+        .await
+        .map_err(internal)?;
+    Ok(verdict.valid)
+}
+
+async fn enforce_quarter_limits(
+    state: &AppState,
+    workspace_id: &str,
+    headers: &HeaderMap,
+    dated_records: &[(Date, usize)],
+) -> ApiResult<()> {
+    for (date, additions) in dated_records {
+        let (from, to) = quarter_bounds_for_record(*date);
+        let existing: (i64,) = sqlx::query_as(
+            "SELECT COUNT(*) FROM records WHERE workspace_id=? AND record_date>=? AND record_date<=?",
+        )
+        .bind(workspace_id)
+        .bind(from)
+        .bind(to)
+        .fetch_one(&state.db)
+        .await
+        .map_err(internal)?;
+        if existing.0 + *additions as i64 > 25 && !has_paid_access(state, headers).await? {
+            return Err(error(
+                StatusCode::PAYMENT_REQUIRED,
+                "The free quarter has 25 transactions. Restore paid access or use another quarter.",
+            ));
+        }
+    }
     Ok(())
 }
 
 async fn insert_record(
-    db: &sqlx::SqlitePool,
+    connection: &mut sqlx::SqliteConnection,
     workspace_id: &str,
     input: RecordInput,
 ) -> ApiResult<String> {
-    validate(&input)?;
     let id = Uuid::new_v4().to_string();
     let timestamp = now();
     let source = input
@@ -296,9 +435,9 @@ async fn insert_record(
     sqlx::query("INSERT INTO records(id,workspace_id,kind,record_date,description,amount_pence,category,source,invoice_number,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?,?,?)")
         .bind(&id).bind(workspace_id).bind(input.kind).bind(input.record_date).bind(input.description.trim())
         .bind(input.amount_pence).bind(input.category.trim()).bind(source).bind(input.invoice_number.filter(|s| !s.trim().is_empty()))
-        .bind(timestamp).bind(timestamp).execute(db).await.map_err(internal)?;
+        .bind(timestamp).bind(timestamp).execute(&mut *connection).await.map_err(internal)?;
     sqlx::query("INSERT INTO audit_log(workspace_id,record_id,action,detail,created_at) VALUES(?,?,'record_created','Transaction added',?)")
-        .bind(workspace_id).bind(&id).bind(timestamp).execute(db).await.map_err(internal)?;
+        .bind(workspace_id).bind(&id).bind(timestamp).execute(&mut *connection).await.map_err(internal)?;
     Ok(id)
 }
 
@@ -309,7 +448,12 @@ pub async fn create_record(
 ) -> ApiResult<impl IntoResponse> {
     let workspace_id = workspace(&headers)?;
     check_workspace(&state.db, &workspace_id).await?;
-    let id = insert_record(&state.db, &workspace_id, input).await?;
+    let date = validate(&input)?;
+    let _write_guard = state.write_lock.lock().await;
+    enforce_quarter_limits(&state, &workspace_id, &headers, &[(date, 1)]).await?;
+    let mut tx = state.db.begin().await.map_err(internal)?;
+    let id = insert_record(&mut tx, &workspace_id, input).await?;
+    tx.commit().await.map_err(internal)?;
     Ok((StatusCode::CREATED, Json(serde_json::json!({"id":id}))))
 }
 
@@ -327,9 +471,26 @@ pub async fn import_records(
         ));
     }
     let count = input.records.len();
-    for record in input.records {
-        insert_record(&state.db, &workspace_id, record).await?;
+    let mut quarter_additions: Vec<(Date, usize)> = Vec::new();
+    for record in &input.records {
+        let date = validate(record)?;
+        let bounds = quarter_bounds_for_record(date);
+        if let Some((_, additions)) = quarter_additions
+            .iter_mut()
+            .find(|(known, _)| quarter_bounds_for_record(*known) == bounds)
+        {
+            *additions += 1;
+        } else {
+            quarter_additions.push((date, 1));
+        }
     }
+    let _write_guard = state.write_lock.lock().await;
+    enforce_quarter_limits(&state, &workspace_id, &headers, &quarter_additions).await?;
+    let mut tx = state.db.begin().await.map_err(internal)?;
+    for record in input.records {
+        insert_record(&mut tx, &workspace_id, record).await?;
+    }
+    tx.commit().await.map_err(internal)?;
     Ok((
         StatusCode::CREATED,
         Json(serde_json::json!({"imported":count})),

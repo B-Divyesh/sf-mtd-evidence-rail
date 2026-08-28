@@ -16,7 +16,7 @@ accounting suite. It does not calculate tax or file with HMRC.
 - Deletes a workspace and its files on request.
 
 A workspace needs no account. Its unguessable key stays in the browser. The
-free plan accepts 25 transactions per quarter. Paid access is £15/month and
+free plan accepts 25 transactions per quarter. Paid access costs £15 once and
 removes that limit. Checkout and licence checks use the Sociobot billing API.
 
 ## Try the isolated demo
@@ -28,7 +28,7 @@ private workspaces and expire after 24 hours. See [`.factory/demo.md`](.factory/
 
 ## Run locally
 
-Requirements: Node 22+, Rust 1.88+, and SQLite build support.
+Requirements: Node 22+, current stable Rust, and SQLite build support.
 
 ```sh
 npm ci
@@ -58,21 +58,26 @@ and runs Playwright in Chromium. Claim tests are listed in
 
 ## Data and security
 
-Records and evidence are stored in SQLite under `DATA_DIR`. An unguessable
-workspace key scopes every API request. Demo keys use a separate browser and
-database namespace. API endpoints enforce per-IP burst limits and respect the
-first `X-Forwarded-For` hop. Security headers include a restrictive CSP.
+Records and evidence are stored in SQLite under `DATA_DIR`. Production mounts
+that directory from Azure Files and runs one replica, so every request reaches
+the same durable database. An unguessable workspace key scopes every API
+request. Demo keys use a separate browser and database namespace. API endpoints
+enforce per-IP burst limits and respect the first `X-Forwarded-For` hop.
+Security headers include a restrictive CSP.
 
-There are no advertising trackers or third-party runtime scripts. The browser
-contacts `api.sociobot.in` only when a buyer restores or receives paid access.
-See `/privacy` and `/terms` in the running product.
+There are no advertising trackers or third-party runtime scripts. The product
+contacts `api.sociobot.in` only to verify paid access or start checkout. The
+server enforces the free quarter limit even if browser storage is changed. See
+`/privacy` and `/terms` in the running product.
 
 ## Deploy
 
 The root `Dockerfile` builds the Vite frontend and Rust server in separate
-stages. The runtime image runs as a non-root user, reads `PORT`, persists SQLite
-under `/data`, and serves `/health` with the supplied `BUILD_SHA`. The factory
-owns infrastructure, DNS, product registration, and billing configuration.
+stages. The runtime image runs as a non-root user, reads `PORT`, and serves
+`/health` with the supplied `BUILD_SHA`. The work-order deployment is wrapped
+by `scripts/deploy.sh`; it mounts Azure Files at `/data` and pins the app to one
+replica because SQLite is a single-writer database. The factory owns product
+registration and billing configuration.
 
 ## Licence
 

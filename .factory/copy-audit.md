@@ -1,8 +1,7 @@
 # Landing copy audit
 
-Audited 28 August 2026 against the plain-words contract. Counts treat `£15/month`
-as one word. Interface labels and headings are included even when they are not
-sentences.
+Audited 28 August 2026 against the plain-words contract. Interface labels and
+headings are included even when they are not sentences.
 
 ## First screen
 
@@ -16,7 +15,7 @@ sentences.
 | Nothing is saved. | 3 |
 | Start a private workspace | 4 |
 | Your workspace needs no account. | 5 |
-| £15/month for more than 25 transactions. | 6 |
+| £15 once for more than 25 transactions. | 7 |
 | This record aid does not file with HMRC. | 8 |
 
 Read-aloud check: the headline, audience line, and sample action fit in one
@@ -60,10 +59,10 @@ product name.
 | Demo records use a separate 24-hour workspace. | 7 |
 | You can export or delete your workspace. | 7 |
 | No advertising trackers or third-party scripts run here. | 8 |
-| Paid plan | 2 |
+| Paid access | 2 |
 | Keep every quarter on the rail | 6 |
 | Use the free workspace for 25 transactions in a quarter. | 10 |
-| The paid plan removes that limit. | 6 |
+| One purchase removes that limit. | 5 |
 | Paid access includes unlimited transactions across your quarters. | 8 |
 | Receipt and invoice evidence | 4 |
 | Bank CSV review | 3 |

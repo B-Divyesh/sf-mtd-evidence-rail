@@ -7,15 +7,22 @@
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "start": "cargo run --release",
-    "test": "npm run build && cargo test && playwright test",
+    "test": "npm run typecheck && npm run build && cargo test && cargo build && npm run test:runtime-defaults && npm run test:durable-storage && playwright test",
+    "typecheck": "tsc --noEmit",
+    "test:runtime-defaults": "bash scripts/test-runtime-defaults.sh",
+    "test:durable-storage": "bash scripts/test-durable-storage.sh",
     "test:e2e": "playwright test",
     "assets": "node scripts/optimise-assets.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.10.2",
     "@playwright/test": "1.58.2",
+    "@types/node": "22.15.3",
     "sharp": "^0.35.4",
     "typescript": "5.9.2",
     "vite": "^7.3.6"
+  },
+  "overrides": {
+    "playwright-core": "1.58.2"
   }
 }

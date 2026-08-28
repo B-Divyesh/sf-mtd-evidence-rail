@@ -4,7 +4,7 @@ COPY package.json package-lock.json tsconfig.json vite.config.ts ./
 COPY frontend ./frontend
 RUN npm ci && npm run build
 
-FROM rust:1.88-bookworm AS backend-builder
+FROM rust:1-slim AS backend-builder
 WORKDIR /build
 COPY Cargo.toml Cargo.lock ./
 COPY migrations ./migrations

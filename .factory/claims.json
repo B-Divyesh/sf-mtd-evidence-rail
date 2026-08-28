@@ -8,17 +8,52 @@
   },
   {
     "id": "no-account",
-    "claim": "A private workspace needs no account",
-    "where": "landing facts, README",
+    "claim": "A private workspace needs no account and its key is stored on this device",
+    "where": "landing facts, privacy page, README",
     "test": "npm test -- --grep @claim:no-account",
-    "sandbox": "fresh browser context; start a real workspace without credentials"
+    "sandbox": "fresh browser context; start /app without credentials; inspect local and demo storage namespaces"
+  },
+  {
+    "id": "quarter-capture",
+    "claim": "Income and expenses appear in their dated MTD quarter",
+    "where": "landing preview, app, README",
+    "test": "npm test -- --grep @claim:quarter-capture",
+    "sandbox": "fresh private workspace; save one income and one expense through the API; select their quarter and assert both rows"
   },
   {
     "id": "csv-matching",
-    "claim": "Bank CSV review flags likely matches before import",
+    "claim": "Bank CSV review flags likely amount-and-date matches before import",
     "where": "how it works, import dialog, README",
     "test": "npm test -- --grep @claim:csv-matching",
-    "sandbox": "demo data; upload a two-row CSV containing one matching amount and date"
+    "sandbox": "demo data; upload a two-row CSV containing one matching amount and date; assert only the new row is imported"
+  },
+  {
+    "id": "atomic-import",
+    "claim": "A rejected bank import saves none of its rows",
+    "where": "API behavior and handoff",
+    "test": "npm test -- --grep @claim:atomic-import",
+    "sandbox": "demo data; submit one valid and one invalid row; assert HTTP 400 and the original six-row count"
+  },
+  {
+    "id": "calendar-dates",
+    "claim": "The API rejects impossible calendar dates",
+    "where": "API behavior and handoff",
+    "test": "npm test -- --grep @claim:calendar-dates",
+    "sandbox": "fresh private workspace; submit 2026-99-99 and assert HTTP 400 with the date error"
+  },
+  {
+    "id": "evidence-types",
+    "claim": "Evidence accepts PDF, JPG, PNG, WebP, and text files up to 5 MB",
+    "where": "file input, API errors, terms, README",
+    "test": "npm test -- --grep @claim:evidence-types",
+    "sandbox": "demo record; upload a non-empty fixture once under each supported MIME type and assert HTTP 200"
+  },
+  {
+    "id": "missing-review",
+    "claim": "Missing evidence can be reviewed as a separate list",
+    "where": "landing preview, app, README",
+    "test": "npm test -- --grep @claim:missing-review",
+    "sandbox": "demo data; enable missing filter; assert exactly two missing rows and no linked row"
   },
   {
     "id": "evidence-pack",
@@ -28,24 +63,66 @@
     "sandbox": "demo data; download pack and inspect ZIP signature and entries"
   },
   {
-    "id": "free-limit",
-    "claim": "The free workspace accepts 25 transactions in a quarter",
-    "where": "landing facts, pricing, terms",
-    "test": "npm test -- --grep @claim:free-limit",
-    "sandbox": "demo workspace; add records up to 25 and assert the next save is stopped"
+    "id": "workspace-delete",
+    "claim": "Deleting a workspace removes its transactions and evidence files",
+    "where": "workspace settings, privacy page, README",
+    "test": "npm test -- --grep @claim:workspace-delete",
+    "sandbox": "fresh private workspace with linked evidence; delete with confirmation and assert the key returns 404"
   },
   {
-    "id": "no-trackers",
-    "claim": "No advertising trackers or third-party scripts run during the core flow",
-    "where": "privacy section and page, README",
-    "test": "npm test -- --grep @claim:no-trackers",
-    "sandbox": "fresh demo; record every outgoing request during load and missing-evidence review"
+    "id": "free-limit",
+    "claim": "The free workspace accepts at most 25 transactions in one quarter",
+    "where": "landing facts, pricing, terms, README",
+    "test": "npm test -- --grep @claim:free-limit",
+    "sandbox": "demo workspace; import to 25, call the public API directly for row 26, assert HTTP 402 and unchanged UI count"
+  },
+  {
+    "id": "paid-limit",
+    "claim": "The server verifies a paid licence before accepting more than 25 transactions",
+    "where": "pricing, terms, README",
+    "test": "npm test -- --grep @claim:paid-limit",
+    "sandbox": "demo workspace and recorded Sociobot verification fixture; submit 26 rows with a valid token and assert all 26 persist"
+  },
+  {
+    "id": "hosted-checkout",
+    "claim": "The £15 purchase starts on the hosted Sociobot checkout",
+    "where": "pricing, terms, README",
+    "test": "bash scripts/test-live-checkout.sh",
+    "sandbox": "live Sociobot billing route; assert a redirect response without completing or spending on a purchase"
   },
   {
     "id": "license-return",
     "claim": "A returned Sociobot licence is stored and verified",
-    "where": "paid access section",
+    "where": "paid access section, README",
     "test": "npm test -- --grep @claim:license-return",
     "sandbox": "fresh browser; recorded valid verify response; assert URL stripping and cached verdict"
+  },
+  {
+    "id": "no-trackers",
+    "claim": "No advertising trackers or third-party scripts run during the core flow",
+    "where": "privacy section, privacy page, README",
+    "test": "npm test -- --grep @claim:no-trackers",
+    "sandbox": "fresh demo; record every outgoing request during load and missing-evidence review; assert same-origin only"
+  },
+  {
+    "id": "runtime-defaults",
+    "claim": "The container service starts with no required environment variables beyond PORT",
+    "where": "README, Dockerfile contract",
+    "test": "npm run build && cargo build && npm run test:runtime-defaults",
+    "sandbox": "scrubbed process environment containing only PORT; assert /health returns status ok"
+  },
+  {
+    "id": "durable-storage",
+    "claim": "A workspace remains available after the service restarts",
+    "where": "privacy page, README, deployment handoff",
+    "test": "npm run build && cargo build && npm run test:durable-storage",
+    "sandbox": "temporary persistent DATA_DIR; create a workspace, restart the server, and assert the same key returns HTTP 200"
+  },
+  {
+    "id": "api-rate-limit",
+    "claim": "API endpoints enforce a per-client burst limit using the first forwarded IP and return Retry-After",
+    "where": "README, handoff",
+    "test": "cargo test api_rate_limit_returns_retry_after",
+    "sandbox": "in-process router; send 45 requests with one X-Forwarded-For first hop; assert 429 and Retry-After: 1"
   }
 ]
