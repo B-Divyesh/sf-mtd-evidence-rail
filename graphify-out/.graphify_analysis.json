@@ -293,6 +293,11 @@
       "degree": 13
     },
     {
+      "id": "src_routes_remove_evidence",
+      "label": "remove_evidence()",
+      "degree": 13
+    },
+    {
       "id": "src_routes_workspace",
       "label": "workspace()",
       "degree": 13
@@ -303,17 +308,45 @@
       "degree": 13
     },
     {
-      "id": "src_routes_remove_evidence",
-      "label": "remove_evidence()",
-      "degree": 13
-    },
-    {
       "id": "tsconfig_compileroptions",
       "label": "compilerOptions",
       "degree": 12
     }
   ],
   "surprises": [
+    {
+      "source": "enforce_quarter_limits()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "has_paid_access()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "import_records()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities"
+    },
     {
       "source": "add_evidence()",
       "target": "AppState",
@@ -327,39 +360,6 @@
     },
     {
       "source": "create_demo()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "bridges separate communities"
-    },
-    {
-      "source": "create_record()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "bridges separate communities"
-    },
-    {
-      "source": "create_workspace()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "bridges separate communities"
-    },
-    {
-      "source": "delete_record()",
       "target": "AppState",
       "source_files": [
         "src/routes.rs",
