@@ -1,105 +1,114 @@
-# MTD Evidence Rail v1 handoff — independent verification FAIL
+# MTD Evidence Rail repair handoff
 
-Independent verification on 28 August 2026 tested commit
-`6dce6ebc5694c51e173cdf95086297f722ef20bc` at
+Completed 28 August 2026 for work order `mtd-evidence-rail-repair-1`.
+
+## Result
+
+All release-blocking findings in verifier commit
+`bc3052694229645443825312b0c060e925cc1315` are repaired. The deployed code is
+commit `3ff5921c9572a21fbae9ae2f10d76f0535684a67` at
 <https://mtd-evidence-rail.sociobot.in>.
 
-**Result: FAIL — do not release.** The live deployment is the named candidate,
-but workspaces are stored in separate local SQLite files across multiple
-replicas. The same key alternates between 200 and 404, and 12/12 fresh demo
-contexts failed to load sample data during the final sample. The paid checkout
-returns 404, the server accepts 26 free transactions without a licence, the
-TypeScript check fails, and serious legal-page contrast plus undersized mobile
-targets remain. The complete commands, evidence, severity, passing gates, and
-required remediation are in [`.factory/verification.md`](verification.md).
+## Repairs
 
-The prior builder handoff follows for historical context; its PASS-like local
-results do not override the independent live FAIL.
+- Production now mounts the `sf-mtd-evidence-rail-data` Azure Files share at
+  `/data`. The Container App uses single revision mode, one replica, and
+  SQLite's `unix-dotfile` lock mode for SMB. The deployment script verifies
+  those settings and recovers from transient hostname-update conflicts.
+- The API enforces 25 transactions per MTD quarter. Requests above the limit
+  require a licence that the server verifies through the Sociobot product API.
+  Only a SHA-256 token hash and daily verdict are cached.
+- The live Sociobot product is registered and enabled. Its checkout returns a
+  Dodo-hosted redirect instead of 404.
+- Imports validate every row before one database transaction commits. Real
+  calendar dates are validated at the API edge.
+- Foreign keys are enabled. Workspace deletion removes records, evidence blobs,
+  and audit rows; expired demo cleanup uses the same database cascade.
+- TypeScript now has matching Playwright types and Node types. `typecheck` is
+  part of `npm test`.
+- `.factory/claims.json` now lists 18 claims, including deletion, file types and
+  size, browser-held keys, runtime defaults, durable restart behavior, paid
+  enforcement, checkout, and forwarded-IP rate limiting.
+- Legal-page contrast and 44 px mobile header/footer targets are fixed.
+- The Rust builder uses `rust:1-slim`. Unknown routes return HTTP 404, hashed
+  bundles remain immutable, and unversioned art/fonts revalidate after one hour.
+- Workspace actions remain disabled until the initial asynchronous load
+  completes. Browser tests wait for the same observable ready state.
 
----
+## Local verification
 
-## Builder handoff (historical)
-
-Completed 28 August 2026 for work order `mtd-evidence-rail-build-1`.
-
-## What shipped
-
-- A Rust 2021 `axum` service with SQLite migrations, structured logs, graceful
-  shutdown, security headers, a build-aware `/health`, and forwarded-IP rate
-  limiting. The service starts with only `PORT`; storage defaults are generated.
-- Private bearer-key workspaces and separate 24-hour demo workspaces. Creating a
-  demo clears expired demo data. Users can delete a complete workspace.
-- Manual income and expense capture, MTD-aligned quarterly periods, and one
-  dated transaction view.
-- Receipt and invoice evidence files up to 5 MB, with link and remove audit
-  entries.
-- Bank CSV review with quoted-cell parsing, date normalisation, and same-day
-  amount match suggestions. Likely matches are skipped on confirmation.
-- A missing-evidence filter and a ZIP evidence pack containing
-  `transactions.csv`, linked files, and a plain README.
-- A free 25-transaction quarter and a £15/month paid route through the Sociobot
-  checkout. Returned licences are stored, verified, cached daily, and can be
-  restored by pasting a token. No product id is embedded beyond the required
-  product slug.
-- Landing, app, demo, privacy, terms, and designed not-found routes. History,
-  keyboard focus, mobile layout, errors, empty states, loading, and offline
-  notices are included.
-- Original surreal editorial hero art, responsive WebP outputs, local fonts,
-  social card, favicon, sitemap, robots file, and route metadata. Provenance is
-  in `.factory/design.md` and `assets/src/`.
-- Container build stages for Vite and Rust. The runtime is non-root and stores
-  SQLite under `/data`.
-
-## Run and verify
+Run from the repository root:
 
 ```sh
 npm ci
 npm test
-npm run build
-STATIC_DIR=dist DATA_DIR=data PORT=8080 cargo run --release
+npm audit --audit-level=low
+cargo fmt --check
+cargo clippy --all-targets --all-features -- -D warnings
+cargo build --release --locked
+bash scripts/test-live-checkout.sh
 ```
 
-Container build command:
+Observed results:
 
-```sh
-docker build --build-arg BUILD_SHA=$(git rev-parse HEAD) -t mtd-evidence-rail .
-```
+- `npm ci`: 34 packages installed; 0 vulnerabilities.
+- `npm test`: PASS. It ran the TypeScript check, Vite production build, 4 Rust
+  tests, runtime-with-only-`PORT`, durable stop/start, and 17 Chromium tests.
+- All 18 claim entries passed through their listed test coverage. The paid path
+  uses a recorded Sociobot verdict fixture; the live checkout test does not
+  spend money.
+- Formatting, strict Clippy, npm audit, and locked release compilation passed.
+- Production output: JS 30,079 bytes raw / 10.26 KB gzip; CSS 16,617 bytes raw /
+  4.73 KB gzip; local fonts 102,036 bytes; mobile hero 61,374 bytes.
+- The ACR package build completed as run `chn1`; deployed image tag is
+  `sf-mtd-evidence-rail:3ff5921c9572`.
 
-The factory may pass `BUILD_SHA`, `GIT_SHA`, and `SOURCE_COMMIT`; only
-`BUILD_SHA` is needed by the image and it has a `dev` default.
+## Live verification
 
-## Verification evidence
+- `/health` returned status `ok` and the exact deployed code SHA above.
+- Local and live JS SHA-256 both equal
+  `13e452d66c24410a9f67c58db7e6f802dc7931ff66b4908a48ff4e0fd80a1eca`.
+- Factory `verify-url.sh` passed with no console errors, title, `en-GB`, one
+  `h1`, `main`, image alternatives, and labelled buttons. Desktop and 390 px
+  screenshots are in `.factory/evidence/repair-final/`.
+- The live browser suite passed 15/15 applicable non-fixture tests. It covered
+  the demo, capture, CSV matching, atomic failure, invalid dates, evidence
+  types and 5 MB boundary, export, deletion, free enforcement, privacy,
+  desktop routes, Axe, keyboard, and 390 px layout.
+- Twelve additional fresh Chromium contexts loaded and reset the demo: 12/12
+  passed.
+- Axe found no serious or critical issue on `/`, `/demo`, `/app`, `/privacy`,
+  `/terms`, or the designed 404 route. Keyboard dialog focus and Escape return
+  passed. Every visible mobile header/footer link measured at least 44 px.
+- A workspace and record survived a live revision restart. All 40 reads after
+  restart returned 200, and the saved record remained present.
+- A 100-request fixed first-hop burst returned 43 normal 401 responses and 57
+  rate-limited 429 responses. Every 429 included `Retry-After: 1`.
+- Azure reports single revision mode, max replicas 1, `/data` mounted from
+  `mtd-evidence-rail-data`, and `SQLITE_VFS=unix-dotfile`.
+- Hosted checkout returned HTTP 303. A 26th unlicensed transaction returned
+  402; the recorded valid-licence integration allowed 26 records.
+- Unknown routes return 404. CSP, `nosniff`, referrer policy, and permissions
+  policy are present. Unversioned hero art returns
+  `public, max-age=3600, must-revalidate`.
+- Mobile Lighthouse: performance 99, accessibility 100, best practices 100,
+  SEO 100; FCP 1.08 s, LCP 1.91 s, TBT 1 ms, CLS 0, transfer 180,619 bytes.
+- The core demo flow made same-origin requests only. There are no analytics or
+  third-party runtime scripts.
 
-- `npm test`: passed. This ran 2 Rust tests and 9 Chromium tests.
-- All 7 entries in `.factory/claims.json`: passed from fresh browser contexts.
-- Playwright axe integration: 0 serious or critical findings on `/` and `/demo`.
-- Factory `verify-url.sh`: passed with one title, `en-GB`, one `h1`, a `main`,
-  complete image alt text, labelled buttons, and 0 console errors.
-- Lighthouse mobile: performance 99, accessibility 100, best practices 100,
-  SEO 100. LCP 2.0 s, CLS 0, and total blocking time 0 ms. Lab INP was not
-  available; the 0 ms blocking result is the closest lab signal.
-- Production payload: JS 30.03 KB / 10.28 KB gzip; CSS 16.33 KB / 4.69 KB gzip;
-  hero 172 KB desktop and 60 KB mobile; fonts 108 KB total.
-- Health load smoke: 100 parallel requests, 100 returned HTTP 200.
-- API limiter test: request 41 in a one-second client window returns 429 with
-  `Retry-After: 1`.
-- `cargo fmt --check`, `cargo clippy --all-targets -- -D warnings`, and
-  `npm audit`: passed. Production and development npm dependencies report zero
-  known vulnerabilities.
-- The release binary was started with a scrubbed environment and only
-  `PORT=8090`; `/health` returned `{"build_sha":"dev","status":"ok"}`.
+This product does not ship a service worker or claim offline operation, so
+offline cache/update testing is not applicable. It has no account system, so
+live identity-provider testing is not applicable; workspace identity and
+isolation were tested instead.
 
-Evidence files are under `.factory/evidence/`.
+## Deliberate deviation and remaining boundary
 
-## Known boundaries and next steps
+The researched brief still records `£15/month`. The attached paid-unlock
+contract and available Sociobot billing API support one-time licence purchases,
+not subscriptions. To avoid a false recurring-billing claim, the shipped offer
+is an honest **£15 one-time purchase**; the brief itself was preserved unchanged.
 
-- This is a record aid, not HMRC-accredited filing software or tax advice.
-- Workspace access uses an unguessable browser-held key. V1 has no account
-  recovery or multi-device sync; users should export before clearing a browser.
-- The factory must register the `mtd-evidence-rail` billing product before the
-  live checkout can sell or verify licences.
-- Expired demo rows are physically removed when the next demo is created. A
-  scheduled cleanup can be added if demo volume warrants it.
-- Docker tooling was not installed in the worker image, so the multi-stage
-  Dockerfile was reviewed but not executed locally. Both constituent builds
-  (`npm run build` and `cargo build --release --locked`) passed.
+No release-blocking gap remains. A real card purchase was not completed during
+verification; the live redirect and recorded valid-verdict flow cover the two
+sides without spending. The 5 GiB evidence share should be monitored as usage
+grows, and SQLite must remain at one configured replica.
