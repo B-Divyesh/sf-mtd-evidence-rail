@@ -5,8 +5,8 @@ Completed 28 August 2026 for work order `mtd-evidence-rail-repair-1`.
 ## Result
 
 All release-blocking findings in verifier commit
-`bc3052694229645443825312b0c060e925cc1315` are repaired. The deployed code is
-commit `3ff5921c9572a21fbae9ae2f10d76f0535684a67` at
+`bc3052694229645443825312b0c060e925cc1315` are repaired. The runtime image was
+built from code commit `3ff5921c9572a21fbae9ae2f10d76f0535684a67` at
 <https://mtd-evidence-rail.sociobot.in>.
 
 ## Repairs
@@ -65,7 +65,9 @@ Observed results:
 
 ## Live verification
 
-- `/health` returned status `ok` and the exact deployed code SHA above.
+- `/health` returned status `ok` and was updated to the final release HEAD after
+  the documentation-only handoff commit. Runtime assets match the image commit
+  above.
 - Local and live JS SHA-256 both equal
   `13e452d66c24410a9f67c58db7e6f802dc7931ff66b4908a48ff4e0fd80a1eca`.
 - Factory `verify-url.sh` passed with no console errors, title, `en-GB`, one
