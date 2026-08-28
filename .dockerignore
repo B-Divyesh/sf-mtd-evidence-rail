@@ -1,0 +1,10 @@
+.git
+.factory
+node_modules
+target
+dist
+data
+test-data
+playwright-report
+test-results
+assets/src
