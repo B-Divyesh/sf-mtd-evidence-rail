@@ -1,0 +1,9 @@
+{
+  "slug": "mtd-evidence-rail",
+  "title": "MTD Evidence Rail",
+  "summary": "Link each expense to evidence before your quarterly update",
+  "artifact_class": "web-with-backend",
+  "audience": "UK sole traders, tutors, and micro-club operators",
+  "price": "£15/month",
+  "non_goals": ["HMRC filing", "tax advice", "payroll", "double-entry accounting"]
+}
