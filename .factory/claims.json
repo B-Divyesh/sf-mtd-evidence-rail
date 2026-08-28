@@ -1,0 +1,51 @@
+[
+  {
+    "id": "demo-isolation",
+    "claim": "Demo records use a separate workspace that expires after 24 hours",
+    "where": "demo banner, privacy page, README",
+    "test": "npm test -- --grep @claim:demo-isolation",
+    "sandbox": "fresh browser context; open /demo; inspect demo key, expiry response, and reset"
+  },
+  {
+    "id": "no-account",
+    "claim": "A private workspace needs no account",
+    "where": "landing facts, README",
+    "test": "npm test -- --grep @claim:no-account",
+    "sandbox": "fresh browser context; start a real workspace without credentials"
+  },
+  {
+    "id": "csv-matching",
+    "claim": "Bank CSV review flags likely matches before import",
+    "where": "how it works, import dialog, README",
+    "test": "npm test -- --grep @claim:csv-matching",
+    "sandbox": "demo data; upload a two-row CSV containing one matching amount and date"
+  },
+  {
+    "id": "evidence-pack",
+    "claim": "The evidence pack is a ZIP with a transaction CSV and linked files",
+    "where": "how it works, export button, README",
+    "test": "npm test -- --grep @claim:evidence-pack",
+    "sandbox": "demo data; download pack and inspect ZIP signature and entries"
+  },
+  {
+    "id": "free-limit",
+    "claim": "The free workspace accepts 25 transactions in a quarter",
+    "where": "landing facts, pricing, terms",
+    "test": "npm test -- --grep @claim:free-limit",
+    "sandbox": "demo workspace; add records up to 25 and assert the next save is stopped"
+  },
+  {
+    "id": "no-trackers",
+    "claim": "No advertising trackers or third-party scripts run during the core flow",
+    "where": "privacy section and page, README",
+    "test": "npm test -- --grep @claim:no-trackers",
+    "sandbox": "fresh demo; record every outgoing request during load and missing-evidence review"
+  },
+  {
+    "id": "license-return",
+    "claim": "A returned Sociobot licence is stored and verified",
+    "where": "paid access section",
+    "test": "npm test -- --grep @claim:license-return",
+    "sandbox": "fresh browser; recorded valid verify response; assert URL stripping and cached verdict"
+  }
+]
