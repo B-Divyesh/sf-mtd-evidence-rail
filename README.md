@@ -60,8 +60,9 @@ and runs Playwright in Chromium. Claim tests are listed in
 
 Records and evidence are stored in SQLite under `DATA_DIR`. Production mounts
 that directory from Azure Files and runs one replica, so every request reaches
-the same durable database. Its deployment-only `SQLITE_VFS=unix-none` setting
-avoids SMB locking; the one-replica policy is therefore mandatory. An
+the same durable database. Its deployment-only `SQLITE_VFS=unix-dotfile`
+setting uses lock files supported by SMB; the one-replica policy remains
+mandatory. An
 unguessable workspace key scopes every API request. Demo keys use a separate
 browser and database namespace. API endpoints enforce per-IP burst limits and
 respect the first `X-Forwarded-For` hop. Security headers include a restrictive

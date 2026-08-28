@@ -1,13 +1,19 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { readFileSync } from 'node:fs';
+
+async function openReady(page:Page,path:'/app'|'/demo'){
+  await page.goto(path);
+  await expect(page.locator('#records-view .summary-line')).toBeVisible();
+  await expect(page.getByRole('button',{name:'Add a transaction'})).toBeEnabled();
+}
 
 test('@claim:demo-isolation demo uses a separate 24-hour workspace', async ({ page }) => {
   let expiry:number|undefined;
   page.on('response', async response => {
     if (response.url().endsWith('/api/demo') && response.request().method() === 'POST') expiry = (await response.json()).expires_in_hours;
   });
-  await page.goto('/demo');
+  await openReady(page,'/demo');
   await expect(page.getByText('Demo — sample data, nothing is saved to your workspace')).toBeVisible();
   await expect(page.getByText('6', { exact: true }).first()).toBeVisible();
   const firstKey = await page.evaluate(() => sessionStorage.getItem('demo:mtd-evidence-rail:workspace'));
@@ -29,7 +35,7 @@ test('@claim:no-account starts without sign-in and keeps the key on this device'
 });
 
 test('@claim:quarter-capture saves income and expenses in the dated quarter', async ({ page }) => {
-  await page.goto('/app');
+  await openReady(page,'/app');
   const key = await page.evaluate(() => localStorage.getItem('mtd-evidence-rail:workspace'));
   for (const record of [
     { kind: 'income', description: 'Tutoring session', amount_pence: 5000, category: 'Tutoring' },
@@ -47,7 +53,7 @@ test('@claim:quarter-capture saves income and expenses in the dated quarter', as
 });
 
 test('@claim:csv-matching bank CSV review flags likely matches', async ({ page }) => {
-  await page.goto('/demo');
+  await openReady(page,'/demo');
   await page.getByRole('button', { name: 'Import bank CSV' }).click();
   await page.locator('#csv-file').setInputFiles({
     name: 'bank.csv', mimeType: 'text/csv',
@@ -61,7 +67,7 @@ test('@claim:csv-matching bank CSV review flags likely matches', async ({ page }
 });
 
 test('@claim:evidence-pack exports a ZIP with CSV and linked files', async ({ page }) => {
-  await page.goto('/demo');
+  await openReady(page,'/demo');
   const downloadPromise = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Export evidence pack' }).click();
   const download = await downloadPromise;
@@ -75,7 +81,7 @@ test('@claim:evidence-pack exports a ZIP with CSV and linked files', async ({ pa
 });
 
 test('@claim:free-limit server stops a 26th free transaction', async ({ page }) => {
-  await page.goto('/demo');
+  await openReady(page,'/demo');
   const key = await page.evaluate(() => sessionStorage.getItem('demo:mtd-evidence-rail:workspace'));
   const records = Array.from({ length: 19 }, (_, i) => ({
     kind: 'expense', record_date: `2026-06-${String(i + 1).padStart(2, '0')}`,
@@ -94,7 +100,7 @@ test('@claim:free-limit server stops a 26th free transaction', async ({ page }) 
 });
 
 test('@claim:paid-limit server verifies a licence before allowing more than 25', async ({ page }) => {
-  await page.goto('/demo');
+  await openReady(page,'/demo');
   const key = await page.evaluate(() => sessionStorage.getItem('demo:mtd-evidence-rail:workspace'));
   const records = Array.from({ length: 20 }, (_, i) => ({
     kind: 'expense', record_date: `2026-06-${String(i + 1).padStart(2, '0')}`,
@@ -109,7 +115,7 @@ test('@claim:paid-limit server verifies a licence before allowing more than 25',
 });
 
 test('@claim:atomic-import rejects the whole file when one row is invalid', async ({ page }) => {
-  await page.goto('/demo');
+  await openReady(page,'/demo');
   const key = await page.evaluate(() => sessionStorage.getItem('demo:mtd-evidence-rail:workspace'));
   const response = await page.request.post('/api/records/import', {
     headers: { 'X-Workspace-Key': key! },
@@ -124,7 +130,7 @@ test('@claim:atomic-import rejects the whole file when one row is invalid', asyn
 });
 
 test('@claim:calendar-dates rejects impossible dates at the API edge', async ({ page }) => {
-  await page.goto('/app');
+  await openReady(page,'/app');
   const key = await page.evaluate(() => localStorage.getItem('mtd-evidence-rail:workspace'));
   const response = await page.request.post('/api/records', {
     headers: { 'X-Workspace-Key': key! },
@@ -135,7 +141,7 @@ test('@claim:calendar-dates rejects impossible dates at the API edge', async ({ 
 });
 
 test('@claim:evidence-types accepts PDF, JPG, PNG, WebP, and text evidence', async ({ page }) => {
-  await page.goto('/demo');
+  await openReady(page,'/demo');
   const key = await page.evaluate(() => sessionStorage.getItem('demo:mtd-evidence-rail:workspace'));
   const workspace = await page.request.get('/api/workspace?from=2026-04-06&to=2026-07-05', { headers: { 'X-Workspace-Key': key! } });
   const recordId = (await workspace.json()).records[0].id as string;
@@ -157,7 +163,7 @@ test('@claim:evidence-types accepts PDF, JPG, PNG, WebP, and text evidence', asy
 });
 
 test('@claim:workspace-delete removes the workspace and its evidence', async ({ page }) => {
-  await page.goto('/app');
+  await openReady(page,'/app');
   const key = await page.evaluate(() => localStorage.getItem('mtd-evidence-rail:workspace'));
   const created = await page.request.post('/api/records', {
     headers: { 'X-Workspace-Key': key! },
@@ -173,7 +179,7 @@ test('@claim:workspace-delete removes the workspace and its evidence', async ({ 
 });
 
 test('@claim:missing-review shows only transactions without evidence', async ({ page }) => {
-  await page.goto('/demo');
+  await openReady(page,'/demo');
   await page.getByRole('button', { name: 'Show missing evidence' }).click();
   await expect(page.getByText('2 shown')).toBeVisible();
   await expect(page.getByText('Community hall hire')).toBeVisible();
@@ -183,11 +189,12 @@ test('@claim:missing-review shows only transactions without evidence', async ({ 
 test('@claim:no-trackers demo core flow sends only same-origin requests', async ({ page }) => {
   const outgoing:string[] = [];
   page.on('request', request => outgoing.push(request.url()));
-  await page.goto('/demo');
+  await openReady(page,'/demo');
   await page.getByRole('button', { name: 'Show missing evidence' }).click();
   await expect(page.getByText('2 shown')).toBeVisible();
   expect(outgoing.length).toBeGreaterThan(2);
-  for (const url of outgoing) expect(new URL(url).origin).toBe('http://127.0.0.1:8080');
+  const productOrigin = new URL(page.url()).origin;
+  for (const url of outgoing) expect(new URL(url).origin).toBe(productOrigin);
 });
 
 test('@claim:license-return stores and verifies a returned licence', async ({ page }) => {
