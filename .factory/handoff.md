@@ -58,7 +58,7 @@ The factory may pass `BUILD_SHA`, `GIT_SHA`, and `SOURCE_COMMIT`; only
 - Lighthouse mobile: performance 99, accessibility 100, best practices 100,
   SEO 100. LCP 2.0 s, CLS 0, and total blocking time 0 ms. Lab INP was not
   available; the 0 ms blocking result is the closest lab signal.
-- Production payload: JS 29.67 KB / 10.20 KB gzip; CSS 16.33 KB / 4.69 KB gzip;
+- Production payload: JS 30.03 KB / 10.28 KB gzip; CSS 16.33 KB / 4.69 KB gzip;
   hero 172 KB desktop and 60 KB mobile; fonts 108 KB total.
 - Health load smoke: 100 parallel requests, 100 returned HTTP 200.
 - API limiter test: request 41 in a one-second client window returns 429 with
