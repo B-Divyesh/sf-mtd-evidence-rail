@@ -7,9 +7,12 @@
       "package_devdependencies_axe_core_playwright",
       "package_devdependencies_playwright_test",
       "package_devdependencies_sharp",
+      "package_devdependencies_types_node",
       "package_devdependencies_typescript",
       "package_devdependencies_vite",
       "package_name",
+      "package_overrides",
+      "package_overrides_playwright_core",
       "package_private",
       "package_scripts",
       "package_scripts_assets",
@@ -17,11 +20,15 @@
       "package_scripts_dev",
       "package_scripts_start",
       "package_scripts_test",
+      "package_scripts_test_durable_storage",
       "package_scripts_test_e2e",
+      "package_scripts_test_runtime_defaults",
+      "package_scripts_typecheck",
       "package_type",
       "package_version",
       "playwright_test",
       "sharp",
+      "types_node",
       "typescript",
       "vite"
     ],
@@ -69,6 +76,25 @@
       "frontend_src_main_workspaceresponse"
     ],
     "3": [
+      "next",
+      "request",
+      "router",
+      "src_main",
+      "src_main_api_rate_limit_returns_retry_after",
+      "src_main_app",
+      "src_main_health",
+      "src_main_health_reports_build_sha",
+      "src_main_main",
+      "src_main_rs_intoresponse",
+      "src_main_rs_response",
+      "src_main_rs_state",
+      "src_main_security_headers",
+      "src_main_shutdown_signal",
+      "src_main_test_app",
+      "src_main_unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated",
+      "src_main_workspace_deletion_removes_records_evidence_and_audit"
+    ],
+    "4": [
       "frontend_src_main_api",
       "frontend_src_main_bindapp",
       "frontend_src_main_closedialog",
@@ -86,65 +112,69 @@
       "frontend_src_main_saverecord",
       "frontend_src_main_setnotice"
     ],
-    "4": [
-      "next",
-      "request",
-      "router",
-      "src_main",
-      "src_main_api_rate_limit_returns_retry_after",
-      "src_main_app",
-      "src_main_health",
-      "src_main_health_reports_build_sha",
-      "src_main_main",
-      "src_main_rs_intoresponse",
-      "src_main_rs_response",
-      "src_main_rs_state",
-      "src_main_security_headers",
-      "src_main_shutdown_signal",
-      "src_main_test_app"
-    ],
     "5": [
       "option",
+      "sqliteconnection",
       "src_routes",
+      "src_routes_evidenceinput",
       "src_routes_exportrecord",
-      "src_routes_import_records",
       "src_routes_importinput",
       "src_routes_insert_record",
       "src_routes_periodquery",
       "src_routes_record",
       "src_routes_recordinput",
-      "src_routes_rs_sqlitepool",
       "src_routes_rs_string",
-      "src_routes_validate",
       "vec"
     ],
     "6": [
       "apiresult",
+      "date",
       "headermap",
-      "query",
-      "src_routes_check_workspace",
-      "src_routes_create_record",
-      "src_routes_delete_record",
-      "src_routes_delete_workspace",
-      "src_routes_export_pack",
-      "src_routes_get_workspace",
-      "src_routes_rs_response",
-      "src_routes_rs_state",
-      "src_routes_workspace"
+      "src_routes_enforce_quarter_limits",
+      "src_routes_has_paid_access",
+      "src_routes_import_records",
+      "src_routes_parse_date",
+      "src_routes_quarter_bounds",
+      "src_routes_quarter_bounds_for_record",
+      "src_routes_validate"
     ],
     "7": [
+      "arc",
+      "client",
+      "mutex",
+      "query",
+      "src_main_appstate",
+      "src_main_rs_sqlitepool",
+      "src_main_rs_string",
+      "src_routes_export_pack",
+      "src_routes_get_workspace",
+      "src_routes_rs_response"
+    ],
+    "8": [
       "e",
-      "json",
       "path",
-      "src_routes_add_evidence",
+      "src_routes_delete_record",
+      "src_routes_delete_workspace",
       "src_routes_error",
-      "src_routes_evidenceinput",
       "src_routes_internal",
       "src_routes_remove_evidence",
+      "src_routes_workspace",
       "statuscode",
       "value"
     ],
-    "8": [
+    "9": [
+      "json",
+      "src_routes_add_evidence",
+      "src_routes_check_workspace",
+      "src_routes_create_demo",
+      "src_routes_create_record",
+      "src_routes_create_workspace",
+      "src_routes_now",
+      "src_routes_rs_intoresponse",
+      "src_routes_rs_sqlitepool",
+      "src_routes_rs_state"
+    ],
+    "10": [
       "frontend_src_main_bindroutes",
       "frontend_src_main_footer",
       "frontend_src_main_header",
@@ -154,70 +184,102 @@
       "frontend_src_main_notfound",
       "frontend_src_main_render"
     ],
-    "9": [
-      "src_main_appstate",
-      "src_main_rs_sqlitepool",
-      "src_main_rs_string",
-      "src_routes_create_demo",
-      "src_routes_create_workspace",
-      "src_routes_now",
-      "src_routes_rs_intoresponse"
+    "11": [
+      "scripts_deploy",
+      "scripts_deploy_patch_app",
+      "scripts_deploy_sh__entry",
+      "scripts_deploy_wait_for_app"
     ],
-    "10": [
+    "12": [
+      "scripts_test_durable_storage",
+      "scripts_test_durable_storage_cleanup",
+      "scripts_test_durable_storage_sh__entry",
+      "scripts_test_durable_storage_start_server"
+    ],
+    "13": [
       "frontend_src_main_apierror",
       "frontend_src_main_deleteworkspace",
       "frontend_src_main_workspacekey"
     ],
-    "11": [
+    "14": [
       "frontend_src_main_bindlicensebuttons",
       "frontend_src_main_capturelicense",
       "frontend_src_main_verifylicense"
     ],
-    "12": [
+    "15": [
+      "scripts_test_runtime_defaults",
+      "scripts_test_runtime_defaults_cleanup",
+      "scripts_test_runtime_defaults_sh__entry"
+    ],
+    "16": [
       "scripts_optimise_assets",
       "scripts_optimise_assets_source"
     ],
-    "13": [
+    "17": [
+      "scripts_test_live_checkout",
+      "scripts_test_live_checkout_sh__entry"
+    ],
+    "18": [
+      "tests_product_spec",
+      "tests_product_spec_openready"
+    ],
+    "19": [
       "pkg_mtd_evidence_rail"
     ],
-    "14": [
+    "20": [
       "playwright_config"
     ],
-    "15": [
-      "tests_product_spec"
+    "21": [
+      "scripts_license_fixture"
     ],
-    "16": [
+    "22": [
       "vite_config"
     ]
   },
   "cohesion": {
-    "0": 0.08695652173913043,
+    "0": 0.06666666666666667,
     "1": 0.1,
     "2": 0.17543859649122806,
-    "3": 0.36666666666666664,
-    "4": 0.19047619047619047,
+    "3": 0.16911764705882354,
+    "4": 0.36666666666666664,
     "5": 0.3333333333333333,
-    "6": 0.45454545454545453,
-    "7": 0.37777777777777777,
-    "8": 0.42857142857142855,
-    "9": 0.38095238095238093,
-    "10": 1.0,
-    "11": 0.6666666666666666,
-    "12": 1.0,
+    "6": 0.4444444444444444,
+    "7": 0.2222222222222222,
+    "8": 0.37777777777777777,
+    "9": 0.4,
+    "10": 0.42857142857142855,
+    "11": 0.8333333333333334,
+    "12": 0.6666666666666666,
     "13": 1.0,
-    "14": 1.0,
-    "15": 1.0,
-    "16": 1.0
+    "14": 0.6666666666666666,
+    "15": 0.6666666666666666,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0
   },
   "gods": [
     {
       "id": "src_main_appstate",
       "label": "AppState",
+      "degree": 21
+    },
+    {
+      "id": "src_routes_error",
+      "label": "error()",
       "degree": 16
     },
     {
       "id": "frontend_src_main_bindapp",
       "label": "bindApp()",
+      "degree": 15
+    },
+    {
+      "id": "src_routes_import_records",
+      "label": "import_records()",
       "degree": 15
     },
     {
@@ -236,8 +298,8 @@
       "degree": 13
     },
     {
-      "id": "src_routes_error",
-      "label": "error()",
+      "id": "src_routes_create_record",
+      "label": "create_record()",
       "degree": 13
     },
     {
@@ -249,21 +311,22 @@
       "id": "tsconfig_compileroptions",
       "label": "compilerOptions",
       "degree": 12
-    },
-    {
-      "id": "src_routes_import_records",
-      "label": "import_records()",
-      "degree": 12
-    },
-    {
-      "id": "src_routes_check_workspace",
-      "label": "check_workspace()",
-      "degree": 12
     }
   ],
   "surprises": [
     {
-      "source": "import_records()",
+      "source": "add_evidence()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "create_demo()",
       "target": "AppState",
       "source_files": [
         "src/routes.rs",
@@ -285,29 +348,18 @@
       "why": "bridges separate communities"
     },
     {
+      "source": "create_workspace()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities"
+    },
+    {
       "source": "delete_record()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "bridges separate communities"
-    },
-    {
-      "source": "delete_workspace()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "bridges separate communities"
-    },
-    {
-      "source": "export_pack()",
       "target": "AppState",
       "source_files": [
         "src/routes.rs",

@@ -13,7 +13,7 @@
       "file_type": "code",
       "norm_label": "importrow",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L140"
+      "source_location": "L141"
     },
     {
       "id": "frontend_src_main_quarter",
@@ -52,11 +52,99 @@
       "source_location": "L7"
     },
     {
+      "id": "frontend_src_main_bindroutes",
+      "label": "bindRoutes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "bindroutes()",
+      "source_file": "frontend/src/main.ts",
+      "source_location": "L167"
+    },
+    {
+      "id": "frontend_src_main_footer",
+      "label": "footer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "footer()",
+      "source_file": "frontend/src/main.ts",
+      "source_location": "L32"
+    },
+    {
+      "id": "frontend_src_main_header",
+      "label": "header()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "header()",
+      "source_file": "frontend/src/main.ts",
+      "source_location": "L29"
+    },
+    {
+      "id": "frontend_src_main_icon",
+      "label": "icon()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "icon()",
+      "source_file": "frontend/src/main.ts",
+      "source_location": "L27"
+    },
+    {
+      "id": "frontend_src_main_landing",
+      "label": "landing()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "landing()",
+      "source_file": "frontend/src/main.ts",
+      "source_location": "L34"
+    },
+    {
+      "id": "frontend_src_main_legal",
+      "label": "legal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "legal()",
+      "source_file": "frontend/src/main.ts",
+      "source_location": "L153"
+    },
+    {
+      "id": "frontend_src_main_notfound",
+      "label": "notFound()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "notfound()",
+      "source_file": "frontend/src/main.ts",
+      "source_location": "L157"
+    },
+    {
+      "id": "frontend_src_main_render",
+      "label": "render()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "render()",
+      "source_file": "frontend/src/main.ts",
+      "source_location": "L166"
+    },
+    {
       "id": "frontend_src_main_apierror",
       "label": "apiError()",
       "_callable": true,
       "_origin": "ast",
-      "community": 10,
+      "community": 13,
       "file_type": "code",
       "norm_label": "apierror()",
       "source_file": "frontend/src/main.ts",
@@ -67,18 +155,18 @@
       "label": "deleteWorkspace()",
       "_callable": true,
       "_origin": "ast",
-      "community": 10,
+      "community": 13,
       "file_type": "code",
       "norm_label": "deleteworkspace()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L148"
+      "source_location": "L149"
     },
     {
       "id": "frontend_src_main_workspacekey",
       "label": "workspaceKey()",
       "_callable": true,
       "_origin": "ast",
-      "community": 10,
+      "community": 13,
       "file_type": "code",
       "norm_label": "workspacekey()",
       "source_file": "frontend/src/main.ts",
@@ -89,33 +177,44 @@
       "label": "bindLicenseButtons()",
       "_callable": true,
       "_origin": "ast",
-      "community": 11,
+      "community": 14,
       "file_type": "code",
       "norm_label": "bindlicensebuttons()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L161"
+      "source_location": "L162"
     },
     {
       "id": "frontend_src_main_capturelicense",
       "label": "captureLicense()",
       "_callable": true,
       "_origin": "ast",
-      "community": 11,
+      "community": 14,
       "file_type": "code",
       "norm_label": "capturelicense()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L162"
+      "source_location": "L163"
     },
     {
       "id": "frontend_src_main_verifylicense",
       "label": "verifyLicense()",
       "_callable": true,
       "_origin": "ast",
-      "community": 11,
+      "community": 14,
       "file_type": "code",
       "norm_label": "verifylicense()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L160"
+      "source_location": "L161"
+    },
+    {
+      "id": "tests_product_spec_openready",
+      "label": "openReady()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "file_type": "code",
+      "norm_label": "openready()",
+      "source_file": "tests/product.spec.ts",
+      "source_location": "L5"
     },
     {
       "id": "frontend_src_main_appbanner",
@@ -159,7 +258,7 @@
       "file_type": "code",
       "norm_label": "licenseinactive()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L159"
+      "source_location": "L160"
     },
     {
       "id": "frontend_src_main_money",
@@ -181,7 +280,7 @@
       "file_type": "code",
       "norm_label": "normalisedate()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L143"
+      "source_location": "L144"
     },
     {
       "id": "frontend_src_main_prettydate",
@@ -225,7 +324,7 @@
       "file_type": "code",
       "norm_label": "readcsv()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L144"
+      "source_location": "L145"
     },
     {
       "id": "frontend_src_main_setformerror",
@@ -236,7 +335,7 @@
       "file_type": "code",
       "norm_label": "setformerror()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L135"
+      "source_location": "L136"
     },
     {
       "id": "frontend_src_main_splitcsv",
@@ -247,14 +346,14 @@
       "file_type": "code",
       "norm_label": "splitcsv()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L142"
+      "source_location": "L143"
     },
     {
       "id": "frontend_src_main_api",
       "label": "api()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "api()",
       "source_file": "frontend/src/main.ts",
@@ -265,7 +364,7 @@
       "label": "bindApp()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "bindapp()",
       "source_file": "frontend/src/main.ts",
@@ -276,7 +375,7 @@
       "label": "closeDialog()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "closedialog()",
       "source_file": "frontend/src/main.ts",
@@ -287,18 +386,18 @@
       "label": "confirmImport()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "confirmimport()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L145"
+      "source_location": "L146"
     },
     {
       "id": "frontend_src_main_escapehtml",
       "label": "escapeHtml()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "escapehtml()",
       "source_file": "frontend/src/main.ts",
@@ -309,40 +408,40 @@
       "label": "exportPack()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "exportpack()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L147"
+      "source_location": "L148"
     },
     {
       "id": "frontend_src_main_ispaid",
       "label": "isPaid()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "ispaid()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L158"
+      "source_location": "L159"
     },
     {
       "id": "frontend_src_main_linkevidence",
       "label": "linkEvidence()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "linkevidence()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L137"
+      "source_location": "L138"
     },
     {
       "id": "frontend_src_main_loadrecords",
       "label": "loadRecords()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "loadrecords()",
       "source_file": "frontend/src/main.ts",
@@ -353,29 +452,29 @@
       "label": "message()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "message()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L164"
+      "source_location": "L165"
     },
     {
       "id": "frontend_src_main_offlinenotice",
       "label": "offlineNotice()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "offlinenotice()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L150"
+      "source_location": "L151"
     },
     {
       "id": "frontend_src_main_opendialog",
       "label": "openDialog()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "opendialog()",
       "source_file": "frontend/src/main.ts",
@@ -386,18 +485,18 @@
       "label": "removeEvidence()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "removeevidence()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L138"
+      "source_location": "L139"
     },
     {
       "id": "frontend_src_main_renderrecords",
       "label": "renderRecords()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "renderrecords()",
       "source_file": "frontend/src/main.ts",
@@ -408,110 +507,22 @@
       "label": "saveRecord()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "saverecord()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L127"
+      "source_location": "L128"
     },
     {
       "id": "frontend_src_main_setnotice",
       "label": "setNotice()",
       "_callable": true,
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "setnotice()",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L149"
-    },
-    {
-      "id": "frontend_src_main_bindroutes",
-      "label": "bindRoutes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "bindroutes()",
-      "source_file": "frontend/src/main.ts",
-      "source_location": "L166"
-    },
-    {
-      "id": "frontend_src_main_footer",
-      "label": "footer()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "footer()",
-      "source_file": "frontend/src/main.ts",
-      "source_location": "L32"
-    },
-    {
-      "id": "frontend_src_main_header",
-      "label": "header()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "header()",
-      "source_file": "frontend/src/main.ts",
-      "source_location": "L29"
-    },
-    {
-      "id": "frontend_src_main_icon",
-      "label": "icon()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "icon()",
-      "source_file": "frontend/src/main.ts",
-      "source_location": "L27"
-    },
-    {
-      "id": "frontend_src_main_landing",
-      "label": "landing()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "landing()",
-      "source_file": "frontend/src/main.ts",
-      "source_location": "L34"
-    },
-    {
-      "id": "frontend_src_main_legal",
-      "label": "legal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "legal()",
-      "source_file": "frontend/src/main.ts",
-      "source_location": "L152"
-    },
-    {
-      "id": "frontend_src_main_notfound",
-      "label": "notFound()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "notfound()",
-      "source_file": "frontend/src/main.ts",
-      "source_location": "L156"
-    },
-    {
-      "id": "frontend_src_main_render",
-      "label": "render()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "render()",
-      "source_file": "frontend/src/main.ts",
-      "source_location": "L165"
+      "source_location": "L150"
     },
     {
       "id": "package",
@@ -531,7 +542,7 @@
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "package.json",
-      "source_location": "L14"
+      "source_location": "L17"
     },
     {
       "id": "package_devdependencies_axe_core_playwright",
@@ -541,7 +552,7 @@
       "file_type": "code",
       "norm_label": "@axe-core/playwright",
       "source_file": "package.json",
-      "source_location": "L15"
+      "source_location": "L18"
     },
     {
       "id": "package_devdependencies_playwright_test",
@@ -551,7 +562,7 @@
       "file_type": "code",
       "norm_label": "@playwright/test",
       "source_file": "package.json",
-      "source_location": "L16"
+      "source_location": "L19"
     },
     {
       "id": "package_devdependencies_sharp",
@@ -561,7 +572,17 @@
       "file_type": "code",
       "norm_label": "sharp",
       "source_file": "package.json",
-      "source_location": "L17"
+      "source_location": "L21"
+    },
+    {
+      "id": "package_devdependencies_types_node",
+      "label": "@types/node",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "@types/node",
+      "source_file": "package.json",
+      "source_location": "L20"
     },
     {
       "id": "package_devdependencies_typescript",
@@ -571,7 +592,7 @@
       "file_type": "code",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L18"
+      "source_location": "L22"
     },
     {
       "id": "package_devdependencies_vite",
@@ -581,7 +602,7 @@
       "file_type": "code",
       "norm_label": "vite",
       "source_file": "package.json",
-      "source_location": "L19"
+      "source_location": "L23"
     },
     {
       "id": "package_name",
@@ -592,6 +613,26 @@
       "norm_label": "name",
       "source_file": "package.json",
       "source_location": "L2"
+    },
+    {
+      "id": "package_overrides",
+      "label": "overrides",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "overrides",
+      "source_file": "package.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "package_overrides_playwright_core",
+      "label": "playwright-core",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "playwright-core",
+      "source_file": "package.json",
+      "source_location": "L26"
     },
     {
       "id": "package_private",
@@ -621,7 +662,7 @@
       "file_type": "code",
       "norm_label": "assets",
       "source_file": "package.json",
-      "source_location": "L12"
+      "source_location": "L15"
     },
     {
       "id": "package_scripts_build",
@@ -664,12 +705,42 @@
       "source_location": "L10"
     },
     {
+      "id": "package_scripts_test_durable_storage",
+      "label": "test:durable-storage",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "test:durable-storage",
+      "source_file": "package.json",
+      "source_location": "L13"
+    },
+    {
       "id": "package_scripts_test_e2e",
       "label": "test:e2e",
       "_origin": "ast",
       "community": 0,
       "file_type": "code",
       "norm_label": "test:e2e",
+      "source_file": "package.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "package_scripts_test_runtime_defaults",
+      "label": "test:runtime-defaults",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "test:runtime-defaults",
+      "source_file": "package.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "package_scripts_typecheck",
+      "label": "typecheck",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "typecheck",
       "source_file": "package.json",
       "source_location": "L11"
     },
@@ -701,7 +772,7 @@
       "file_type": "concept",
       "norm_label": "@axe-core/playwright",
       "source_file": "package.json",
-      "source_location": "L15"
+      "source_location": "L18"
     },
     {
       "id": "playwright_test",
@@ -711,7 +782,7 @@
       "file_type": "concept",
       "norm_label": "@playwright/test",
       "source_file": "package.json",
-      "source_location": "L16"
+      "source_location": "L19"
     },
     {
       "id": "sharp",
@@ -721,7 +792,17 @@
       "file_type": "concept",
       "norm_label": "sharp",
       "source_file": "package.json",
-      "source_location": "L17"
+      "source_location": "L21"
+    },
+    {
+      "id": "types_node",
+      "label": "@types/node",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "concept",
+      "norm_label": "@types/node",
+      "source_file": "package.json",
+      "source_location": "L20"
     },
     {
       "id": "typescript",
@@ -731,7 +812,7 @@
       "file_type": "concept",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L18"
+      "source_location": "L22"
     },
     {
       "id": "vite",
@@ -741,7 +822,7 @@
       "file_type": "concept",
       "norm_label": "vite",
       "source_file": "package.json",
-      "source_location": "L19"
+      "source_location": "L23"
     },
     {
       "id": "tsconfig",
@@ -944,10 +1025,164 @@
       "source_location": "L15"
     },
     {
+      "id": "scripts_deploy",
+      "label": "deploy.sh",
+      "_origin": "ast",
+      "community": 11,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "deploy.sh",
+      "source_file": "scripts/deploy.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_deploy_patch_app",
+      "label": "patch_app()",
+      "_origin": "ast",
+      "community": 11,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "patch_app()",
+      "source_file": "scripts/deploy.sh",
+      "source_location": "L15"
+    },
+    {
+      "id": "scripts_deploy_sh__entry",
+      "label": "deploy.sh script",
+      "_origin": "ast",
+      "community": 11,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "deploy.sh script",
+      "source_file": "scripts/deploy.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_deploy_wait_for_app",
+      "label": "wait_for_app()",
+      "_origin": "ast",
+      "community": 11,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "wait_for_app()",
+      "source_file": "scripts/deploy.sh",
+      "source_location": "L24"
+    },
+    {
+      "id": "scripts_test_durable_storage",
+      "label": "test-durable-storage.sh",
+      "_origin": "ast",
+      "community": 12,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "test-durable-storage.sh",
+      "source_file": "scripts/test-durable-storage.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_test_durable_storage_cleanup",
+      "label": "cleanup()",
+      "_origin": "ast",
+      "community": 12,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "cleanup()",
+      "source_file": "scripts/test-durable-storage.sh",
+      "source_location": "L7"
+    },
+    {
+      "id": "scripts_test_durable_storage_sh__entry",
+      "label": "test-durable-storage.sh script",
+      "_origin": "ast",
+      "community": 12,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "test-durable-storage.sh script",
+      "source_file": "scripts/test-durable-storage.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_test_durable_storage_start_server",
+      "label": "start_server()",
+      "_origin": "ast",
+      "community": 12,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "start_server()",
+      "source_file": "scripts/test-durable-storage.sh",
+      "source_location": "L13"
+    },
+    {
+      "id": "scripts_test_runtime_defaults",
+      "label": "test-runtime-defaults.sh",
+      "_origin": "ast",
+      "community": 15,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "test-runtime-defaults.sh",
+      "source_file": "scripts/test-runtime-defaults.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_test_runtime_defaults_cleanup",
+      "label": "cleanup()",
+      "_origin": "ast",
+      "community": 15,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "cleanup()",
+      "source_file": "scripts/test-runtime-defaults.sh",
+      "source_location": "L7"
+    },
+    {
+      "id": "scripts_test_runtime_defaults_sh__entry",
+      "label": "test-runtime-defaults.sh script",
+      "_origin": "ast",
+      "community": 15,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "test-runtime-defaults.sh script",
+      "source_file": "scripts/test-runtime-defaults.sh",
+      "source_location": "L1"
+    },
+    {
       "id": "scripts_optimise_assets",
       "label": "optimise-assets.mjs",
       "_origin": "ast",
-      "community": 12,
+      "community": 16,
       "file_type": "code",
       "norm_label": "optimise-assets.mjs",
       "source_file": "scripts/optimise-assets.mjs",
@@ -957,17 +1192,55 @@
       "id": "scripts_optimise_assets_source",
       "label": "source",
       "_origin": "ast",
-      "community": 12,
+      "community": 16,
       "file_type": "code",
       "norm_label": "source",
       "source_file": "scripts/optimise-assets.mjs",
       "source_location": "L5"
     },
     {
+      "id": "scripts_test_live_checkout",
+      "label": "test-live-checkout.sh",
+      "_origin": "ast",
+      "community": 17,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "test-live-checkout.sh",
+      "source_file": "scripts/test-live-checkout.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_test_live_checkout_sh__entry",
+      "label": "test-live-checkout.sh script",
+      "_origin": "ast",
+      "community": 17,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "test-live-checkout.sh script",
+      "source_file": "scripts/test-live-checkout.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_product_spec",
+      "label": "product.spec.ts",
+      "_origin": "ast",
+      "community": 18,
+      "file_type": "code",
+      "norm_label": "product.spec.ts",
+      "source_file": "tests/product.spec.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "pkg_mtd_evidence_rail",
       "label": "mtd-evidence-rail",
       "_origin": "ast",
-      "community": 13,
+      "community": 19,
       "ecosystem": "cargo",
       "file_type": "code",
       "norm_label": "mtd-evidence-rail",
@@ -975,36 +1248,6 @@
       "source_location": "L1",
       "type": "package",
       "version": "1.0.0"
-    },
-    {
-      "id": "playwright_config",
-      "label": "playwright.config.ts",
-      "_origin": "ast",
-      "community": 14,
-      "file_type": "code",
-      "norm_label": "playwright.config.ts",
-      "source_file": "playwright.config.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "tests_product_spec",
-      "label": "product.spec.ts",
-      "_origin": "ast",
-      "community": 15,
-      "file_type": "code",
-      "norm_label": "product.spec.ts",
-      "source_file": "tests/product.spec.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "vite_config",
-      "label": "vite.config.ts",
-      "_origin": "ast",
-      "community": 16,
-      "file_type": "code",
-      "norm_label": "vite.config.ts",
-      "source_file": "vite.config.ts",
-      "source_location": "L1"
     },
     {
       "id": "frontend_src_main",
@@ -1034,13 +1277,43 @@
       "file_type": "code",
       "norm_label": "importrows",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L141"
+      "source_location": "L142"
+    },
+    {
+      "id": "playwright_config",
+      "label": "playwright.config.ts",
+      "_origin": "ast",
+      "community": 20,
+      "file_type": "code",
+      "norm_label": "playwright.config.ts",
+      "source_file": "playwright.config.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_license_fixture",
+      "label": "license-fixture.mjs",
+      "_origin": "ast",
+      "community": 21,
+      "file_type": "code",
+      "norm_label": "license-fixture.mjs",
+      "source_file": "scripts/license-fixture.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "vite_config",
+      "label": "vite.config.ts",
+      "_origin": "ast",
+      "community": 22,
+      "file_type": "code",
+      "norm_label": "vite.config.ts",
+      "source_file": "vite.config.ts",
+      "source_location": "L1"
     },
     {
       "id": "next",
       "label": "Next",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "next",
       "source_file": "",
@@ -1050,7 +1323,7 @@
       "id": "request",
       "label": "Request",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "request",
       "source_file": "",
@@ -1060,7 +1333,7 @@
       "id": "router",
       "label": "Router",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "router",
       "source_file": "",
@@ -1070,7 +1343,7 @@
       "id": "src_main",
       "label": "main.rs",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "main.rs",
       "source_file": "src/main.rs",
@@ -1080,57 +1353,57 @@
       "id": "src_main_api_rate_limit_returns_retry_after",
       "label": "api_rate_limit_returns_retry_after()",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "api_rate_limit_returns_retry_after()",
       "source_file": "src/main.rs",
-      "source_location": "L212"
+      "source_location": "L259"
     },
     {
       "id": "src_main_app",
       "label": "app()",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "app()",
       "source_file": "src/main.rs",
-      "source_location": "L69"
+      "source_location": "L92"
     },
     {
       "id": "src_main_health",
       "label": "health()",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "health()",
       "source_file": "src/main.rs",
-      "source_location": "L126"
+      "source_location": "L149"
     },
     {
       "id": "src_main_health_reports_build_sha",
       "label": "health_reports_build_sha()",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "health_reports_build_sha()",
       "source_file": "src/main.rs",
-      "source_location": "L193"
+      "source_location": "L240"
     },
     {
       "id": "src_main_main",
       "label": "main()",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "src/main.rs",
-      "source_location": "L31"
+      "source_location": "L34"
     },
     {
       "id": "src_main_rs_intoresponse",
       "label": "IntoResponse",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "intoresponse",
       "source_file": "",
@@ -1140,7 +1413,7 @@
       "id": "src_main_rs_response",
       "label": "Response",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "response",
       "source_file": "",
@@ -1150,7 +1423,7 @@
       "id": "src_main_rs_state",
       "label": "State",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "state",
       "source_file": "",
@@ -1160,31 +1433,51 @@
       "id": "src_main_security_headers",
       "label": "security_headers()",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "security_headers()",
       "source_file": "src/main.rs",
-      "source_location": "L130"
+      "source_location": "L153"
     },
     {
       "id": "src_main_shutdown_signal",
       "label": "shutdown_signal()",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "shutdown_signal()",
       "source_file": "src/main.rs",
-      "source_location": "L159"
+      "source_location": "L203"
     },
     {
       "id": "src_main_test_app",
       "label": "test_app()",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "file_type": "code",
       "norm_label": "test_app()",
       "source_file": "src/main.rs",
-      "source_location": "L179"
+      "source_location": "L223"
+    },
+    {
+      "id": "src_main_unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated",
+      "label": "unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated()",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated()",
+      "source_file": "src/main.rs",
+      "source_location": "L303"
+    },
+    {
+      "id": "src_main_workspace_deletion_removes_records_evidence_and_audit",
+      "label": "workspace_deletion_removes_records_evidence_and_audit()",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "workspace_deletion_removes_records_evidence_and_audit()",
+      "source_file": "src/main.rs",
+      "source_location": "L333"
     },
     {
       "id": "option",
@@ -1193,6 +1486,16 @@
       "community": 5,
       "file_type": "code",
       "norm_label": "option",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "sqliteconnection",
+      "label": "SqliteConnection",
+      "_origin": "ast",
+      "community": 5,
+      "file_type": "code",
+      "norm_label": "sqliteconnection",
       "source_file": "",
       "source_location": ""
     },
@@ -1207,6 +1510,16 @@
       "source_location": "L1"
     },
     {
+      "id": "src_routes_evidenceinput",
+      "label": "EvidenceInput",
+      "_origin": "ast",
+      "community": 5,
+      "file_type": "code",
+      "norm_label": "evidenceinput",
+      "source_file": "src/routes.rs",
+      "source_location": "L53"
+    },
+    {
       "id": "src_routes_exportrecord",
       "label": "ExportRecord",
       "_origin": "ast",
@@ -1214,17 +1527,7 @@
       "file_type": "code",
       "norm_label": "exportrecord",
       "source_file": "src/routes.rs",
-      "source_location": "L449"
-    },
-    {
-      "id": "src_routes_import_records",
-      "label": "import_records()",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "import_records()",
-      "source_file": "src/routes.rs",
-      "source_location": "L316"
+      "source_location": "L610"
     },
     {
       "id": "src_routes_importinput",
@@ -1234,7 +1537,7 @@
       "file_type": "code",
       "norm_label": "importinput",
       "source_file": "src/routes.rs",
-      "source_location": "L47"
+      "source_location": "L48"
     },
     {
       "id": "src_routes_insert_record",
@@ -1244,7 +1547,7 @@
       "file_type": "code",
       "norm_label": "insert_record()",
       "source_file": "src/routes.rs",
-      "source_location": "L283"
+      "source_location": "L423"
     },
     {
       "id": "src_routes_periodquery",
@@ -1254,7 +1557,7 @@
       "file_type": "code",
       "norm_label": "periodquery",
       "source_file": "src/routes.rs",
-      "source_location": "L59"
+      "source_location": "L60"
     },
     {
       "id": "src_routes_record",
@@ -1264,7 +1567,7 @@
       "file_type": "code",
       "norm_label": "record",
       "source_file": "src/routes.rs",
-      "source_location": "L20"
+      "source_location": "L21"
     },
     {
       "id": "src_routes_recordinput",
@@ -1274,17 +1577,7 @@
       "file_type": "code",
       "norm_label": "recordinput",
       "source_file": "src/routes.rs",
-      "source_location": "L36"
-    },
-    {
-      "id": "src_routes_rs_sqlitepool",
-      "label": "SqlitePool",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "sqlitepool",
-      "source_file": "",
-      "source_location": ""
+      "source_location": "L37"
     },
     {
       "id": "src_routes_rs_string",
@@ -1295,16 +1588,6 @@
       "norm_label": "string",
       "source_file": "",
       "source_location": ""
-    },
-    {
-      "id": "src_routes_validate",
-      "label": "validate()",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "validate()",
-      "source_file": "src/routes.rs",
-      "source_location": "L249"
     },
     {
       "id": "vec",
@@ -1327,6 +1610,16 @@
       "source_location": ""
     },
     {
+      "id": "date",
+      "label": "Date",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "code",
+      "norm_label": "date",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "headermap",
       "label": "HeaderMap",
       "_origin": "ast",
@@ -1337,202 +1630,112 @@
       "source_location": ""
     },
     {
-      "id": "query",
-      "label": "Query",
+      "id": "src_routes_enforce_quarter_limits",
+      "label": "enforce_quarter_limits()",
       "_origin": "ast",
       "community": 6,
       "file_type": "code",
-      "norm_label": "query",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "src_routes_check_workspace",
-      "label": "check_workspace()",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "check_workspace()",
+      "norm_label": "enforce_quarter_limits()",
       "source_file": "src/routes.rs",
-      "source_location": "L86"
+      "source_location": "L396"
     },
     {
-      "id": "src_routes_create_record",
-      "label": "create_record()",
+      "id": "src_routes_has_paid_access",
+      "label": "has_paid_access()",
       "_origin": "ast",
       "community": 6,
       "file_type": "code",
-      "norm_label": "create_record()",
-      "source_file": "src/routes.rs",
-      "source_location": "L305"
-    },
-    {
-      "id": "src_routes_delete_record",
-      "label": "delete_record()",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "delete_record()",
-      "source_file": "src/routes.rs",
-      "source_location": "L409"
-    },
-    {
-      "id": "src_routes_delete_workspace",
-      "label": "delete_workspace()",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "delete_workspace()",
-      "source_file": "src/routes.rs",
-      "source_location": "L425"
-    },
-    {
-      "id": "src_routes_export_pack",
-      "label": "export_pack()",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "export_pack()",
-      "source_file": "src/routes.rs",
-      "source_location": "L462"
-    },
-    {
-      "id": "src_routes_get_workspace",
-      "label": "get_workspace()",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "get_workspace()",
-      "source_file": "src/routes.rs",
-      "source_location": "L232"
-    },
-    {
-      "id": "src_routes_rs_response",
-      "label": "Response",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "response",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "src_routes_rs_state",
-      "label": "State",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "state",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "src_routes_workspace",
-      "label": "workspace()",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "workspace()",
-      "source_file": "src/routes.rs",
-      "source_location": "L68"
-    },
-    {
-      "id": "e",
-      "label": "E",
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "code",
-      "norm_label": "e",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "json",
-      "label": "Json",
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "code",
-      "norm_label": "json",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "path",
-      "label": "Path",
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "code",
-      "norm_label": "path",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "src_routes_add_evidence",
-      "label": "add_evidence()",
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "code",
-      "norm_label": "add_evidence()",
+      "norm_label": "has_paid_access()",
       "source_file": "src/routes.rs",
       "source_location": "L339"
     },
     {
-      "id": "src_routes_error",
-      "label": "error()",
+      "id": "src_routes_import_records",
+      "label": "import_records()",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "code",
-      "norm_label": "error()",
+      "norm_label": "import_records()",
       "source_file": "src/routes.rs",
-      "source_location": "L64"
+      "source_location": "L460"
     },
     {
-      "id": "src_routes_evidenceinput",
-      "label": "EvidenceInput",
+      "id": "src_routes_parse_date",
+      "label": "parse_date()",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "code",
-      "norm_label": "evidenceinput",
+      "norm_label": "parse_date()",
       "source_file": "src/routes.rs",
-      "source_location": "L52"
+      "source_location": "L250"
     },
     {
-      "id": "src_routes_internal",
-      "label": "internal()",
+      "id": "src_routes_quarter_bounds",
+      "label": "quarter_bounds()",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "code",
-      "norm_label": "internal()",
+      "norm_label": "quarter_bounds()",
       "source_file": "src/routes.rs",
-      "source_location": "L106"
+      "source_location": "L309"
     },
     {
-      "id": "src_routes_remove_evidence",
-      "label": "remove_evidence()",
+      "id": "src_routes_quarter_bounds_for_record",
+      "label": "quarter_bounds_for_record()",
       "_origin": "ast",
-      "community": 7,
+      "community": 6,
       "file_type": "code",
-      "norm_label": "remove_evidence()",
+      "norm_label": "quarter_bounds_for_record()",
       "source_file": "src/routes.rs",
-      "source_location": "L389"
+      "source_location": "L329"
     },
     {
-      "id": "statuscode",
-      "label": "StatusCode",
+      "id": "src_routes_validate",
+      "label": "validate()",
+      "_origin": "ast",
+      "community": 6,
+      "file_type": "code",
+      "norm_label": "validate()",
+      "source_file": "src/routes.rs",
+      "source_location": "L274"
+    },
+    {
+      "id": "arc",
+      "label": "Arc",
       "_origin": "ast",
       "community": 7,
       "file_type": "code",
-      "norm_label": "statuscode",
+      "norm_label": "arc",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "value",
-      "label": "Value",
+      "id": "client",
+      "label": "Client",
       "_origin": "ast",
       "community": 7,
       "file_type": "code",
-      "norm_label": "value",
+      "norm_label": "client",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "mutex",
+      "label": "Mutex",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "mutex",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "query",
+      "label": "Query",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "query",
       "source_file": "",
       "source_location": ""
     },
@@ -1540,7 +1743,7 @@
       "id": "src_main_appstate",
       "label": "AppState",
       "_origin": "ast",
-      "community": 9,
+      "community": 7,
       "file_type": "code",
       "norm_label": "appstate",
       "source_file": "src/main.rs",
@@ -1550,7 +1753,7 @@
       "id": "src_main_rs_sqlitepool",
       "label": "SqlitePool",
       "_origin": "ast",
-      "community": 9,
+      "community": 7,
       "file_type": "code",
       "norm_label": "sqlitepool",
       "source_file": "",
@@ -1560,11 +1763,171 @@
       "id": "src_main_rs_string",
       "label": "String",
       "_origin": "ast",
-      "community": 9,
+      "community": 7,
       "file_type": "code",
       "norm_label": "string",
       "source_file": "",
       "source_location": ""
+    },
+    {
+      "id": "src_routes_export_pack",
+      "label": "export_pack()",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "export_pack()",
+      "source_file": "src/routes.rs",
+      "source_location": "L623"
+    },
+    {
+      "id": "src_routes_get_workspace",
+      "label": "get_workspace()",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "get_workspace()",
+      "source_file": "src/routes.rs",
+      "source_location": "L233"
+    },
+    {
+      "id": "src_routes_rs_response",
+      "label": "Response",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "norm_label": "response",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "e",
+      "label": "E",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "e",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "path",
+      "label": "Path",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "path",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "src_routes_delete_record",
+      "label": "delete_record()",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "delete_record()",
+      "source_file": "src/routes.rs",
+      "source_location": "L570"
+    },
+    {
+      "id": "src_routes_delete_workspace",
+      "label": "delete_workspace()",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "delete_workspace()",
+      "source_file": "src/routes.rs",
+      "source_location": "L586"
+    },
+    {
+      "id": "src_routes_error",
+      "label": "error()",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "error()",
+      "source_file": "src/routes.rs",
+      "source_location": "L65"
+    },
+    {
+      "id": "src_routes_internal",
+      "label": "internal()",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "internal()",
+      "source_file": "src/routes.rs",
+      "source_location": "L107"
+    },
+    {
+      "id": "src_routes_remove_evidence",
+      "label": "remove_evidence()",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "remove_evidence()",
+      "source_file": "src/routes.rs",
+      "source_location": "L550"
+    },
+    {
+      "id": "src_routes_workspace",
+      "label": "workspace()",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "workspace()",
+      "source_file": "src/routes.rs",
+      "source_location": "L69"
+    },
+    {
+      "id": "statuscode",
+      "label": "StatusCode",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "statuscode",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "value",
+      "label": "Value",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "value",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "json",
+      "label": "Json",
+      "_origin": "ast",
+      "community": 9,
+      "file_type": "code",
+      "norm_label": "json",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "src_routes_add_evidence",
+      "label": "add_evidence()",
+      "_origin": "ast",
+      "community": 9,
+      "file_type": "code",
+      "norm_label": "add_evidence()",
+      "source_file": "src/routes.rs",
+      "source_location": "L500"
+    },
+    {
+      "id": "src_routes_check_workspace",
+      "label": "check_workspace()",
+      "_origin": "ast",
+      "community": 9,
+      "file_type": "code",
+      "norm_label": "check_workspace()",
+      "source_file": "src/routes.rs",
+      "source_location": "L87"
     },
     {
       "id": "src_routes_create_demo",
@@ -1574,7 +1937,17 @@
       "file_type": "code",
       "norm_label": "create_demo()",
       "source_file": "src/routes.rs",
-      "source_location": "L128"
+      "source_location": "L129"
+    },
+    {
+      "id": "src_routes_create_record",
+      "label": "create_record()",
+      "_origin": "ast",
+      "community": 9,
+      "file_type": "code",
+      "norm_label": "create_record()",
+      "source_file": "src/routes.rs",
+      "source_location": "L444"
     },
     {
       "id": "src_routes_create_workspace",
@@ -1584,7 +1957,7 @@
       "file_type": "code",
       "norm_label": "create_workspace()",
       "source_file": "src/routes.rs",
-      "source_location": "L114"
+      "source_location": "L115"
     },
     {
       "id": "src_routes_now",
@@ -1594,7 +1967,7 @@
       "file_type": "code",
       "norm_label": "now()",
       "source_file": "src/routes.rs",
-      "source_location": "L82"
+      "source_location": "L83"
     },
     {
       "id": "src_routes_rs_intoresponse",
@@ -1603,6 +1976,26 @@
       "community": 9,
       "file_type": "code",
       "norm_label": "intoresponse",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "src_routes_rs_sqlitepool",
+      "label": "SqlitePool",
+      "_origin": "ast",
+      "community": 9,
+      "file_type": "code",
+      "norm_label": "sqlitepool",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "src_routes_rs_state",
+      "label": "State",
+      "_origin": "ast",
+      "community": 9,
+      "file_type": "code",
+      "norm_label": "state",
       "source_file": "",
       "source_location": ""
     }
@@ -1857,7 +2250,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L161",
+      "source_location": "L162",
       "weight": 1.0
     },
     {
@@ -1869,7 +2262,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L161",
+      "source_location": "L162",
       "weight": 1.0
     },
     {
@@ -1881,7 +2274,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L166",
+      "source_location": "L167",
       "weight": 1.0
     },
     {
@@ -1893,7 +2286,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L162",
+      "source_location": "L163",
       "weight": 1.0
     },
     {
@@ -1905,7 +2298,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L145",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -1917,7 +2310,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L145",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -1929,7 +2322,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L145",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -1941,7 +2334,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L145",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -1953,7 +2346,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L145",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -1965,7 +2358,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L145",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -1977,7 +2370,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L145",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -1989,7 +2382,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L148",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -2001,7 +2394,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L148",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -2013,7 +2406,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L148",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -2025,7 +2418,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L148",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -2037,7 +2430,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L148",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -2049,7 +2442,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L147",
+      "source_location": "L148",
       "weight": 1.0
     },
     {
@@ -2061,7 +2454,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L147",
+      "source_location": "L148",
       "weight": 1.0
     },
     {
@@ -2073,7 +2466,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L147",
+      "source_location": "L148",
       "weight": 1.0
     },
     {
@@ -2157,7 +2550,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L154",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -2169,7 +2562,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L154",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -2181,7 +2574,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L137",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -2193,7 +2586,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L137",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -2205,7 +2598,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L137",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -2217,7 +2610,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L137",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -2277,7 +2670,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L156",
+      "source_location": "L157",
       "weight": 1.0
     },
     {
@@ -2289,7 +2682,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L156",
+      "source_location": "L157",
       "weight": 1.0
     },
     {
@@ -2301,7 +2694,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L150",
+      "source_location": "L151",
       "weight": 1.0
     },
     {
@@ -2337,7 +2730,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L144",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -2349,7 +2742,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L144",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -2361,7 +2754,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L144",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -2373,7 +2766,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L144",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -2385,7 +2778,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L144",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -2397,7 +2790,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L144",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -2409,7 +2802,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L138",
+      "source_location": "L139",
       "weight": 1.0
     },
     {
@@ -2421,7 +2814,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L138",
+      "source_location": "L139",
       "weight": 1.0
     },
     {
@@ -2433,7 +2826,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L138",
+      "source_location": "L139",
       "weight": 1.0
     },
     {
@@ -2445,7 +2838,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L138",
+      "source_location": "L139",
       "weight": 1.0
     },
     {
@@ -2457,7 +2850,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L165",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -2469,7 +2862,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L165",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -2481,7 +2874,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L165",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -2493,7 +2886,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L165",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -2553,7 +2946,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L122",
+      "source_location": "L123",
       "weight": 1.0
     },
     {
@@ -2565,7 +2958,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L128",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -2577,7 +2970,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L128",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -2589,7 +2982,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L132",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -2601,7 +2994,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L132",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -2613,7 +3006,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L132",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -2625,7 +3018,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L132",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -2637,7 +3030,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L133",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
@@ -2649,7 +3042,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L149",
+      "source_location": "L150",
       "weight": 1.0
     },
     {
@@ -2665,6 +3058,42 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_deploy_sh__entry",
+      "target": "scripts_deploy_patch_app",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/deploy.sh",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_deploy_sh__entry",
+      "target": "scripts_deploy_wait_for_app",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/deploy.sh",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_test_durable_storage_sh__entry",
+      "target": "scripts_test_durable_storage_start_server",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/test-durable-storage.sh",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
       "source": "src_main_api_rate_limit_returns_retry_after",
       "target": "src_main_test_app",
       "relation": "calls",
@@ -2673,7 +3102,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/main.rs",
-      "source_location": "L213",
+      "source_location": "L260",
       "weight": 1.0
     },
     {
@@ -2685,7 +3114,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/main.rs",
-      "source_location": "L194",
+      "source_location": "L241",
       "weight": 1.0
     },
     {
@@ -2697,7 +3126,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/main.rs",
-      "source_location": "L56",
+      "source_location": "L79",
       "weight": 1.0
     },
     {
@@ -2709,7 +3138,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/main.rs",
-      "source_location": "L64",
+      "source_location": "L87",
       "weight": 1.0
     },
     {
@@ -2721,7 +3150,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/main.rs",
-      "source_location": "L186",
+      "source_location": "L230",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated",
+      "target": "src_main_test_app",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/main.rs",
+      "source_location": "L304",
       "weight": 1.0
     },
     {
@@ -2733,7 +3174,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L345",
+      "source_location": "L506",
       "weight": 1.0
     },
     {
@@ -2745,7 +3186,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L346",
+      "source_location": "L507",
       "weight": 1.0
     },
     {
@@ -2757,7 +3198,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L348",
+      "source_location": "L509",
       "weight": 1.0
     },
     {
@@ -2769,7 +3210,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L377",
+      "source_location": "L538",
       "weight": 1.0
     },
     {
@@ -2781,7 +3222,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L386",
+      "source_location": "L547",
       "weight": 1.0
     },
     {
@@ -2793,7 +3234,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L94",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -2805,7 +3246,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L98",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -2817,7 +3258,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L130",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -2829,7 +3270,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L228",
+      "source_location": "L229",
       "weight": 1.0
     },
     {
@@ -2841,7 +3282,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L310",
+      "source_location": "L449",
       "weight": 1.0
     },
     {
@@ -2853,7 +3294,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L311",
+      "source_location": "L450",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_create_record",
+      "target": "src_routes_validate",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/routes.rs",
+      "source_location": "L451",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_create_record",
+      "target": "src_routes_enforce_quarter_limits",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/routes.rs",
+      "source_location": "L453",
       "weight": 1.0
     },
     {
@@ -2865,7 +3330,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L312",
+      "source_location": "L455",
       "weight": 1.0
     },
     {
@@ -2877,7 +3342,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L313",
+      "source_location": "L457",
       "weight": 1.0
     },
     {
@@ -2889,7 +3354,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L118",
+      "source_location": "L119",
       "weight": 1.0
     },
     {
@@ -2901,7 +3366,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L124",
+      "source_location": "L125",
       "weight": 1.0
     },
     {
@@ -2913,7 +3378,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L414",
+      "source_location": "L575",
       "weight": 1.0
     },
     {
@@ -2925,7 +3390,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L415",
+      "source_location": "L576",
       "weight": 1.0
     },
     {
@@ -2937,7 +3402,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L429",
+      "source_location": "L590",
       "weight": 1.0
     },
     {
@@ -2949,7 +3414,43 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L435",
+      "source_location": "L596",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_enforce_quarter_limits",
+      "target": "src_routes_quarter_bounds_for_record",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/routes.rs",
+      "source_location": "L403",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_enforce_quarter_limits",
+      "target": "src_routes_has_paid_access",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/routes.rs",
+      "source_location": "L413",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_enforce_quarter_limits",
+      "target": "src_routes_error",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/routes.rs",
+      "source_location": "L414",
       "weight": 1.0
     },
     {
@@ -2961,7 +3462,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L65",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -2973,7 +3474,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L467",
+      "source_location": "L628",
       "weight": 1.0
     },
     {
@@ -2985,7 +3486,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L468",
+      "source_location": "L629",
       "weight": 1.0
     },
     {
@@ -2997,24 +3498,12 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L474",
+      "source_location": "L635",
       "weight": 1.0
     },
     {
       "source": "src_routes_get_workspace",
       "target": "src_routes_workspace",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/routes.rs",
-      "source_location": "L237",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes_get_workspace",
-      "target": "src_routes_check_workspace",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3026,6 +3515,18 @@
     },
     {
       "source": "src_routes_get_workspace",
+      "target": "src_routes_check_workspace",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/routes.rs",
+      "source_location": "L239",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_get_workspace",
       "target": "json",
       "relation": "calls",
       "_origin": "ast",
@@ -3033,7 +3534,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L244",
+      "source_location": "L245",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_has_paid_access",
+      "target": "src_routes_error",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/routes.rs",
+      "source_location": "L370",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_has_paid_access",
+      "target": "src_routes_now",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/routes.rs",
+      "source_location": "L389",
       "weight": 1.0
     },
     {
@@ -3045,7 +3570,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L321",
+      "source_location": "L465",
       "weight": 1.0
     },
     {
@@ -3057,7 +3582,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L322",
+      "source_location": "L466",
       "weight": 1.0
     },
     {
@@ -3069,7 +3594,43 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L324",
+      "source_location": "L468",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_import_records",
+      "target": "src_routes_validate",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/routes.rs",
+      "source_location": "L476",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_import_records",
+      "target": "src_routes_quarter_bounds_for_record",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/routes.rs",
+      "source_location": "L477",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_import_records",
+      "target": "src_routes_enforce_quarter_limits",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/routes.rs",
+      "source_location": "L488",
       "weight": 1.0
     },
     {
@@ -3081,7 +3642,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L331",
+      "source_location": "L491",
       "weight": 1.0
     },
     {
@@ -3093,19 +3654,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L335",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes_insert_record",
-      "target": "src_routes_validate",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/routes.rs",
-      "source_location": "L288",
+      "source_location": "L496",
       "weight": 1.0
     },
     {
@@ -3117,7 +3666,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L290",
+      "source_location": "L429",
       "weight": 1.0
     },
     {
@@ -3129,7 +3678,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L108",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_parse_date",
+      "target": "src_routes_error",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/routes.rs",
+      "source_location": "L259",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_quarter_bounds_for_record",
+      "target": "src_routes_quarter_bounds",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/routes.rs",
+      "source_location": "L336",
       "weight": 1.0
     },
     {
@@ -3141,7 +3714,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L394",
+      "source_location": "L555",
       "weight": 1.0
     },
     {
@@ -3153,7 +3726,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L395",
+      "source_location": "L556",
       "weight": 1.0
     },
     {
@@ -3165,7 +3738,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L397",
+      "source_location": "L558",
       "weight": 1.0
     },
     {
@@ -3177,7 +3750,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L399",
+      "source_location": "L560",
       "weight": 1.0
     },
     {
@@ -3189,7 +3762,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L406",
+      "source_location": "L567",
       "weight": 1.0
     },
     {
@@ -3201,7 +3774,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L251",
+      "source_location": "L276",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_validate",
+      "target": "src_routes_parse_date",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/routes.rs",
+      "source_location": "L287",
       "weight": 1.0
     },
     {
@@ -3213,7 +3798,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/routes.rs",
-      "source_location": "L75",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -3237,7 +3822,31 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/main.rs",
-      "source_location": "L27",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_appstate",
+      "target": "client",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "src/main.rs",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_appstate",
+      "target": "arc",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "src/main.rs",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -3249,7 +3858,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/routes.rs",
-      "source_location": "L55",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -3261,7 +3870,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/routes.rs",
-      "source_location": "L459",
+      "source_location": "L620",
       "weight": 1.0
     },
     {
@@ -3273,7 +3882,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/routes.rs",
-      "source_location": "L48",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -3285,7 +3894,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/routes.rs",
-      "source_location": "L61",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -3297,7 +3906,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/routes.rs",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -3309,7 +3918,19 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "src/routes.rs",
-      "source_location": "L43",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_appstate",
+      "target": "mutex",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "src/main.rs",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -3321,7 +3942,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/main.rs",
-      "source_location": "L126",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -3333,7 +3954,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L339",
+      "source_location": "L500",
       "weight": 1.0
     },
     {
@@ -3345,7 +3966,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L339",
+      "source_location": "L500",
       "weight": 1.0
     },
     {
@@ -3357,7 +3978,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L339",
+      "source_location": "L500",
       "weight": 1.0
     },
     {
@@ -3369,7 +3990,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L339",
+      "source_location": "L500",
       "weight": 1.0
     },
     {
@@ -3381,7 +4002,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L128",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -3393,7 +4014,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L128",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -3405,7 +4026,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L305",
+      "source_location": "L444",
       "weight": 1.0
     },
     {
@@ -3417,7 +4038,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L305",
+      "source_location": "L444",
       "weight": 1.0
     },
     {
@@ -3429,7 +4050,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L305",
+      "source_location": "L444",
       "weight": 1.0
     },
     {
@@ -3441,7 +4062,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L114",
+      "source_location": "L115",
       "weight": 1.0
     },
     {
@@ -3453,7 +4074,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L114",
+      "source_location": "L115",
       "weight": 1.0
     },
     {
@@ -3465,7 +4086,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L409",
+      "source_location": "L570",
       "weight": 1.0
     },
     {
@@ -3477,7 +4098,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L409",
+      "source_location": "L570",
       "weight": 1.0
     },
     {
@@ -3489,7 +4110,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L409",
+      "source_location": "L570",
       "weight": 1.0
     },
     {
@@ -3501,7 +4122,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L425",
+      "source_location": "L586",
       "weight": 1.0
     },
     {
@@ -3513,7 +4134,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L425",
+      "source_location": "L586",
       "weight": 1.0
     },
     {
@@ -3525,7 +4146,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -3537,7 +4158,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L462",
+      "source_location": "L623",
       "weight": 1.0
     },
     {
@@ -3549,7 +4170,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L462",
+      "source_location": "L623",
       "weight": 1.0
     },
     {
@@ -3561,7 +4182,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L462",
+      "source_location": "L623",
       "weight": 1.0
     },
     {
@@ -3573,7 +4194,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L458",
+      "source_location": "L619",
       "weight": 1.0
     },
     {
@@ -3585,7 +4206,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L459",
+      "source_location": "L620",
       "weight": 1.0
     },
     {
@@ -3597,7 +4218,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L232",
+      "source_location": "L233",
       "weight": 1.0
     },
     {
@@ -3609,7 +4230,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L232",
+      "source_location": "L233",
       "weight": 1.0
     },
     {
@@ -3621,7 +4242,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L232",
+      "source_location": "L233",
       "weight": 1.0
     },
     {
@@ -3633,7 +4254,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L316",
+      "source_location": "L460",
       "weight": 1.0
     },
     {
@@ -3645,7 +4266,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L316",
+      "source_location": "L460",
       "weight": 1.0
     },
     {
@@ -3657,7 +4278,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L316",
+      "source_location": "L460",
       "weight": 1.0
     },
     {
@@ -3669,7 +4290,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L48",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -3681,7 +4302,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L283",
+      "source_location": "L423",
       "weight": 1.0
     },
     {
@@ -3693,7 +4314,19 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L106",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_parse_date",
+      "target": "date",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "src/routes.rs",
+      "source_location": "L250",
       "weight": 1.0
     },
     {
@@ -3705,7 +4338,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L61",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -3717,7 +4350,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -3729,7 +4362,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L43",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -3741,7 +4374,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L389",
+      "source_location": "L550",
       "weight": 1.0
     },
     {
@@ -3753,7 +4386,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L389",
+      "source_location": "L550",
       "weight": 1.0
     },
     {
@@ -3765,7 +4398,19 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L389",
+      "source_location": "L550",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_validate",
+      "target": "date",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "src/routes.rs",
+      "source_location": "L274",
       "weight": 1.0
     },
     {
@@ -3777,7 +4422,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/routes.rs",
-      "source_location": "L68",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -3861,7 +4506,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -3873,7 +4518,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -3885,7 +4530,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "package_devdependencies_types_node",
+      "target": "types_node",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "package.json",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -3897,7 +4554,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -3909,7 +4566,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -3933,7 +4590,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/main.rs",
-      "source_location": "L69",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -3945,7 +4602,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/main.rs",
-      "source_location": "L126",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -3957,7 +4614,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/main.rs",
-      "source_location": "L130",
+      "source_location": "L153",
       "weight": 1.0
     },
     {
@@ -3969,7 +4626,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/main.rs",
-      "source_location": "L130",
+      "source_location": "L153",
       "weight": 1.0
     },
     {
@@ -3981,7 +4638,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L339",
+      "source_location": "L500",
       "weight": 1.0
     },
     {
@@ -3993,7 +4650,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L339",
+      "source_location": "L500",
       "weight": 1.0
     },
     {
@@ -4005,7 +4662,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L339",
+      "source_location": "L500",
       "weight": 1.0
     },
     {
@@ -4017,7 +4674,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L86",
+      "source_location": "L87",
       "weight": 1.0
     },
     {
@@ -4029,7 +4686,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L128",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -4041,7 +4698,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L305",
+      "source_location": "L444",
       "weight": 1.0
     },
     {
@@ -4053,7 +4710,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L305",
+      "source_location": "L444",
       "weight": 1.0
     },
     {
@@ -4065,7 +4722,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L114",
+      "source_location": "L115",
       "weight": 1.0
     },
     {
@@ -4077,7 +4734,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L409",
+      "source_location": "L570",
       "weight": 1.0
     },
     {
@@ -4089,7 +4746,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L409",
+      "source_location": "L570",
       "weight": 1.0
     },
     {
@@ -4101,7 +4758,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L409",
+      "source_location": "L570",
       "weight": 1.0
     },
     {
@@ -4113,7 +4770,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L425",
+      "source_location": "L586",
       "weight": 1.0
     },
     {
@@ -4125,7 +4782,43 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L425",
+      "source_location": "L586",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_enforce_quarter_limits",
+      "target": "date",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "src/routes.rs",
+      "source_location": "L396",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_enforce_quarter_limits",
+      "target": "headermap",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "src/routes.rs",
+      "source_location": "L396",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_enforce_quarter_limits",
+      "target": "src_main_appstate",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "src/routes.rs",
+      "source_location": "L396",
       "weight": 1.0
     },
     {
@@ -4137,7 +4830,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L462",
+      "source_location": "L623",
       "weight": 1.0
     },
     {
@@ -4149,7 +4842,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L462",
+      "source_location": "L623",
       "weight": 1.0
     },
     {
@@ -4161,7 +4854,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L462",
+      "source_location": "L623",
       "weight": 1.0
     },
     {
@@ -4173,7 +4866,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L232",
+      "source_location": "L233",
       "weight": 1.0
     },
     {
@@ -4185,7 +4878,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L232",
+      "source_location": "L233",
       "weight": 1.0
     },
     {
@@ -4197,7 +4890,31 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L232",
+      "source_location": "L233",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_has_paid_access",
+      "target": "headermap",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "src/routes.rs",
+      "source_location": "L339",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_has_paid_access",
+      "target": "src_main_appstate",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "src/routes.rs",
+      "source_location": "L339",
       "weight": 1.0
     },
     {
@@ -4209,7 +4926,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L316",
+      "source_location": "L460",
       "weight": 1.0
     },
     {
@@ -4221,7 +4938,19 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L316",
+      "source_location": "L460",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_insert_record",
+      "target": "sqliteconnection",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "src/routes.rs",
+      "source_location": "L423",
       "weight": 1.0
     },
     {
@@ -4233,19 +4962,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L283",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes_insert_record",
-      "target": "src_routes_rs_sqlitepool",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "parameter_type",
-      "source_file": "src/routes.rs",
-      "source_location": "L283",
+      "source_location": "L423",
       "weight": 1.0
     },
     {
@@ -4257,7 +4974,31 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L106",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_quarter_bounds",
+      "target": "date",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "src/routes.rs",
+      "source_location": "L309",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_quarter_bounds_for_record",
+      "target": "date",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "src/routes.rs",
+      "source_location": "L329",
       "weight": 1.0
     },
     {
@@ -4269,7 +5010,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L389",
+      "source_location": "L550",
       "weight": 1.0
     },
     {
@@ -4281,7 +5022,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L389",
+      "source_location": "L550",
       "weight": 1.0
     },
     {
@@ -4293,7 +5034,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L389",
+      "source_location": "L550",
       "weight": 1.0
     },
     {
@@ -4305,7 +5046,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L249",
+      "source_location": "L274",
       "weight": 1.0
     },
     {
@@ -4317,7 +5058,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/routes.rs",
-      "source_location": "L68",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -4329,7 +5070,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/main.rs",
-      "source_location": "L69",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -4341,7 +5082,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/main.rs",
-      "source_location": "L126",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -4353,7 +5094,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/main.rs",
-      "source_location": "L130",
+      "source_location": "L153",
       "weight": 1.0
     },
     {
@@ -4365,7 +5106,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/main.rs",
-      "source_location": "L179",
+      "source_location": "L223",
       "weight": 1.0
     },
     {
@@ -4377,7 +5118,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/routes.rs",
-      "source_location": "L339",
+      "source_location": "L500",
       "weight": 1.0
     },
     {
@@ -4389,7 +5130,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/routes.rs",
-      "source_location": "L86",
+      "source_location": "L87",
       "weight": 1.0
     },
     {
@@ -4401,7 +5142,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/routes.rs",
-      "source_location": "L128",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -4413,7 +5154,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/routes.rs",
-      "source_location": "L305",
+      "source_location": "L444",
       "weight": 1.0
     },
     {
@@ -4425,7 +5166,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/routes.rs",
-      "source_location": "L114",
+      "source_location": "L115",
       "weight": 1.0
     },
     {
@@ -4437,7 +5178,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/routes.rs",
-      "source_location": "L409",
+      "source_location": "L570",
       "weight": 1.0
     },
     {
@@ -4449,7 +5190,19 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/routes.rs",
-      "source_location": "L425",
+      "source_location": "L586",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_enforce_quarter_limits",
+      "target": "apiresult",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "return_type",
+      "source_file": "src/routes.rs",
+      "source_location": "L396",
       "weight": 1.0
     },
     {
@@ -4461,7 +5214,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/routes.rs",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -4473,7 +5226,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/routes.rs",
-      "source_location": "L462",
+      "source_location": "L623",
       "weight": 1.0
     },
     {
@@ -4485,7 +5238,19 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/routes.rs",
-      "source_location": "L232",
+      "source_location": "L233",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_has_paid_access",
+      "target": "apiresult",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "return_type",
+      "source_file": "src/routes.rs",
+      "source_location": "L339",
       "weight": 1.0
     },
     {
@@ -4497,7 +5262,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/routes.rs",
-      "source_location": "L316",
+      "source_location": "L460",
       "weight": 1.0
     },
     {
@@ -4509,7 +5274,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/routes.rs",
-      "source_location": "L283",
+      "source_location": "L423",
       "weight": 1.0
     },
     {
@@ -4521,7 +5286,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/routes.rs",
-      "source_location": "L106",
+      "source_location": "L107",
       "weight": 1.0
     },
     {
@@ -4533,7 +5298,43 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/routes.rs",
-      "source_location": "L106",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_parse_date",
+      "target": "apiresult",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "return_type",
+      "source_file": "src/routes.rs",
+      "source_location": "L250",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_quarter_bounds",
+      "target": "src_routes_rs_string",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "return_type",
+      "source_file": "src/routes.rs",
+      "source_location": "L309",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes_quarter_bounds_for_record",
+      "target": "src_routes_rs_string",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "return_type",
+      "source_file": "src/routes.rs",
+      "source_location": "L329",
       "weight": 1.0
     },
     {
@@ -4545,7 +5346,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/routes.rs",
-      "source_location": "L389",
+      "source_location": "L550",
       "weight": 1.0
     },
     {
@@ -4557,7 +5358,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/routes.rs",
-      "source_location": "L249",
+      "source_location": "L274",
       "weight": 1.0
     },
     {
@@ -4569,7 +5370,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/routes.rs",
-      "source_location": "L68",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -4624,7 +5425,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
-      "source_location": "L127",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -4635,7 +5436,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
-      "source_location": "L135",
+      "source_location": "L136",
       "weight": 1.0
     },
     {
@@ -4646,7 +5447,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
-      "source_location": "L137",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -4657,7 +5458,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
-      "source_location": "L138",
+      "source_location": "L139",
       "weight": 1.0
     },
     {
@@ -4668,7 +5469,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
-      "source_location": "L140",
+      "source_location": "L141",
       "weight": 1.0
     },
     {
@@ -4679,7 +5480,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
-      "source_location": "L141",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -4690,7 +5491,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
-      "source_location": "L142",
+      "source_location": "L143",
       "weight": 1.0
     },
     {
@@ -4701,7 +5502,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
-      "source_location": "L143",
+      "source_location": "L144",
       "weight": 1.0
     },
     {
@@ -4712,7 +5513,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
-      "source_location": "L144",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -4723,7 +5524,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
-      "source_location": "L145",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -4734,7 +5535,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
-      "source_location": "L147",
+      "source_location": "L148",
       "weight": 1.0
     },
     {
@@ -4745,7 +5546,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
-      "source_location": "L148",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -4756,7 +5557,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
-      "source_location": "L149",
+      "source_location": "L150",
       "weight": 1.0
     },
     {
@@ -4767,7 +5568,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
-      "source_location": "L150",
+      "source_location": "L151",
       "weight": 1.0
     },
     {
@@ -4778,7 +5579,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
-      "source_location": "L152",
+      "source_location": "L153",
       "weight": 1.0
     },
     {
@@ -4789,23 +5590,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
-      "source_location": "L156",
+      "source_location": "L157",
       "weight": 1.0
     },
     {
       "source": "frontend_src_main",
       "target": "frontend_src_main_ispaid",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "frontend/src/main.ts",
-      "source_location": "L158",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_main",
-      "target": "frontend_src_main_licenseinactive",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4827,7 +5617,7 @@
     },
     {
       "source": "frontend_src_main",
-      "target": "frontend_src_main_verifylicense",
+      "target": "frontend_src_main_licenseinactive",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4838,7 +5628,7 @@
     },
     {
       "source": "frontend_src_main",
-      "target": "frontend_src_main_bindlicensebuttons",
+      "target": "frontend_src_main_verifylicense",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4849,7 +5639,7 @@
     },
     {
       "source": "frontend_src_main",
-      "target": "frontend_src_main_capturelicense",
+      "target": "frontend_src_main_bindlicensebuttons",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4860,18 +5650,18 @@
     },
     {
       "source": "frontend_src_main",
-      "target": "frontend_src_main_message",
+      "target": "frontend_src_main_capturelicense",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
-      "source_location": "L164",
+      "source_location": "L163",
       "weight": 1.0
     },
     {
       "source": "frontend_src_main",
-      "target": "frontend_src_main_render",
+      "target": "frontend_src_main_message",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4882,13 +5672,24 @@
     },
     {
       "source": "frontend_src_main",
-      "target": "frontend_src_main_bindroutes",
+      "target": "frontend_src_main_render",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/main.ts",
       "source_location": "L166",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_main",
+      "target": "frontend_src_main_bindroutes",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/main.ts",
+      "source_location": "L167",
       "weight": 1.0
     },
     {
@@ -5108,7 +5909,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L14",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -5120,6 +5921,17 @@
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "package",
+      "target": "package_overrides",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -5174,7 +5986,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -5185,7 +5997,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_node",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -5196,7 +6019,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -5207,7 +6030,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -5218,7 +6041,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "package_overrides",
+      "target": "package_overrides_playwright_core",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -5234,7 +6068,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_e2e",
+      "target": "package_scripts_typecheck",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5245,13 +6079,46 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_assets",
+      "target": "package_scripts_test_runtime_defaults",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_durable_storage",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_e2e",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_assets",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -5288,6 +6155,17 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_deploy",
+      "target": "scripts_deploy_sh__entry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/deploy.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_optimise_assets",
       "target": "scripts_optimise_assets_source",
       "relation": "contains",
@@ -5299,6 +6177,39 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_test_durable_storage",
+      "target": "scripts_test_durable_storage_sh__entry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/test-durable-storage.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_test_live_checkout",
+      "target": "scripts_test_live_checkout_sh__entry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/test-live-checkout.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_test_runtime_defaults",
+      "target": "scripts_test_runtime_defaults_sh__entry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/test-runtime-defaults.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "src_main",
       "target": "src_main_health",
       "relation": "contains",
@@ -5306,7 +6217,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L126",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -5317,7 +6228,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L130",
+      "source_location": "L153",
       "weight": 1.0
     },
     {
@@ -5328,7 +6239,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L159",
+      "source_location": "L203",
       "weight": 1.0
     },
     {
@@ -5339,7 +6250,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L179",
+      "source_location": "L223",
       "weight": 1.0
     },
     {
@@ -5350,18 +6261,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L193",
-      "weight": 1.0
-    },
-    {
-      "source": "src_main",
-      "target": "src_main_api_rate_limit_returns_retry_after",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/main.rs",
-      "source_location": "L212",
+      "source_location": "L240",
       "weight": 1.0
     },
     {
@@ -5377,13 +6277,46 @@
     },
     {
       "source": "src_main",
+      "target": "src_main_api_rate_limit_returns_retry_after",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main.rs",
+      "source_location": "L259",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main",
+      "target": "src_main_unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main.rs",
+      "source_location": "L303",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main",
+      "target": "src_main_workspace_deletion_removes_records_evidence_and_audit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main.rs",
+      "source_location": "L333",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main",
       "target": "src_main_main",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L31",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -5394,7 +6327,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L69",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -5405,7 +6338,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L106",
+      "source_location": "L107",
       "weight": 1.0
     },
     {
@@ -5416,7 +6349,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L114",
+      "source_location": "L115",
       "weight": 1.0
     },
     {
@@ -5427,7 +6360,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L128",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -5438,7 +6371,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -5449,7 +6382,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L232",
+      "source_location": "L233",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes",
+      "target": "src_routes_parse_date",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/routes.rs",
+      "source_location": "L250",
       "weight": 1.0
     },
     {
@@ -5460,45 +6404,34 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L249",
+      "source_location": "L274",
       "weight": 1.0
     },
     {
       "source": "src_routes",
-      "target": "src_routes_insert_record",
+      "target": "src_routes_quarter_bounds",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L283",
+      "source_location": "L309",
       "weight": 1.0
     },
     {
       "source": "src_routes",
-      "target": "src_routes_create_record",
+      "target": "src_routes_quarter_bounds_for_record",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L305",
+      "source_location": "L329",
       "weight": 1.0
     },
     {
       "source": "src_routes",
-      "target": "src_routes_import_records",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/routes.rs",
-      "source_location": "L316",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes",
-      "target": "src_routes_add_evidence",
+      "target": "src_routes_has_paid_access",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5515,62 +6448,51 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
       "source": "src_routes",
-      "target": "src_routes_remove_evidence",
+      "target": "src_routes_enforce_quarter_limits",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L389",
+      "source_location": "L396",
       "weight": 1.0
     },
     {
       "source": "src_routes",
-      "target": "src_routes_delete_record",
+      "target": "src_routes_insert_record",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L409",
+      "source_location": "L423",
       "weight": 1.0
     },
     {
       "source": "src_routes",
-      "target": "src_routes_delete_workspace",
+      "target": "src_routes_create_record",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L425",
+      "source_location": "L444",
       "weight": 1.0
     },
     {
       "source": "src_routes",
-      "target": "src_routes_exportrecord",
+      "target": "src_routes_import_records",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L449",
-      "weight": 1.0
-    },
-    {
-      "source": "src_routes",
-      "target": "src_routes_export_pack",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/routes.rs",
-      "source_location": "L462",
+      "source_location": "L460",
       "weight": 1.0
     },
     {
@@ -5581,7 +6503,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L47",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes",
+      "target": "src_routes_add_evidence",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/routes.rs",
+      "source_location": "L500",
       "weight": 1.0
     },
     {
@@ -5592,7 +6525,40 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L52",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes",
+      "target": "src_routes_remove_evidence",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/routes.rs",
+      "source_location": "L550",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes",
+      "target": "src_routes_delete_record",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/routes.rs",
+      "source_location": "L570",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes",
+      "target": "src_routes_delete_workspace",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/routes.rs",
+      "source_location": "L586",
       "weight": 1.0
     },
     {
@@ -5603,7 +6569,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L59",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes",
+      "target": "src_routes_exportrecord",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/routes.rs",
+      "source_location": "L610",
+      "weight": 1.0
+    },
+    {
+      "source": "src_routes",
+      "target": "src_routes_export_pack",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/routes.rs",
+      "source_location": "L623",
       "weight": 1.0
     },
     {
@@ -5614,7 +6602,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -5625,7 +6613,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L68",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -5636,7 +6624,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L82",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -5647,7 +6635,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/routes.rs",
-      "source_location": "L86",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_product_spec",
+      "target": "tests_product_spec_openready",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/product.spec.ts",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -5794,6 +6793,61 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_deploy",
+      "target": "scripts_deploy_patch_app",
+      "relation": "defines",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/deploy.sh",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_deploy",
+      "target": "scripts_deploy_wait_for_app",
+      "relation": "defines",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/deploy.sh",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_test_durable_storage",
+      "target": "scripts_test_durable_storage_start_server",
+      "relation": "defines",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/test-durable-storage.sh",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_test_durable_storage",
+      "target": "scripts_test_durable_storage_cleanup",
+      "relation": "defines",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/test-durable-storage.sh",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_test_runtime_defaults",
+      "target": "scripts_test_runtime_defaults_cleanup",
+      "relation": "defines",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/test-runtime-defaults.sh",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
       "source": "frontend_src_main_bindapp",
       "target": "frontend_src_main_offlinenotice",
       "relation": "indirect_call",
@@ -5874,7 +6928,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L123",
+      "source_location": "L124",
       "weight": 1.0
     },
     {
@@ -5886,10 +6940,10 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "frontend/src/main.ts",
-      "source_location": "L124",
+      "source_location": "L125",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "bc3052694229645443825312b0c060e925cc1315"
+  "built_at_commit": "9a357651212a07db848e3857217cfa1bc91240ca"
 }
