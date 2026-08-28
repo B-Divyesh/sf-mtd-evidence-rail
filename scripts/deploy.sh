@@ -91,10 +91,11 @@ for attempt in $(seq 1 30); do
   mount=$(printf '%s' "$resource" | jq -r '.properties.template.containers[0].volumeMounts[0].mountPath // ""')
   vfs=$(printf '%s' "$resource" | jq -r '[.properties.template.containers[0].env[]? | select(.name == "SQLITE_VFS")][0].value // ""')
   maximum=$(printf '%s' "$resource" | jq -r .properties.template.scale.maxReplicas)
-  [ "$latest" = "$ready" ] && [ "$mount" = /data ] && [ "$vfs" = unix-dotfile ] && [ "$maximum" = 1 ] && break
+  active=$(az containerapp revision list --resource-group "$resource_group" --name "$app_name" --query '[?properties.active==`true`] | length(@)' --output tsv)
+  [ "$latest" = "$ready" ] && [ "$mount" = /data ] && [ "$vfs" = unix-dotfile ] && [ "$maximum" = 1 ] && [ "$active" = 1 ] && break
   sleep 5
 done
-[ "$latest" = "$ready" ] && [ "$mount" = /data ] && [ "$vfs" = unix-dotfile ] && [ "$maximum" = 1 ]
+[ "$latest" = "$ready" ] && [ "$mount" = /data ] && [ "$vfs" = unix-dotfile ] && [ "$maximum" = 1 ] && [ "$active" = 1 ]
 
 domain_binding=$(printf '%s' "$resource" | jq -r --arg hostname "$hostname" '[.properties.configuration.ingress.customDomains[]? | select(.name == $hostname)][0].bindingType // ""')
 if [ "$domain_binding" != SniEnabled ]; then
@@ -114,4 +115,7 @@ for attempt in $(seq 1 30); do
 done
 [ "$live_sha" = "$source_sha" ]
 
-echo "Deployed ${source_sha} as one replica with durable Azure Files storage mounted at /data."
+EXPECTED_SHA="$source_sha" BASE_URL="https://${hostname}" \
+  bash "$repo_dir/scripts/verify-live-topology.sh"
+
+echo "Deployed ${source_sha}; one active replica and the durable workspace smoke are verified."

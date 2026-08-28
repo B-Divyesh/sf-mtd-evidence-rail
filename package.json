@@ -7,10 +7,12 @@
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "start": "cargo run --release",
-    "test": "npm run typecheck && npm run build && cargo test && cargo build && npm run test:runtime-defaults && npm run test:durable-storage && playwright test",
+    "test": "npm run typecheck && npm run build && cargo test && cargo build && npm run test:runtime-defaults && npm run test:durable-storage && npm run test:shared-storage && playwright test",
     "typecheck": "tsc --noEmit",
     "test:runtime-defaults": "bash scripts/test-runtime-defaults.sh",
     "test:durable-storage": "bash scripts/test-durable-storage.sh",
+    "test:shared-storage": "bash scripts/test-shared-storage.sh",
+    "verify:live-topology": "bash scripts/verify-live-topology.sh",
     "test:e2e": "playwright test",
     "assets": "node scripts/optimise-assets.mjs"
   },

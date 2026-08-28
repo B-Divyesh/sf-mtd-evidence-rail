@@ -119,6 +119,13 @@
     "sandbox": "temporary persistent DATA_DIR; create a workspace, restart the server, and assert the same key returns HTTP 200"
   },
   {
+    "id": "shared-state-boundary",
+    "claim": "Every service process reads the same durable workspace store",
+    "where": "README, deployment handoff",
+    "test": "npm run build && cargo build && npm run test:shared-storage",
+    "sandbox": "three service processes share one temporary DATA_DIR; demo and private keys each return 100/100 reads before and after all processes restart"
+  },
+  {
     "id": "api-rate-limit",
     "claim": "API endpoints enforce a per-client burst limit using the first forwarded IP and return Retry-After",
     "where": "README, handoff",

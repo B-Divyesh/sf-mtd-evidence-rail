@@ -48,6 +48,7 @@ proxies `/api` and `/health` to port 8080.
 ```sh
 npm test
 npm run build       # writes the frontend to dist/
+npm run verify:live-topology # checks 12 fresh demos and 100 reads per workspace
 docker build --build-arg BUILD_SHA=local -t mtd-evidence-rail .
 docker run --rm -p 8080:8080 mtd-evidence-rail
 ```
@@ -79,8 +80,10 @@ The root `Dockerfile` builds the Vite frontend and Rust server in separate
 stages. The runtime image runs as a non-root user, reads `PORT`, and serves
 `/health` with the supplied `BUILD_SHA`. The work-order deployment is wrapped
 by `scripts/deploy.sh`; it mounts Azure Files at `/data` and pins the app to one
-replica because SQLite is a single-writer database. The factory owns product
-registration and billing configuration.
+replica because SQLite is a single-writer database. The deploy command applies
+that storage topology after the factory image rollout. Deployment fails unless
+the control plane and cross-connection workspace smoke both pass. The factory
+owns product registration and billing configuration.
 
 ## Licence
 
