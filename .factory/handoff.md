@@ -1,66 +1,120 @@
-# MTD Evidence Rail verification handoff
+# MTD Evidence Rail repair handoff
 
-Completed 29 August 2026 for work order `mtd-evidence-rail-verify-3`.
+Completed 29 August 2026 for work order `mtd-evidence-rail-repair-3`.
 
 ## Result
 
-**FAIL — do not release candidate
-`d9774c5d70af912a520d2f349b4b10960ffd7e47`.**
+All release blockers in verifier report commit
+`505846e9e76bfd7b465b58f1de89a67229c904cc` are repaired. The repaired product
+code was committed and deployed as
+`e302ce8dcc0bce6c44ef2103e2d0e06dee9b22ea`. The live health response matched
+that full SHA during verification.
 
-The source candidate passes all 19 declared claim commands from a detached
-clean worktree after `npm ci`, the complete `npm test`, strict TypeScript/Rust
-checks, the locked release build, and independent local end-to-end
-boundary/recovery checks. The exact candidate
-is deployed: `/health` and 100 concurrent health responses report its full SHA,
-and live HTML/JS/CSS hashes match the local production build.
+The required failure was reproduced before any repair:
 
-Production is still release-blocked. Azure currently runs three replicas at
-max scale with no `/data` mount, no volume, and no `SQLITE_VFS`. Each replica
-therefore has a separate disposable SQLite database. After concurrency brought
-all replicas into use, 14/15 applicable live tests failed. A final 12-browser
-demo check failed 12/12: every `POST /api/demo` returned 201, then the immediate
-`GET /api/workspace` returned 404. The required one-click demo and real private
-workspaces are not reliable or durable.
+```text
+Unsafe topology: mode=Single max=3 mount= vfs= active=1
+```
 
-Additional findings:
+The live service now uses one active revision, one ready replica, one
+container, `minReplicas: 1`, `maxReplicas: 1`, Azure Files volume
+`mtd-evidence-rail-data` mounted at `/data`, and
+`SQLITE_VFS=unix-dotfile`.
 
-- High: absolute “unlimited transactions” and “unguessable key” copy is not
-  represented by an exact claim test.
-- Medium: three inline mobile links are under the required 44 px target height.
-- Low: three section/404 labels use railway metaphor instead of plain task
-  names.
+## Repairs
 
-Full commands, evidence, headers, rate-limit allowances, Lighthouse results,
-and remediation are in [verification-3.md](verification-3.md). Key evidence is
-under [`evidence/verification-3/`](evidence/verification-3/).
+- Added `.factory/container-app.json` as the source-owned production topology
+  contract. `scripts/render-production-topology.sh` deterministically turns the
+  verifier's unsafe three-replica shape into the required one-replica shape.
+- Updated `scripts/deploy.sh` to render that contract after the image rollout
+  and to require a real revision restart before success.
+- Strengthened `scripts/verify-live-topology.sh`. It waits for Azure to settle
+  to exactly one ready replica, checks the Azure Files mount and VFS, performs
+  100 private and 100 demo reads, opens 12 fresh Chromium demos, measures one
+  process-wide limiter, restarts the revision, and repeats every data-plane
+  check using the original keys.
+- Replaced “unlimited” with the tested paid boundary and “unguessable” with the
+  observed 64-character key property. The privacy retention text now points to
+  the tested durable-storage and deletion behaviours.
+- Replaced “Three stops,” “Keep every quarter on the rail,” and “The rail ends
+  here” with direct section labels. The product name and original visual art
+  remain unchanged.
+- Gave the inline landing Terms link and both legal-page email links a minimum
+  44 by 44 CSS-pixel target. A 390 px Playwright regression measures all three.
+- Added the `production-topology` claim and exact regression. The aggregate
+  test command now includes it.
 
-## Verification summary
+## Local verification
 
-- All 19 declared claims: PASS locally after locked install.
-- `npm test`: PASS (4 Rust, 3 runtime/persistence scripts, 17 Chromium).
-- `npm audit --audit-level=low`: PASS, 0 vulnerabilities.
+- Clean `npm ci`: 34 packages, 0 vulnerabilities.
+- Every command in `.factory/claims.json`: **20/20 passed exactly as listed**.
+- `npm test`: PASS — TypeScript, production Vite build, 4 Rust tests, runtime
+  defaults, restart durability, three-process shared storage, deployment
+  topology, and 18 Chromium tests.
 - `cargo fmt --check`: PASS.
 - `cargo clippy --all-targets --all-features -- -D warnings`: PASS.
 - `cargo build --release --locked`: PASS.
-- `npm run build`: PASS; `dist/` produced.
-- Live topology check: **FAIL** (`max=3`, no mount/VFS).
-- Live applicable Playwright: **FAIL**, 1/15 passed.
-- Final fresh-browser demo: **FAIL**, 0/12 loaded.
-- Live rate limit: 409/600 returned 429 with `Retry-After: 1`; 191 requests
-  reached the three independent limiters during the 2.259-second burst.
-- Factory URL smoke: PASS on landing.
-- Axe serious/critical: 0 across all routes and the error state.
-- Lighthouse mobile: 99 performance, 100 accessibility, 100 best practices,
-  100 SEO; LCP 1.905 s, TBT 5 ms, CLS 0, transfer 180,628 bytes.
+- `npm audit --audit-level=low`: PASS, 0 vulnerabilities.
+- `npm run build`: PASS; `dist/` contains 30,080 bytes JS (10,250 gzip), 16,704
+  bytes CSS (4,753 gzip), 102,036 bytes of local fonts, and a 61,374-byte mobile
+  hero.
+- Factory URL smoke on desktop and 390 px mobile: PASS; title, `en-GB`, one
+  `h1`, `main`, image alternatives, labelled controls, and zero console errors.
+  Evidence is in `.factory/evidence/repair-3/`.
+- Playwright Axe checks: zero serious or critical findings across `/`, `/demo`,
+  `/app`, `/privacy`, `/terms`, and the real 404 route.
+- Keyboard: skip link first, Enter activation, dialog initial focus, Escape
+  close with focus return, and visible 3 px focus treatment all pass.
+- Reduced motion, 390 px layout, touch targets, same-origin core requests,
+  response security headers, cache policy, and real 404 response all pass.
+- Local Docker/Podman image build was not available in this worker. The same
+  Dockerfile passed the Azure ACR build used for deployment.
 
-Docker/Podman were unavailable, so a second local image build was not run. The
-live ACR image tag, build SHA, and asset hashes establish candidate identity.
-No production restart was performed because that would mutate live state.
+## Live verification
 
-## Next action
+- Azure image: `sociobotregistry.azurecr.io/sf-mtd-evidence-rail:e302ce8dcc0b`.
+- Ready revision: `sf-mtd-evidence-rail--0000017`; one active revision and one
+  ready replica.
+- Before restart: private 100/100 reads, demo 100/100 reads, and 12/12 fresh
+  Chromium demo contexts passed.
+- Shared limiter sample: 102/240 requests returned 429 with `Retry-After: 1`;
+  138 accepted responses stayed within the one-process elapsed-time bound of
+  185. A second sample returned 96/240 429 responses within the same bound.
+- After a real Azure revision restart: the same private and demo keys each
+  returned 100/100 successful reads, and 12/12 fresh demos passed again.
+- Post-restart limiter sample: 92/240 requests returned 429 with
+  `Retry-After: 1`; 148 accepted responses stayed within the one-process bound
+  of 186.
+- Live applicable Playwright suite: **16/16 passed**, including the complete
+  product flow, 390 px mobile, keyboard, Axe, privacy, response caching, and
+  copy/touch regressions. Paid fixture-only tests were excluded from live.
+- Factory live URL smoke: PASS with no browser console errors.
+- Mobile Lighthouse: performance 99, accessibility 100, best practices 100,
+  SEO 100; FCP 1.1 s, LCP 1.9 s, TBT 10 ms, CLS 0, transfer 180,647 bytes.
+  Evidence is in `.factory/evidence/repair-3/lighthouse.json` and
+  `.factory/evidence/repair-3-live/`.
+- Hosted checkout claim: PASS; Sociobot returned the expected redirect. No
+  purchase was made.
 
-Restore and preserve the one-replica Azure Files topology, then repeat the full
-live verification after concurrency and a controlled revision restart. Do not
-release until all fresh demo/private workspace reads survive both.
+## Applicability and known gaps
 
-No product code was changed by this verifier.
+- This product makes no offline claim and is not a PWA, so offline/update
+  lifecycle checks do not apply. Its offline UI error state remains covered.
+- Package/consumer checks do not apply to this web-with-backend artifact.
+- There is no runtime AI feature or user identity/sign-in flow, so AI gateway
+  and live identity-provider checks do not apply.
+- No release-blocking product gap remains. Infrastructure and billing
+  registration remain factory-owned as required by `AGENTS.md`.
+
+## Run and verify
+
+```sh
+npm ci
+npm test
+cargo fmt --check
+cargo clippy --all-targets --all-features -- -D warnings
+cargo build --release --locked
+npm audit --audit-level=low
+bash scripts/deploy.sh
+EXPECTED_SHA="$(git rev-parse HEAD)" npm run verify:live-topology -- --restart
+```

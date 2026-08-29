@@ -289,19 +289,29 @@
       "degree": 16
     },
     {
-      "id": "src_routes_import_records",
-      "label": "import_records()",
+      "id": "frontend_src_main_bindapp",
+      "label": "bindApp()",
       "degree": 15
     },
     {
-      "id": "frontend_src_main_bindapp",
-      "label": "bindApp()",
+      "id": "src_routes_import_records",
+      "label": "import_records()",
       "degree": 15
     },
     {
       "id": "src_routes_add_evidence",
       "label": "add_evidence()",
       "degree": 14
+    },
+    {
+      "id": "frontend_src_main_apppage",
+      "label": "appPage()",
+      "degree": 13
+    },
+    {
+      "id": "src_routes_create_record",
+      "label": "create_record()",
+      "degree": 13
     },
     {
       "id": "src_routes_remove_evidence",
@@ -314,55 +324,12 @@
       "degree": 13
     },
     {
-      "id": "src_routes_create_record",
-      "label": "create_record()",
-      "degree": 13
-    },
-    {
-      "id": "frontend_src_main_apppage",
-      "label": "appPage()",
-      "degree": 13
-    },
-    {
       "id": "package_scripts",
       "label": "scripts",
       "degree": 13
     }
   ],
   "surprises": [
-    {
-      "source": "enforce_quarter_limits()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "cross-file semantic connection"
-    },
-    {
-      "source": "has_paid_access()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "cross-file semantic connection"
-    },
-    {
-      "source": "import_records()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "cross-file semantic connection"
-    },
     {
       "source": "add_evidence()",
       "target": "AppState",
@@ -376,6 +343,39 @@
     },
     {
       "source": "create_demo()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "create_record()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "create_workspace()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "delete_record()",
       "target": "AppState",
       "source_files": [
         "src/routes.rs",

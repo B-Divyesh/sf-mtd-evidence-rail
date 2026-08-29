@@ -168,10 +168,10 @@
     "semantic_hash": "9ee6980f8036b833ec451f8aa9dde78b"
   },
   "scripts/verify-live-topology.sh": {
-    "mtime": 1787965082.0062094,
-    "seen": 1787965786.4910235,
-    "ast_hash": "101b3ffef6cf41347710981c9930bf5e",
-    "semantic_hash": "101b3ffef6cf41347710981c9930bf5e"
+    "mtime": 1787966747.2226884,
+    "seen": 1787967128.1071904,
+    "ast_hash": "705d7abefc01b091691956d3f01b3d34",
+    "semantic_hash": "705d7abefc01b091691956d3f01b3d34"
   },
   ".factory/evidence/verification-3/lighthouse.json": {
     "mtime": 1787964686.997404,
@@ -228,10 +228,10 @@
     "semantic_hash": "a5391d9573ea22fe53b055b9e3c31d56"
   },
   ".factory/evidence/repair-3/verify.json": {
-    "mtime": 1787965730.5940716,
-    "seen": 1787965786.4893432,
-    "ast_hash": "a3455be7366f242b0e626118eec5f6ef",
-    "semantic_hash": "a3455be7366f242b0e626118eec5f6ef"
+    "mtime": 1787965803.744556,
+    "seen": 1787967128.1049979,
+    "ast_hash": "10d1a5cf80fe992a570673a43ece78b1",
+    "semantic_hash": "10d1a5cf80fe992a570673a43ece78b1"
   },
   "scripts/render-production-topology.sh": {
     "mtime": 1787964834.6061394,
@@ -244,5 +244,17 @@
     "seen": 1787965786.4907844,
     "ast_hash": "36f4446f14f1b0d1afc805bbce558686",
     "semantic_hash": "36f4446f14f1b0d1afc805bbce558686"
+  },
+  ".factory/evidence/repair-3-live/verify.json": {
+    "mtime": 1787967047.8846025,
+    "seen": 1787967128.1049933,
+    "ast_hash": "2fe1704b7cfe26ed90a4db8297b1d138",
+    "semantic_hash": "2fe1704b7cfe26ed90a4db8297b1d138"
+  },
+  ".factory/evidence/repair-3/lighthouse.json": {
+    "mtime": 1787967015.6235204,
+    "seen": 1787967128.1049953,
+    "ast_hash": "a2886b8a7a92db110c439e78ab8958f6",
+    "semantic_hash": "a2886b8a7a92db110c439e78ab8958f6"
   }
 }
