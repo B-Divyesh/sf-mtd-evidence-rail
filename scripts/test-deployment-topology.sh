@@ -53,4 +53,26 @@ if grep -F '/opt/fleet/lib/deploy-container.sh' "$repo_dir/scripts/deploy.sh" >/
   exit 1
 fi
 
-echo '@claim:production-topology PASS — an unsafe three-replica payload renders the requested image as one replica with the canonical mtd-data Azure Files volume at /data and the SMB-safe SQLite VFS'
+# The verifier's failed candidate was rolled out after the product deployer by
+# the generic factory template. It supplied only PORT, left /data inside the
+# container layer, and still became healthy. The binary must now refuse that
+# exact Azure runtime boundary, so a later unsafe rollout cannot take traffic.
+if [ ! -x "$repo_dir/target/debug/mtd-evidence-rail" ]; then
+  cargo build --quiet --locked --manifest-path "$repo_dir/Cargo.toml"
+fi
+unsafe_log="$tmp_dir/unsafe-runtime.log"
+set +e
+env -i \
+  CONTAINER_APP_NAME=sf-mtd-evidence-rail \
+  CONTAINER_APP_REVISION=sf-mtd-evidence-rail--unsafe \
+  CONTAINER_APP_REPLICA_NAME=unsafe-replica \
+  DATA_DIR=/data \
+  PORT=8299 \
+  STATIC_DIR="$repo_dir/dist" \
+  "$repo_dir/target/debug/mtd-evidence-rail" >"$unsafe_log" 2>&1
+unsafe_status=$?
+set -e
+test "$unsafe_status" -eq 78
+grep -F 'Azure Container Apps has no dedicated /data mount; refusing container-local SQLite' "$unsafe_log" >/dev/null
+
+echo '@claim:production-topology PASS — an unsafe three-replica payload renders as one durable replica, and an Azure revision without the /data mount exits before serving traffic'

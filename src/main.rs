@@ -10,7 +10,13 @@ use axum::{
     Router,
 };
 use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
-use std::{env, net::SocketAddr, path::PathBuf, sync::Arc, time::Duration};
+use std::{
+    env,
+    net::SocketAddr,
+    path::{Path, PathBuf},
+    sync::Arc,
+    time::Duration,
+};
 use tokio::{net::TcpListener, signal};
 use tower_governor::{
     governor::GovernorConfigBuilder, key_extractor::SmartIpKeyExtractor, GovernorLayer,
@@ -44,6 +50,10 @@ async fn main() {
         .and_then(|v| v.parse().ok())
         .unwrap_or(8080);
     let data_dir = env::var("DATA_DIR").unwrap_or_else(|_| "data".into());
+    if let Err(error) = validate_runtime_storage(&data_dir) {
+        tracing::error!(%error, "unsafe runtime configuration");
+        std::process::exit(78);
+    }
     std::fs::create_dir_all(&data_dir).expect("create data directory");
     let db_path = PathBuf::from(&data_dir).join("evidence-rail.sqlite");
     let db_url = format!("sqlite://{}?mode=rwc", db_path.display());
@@ -87,6 +97,35 @@ async fn main() {
     .with_graceful_shutdown(shutdown_signal())
     .await
     .expect("serve application");
+}
+
+fn validate_runtime_storage(data_dir: &str) -> Result<(), String> {
+    if env::var_os("CONTAINER_APP_NAME").is_none() {
+        return Ok(());
+    }
+    let mountinfo = std::fs::read_to_string("/proc/self/mountinfo")
+        .map_err(|error| format!("could not inspect mounted storage: {error}"))?;
+    validate_azure_storage_contract(data_dir, &mountinfo)
+}
+
+fn validate_azure_storage_contract(data_dir: &str, mountinfo: &str) -> Result<(), String> {
+    if Path::new(data_dir) != Path::new("/data") {
+        return Err(format!(
+            "Azure Container Apps must use DATA_DIR=/data, not {data_dir}"
+        ));
+    }
+    let has_data_mount = mountinfo.lines().any(|line| {
+        line.split_ascii_whitespace()
+            .nth(4)
+            .is_some_and(|mount_point| mount_point == "/data")
+    });
+    if !has_data_mount {
+        return Err(
+            "Azure Container Apps has no dedicated /data mount; refusing container-local SQLite"
+                .into(),
+        );
+    }
+    Ok(())
 }
 
 pub fn app(state: AppState) -> Router {
@@ -253,6 +292,22 @@ mod tests {
             response.headers().get("x-content-type-options").unwrap(),
             "nosniff"
         );
+    }
+
+    #[test]
+    fn azure_runtime_rejects_the_generic_container_local_filesystem() {
+        let mountinfo = "29 23 0:25 / / rw,relatime - overlay overlay rw\n";
+        let error = validate_azure_storage_contract("/data", mountinfo).unwrap_err();
+        assert!(error.contains("no dedicated /data mount"));
+    }
+
+    #[test]
+    fn azure_runtime_accepts_the_durable_data_mount() {
+        let mountinfo = concat!(
+            "29 23 0:25 / / rw,relatime - overlay overlay rw\n",
+            "42 29 0:40 / /data rw,relatime - cifs //account/share rw\n"
+        );
+        validate_azure_storage_contract("/data", mountinfo).unwrap();
     }
 
     #[tokio::test]
