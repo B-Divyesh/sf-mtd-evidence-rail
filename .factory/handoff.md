@@ -39,21 +39,40 @@ proof part of the deploy gate.
 - Build output: JS 30.36 kB raw / 10.31 kB gzip; CSS 16.96 kB raw / 4.80 kB
   gzip. There is no package consumer or service-worker update path for this
   container-served web application.
+- Detached clean-clone checkout of commit `1f3c843a2d99431266eef439b97c216743e3c9bf`:
+  `npm ci`, `npm test`, and every distinct command listed in
+  `.factory/claims.json` passed. That includes the hosted checkout contract,
+  all claim-tagged browser tests, runtime defaults, durable/shared storage,
+  topology, and the Rust rate-limit test.
 
 ## Deploy and live verification
 
-Deploy with `scripts/deploy.sh`. It builds the root multi-stage Dockerfile,
-applies the source-owned single-replica Azure Files topology, and invokes:
+`scripts/deploy.sh` deployed commit
+`1f3c843a2d99431266eef439b97c216743e3c9bf` to
+<https://mtd-evidence-rail.sociobot.in>. It built the root multi-stage
+Dockerfile, applied the source-owned single-replica Azure Files topology, and
+completed the restart gate:
 
 ```sh
-EXPECTED_SHA=<deployed commit> BASE_URL=https://mtd-evidence-rail.sociobot.in \
+EXPECTED_SHA=1f3c843a2d99431266eef439b97c216743e3c9bf BASE_URL=https://mtd-evidence-rail.sociobot.in \
   npm run verify:live-topology -- --restart
 ```
 
-That gate validates live identity, source/live topology alignment, shared
-storage before and after restart, confirmed deletion, browser demo isolation,
-same-origin privacy behaviour, and the per-client rate limit. The final live
-output is recorded in the deployment job before release.
+The gate passed: `/health` reported that exact SHA; the latest revision is in
+Single mode with min/max replicas `1/1`, one running replica, `mtd-data` Azure
+Files mounted at `/data`, and `SQLITE_VFS=unix-dotfile`. It recorded 100/100
+fresh private reads and 100/100 demo reads, enforced unconfirmed deletion as
+400, then confirmed deletion as 204 followed by 20/20 fresh 404 reads before
+and after restart. The browser demo smoke and same-origin request check passed.
+The focused live limiter rerun recorded 93/240 429 responses; 147 accepted
+requests were within the one-limiter bound of 173 over 6,359 ms and every 429
+included `Retry-After: 1`.
+
+`verify-url.sh` on the live landing page passed: HTTP 200, 592 ms load, no
+console errors, title/lang, one h1/main, image alt text, and labelled buttons.
+A Playwright Axe scan of live `/demo` at 390px found zero violations. (The
+standalone Axe CLI could not locate a system Chrome binary in this worker;
+Playwright's installed Chromium was used instead.)
 
 ## Known gaps
 
