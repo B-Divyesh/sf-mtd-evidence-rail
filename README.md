@@ -2,9 +2,9 @@
 
 Link each expense to evidence before your quarterly update.
 
-MTD Evidence Rail is for UK sole traders, tutors, and small club operators. It
-keeps transactions, receipts, and invoices together without adding a full
-accounting suite. Use it to organise evidence before your own filing.
+MTD Evidence Rail is for UK sole traders, tutors, and small club operators
+preparing an MTD quarterly update. It keeps transactions, receipts, and
+invoices together in a dated quarter view.
 
 ## What it does
 
@@ -19,6 +19,9 @@ A workspace needs no account. Its 64-character key stays in the browser. The
 free plan accepts 25 transactions per quarter. A £15/month subscription accepts
 more than 25. Checkout and subscription checks use the Sociobot billing API and
 open a Dodo-hosted checkout.
+
+Copy the workspace access key to open the same records on another device.
+Anyone with this key can change the records, so keep it private.
 
 ## Try the isolated demo
 
@@ -62,12 +65,13 @@ and runs Playwright in Chromium. Claim tests are listed in
 
 ## Data and security
 
-Records and evidence are stored in SQLite under `DATA_DIR`. Production uses one
-app instance. Its database is stored on the mounted `/data` volume. A
-64-character workspace key scopes every API request. Demo keys use a separate
-browser and database namespace. API endpoints enforce per-IP burst limits and
-respect the first `X-Forwarded-For` hop. Security headers include a restrictive
-CSP.
+Workspace data remains available after a service restart. Production uses one
+app instance with shared durable storage. Every private API request must include
+the workspace's 64-character key. Demo keys use a separate browser and database
+namespace.
+
+The API temporarily blocks a client that sends too many requests. Behind a
+proxy, it identifies the client from the first forwarded IP address.
 
 There are no advertising trackers or third-party runtime scripts. The server
 enforces the free quarter limit even if browser storage is changed. See
@@ -76,9 +80,9 @@ enforces the free quarter limit even if browser storage is changed. See
 ## Deploy
 
 The root `Dockerfile` builds the Vite frontend and Rust server in separate
-stages. The runtime image runs as a non-root user. It reads `PORT` and serves
-`/health` with the supplied `BUILD_SHA`. The factory owns product registration
-and billing configuration. Deployment details are recorded in the handoff.
+stages. Run `scripts/deploy.sh` through the factory work order. The factory owns
+product registration and billing configuration. Deployment details are
+recorded in the handoff.
 
 ## Licence
 

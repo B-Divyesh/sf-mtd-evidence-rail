@@ -70,7 +70,13 @@ fn workspace(headers: &HeaderMap) -> ApiResult<String> {
     headers
         .get("x-workspace-key")
         .and_then(|v| v.to_str().ok())
-        .filter(|v| v.len() >= 32)
+        .filter(|v| {
+            let private = v.len() == 64 && v.bytes().all(|byte| byte.is_ascii_hexdigit());
+            let demo = v
+                .strip_prefix("demo:")
+                .is_some_and(|key| key.len() == 64 && key.bytes().all(|byte| byte.is_ascii_hexdigit()));
+            private || demo
+        })
         .map(ToString::to_string)
         .ok_or_else(|| {
             error(
@@ -588,6 +594,7 @@ pub async fn delete_workspace(
     headers: HeaderMap,
 ) -> ApiResult<StatusCode> {
     let workspace_id = workspace(&headers)?;
+    check_workspace(&state.db, &workspace_id).await?;
     if headers
         .get("x-confirm-delete")
         .and_then(|v| v.to_str().ok())

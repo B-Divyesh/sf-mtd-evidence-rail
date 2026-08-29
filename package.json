@@ -14,6 +14,7 @@
     "test:shared-storage": "bash scripts/test-shared-storage.sh",
     "test:deployment-topology": "bash scripts/test-deployment-topology.sh",
     "test:live-checkout": "node scripts/test-live-checkout.mjs",
+    "test:live-workspace-consistency": "bash scripts/test-live-workspace-consistency.sh",
     "verify:live-topology": "bash scripts/verify-live-topology.sh",
     "test:e2e": "playwright test",
     "assets": "node scripts/optimise-assets.mjs"

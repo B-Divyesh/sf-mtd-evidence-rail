@@ -14,6 +14,20 @@
     "sandbox": "fresh browser context; start /app without credentials; inspect local and demo storage namespaces"
   },
   {
+    "id": "workspace-key-recovery",
+    "claim": "A private workspace can be opened on another device with its 64-character access key",
+    "where": "landing recovery action, workspace settings, privacy page, README",
+    "test": "npm test -- --grep @claim:workspace-key-recovery",
+    "sandbox": "fresh private workspace with a saved record; copy its key, clear browser storage, restore the key from the landing page, and assert the same record loads"
+  },
+  {
+    "id": "workspace-key-auth",
+    "claim": "Every private API request requires a valid workspace access key",
+    "where": "access-key warning and README",
+    "test": "npm test -- --grep @claim:workspace-key-auth",
+    "sandbox": "fresh private workspace; exercise every protected API method with valid, missing, and unknown 64-character keys; assert invalid requests return 401 or 404"
+  },
+  {
     "id": "quarter-capture",
     "claim": "Income and expenses appear in their dated MTD quarter",
     "where": "landing preview, app, README",
@@ -54,6 +68,13 @@
     "where": "landing preview, app, README",
     "test": "npm test -- --grep @claim:missing-review",
     "sandbox": "demo data; enable missing filter; assert exactly two missing rows and no linked row"
+  },
+  {
+    "id": "demo-sample",
+    "claim": "The sample has six transactions, four linked files, and two missing items",
+    "where": "demo, README, demo documentation",
+    "test": "npm test -- --grep @claim:demo-sample",
+    "sandbox": "fresh browser context; open /?demo=1 and inspect the API data, then reset and assert the same three counts again"
   },
   {
     "id": "evidence-pack",
@@ -106,8 +127,8 @@
   },
   {
     "id": "runtime-defaults",
-    "claim": "The container service starts with no required environment variables beyond PORT",
-    "where": "README, Dockerfile contract",
+    "claim": "The service starts with no required environment variables beyond PORT",
+    "where": "README, runtime contract",
     "test": "npm run build && cargo build && npm run test:runtime-defaults",
     "sandbox": "scrubbed process environment containing only PORT; assert /health returns status ok"
   },
@@ -131,6 +152,13 @@
     "where": "README and deployment handoff",
     "test": "npm run test:deployment-topology",
     "sandbox": "render the production topology over the verifier's unsafe three-replica shape; assert one replica, one container, Azure Files at /data, and unix-dotfile"
+  },
+  {
+    "id": "live-workspace-consistency",
+    "claim": "New private and demo workspaces remain available across live service requests",
+    "where": "demo banner, README, deployment handoff",
+    "test": "npm run test:live-workspace-consistency",
+    "sandbox": "public deployed service; create fresh private and demo workspaces, then require 100/100 fresh-connection reads for each key"
   },
   {
     "id": "api-rate-limit",

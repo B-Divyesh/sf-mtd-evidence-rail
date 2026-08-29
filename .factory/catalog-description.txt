@@ -1,1 +1,1 @@
-Link each expense to evidence before your quarterly update.
+Link transactions to evidence and export a quarter pack before your MTD update.

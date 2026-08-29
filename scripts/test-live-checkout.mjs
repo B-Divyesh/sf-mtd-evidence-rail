@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict';
 
+// @claim:hosted-checkout
+
 const productSlug = 'mtd-evidence-rail';
 const productId = 'pdt_0NmPnl9rqkKtKbVXh6baV';
 const endpoint = `https://api.sociobot.in/api/v1/products/${productSlug}/checkout`;

@@ -256,6 +256,7 @@ mod tests {
     }
 
     #[tokio::test]
+    // @claim:api-rate-limit
     async fn api_rate_limit_returns_retry_after() {
         let service = test_app().await;
         for hop in 0..40 {
