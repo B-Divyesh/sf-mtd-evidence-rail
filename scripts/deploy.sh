@@ -44,7 +44,7 @@ wait_for_topology() {
     ready=$(printf '%s' "$resource" | jq -r .properties.latestReadyRevisionName)
     deployed_image=$(printf '%s' "$resource" | jq -r .properties.template.containers[0].image)
     mount=$(printf '%s' "$resource" | jq -r --arg volume_name "$volume_name" '[.properties.template.containers[0].volumeMounts[]? | select(.volumeName == $volume_name)][0].mountPath // ""')
-    volume=$(printf '%s' "$resource" | jq -r --arg volume_name "$volume_name" '[.properties.template.volumes[]? | select(.name == $volume_name)][0] | "\(.storageType // \"\"):\(.storageName // \"\")"')
+    volume=$(printf '%s' "$resource" | jq -r --arg volume_name "$volume_name" '[.properties.template.volumes[]? | select(.name == $volume_name)][0] | "\(.storageType // ""):\(.storageName // "")"')
     vfs=$(printf '%s' "$resource" | jq -r '[.properties.template.containers[0].env[]? | select(.name == "SQLITE_VFS")][0].value // ""')
     minimum=$(printf '%s' "$resource" | jq -r .properties.template.scale.minReplicas)
     maximum=$(printf '%s' "$resource" | jq -r .properties.template.scale.maxReplicas)
