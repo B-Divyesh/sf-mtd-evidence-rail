@@ -101,6 +101,84 @@
       "vec"
     ],
     "2": [
+      "factory_evidence_verification_5_live_index_cimka9hu",
+      "factory_evidence_verification_5_live_index_cimka9hu_a",
+      "factory_evidence_verification_5_live_index_cimka9hu_ae",
+      "factory_evidence_verification_5_live_index_cimka9hu_ce",
+      "factory_evidence_verification_5_live_index_cimka9hu_d",
+      "factory_evidence_verification_5_live_index_cimka9hu_de",
+      "factory_evidence_verification_5_live_index_cimka9hu_e",
+      "factory_evidence_verification_5_live_index_cimka9hu_ee",
+      "factory_evidence_verification_5_live_index_cimka9hu_fe",
+      "factory_evidence_verification_5_live_index_cimka9hu_g",
+      "factory_evidence_verification_5_live_index_cimka9hu_h",
+      "factory_evidence_verification_5_live_index_cimka9hu_he",
+      "factory_evidence_verification_5_live_index_cimka9hu_ie",
+      "factory_evidence_verification_5_live_index_cimka9hu_j",
+      "factory_evidence_verification_5_live_index_cimka9hu_k",
+      "factory_evidence_verification_5_live_index_cimka9hu_l",
+      "factory_evidence_verification_5_live_index_cimka9hu_le",
+      "factory_evidence_verification_5_live_index_cimka9hu_m",
+      "factory_evidence_verification_5_live_index_cimka9hu_me",
+      "factory_evidence_verification_5_live_index_cimka9hu_n",
+      "factory_evidence_verification_5_live_index_cimka9hu_ne",
+      "factory_evidence_verification_5_live_index_cimka9hu_o",
+      "factory_evidence_verification_5_live_index_cimka9hu_oe",
+      "factory_evidence_verification_5_live_index_cimka9hu_p",
+      "factory_evidence_verification_5_live_index_cimka9hu_pe",
+      "factory_evidence_verification_5_live_index_cimka9hu_q",
+      "factory_evidence_verification_5_live_index_cimka9hu_r",
+      "factory_evidence_verification_5_live_index_cimka9hu_re",
+      "factory_evidence_verification_5_live_index_cimka9hu_se",
+      "factory_evidence_verification_5_live_index_cimka9hu_t",
+      "factory_evidence_verification_5_live_index_cimka9hu_te",
+      "factory_evidence_verification_5_live_index_cimka9hu_u",
+      "factory_evidence_verification_5_live_index_cimka9hu_ue",
+      "factory_evidence_verification_5_live_index_cimka9hu_v",
+      "factory_evidence_verification_5_live_index_cimka9hu_ve",
+      "factory_evidence_verification_5_live_index_cimka9hu_w",
+      "factory_evidence_verification_5_live_index_cimka9hu_x",
+      "factory_evidence_verification_5_live_index_cimka9hu_y",
+      "factory_evidence_verification_5_live_index_cimka9hu_ye",
+      "factory_evidence_verification_5_live_index_cimka9hu_z"
+    ],
+    "3": [
+      "axe_core_playwright",
+      "package",
+      "package_devdependencies",
+      "package_devdependencies_axe_core_playwright",
+      "package_devdependencies_playwright_test",
+      "package_devdependencies_sharp",
+      "package_devdependencies_types_node",
+      "package_devdependencies_typescript",
+      "package_devdependencies_vite",
+      "package_name",
+      "package_overrides",
+      "package_overrides_playwright_core",
+      "package_private",
+      "package_scripts",
+      "package_scripts_assets",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_start",
+      "package_scripts_test",
+      "package_scripts_test_deployment_topology",
+      "package_scripts_test_durable_storage",
+      "package_scripts_test_e2e",
+      "package_scripts_test_live_checkout",
+      "package_scripts_test_runtime_defaults",
+      "package_scripts_test_shared_storage",
+      "package_scripts_typecheck",
+      "package_scripts_verify_live_topology",
+      "package_type",
+      "package_version",
+      "playwright_test",
+      "sharp",
+      "types_node",
+      "typescript",
+      "vite"
+    ],
+    "4": [
       "arc",
       "client",
       "mutex",
@@ -125,30 +203,7 @@
       "src_main_unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated",
       "src_main_workspace_deletion_removes_records_evidence_and_audit"
     ],
-    "3": [
-      "package",
-      "package_name",
-      "package_overrides",
-      "package_overrides_playwright_core",
-      "package_private",
-      "package_scripts",
-      "package_scripts_assets",
-      "package_scripts_build",
-      "package_scripts_dev",
-      "package_scripts_start",
-      "package_scripts_test",
-      "package_scripts_test_deployment_topology",
-      "package_scripts_test_durable_storage",
-      "package_scripts_test_e2e",
-      "package_scripts_test_live_checkout",
-      "package_scripts_test_runtime_defaults",
-      "package_scripts_test_shared_storage",
-      "package_scripts_typecheck",
-      "package_scripts_verify_live_topology",
-      "package_type",
-      "package_version"
-    ],
-    "4": [
+    "5": [
       "ref_dom",
       "ref_dom_iterable",
       "ref_es2022",
@@ -170,22 +225,16 @@
       "tsconfig_compileroptions_usedefineforclassfields",
       "tsconfig_include"
     ],
-    "5": [
-      "axe_core_playwright",
-      "package_devdependencies",
-      "package_devdependencies_axe_core_playwright",
-      "package_devdependencies_playwright_test",
-      "package_devdependencies_sharp",
-      "package_devdependencies_types_node",
-      "package_devdependencies_typescript",
-      "package_devdependencies_vite",
-      "playwright_test",
-      "sharp",
-      "types_node",
-      "typescript",
-      "vite"
-    ],
     "6": [
+      "factory_evidence_verification_5_live_api_audit",
+      "factory_evidence_verification_5_live_api_audit_body",
+      "factory_evidence_verification_5_live_api_audit_headersfor",
+      "factory_evidence_verification_5_live_api_audit_invalidcases",
+      "factory_evidence_verification_5_live_api_audit_output",
+      "factory_evidence_verification_5_live_api_audit_untilowned",
+      "factory_evidence_verification_5_live_api_audit_validcases"
+    ],
+    "7": [
       "scripts_test_shared_storage",
       "scripts_test_shared_storage_assert_reads",
       "scripts_test_shared_storage_cleanup",
@@ -194,7 +243,7 @@
       "scripts_test_shared_storage_stop_instances",
       "scripts_test_shared_storage_workspace_id"
     ],
-    "7": [
+    "8": [
       "scripts_verify_live_topology",
       "scripts_verify_live_topology_assert_control_plane",
       "scripts_verify_live_topology_assert_reads",
@@ -203,95 +252,103 @@
       "scripts_verify_live_topology_wait_for_health",
       "scripts_verify_live_topology_workspace_id"
     ],
-    "8": [
+    "9": [
       "scripts_deploy",
       "scripts_deploy_patch_app",
       "scripts_deploy_sh__entry",
       "scripts_deploy_wait_for_app"
     ],
-    "9": [
+    "10": [
       "scripts_test_durable_storage",
       "scripts_test_durable_storage_cleanup",
       "scripts_test_durable_storage_sh__entry",
       "scripts_test_durable_storage_start_server"
     ],
-    "10": [
+    "11": [
       "scripts_test_runtime_defaults",
       "scripts_test_runtime_defaults_cleanup",
       "scripts_test_runtime_defaults_sh__entry"
     ],
-    "11": [
+    "12": [
+      "factory_evidence_verification_5_live_audit",
+      "factory_evidence_verification_5_live_audit_report"
+    ],
+    "13": [
+      "factory_evidence_verification_5_live_browser_observation",
+      "factory_evidence_verification_5_live_browser_observation_out"
+    ],
+    "14": [
       "scripts_optimise_assets",
       "scripts_optimise_assets_source"
     ],
-    "12": [
+    "15": [
       "scripts_render_production_topology",
       "scripts_render_production_topology_sh__entry"
     ],
-    "13": [
+    "16": [
       "scripts_test_deployment_topology",
       "scripts_test_deployment_topology_sh__entry"
     ],
-    "14": [
+    "17": [
       "tests_product_spec",
       "tests_product_spec_openready"
     ],
-    "15": [
+    "18": [
       "pkg_mtd_evidence_rail"
     ],
-    "16": [
+    "19": [
       "playwright_config"
     ],
-    "17": [
+    "20": [
       "scripts_license_fixture"
     ],
-    "18": [
+    "21": [
       "scripts_live_browser_smoke"
     ],
-    "19": [
+    "22": [
       "scripts_test_live_checkout_checkouturl"
     ],
-    "20": [
+    "23": [
       "scripts_test_live_checkout_contractpage"
     ],
-    "21": [
+    "24": [
       "scripts_test_live_checkout_hosted"
     ],
-    "22": [
+    "25": [
       "scripts_test_live_checkout_includes"
     ],
-    "23": [
+    "26": [
       "src_routes_rs_intoresponse"
     ],
-    "24": [
+    "27": [
       "src_routes_rs_response"
     ],
-    "25": [
+    "28": [
       "src_routes_rs_sqlitepool"
     ],
-    "26": [
+    "29": [
       "src_routes_rs_state"
     ],
-    "27": [
+    "30": [
       "src_routes_rs_string"
     ],
-    "28": [
+    "31": [
       "vite_config"
     ]
   },
   "cohesion": {
     "0": 0.12244897959183673,
     "1": 0.17206290471785385,
-    "2": 0.1225296442687747,
-    "3": 0.09523809523809523,
-    "4": 0.1,
-    "5": 0.15384615384615385,
-    "6": 0.42857142857142855,
-    "7": 0.47619047619047616,
-    "8": 0.8333333333333334,
-    "9": 0.6666666666666666,
+    "2": 0.13974358974358975,
+    "3": 0.058823529411764705,
+    "4": 0.1225296442687747,
+    "5": 0.1,
+    "6": 0.2857142857142857,
+    "7": 0.42857142857142855,
+    "8": 0.47619047619047616,
+    "9": 0.8333333333333334,
     "10": 0.6666666666666666,
-    "11": 1.0,
+    "11": 0.6666666666666666,
     "12": 1.0,
     "13": 1.0,
     "14": 1.0,
@@ -308,7 +365,10 @@
     "25": 1.0,
     "26": 1.0,
     "27": 1.0,
-    "28": 1.0
+    "28": 1.0,
+    "29": 1.0,
+    "30": 1.0,
+    "31": 1.0
   },
   "gods": [
     {
@@ -327,23 +387,18 @@
       "degree": 15
     },
     {
-      "id": "package_scripts",
-      "label": "scripts",
-      "degree": 14
-    },
-    {
       "id": "src_routes_add_evidence",
       "label": "add_evidence()",
       "degree": 14
     },
     {
-      "id": "frontend_src_main_apppage",
-      "label": "appPage()",
-      "degree": 13
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 14
     },
     {
-      "id": "src_routes_workspace",
-      "label": "workspace()",
+      "id": "frontend_src_main_apppage",
+      "label": "appPage()",
       "degree": 13
     },
     {
@@ -357,8 +412,13 @@
       "degree": 13
     },
     {
-      "id": "tsconfig_compileroptions",
-      "label": "compilerOptions",
+      "id": "src_routes_workspace",
+      "label": "workspace()",
+      "degree": 13
+    },
+    {
+      "id": "src_routes_check_workspace",
+      "label": "check_workspace()",
       "degree": 12
     }
   ],
