@@ -72,9 +72,9 @@ fn workspace(headers: &HeaderMap) -> ApiResult<String> {
         .and_then(|v| v.to_str().ok())
         .filter(|v| {
             let private = v.len() == 64 && v.bytes().all(|byte| byte.is_ascii_hexdigit());
-            let demo = v
-                .strip_prefix("demo:")
-                .is_some_and(|key| key.len() == 64 && key.bytes().all(|byte| byte.is_ascii_hexdigit()));
+            let demo = v.strip_prefix("demo:").is_some_and(|key| {
+                key.len() == 64 && key.bytes().all(|byte| byte.is_ascii_hexdigit())
+            });
             private || demo
         })
         .map(ToString::to_string)

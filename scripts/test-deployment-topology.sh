@@ -7,12 +7,13 @@ trap 'rm -rf "$tmp_dir"' EXIT
 
 jq -n '{properties:{configuration:{activeRevisionsMode:"Single"},template:{containers:[{name:"app",image:"example.invalid/app:test",env:[{name:"PORT",value:"8080"}],resources:{cpu:0.5,memory:"1Gi"}}],scale:{minReplicas:1,maxReplicas:3},volumes:null}}}' > "$tmp_dir/unsafe.json"
 
-"$repo_dir/scripts/render-production-topology.sh" "$tmp_dir/unsafe.json" > "$tmp_dir/patch.json"
+"$repo_dir/scripts/render-production-topology.sh" --image 'registry.invalid/mtd-evidence-rail:repair-test' "$tmp_dir/unsafe.json" > "$tmp_dir/patch.json"
 
 test "$(jq -r '.properties.configuration.activeRevisionsMode' "$tmp_dir/patch.json")" = Single
 test "$(jq -r '.properties.template.scale.minReplicas' "$tmp_dir/patch.json")" = 1
 test "$(jq -r '.properties.template.scale.maxReplicas' "$tmp_dir/patch.json")" = 1
 test "$(jq -r '.properties.template.containers | length' "$tmp_dir/patch.json")" = 1
+test "$(jq -r '.properties.template.containers[0].image' "$tmp_dir/patch.json")" = registry.invalid/mtd-evidence-rail:repair-test
 test "$(jq -r '.properties.template.containers[0].volumeMounts[0].volumeName' "$tmp_dir/patch.json")" = mtd-data
 test "$(jq -r '.properties.template.containers[0].volumeMounts[0].mountPath' "$tmp_dir/patch.json")" = /data
 test "$(jq -r '.properties.template.volumes[0].name' "$tmp_dir/patch.json")" = mtd-data
@@ -32,4 +33,16 @@ if jq -e '.properties.template.containers[0].volumeMounts[0].volumeName == "data
   exit 1
 fi
 
-echo '@claim:production-topology PASS — an unsafe three-replica payload renders as one replica with the canonical mtd-data Azure Files volume at /data and the SMB-safe SQLite VFS'
+# The generic factory helper creates a fresh app with a three-replica,
+# container-local template. Running it after the product topology is rendered
+# silently discards the Azure Files mount and the limiter's one-replica
+# boundary. The product deployer must build the image itself and patch the
+# complete desired revision in one operation.
+grep -F 'az acr build' "$repo_dir/scripts/deploy.sh" >/dev/null
+grep -F 'render-production-topology.sh" --image "$image"' "$repo_dir/scripts/deploy.sh" >/dev/null
+if grep -F '/opt/fleet/lib/deploy-container.sh' "$repo_dir/scripts/deploy.sh" >/dev/null; then
+  echo 'Regression: deployment delegates to the generic three-replica helper.' >&2
+  exit 1
+fi
+
+echo '@claim:production-topology PASS — an unsafe three-replica payload renders the requested image as one replica with the canonical mtd-data Azure Files volume at /data and the SMB-safe SQLite VFS'

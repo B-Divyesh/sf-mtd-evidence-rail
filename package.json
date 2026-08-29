@@ -15,7 +15,9 @@
     "test:deployment-topology": "bash scripts/test-deployment-topology.sh",
     "test:live-checkout": "node scripts/test-live-checkout.mjs",
     "test:live-workspace-consistency": "bash scripts/test-live-workspace-consistency.sh",
+    "test:live-rate-limit": "bash scripts/test-live-rate-limit.sh",
     "verify:live-topology": "bash scripts/verify-live-topology.sh",
+    "lint": "npm run typecheck && cargo fmt --check && cargo clippy --all-targets --all-features -- -D warnings",
     "test:e2e": "playwright test",
     "assets": "node scripts/optimise-assets.mjs"
   },

@@ -54,6 +54,7 @@ npm test
 npm run build       # writes the frontend to dist/
 npm run test:deployment-topology # rejects the verifier's unsafe rollout shape
 npm run test:live-checkout # checks the live Dodo subscription contract
+npm run test:live-rate-limit # repeats the deployed burst-limit probe
 npm run verify:live-topology # checks 12 fresh demos and 100 reads per workspace
 docker build --build-arg BUILD_SHA=local -t mtd-evidence-rail .
 docker run --rm -p 8080:8080 mtd-evidence-rail
@@ -80,9 +81,12 @@ enforces the free quarter limit even if browser storage is changed. See
 ## Deploy
 
 The root `Dockerfile` builds the Vite frontend and Rust server in separate
-stages. Run `scripts/deploy.sh` through the factory work order. The factory owns
-product registration and billing configuration. Deployment details are
-recorded in the handoff.
+stages. Run `scripts/deploy.sh` through the factory work order. It builds the
+committed image, then applies that image with the one-replica Azure Files
+topology in one revision and refuses completion unless the live resource
+proves the mount, VFS, replica count, workspace reads, restart recovery, and
+rate limiter. The factory owns product registration and billing configuration.
+Deployment details are recorded in the handoff.
 
 ## Licence
 

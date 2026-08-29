@@ -2,10 +2,30 @@
 set -euo pipefail
 
 repo_dir=$(cd "$(dirname "$0")/.." && pwd)
-resource_file=${1:--}
+image=""
+resource_file=-
+
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --image)
+      image=${2:?"--image requires an image reference"}
+      shift 2
+      ;;
+    --)
+      shift
+      resource_file=${1:--}
+      shift || true
+      ;;
+    *)
+      resource_file=$1
+      shift
+      ;;
+  esac
+done
+
 contract_file=${TOPOLOGY_CONTRACT:-"$repo_dir/.factory/container-app.json"}
 
-jq -c --slurpfile contract "$contract_file" '
+jq -c --arg image "$image" --slurpfile contract "$contract_file" '
   ($contract[0]) as $wanted |
   .properties.template.containers[0] as $container |
   {
@@ -16,6 +36,7 @@ jq -c --slurpfile contract "$contract_file" '
       template: {
         containers: [
           $container + {
+            image: (if $image == "" then $container.image else $image end),
             env: (
               [
                 $container.env[]?

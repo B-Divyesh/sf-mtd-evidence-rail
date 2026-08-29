@@ -166,5 +166,12 @@
     "where": "README, handoff",
     "test": "cargo test api_rate_limit_returns_retry_after",
     "sandbox": "in-process router; send 45 requests with one X-Forwarded-For first hop; assert 429 and Retry-After: 1"
+  },
+  {
+    "id": "live-api-rate-limit",
+    "claim": "The deployed API enforces its per-client burst limit and sends Retry-After",
+    "where": "deployment handoff",
+    "test": "npm run test:live-rate-limit",
+    "sandbox": "public deployed service; send 200 fresh HTTP/1.1 POST /api/demo requests with the same X-Forwarded-For first hop; assert at least one 429 and Retry-After: 1 on every limited response"
   }
 ]
