@@ -13,9 +13,9 @@ try {
         failures.push(`${response.request().method()} ${response.url()} ${response.status()}`);
       }
     });
-    await page.goto(`${baseUrl}/demo`, { waitUntil: 'domcontentloaded' });
+    await page.goto(`${baseUrl}/?demo=1`, { waitUntil: 'domcontentloaded' });
     await page.getByText('Community hall hire').waitFor({ state: 'visible', timeout: 15_000 });
-    await page.getByText('Demo — sample data, nothing is saved to your workspace').waitFor({ state: 'visible' });
+    await page.getByText('Demo — sample data. Changes stay in this 24-hour demo.').waitFor({ state: 'visible' });
     if (failures.length) throw new Error(`context ${index + 1}: ${failures.join(', ')}`);
     await context.close();
   });
