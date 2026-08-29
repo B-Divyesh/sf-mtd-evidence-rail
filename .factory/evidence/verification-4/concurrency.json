@@ -1,0 +1,14 @@
+{
+  "healthStatuses": {
+    "200": 100
+  },
+  "healthShas": [
+    "29f741fb45eae06102bc667c80fa96457cff54b6"
+  ],
+  "writeStatuses": {
+    "201": 20
+  },
+  "storedCount": 20,
+  "uniqueDescriptions": 20,
+  "deleteStatus": 204
+}

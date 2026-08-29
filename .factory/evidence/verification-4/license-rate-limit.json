@@ -1,0 +1,89 @@
+{
+  "elapsedMs": 1022,
+  "statuses": {
+    "200": 30,
+    "429": 90
+  },
+  "retryAfterValues": [
+    "4"
+  ],
+  "missingRetryAfter": 0,
+  "successfulCacheValues": [
+    "no-store"
+  ],
+  "corsValues": [
+    "https://mtd-evidence-rail.sociobot.in"
+  ],
+  "samples": [
+    {
+      "status": 200,
+      "retryAfter": null,
+      "cache": "no-store",
+      "cors": "https://mtd-evidence-rail.sociobot.in",
+      "body": "{\"expires_at\":null,\"reason\":\"invalid\",\"valid\":false}"
+    },
+    {
+      "status": 200,
+      "retryAfter": null,
+      "cache": "no-store",
+      "cors": "https://mtd-evidence-rail.sociobot.in",
+      "body": "{\"expires_at\":null,\"reason\":\"invalid\",\"valid\":false}"
+    },
+    {
+      "status": 200,
+      "retryAfter": null,
+      "cache": "no-store",
+      "cors": "https://mtd-evidence-rail.sociobot.in",
+      "body": "{\"expires_at\":null,\"reason\":\"invalid\",\"valid\":false}"
+    },
+    {
+      "status": 200,
+      "retryAfter": null,
+      "cache": "no-store",
+      "cors": "https://mtd-evidence-rail.sociobot.in",
+      "body": "{\"expires_at\":null,\"reason\":\"invalid\",\"valid\":false}"
+    },
+    {
+      "status": 200,
+      "retryAfter": null,
+      "cache": "no-store",
+      "cors": "https://mtd-evidence-rail.sociobot.in",
+      "body": "{\"expires_at\":null,\"reason\":\"invalid\",\"valid\":false}"
+    },
+    {
+      "status": 200,
+      "retryAfter": null,
+      "cache": "no-store",
+      "cors": "https://mtd-evidence-rail.sociobot.in",
+      "body": "{\"expires_at\":null,\"reason\":\"invalid\",\"valid\":false}"
+    },
+    {
+      "status": 200,
+      "retryAfter": null,
+      "cache": "no-store",
+      "cors": "https://mtd-evidence-rail.sociobot.in",
+      "body": "{\"expires_at\":null,\"reason\":\"invalid\",\"valid\":false}"
+    },
+    {
+      "status": 200,
+      "retryAfter": null,
+      "cache": "no-store",
+      "cors": "https://mtd-evidence-rail.sociobot.in",
+      "body": "{\"expires_at\":null,\"reason\":\"invalid\",\"valid\":false}"
+    },
+    {
+      "status": 200,
+      "retryAfter": null,
+      "cache": "no-store",
+      "cors": "https://mtd-evidence-rail.sociobot.in",
+      "body": "{\"expires_at\":null,\"reason\":\"invalid\",\"valid\":false}"
+    },
+    {
+      "status": 200,
+      "retryAfter": null,
+      "cache": "no-store",
+      "cors": "https://mtd-evidence-rail.sociobot.in",
+      "body": "{\"expires_at\":null,\"reason\":\"invalid\",\"valid\":false}"
+    }
+  ]
+}

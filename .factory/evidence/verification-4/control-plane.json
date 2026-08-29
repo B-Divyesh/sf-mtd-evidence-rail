@@ -1,0 +1,31 @@
+{
+  "activeRevisionsMode": "Single",
+  "env": [
+    {
+      "name": "PORT",
+      "value": "8080"
+    },
+    {
+      "name": "SQLITE_VFS",
+      "value": "unix-dotfile"
+    }
+  ],
+  "image": "sociobotregistry.azurecr.io/sf-mtd-evidence-rail:29f741fb45ea",
+  "latestReadyRevision": "sf-mtd-evidence-rail--0000021",
+  "latestRevision": "sf-mtd-evidence-rail--0000021",
+  "maxReplicas": 1,
+  "minReplicas": 1,
+  "volumeMounts": [
+    {
+      "mountPath": "/data",
+      "volumeName": "data"
+    }
+  ],
+  "volumes": [
+    {
+      "name": "data",
+      "storageName": "mtd-evidence-rail-data",
+      "storageType": "AzureFile"
+    }
+  ]
+}

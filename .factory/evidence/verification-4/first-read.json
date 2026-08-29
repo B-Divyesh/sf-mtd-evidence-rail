@@ -1,0 +1,183 @@
+{
+  "result": {
+    "url": "https://mtd-evidence-rail.sociobot.in/",
+    "title": "MTD Evidence Rail — link expenses to evidence",
+    "lang": "en-GB",
+    "h1": [
+      "Link each expense to evidence"
+    ],
+    "viewportText": [
+      "Skip to main content",
+      "MTD Evidence Rail",
+      "Home",
+      "Demo",
+      "Price",
+      "Privacy",
+      "QUARTERLY EVIDENCE, IN ORDER",
+      "Link each expense to evidence",
+      "For sole traders who need a reviewable record before each MTD quarterly update.",
+      "Try it with sample data",
+      "See a ready quarter. Nothing is saved.",
+      "Start a private workspace",
+      "Your workspace needs no account.",
+      "£15 once for more than 25 transactions.",
+      "This record aid does not file with HMRC.",
+      "A quarter at a glance",
+      "See what still needs evidence",
+      "Bank lines, invoices, and receipts share one dated view. Missing files stay visible until you link them.",
+      "6 Apr – 5 Jul 2026",
+      "Capture",
+      "Match",
+      "Review",
+      "Export",
+      "Quarter record",
+      "6 transactions",
+      "2 need evidence",
+      "11 Jun",
+      "Teaching card supplies",
+      "Materials · £32.99",
+      "Evidence linked",
+      "19 May",
+      "Train to client session",
+      "Travel · £27.80",
+      "Evidence missing",
+      "15 Apr",
+      "Spring maths tutoring",
+      "Invoice INV-026 · £120.00",
+      "Evidence linked",
+      "How it works",
+      "Prepare the quarter while it happens",
+      "Add each transaction",
+      "Record income or expenses. You can also import a bank CSV.",
+      "Link the evidence",
+      "Add a receipt, invoice, or note. Likely CSV matches are flagged before import.",
+      "Export the evidence pack",
+      "Download one ZIP with a transaction CSV and every linked file.",
+      "Clear boundaries",
+      "A record aid, not tax software",
+      "MTD Evidence Rail helps you organise source records. It does not calculate tax or send an update to HMRC.",
+      "Your records stay under your control",
+      "Workspace keys are stored on this device.",
+      "Demo records use a separate 24-hour workspace.",
+      "You can export or delete your workspace.",
+      "No advertising trackers or third-party scripts run here.",
+      "Paid access",
+      "Use one workspace for every quarter",
+      "The free workspace accepts 25 transactions in a quarter. Paid access accepts more than 25.",
+      "£15 once",
+      "The server verifies a paid licence before accepting more than 25 transactions.",
+      "Receipt and invoice evidence",
+      "Bank CSV review",
+      "Accountant evidence packs",
+      "Buy paid access",
+      "Sociobot and Dodo handle checkout and refunds. See the terms.",
+      "Have a licence? Paste it here.",
+      "Restore paid access",
+      "MTD Evidence Rail",
+      "Link each expense to evidence before your quarterly update.",
+      "Privacy",
+      "Terms",
+      "Built by Param Factory",
+      "(external site)",
+      "Version 1.0 · Build 2026.08 · Generated hero imagery is original to this product.",
+      "MTD Evidence Rail — link expenses to evidence"
+    ],
+    "actions": [
+      {
+        "tag": "A",
+        "text": "MTD Evidence Rail",
+        "href": "https://mtd-evidence-rail.sociobot.in/",
+        "top": 14
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "href": "https://mtd-evidence-rail.sociobot.in/",
+        "top": 13
+      },
+      {
+        "tag": "A",
+        "text": "Demo",
+        "href": "https://mtd-evidence-rail.sociobot.in/demo",
+        "top": 13
+      },
+      {
+        "tag": "A",
+        "text": "Price",
+        "href": "https://mtd-evidence-rail.sociobot.in/#price",
+        "top": 13
+      },
+      {
+        "tag": "A",
+        "text": "Privacy",
+        "href": "https://mtd-evidence-rail.sociobot.in/privacy",
+        "top": 13
+      },
+      {
+        "tag": "A",
+        "text": "Try it with sample data",
+        "href": "https://mtd-evidence-rail.sociobot.in/demo",
+        "top": 644
+      },
+      {
+        "tag": "A",
+        "text": "Start a private workspace",
+        "href": "https://mtd-evidence-rail.sociobot.in/app",
+        "top": 713
+      }
+    ],
+    "main": true,
+    "scrollY": 0
+  },
+  "status": 200,
+  "headers": {
+    "cache-control": "no-cache",
+    "content-encoding": "gzip",
+    "content-security-policy": "default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'",
+    "content-type": "text/html",
+    "date": "Sat, 29 Aug 2026 02:16:18 GMT",
+    "last-modified": "Sat, 29 Aug 2026 01:46:36 GMT",
+    "permissions-policy": "camera=(), microphone=(), geolocation=()",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "vary": "accept-encoding",
+    "x-content-type-options": "nosniff"
+  },
+  "requests": [
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/",
+      "type": "document"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/assets/index-DnjC6y5A.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/assets/index-DyrYFmj1.css",
+      "type": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/assets/evidence-rail-hero.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+      "type": "font"
+    }
+  ],
+  "errors": []
+}

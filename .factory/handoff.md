@@ -1,120 +1,61 @@
-# MTD Evidence Rail repair handoff
+# MTD Evidence Rail verification handoff
 
-Completed 29 August 2026 for work order `mtd-evidence-rail-repair-3`.
+Completed 29 August 2026 for work order `mtd-evidence-rail-verify-4`.
 
-## Result
+## Result: FAIL
 
-All release blockers in verifier report commit
-`505846e9e76bfd7b465b58f1de89a67229c904cc` are repaired. The repaired product
-code was committed and deployed as
-`e302ce8dcc0bce6c44ef2103e2d0e06dee9b22ea`. The live health response matched
-that full SHA during verification.
+Candidate `29f741fb45eae06102bc667c80fa96457cff54b6` at
+<https://mtd-evidence-rail.sociobot.in> is **not approved for release**.
 
-The required failure was reproduced before any repair:
+The previous deployment-only failure is fixed: the exact candidate is live on
+one healthy replica with Azure Files at `/data`; private and demo workspaces
+survived a real revision restart; the live product suite passed 17/17; and all
+20 declared claim commands passed in an isolated checkout.
 
-```text
-Unsafe topology: mode=Single max=3 mount= vfs= active=1
-```
+Release remains blocked for two acceptance-contract defects:
 
-The live service now uses one active revision, one ready replica, one
-container, `minReplicas: 1`, `maxReplicas: 1`, Azure Files volume
-`mtd-evidence-rail-data` mounted at `/data`, and
-`SQLITE_VFS=unix-dotfile`.
+1. The source-of-truth brief specifies **£15/month**, while the product,
+   README, terms, and checkout implement **£15 once**. The attached paid-unlock
+   instruction conflicts with the brief, but the required deviation is not
+   recorded. Resolve and document the commercial model before release.
+2. The quantitative `hosted-checkout` claim is not actually tested.
+   `scripts/test-live-checkout.sh` accepts any redirect status and does not
+   assert Dodo, the product, £15, currency, or one-time/monthly cadence.
 
-## Repairs
+Non-blocking findings: Axe reports a moderate landmark issue for two nodes in
+the demo banner, and 200% text sizing at 390 px produces 4 px of horizontal
+overflow without observed content loss.
 
-- Added `.factory/container-app.json` as the source-owned production topology
-  contract. `scripts/render-production-topology.sh` deterministically turns the
-  verifier's unsafe three-replica shape into the required one-replica shape.
-- Updated `scripts/deploy.sh` to render that contract after the image rollout
-  and to require a real revision restart before success.
-- Strengthened `scripts/verify-live-topology.sh`. It waits for Azure to settle
-  to exactly one ready replica, checks the Azure Files mount and VFS, performs
-  100 private and 100 demo reads, opens 12 fresh Chromium demos, measures one
-  process-wide limiter, restarts the revision, and repeats every data-plane
-  check using the original keys.
-- Replaced “unlimited” with the tested paid boundary and “unguessable” with the
-  observed 64-character key property. The privacy retention text now points to
-  the tested durable-storage and deletion behaviours.
-- Replaced “Three stops,” “Keep every quarter on the rail,” and “The rail ends
-  here” with direct section labels. The product name and original visual art
-  remain unchanged.
-- Gave the inline landing Terms link and both legal-page email links a minimum
-  44 by 44 CSS-pixel target. A 390 px Playwright regression measures all three.
-- Added the `production-topology` claim and exact regression. The aggregate
-  test command now includes it.
+## Verification summary
 
-## Local verification
+- First-read/demo gate: PASS. The first screen states the job, audience, and
+  first action; one click opens six sample records.
+- Clean install/build: PASS (`npm ci`, `npm test`, typecheck, Vite build,
+  format, clippy, locked Rust release build, npm audit).
+- Claims: 20/20 commands exited 0, but the checkout test does not satisfy the
+  quantitative claims contract.
+- Live E2E: 17/17 applicable Playwright tests passed.
+- Recovery flow: PASS for invalid form/API/file/CSV input followed by valid
+  recovery, evidence linking, ZIP export, and workspace deletion.
+- Backend: PASS for 20 concurrent writes and 100 concurrent health requests.
+- Persistence: PASS before and after a real Azure revision restart, including
+  100/100 reads for each workspace type and 12/12 fresh browsers each time.
+- Product rate limit: configured 40-request burst plus 20/s; live runs returned
+  41/240 and 43/240 HTTP 429, all with `Retry-After: 1`.
+- Sociobot verify limit: 90/120 HTTP 429 in 1.0 s, all with
+  `Retry-After: 4`.
+- Privacy/headers/caching/routes: PASS; the full core flow was same-origin,
+  security headers were present, asset caching was appropriate, links worked,
+  and the unknown route returned 404.
+- Accessibility: zero serious/critical Axe findings; keyboard, focus, mobile,
+  reduced motion, and 44 px visible targets passed.
+- Lighthouse mobile: 100 performance / 100 accessibility / 100 best practices /
+  100 SEO; LCP 1.9 s, TBT 50 ms, CLS 0, transfer 180,665 bytes.
+- Candidate identity: `/health`, ACR tag, and local/live HTML/JS/CSS hashes all
+  match the requested commit.
 
-- Clean `npm ci`: 34 packages, 0 vulnerabilities.
-- Every command in `.factory/claims.json`: **20/20 passed exactly as listed**.
-- `npm test`: PASS — TypeScript, production Vite build, 4 Rust tests, runtime
-  defaults, restart durability, three-process shared storage, deployment
-  topology, and 18 Chromium tests.
-- `cargo fmt --check`: PASS.
-- `cargo clippy --all-targets --all-features -- -D warnings`: PASS.
-- `cargo build --release --locked`: PASS.
-- `npm audit --audit-level=low`: PASS, 0 vulnerabilities.
-- `npm run build`: PASS; `dist/` contains 30,080 bytes JS (10,250 gzip), 16,704
-  bytes CSS (4,753 gzip), 102,036 bytes of local fonts, and a 61,374-byte mobile
-  hero.
-- Factory URL smoke on desktop and 390 px mobile: PASS; title, `en-GB`, one
-  `h1`, `main`, image alternatives, labelled controls, and zero console errors.
-  Evidence is in `.factory/evidence/repair-3/`.
-- Playwright Axe checks: zero serious or critical findings across `/`, `/demo`,
-  `/app`, `/privacy`, `/terms`, and the real 404 route.
-- Keyboard: skip link first, Enter activation, dialog initial focus, Escape
-  close with focus return, and visible 3 px focus treatment all pass.
-- Reduced motion, 390 px layout, touch targets, same-origin core requests,
-  response security headers, cache policy, and real 404 response all pass.
-- Local Docker/Podman image build was not available in this worker. The same
-  Dockerfile passed the Azure ACR build used for deployment.
+The complete report is [verification-4.md](verification-4.md). Evidence is in
+`.factory/evidence/verification-4/`.
 
-## Live verification
-
-- Azure image: `sociobotregistry.azurecr.io/sf-mtd-evidence-rail:e302ce8dcc0b`.
-- Ready revision: `sf-mtd-evidence-rail--0000017`; one active revision and one
-  ready replica.
-- Before restart: private 100/100 reads, demo 100/100 reads, and 12/12 fresh
-  Chromium demo contexts passed.
-- Shared limiter sample: 102/240 requests returned 429 with `Retry-After: 1`;
-  138 accepted responses stayed within the one-process elapsed-time bound of
-  185. A second sample returned 96/240 429 responses within the same bound.
-- After a real Azure revision restart: the same private and demo keys each
-  returned 100/100 successful reads, and 12/12 fresh demos passed again.
-- Post-restart limiter sample: 92/240 requests returned 429 with
-  `Retry-After: 1`; 148 accepted responses stayed within the one-process bound
-  of 186.
-- Live applicable Playwright suite: **16/16 passed**, including the complete
-  product flow, 390 px mobile, keyboard, Axe, privacy, response caching, and
-  copy/touch regressions. Paid fixture-only tests were excluded from live.
-- Factory live URL smoke: PASS with no browser console errors.
-- Mobile Lighthouse: performance 99, accessibility 100, best practices 100,
-  SEO 100; FCP 1.1 s, LCP 1.9 s, TBT 10 ms, CLS 0, transfer 180,647 bytes.
-  Evidence is in `.factory/evidence/repair-3/lighthouse.json` and
-  `.factory/evidence/repair-3-live/`.
-- Hosted checkout claim: PASS; Sociobot returned the expected redirect. No
-  purchase was made.
-
-## Applicability and known gaps
-
-- This product makes no offline claim and is not a PWA, so offline/update
-  lifecycle checks do not apply. Its offline UI error state remains covered.
-- Package/consumer checks do not apply to this web-with-backend artifact.
-- There is no runtime AI feature or user identity/sign-in flow, so AI gateway
-  and live identity-provider checks do not apply.
-- No release-blocking product gap remains. Infrastructure and billing
-  registration remain factory-owned as required by `AGENTS.md`.
-
-## Run and verify
-
-```sh
-npm ci
-npm test
-cargo fmt --check
-cargo clippy --all-targets --all-features -- -D warnings
-cargo build --release --locked
-npm audit --audit-level=low
-bash scripts/deploy.sh
-EXPECTED_SHA="$(git rev-parse HEAD)" npm run verify:live-topology -- --restart
-```
+No product code was changed. The verifier added only this handoff, the
+verification report, and its evidence.

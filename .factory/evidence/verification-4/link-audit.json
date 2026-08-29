@@ -1,0 +1,73 @@
+[
+  {
+    "url": "https://api.sociobot.in/api/v1/products/mtd-evidence-rail/checkout",
+    "status": 303,
+    "location": "https://checkout.dodopayments.com/session/cks_0NmPjdjWuRPElQnZKmeMT"
+  },
+  {
+    "url": "https://mtd-evidence-rail.sociobot.in/",
+    "status": 200,
+    "location": null
+  },
+  {
+    "url": "https://mtd-evidence-rail.sociobot.in/#main",
+    "status": "not-fetched"
+  },
+  {
+    "url": "https://mtd-evidence-rail.sociobot.in/#price",
+    "status": "not-fetched"
+  },
+  {
+    "url": "https://mtd-evidence-rail.sociobot.in/app",
+    "status": 200,
+    "location": null
+  },
+  {
+    "url": "https://mtd-evidence-rail.sociobot.in/app#main",
+    "status": "not-fetched"
+  },
+  {
+    "url": "https://mtd-evidence-rail.sociobot.in/demo",
+    "status": 200,
+    "location": null
+  },
+  {
+    "url": "https://mtd-evidence-rail.sociobot.in/demo#main",
+    "status": "not-fetched"
+  },
+  {
+    "url": "https://mtd-evidence-rail.sociobot.in/not-a-page#main",
+    "status": "not-fetched"
+  },
+  {
+    "url": "https://mtd-evidence-rail.sociobot.in/privacy",
+    "status": 200,
+    "location": null
+  },
+  {
+    "url": "https://mtd-evidence-rail.sociobot.in/privacy#main",
+    "status": "not-fetched"
+  },
+  {
+    "url": "https://mtd-evidence-rail.sociobot.in/terms",
+    "status": 200,
+    "location": null
+  },
+  {
+    "url": "https://mtd-evidence-rail.sociobot.in/terms#main",
+    "status": "not-fetched"
+  },
+  {
+    "url": "https://sociobot.in/",
+    "status": 200,
+    "location": null
+  },
+  {
+    "url": "mailto:privacy@sociobot.in",
+    "status": "not-fetched"
+  },
+  {
+    "url": "mailto:support@sociobot.in",
+    "status": "not-fetched"
+  }
+]

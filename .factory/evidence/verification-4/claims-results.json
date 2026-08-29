@@ -1,0 +1,102 @@
+[
+  {
+    "id": "demo-isolation",
+    "test": "npm test -- --grep @claim:demo-isolation",
+    "status": 0
+  },
+  {
+    "id": "no-account",
+    "test": "npm test -- --grep @claim:no-account",
+    "status": 0
+  },
+  {
+    "id": "quarter-capture",
+    "test": "npm test -- --grep @claim:quarter-capture",
+    "status": 0
+  },
+  {
+    "id": "csv-matching",
+    "test": "npm test -- --grep @claim:csv-matching",
+    "status": 0
+  },
+  {
+    "id": "atomic-import",
+    "test": "npm test -- --grep @claim:atomic-import",
+    "status": 0
+  },
+  {
+    "id": "calendar-dates",
+    "test": "npm test -- --grep @claim:calendar-dates",
+    "status": 0
+  },
+  {
+    "id": "evidence-types",
+    "test": "npm test -- --grep @claim:evidence-types",
+    "status": 0
+  },
+  {
+    "id": "missing-review",
+    "test": "npm test -- --grep @claim:missing-review",
+    "status": 0
+  },
+  {
+    "id": "evidence-pack",
+    "test": "npm test -- --grep @claim:evidence-pack",
+    "status": 0
+  },
+  {
+    "id": "workspace-delete",
+    "test": "npm test -- --grep @claim:workspace-delete",
+    "status": 0
+  },
+  {
+    "id": "free-limit",
+    "test": "npm test -- --grep @claim:free-limit",
+    "status": 0
+  },
+  {
+    "id": "paid-limit",
+    "test": "npm test -- --grep @claim:paid-limit",
+    "status": 0
+  },
+  {
+    "id": "hosted-checkout",
+    "test": "bash scripts/test-live-checkout.sh",
+    "status": 0
+  },
+  {
+    "id": "license-return",
+    "test": "npm test -- --grep @claim:license-return",
+    "status": 0
+  },
+  {
+    "id": "no-trackers",
+    "test": "npm test -- --grep @claim:no-trackers",
+    "status": 0
+  },
+  {
+    "id": "runtime-defaults",
+    "test": "npm run build && cargo build && npm run test:runtime-defaults",
+    "status": 0
+  },
+  {
+    "id": "durable-storage",
+    "test": "npm run build && cargo build && npm run test:durable-storage",
+    "status": 0
+  },
+  {
+    "id": "shared-state-boundary",
+    "test": "npm run build && cargo build && npm run test:shared-storage",
+    "status": 0
+  },
+  {
+    "id": "production-topology",
+    "test": "npm run test:deployment-topology",
+    "status": 0
+  },
+  {
+    "id": "api-rate-limit",
+    "test": "cargo test api_rate_limit_returns_retry_after",
+    "status": 0
+  }
+]

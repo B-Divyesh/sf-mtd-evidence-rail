@@ -1,0 +1,13 @@
+
+> mtd-evidence-rail@1.0.0 verify:live-topology
+> bash scripts/verify-live-topology.sh --restart
+
+private: 100/100 fresh-connection reads returned 200.
+demo: 100/100 fresh-connection reads returned 200.
+Live browser topology smoke passed: 12/12 fresh demo contexts loaded sample data.
+shared limiter: 41/240 requests returned 429; accepted=199 within one-limiter bound=315 over 13472ms.
+private-after-restart: 100/100 fresh-connection reads returned 200.
+demo-after-restart: 100/100 fresh-connection reads returned 200.
+Live browser topology smoke passed: 12/12 fresh demo contexts loaded sample data.
+shared limiter: 43/240 requests returned 429; accepted=197 within one-limiter bound=315 over 13497ms.
+Live topology verification passed for build 29f741fb45eae06102bc667c80fa96457cff54b6.

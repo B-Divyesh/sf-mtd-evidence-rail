@@ -1,0 +1,719 @@
+{
+  "routeResults": [
+    {
+      "path": "/",
+      "statusTitle": "MTD Evidence Rail — link expenses to evidence",
+      "lang": "en-GB",
+      "h1": [
+        "Link each expense to evidence"
+      ],
+      "main": 1,
+      "header": 1,
+      "nav": 1,
+      "footer": 1,
+      "missingAlt": 0,
+      "headingLevels": [
+        1,
+        2,
+        3,
+        2,
+        3,
+        3,
+        3,
+        2,
+        3,
+        2
+      ],
+      "overflow": 0,
+      "targets": [
+        {
+          "tag": "A",
+          "text": "Skip to main content",
+          "w": 181,
+          "h": 48
+        },
+        {
+          "tag": "A",
+          "text": "MTD Evidence Rail",
+          "w": 154,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Home",
+          "w": 44,
+          "h": 44.8
+        },
+        {
+          "tag": "A",
+          "text": "Demo",
+          "w": 44,
+          "h": 44.8
+        },
+        {
+          "tag": "A",
+          "text": "Privacy",
+          "w": 51,
+          "h": 44.8
+        },
+        {
+          "tag": "A",
+          "text": "Try it with sample data",
+          "w": 366,
+          "h": 54.8
+        },
+        {
+          "tag": "A",
+          "text": "Start a private workspace",
+          "w": 366,
+          "h": 50
+        },
+        {
+          "tag": "A",
+          "text": "Buy paid access",
+          "w": 192.2,
+          "h": 54.8
+        },
+        {
+          "tag": "A",
+          "text": "terms",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "w": 320,
+          "h": 48
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Restore paid access",
+          "w": 320,
+          "h": 48
+        },
+        {
+          "tag": "A",
+          "text": "MTD Evidence Rail",
+          "w": 366,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Privacy",
+          "w": 49,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Terms",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Built by Param Factory (external site)",
+          "w": 155,
+          "h": 44
+        }
+      ],
+      "canonical": "https://mtd-evidence-rail.sociobot.in/",
+      "httpStatus": 200,
+      "smallTargets": []
+    },
+    {
+      "path": "/demo",
+      "statusTitle": "Demo — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1": [
+        "Prepare your quarter record"
+      ],
+      "main": 1,
+      "header": 1,
+      "nav": 1,
+      "footer": 1,
+      "missingAlt": 0,
+      "headingLevels": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3
+      ],
+      "overflow": 0,
+      "targets": [
+        {
+          "tag": "A",
+          "text": "Skip to main content",
+          "w": 181,
+          "h": 48
+        },
+        {
+          "tag": "A",
+          "text": "MTD Evidence Rail",
+          "w": 154,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Home",
+          "w": 44,
+          "h": 44.8
+        },
+        {
+          "tag": "A",
+          "text": "Demo",
+          "w": 44,
+          "h": 44.8
+        },
+        {
+          "tag": "A",
+          "text": "Privacy",
+          "w": 51,
+          "h": 44.8
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Reset demo",
+          "w": 116,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Start for real",
+          "w": 123,
+          "h": 44
+        },
+        {
+          "tag": "SELECT",
+          "text": "Quarter 1 · 2025/26 · 6 Apr 2025 to 5 Jul 2025Quarter 2 · 2025/26 · 6 Jul 2025 t",
+          "w": 172,
+          "h": 48
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Add a transaction",
+          "w": 366,
+          "h": 54.8
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Import bank CSV",
+          "w": 177,
+          "h": 48
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Show missing evidence",
+          "w": 177,
+          "h": 72
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export evidence pack",
+          "w": 177,
+          "h": 72
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Workspace settings",
+          "w": 177,
+          "h": 72
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Remove evidence from Teaching card supplies",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Remove evidence from After-school club fees",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "w": 1,
+          "h": 48
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "w": 1,
+          "h": 48
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Remove evidence from Spring maths tutoring",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Remove evidence from Stationery from Paper Mill",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "MTD Evidence Rail",
+          "w": 366,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Privacy",
+          "w": 49,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Terms",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Built by Param Factory (external site)",
+          "w": 155,
+          "h": 44
+        }
+      ],
+      "canonical": "https://mtd-evidence-rail.sociobot.in/demo",
+      "httpStatus": 200,
+      "smallTargets": [
+        {
+          "tag": "INPUT",
+          "text": "",
+          "w": 1,
+          "h": 48
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "w": 1,
+          "h": 48
+        }
+      ]
+    },
+    {
+      "path": "/app",
+      "statusTitle": "Quarter — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1": [
+        "Prepare your quarter record"
+      ],
+      "main": 1,
+      "header": 1,
+      "nav": 1,
+      "footer": 1,
+      "missingAlt": 0,
+      "headingLevels": [
+        1,
+        2,
+        3,
+        2,
+        2,
+        2,
+        3,
+        3
+      ],
+      "overflow": 0,
+      "targets": [
+        {
+          "tag": "A",
+          "text": "Skip to main content",
+          "w": 181,
+          "h": 48
+        },
+        {
+          "tag": "A",
+          "text": "MTD Evidence Rail",
+          "w": 154,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Home",
+          "w": 44,
+          "h": 44.8
+        },
+        {
+          "tag": "A",
+          "text": "Demo",
+          "w": 44,
+          "h": 44.8
+        },
+        {
+          "tag": "A",
+          "text": "Privacy",
+          "w": 51,
+          "h": 44.8
+        },
+        {
+          "tag": "SELECT",
+          "text": "Quarter 1 · 2025/26 · 6 Apr 2025 to 5 Jul 2025Quarter 2 · 2025/26 · 6 Jul 2025 t",
+          "w": 171,
+          "h": 48
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Add a transaction",
+          "w": 366,
+          "h": 54.8
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Import bank CSV",
+          "w": 177,
+          "h": 48
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Show missing evidence",
+          "w": 177,
+          "h": 72
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export evidence pack",
+          "w": 177,
+          "h": 72
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Workspace settings",
+          "w": 177,
+          "h": 72
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Add the first transaction",
+          "w": 256.2,
+          "h": 54.8
+        },
+        {
+          "tag": "A",
+          "text": "MTD Evidence Rail",
+          "w": 366,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Privacy",
+          "w": 49,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Terms",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Built by Param Factory (external site)",
+          "w": 155,
+          "h": 44
+        }
+      ],
+      "canonical": "https://mtd-evidence-rail.sociobot.in/app",
+      "httpStatus": 200,
+      "smallTargets": []
+    },
+    {
+      "path": "/privacy",
+      "statusTitle": "Privacy — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1": [
+        "Your records and privacy"
+      ],
+      "main": 1,
+      "header": 1,
+      "nav": 1,
+      "footer": 1,
+      "missingAlt": 0,
+      "headingLevels": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "overflow": 0,
+      "targets": [
+        {
+          "tag": "A",
+          "text": "Skip to main content",
+          "w": 181,
+          "h": 48
+        },
+        {
+          "tag": "A",
+          "text": "MTD Evidence Rail",
+          "w": 154,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Home",
+          "w": 44,
+          "h": 44.8
+        },
+        {
+          "tag": "A",
+          "text": "Demo",
+          "w": 44,
+          "h": 44.8
+        },
+        {
+          "tag": "A",
+          "text": "Privacy",
+          "w": 51,
+          "h": 44.8
+        },
+        {
+          "tag": "A",
+          "text": "privacy@sociobot.in",
+          "w": 137,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "MTD Evidence Rail",
+          "w": 366,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Privacy",
+          "w": 49,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Terms",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Built by Param Factory (external site)",
+          "w": 155,
+          "h": 44
+        }
+      ],
+      "canonical": "https://mtd-evidence-rail.sociobot.in/privacy",
+      "httpStatus": 200,
+      "smallTargets": []
+    },
+    {
+      "path": "/terms",
+      "statusTitle": "Terms — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1": [
+        "Terms for using the record aid"
+      ],
+      "main": 1,
+      "header": 1,
+      "nav": 1,
+      "footer": 1,
+      "missingAlt": 0,
+      "headingLevels": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "overflow": 0,
+      "targets": [
+        {
+          "tag": "A",
+          "text": "Skip to main content",
+          "w": 181,
+          "h": 48
+        },
+        {
+          "tag": "A",
+          "text": "MTD Evidence Rail",
+          "w": 154,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Home",
+          "w": 44,
+          "h": 44.8
+        },
+        {
+          "tag": "A",
+          "text": "Demo",
+          "w": 44,
+          "h": 44.8
+        },
+        {
+          "tag": "A",
+          "text": "Privacy",
+          "w": 51,
+          "h": 44.8
+        },
+        {
+          "tag": "A",
+          "text": "support@sociobot.in",
+          "w": 143,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "MTD Evidence Rail",
+          "w": 366,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Privacy",
+          "w": 49,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Terms",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Built by Param Factory (external site)",
+          "w": 155,
+          "h": 44
+        }
+      ],
+      "canonical": "https://mtd-evidence-rail.sociobot.in/terms",
+      "httpStatus": 200,
+      "smallTargets": []
+    },
+    {
+      "path": "/not-a-page",
+      "statusTitle": "Page not found — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1": [
+        "This page was not found"
+      ],
+      "main": 1,
+      "header": 1,
+      "nav": 1,
+      "footer": 1,
+      "missingAlt": 0,
+      "headingLevels": [
+        1
+      ],
+      "overflow": 0,
+      "targets": [
+        {
+          "tag": "A",
+          "text": "Skip to main content",
+          "w": 181,
+          "h": 48
+        },
+        {
+          "tag": "A",
+          "text": "MTD Evidence Rail",
+          "w": 154,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Home",
+          "w": 44,
+          "h": 44.8
+        },
+        {
+          "tag": "A",
+          "text": "Demo",
+          "w": 44,
+          "h": 44.8
+        },
+        {
+          "tag": "A",
+          "text": "Privacy",
+          "w": 51,
+          "h": 44.8
+        },
+        {
+          "tag": "A",
+          "text": "Return home",
+          "w": 164.2,
+          "h": 54.8
+        },
+        {
+          "tag": "A",
+          "text": "MTD Evidence Rail",
+          "w": 366,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Privacy",
+          "w": 49,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Terms",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "tag": "A",
+          "text": "Built by Param Factory (external site)",
+          "w": 155,
+          "h": 44
+        }
+      ],
+      "canonical": "https://mtd-evidence-rail.sociobot.in/not-a-page",
+      "httpStatus": 404,
+      "smallTargets": []
+    }
+  ],
+  "firstFocus": {
+    "text": "Skip to main content",
+    "outline": "rgb(232, 191, 98) solid 3px",
+    "boxShadow": "rgb(9, 42, 50) 0px 0px 0px 5px"
+  },
+  "skipAfter": {
+    "hash": "#main",
+    "active": "BODY",
+    "id": ""
+  },
+  "ctaBox": {
+    "x": 12,
+    "y": 317.140625,
+    "width": 366,
+    "height": 54.796875
+  },
+  "motion": {
+    "reduced": true,
+    "trainAnimation": "none",
+    "primaryTransition": "0s",
+    "scrollBehavior": "auto"
+  },
+  "zoom": {
+    "scrollWidth": 394,
+    "clientWidth": 390,
+    "h1Visible": true,
+    "ctaVisible": true
+  },
+  "coldErrors": [
+    {
+      "url": "https://mtd-evidence-rail.sociobot.in/not-a-page",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    }
+  ]
+}

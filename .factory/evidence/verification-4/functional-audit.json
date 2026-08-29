@@ -1,0 +1,303 @@
+{
+  "steps": [
+    "one-click demo shows persistent isolation banner",
+    "demo opens with six realistic records",
+    "missing-evidence filter narrows to two records",
+    "Reset demo provisions a different workspace",
+    "demo never writes private workspace storage",
+    "private workspace starts account-free with 64-character key",
+    "zero amount gives a corrective inline error",
+    "form error is announced assertively",
+    "corrected £0.01 transaction saves through the UI",
+    "£1,000,000 and quarter-end date are accepted",
+    "zero is rejected with 400",
+    "negative is rejected with 400",
+    "over amount is rejected with 400",
+    "impossible date is rejected with 400",
+    "unknown kind is rejected with 400",
+    "long description is rejected with 400",
+    "long category is rejected with 400",
+    "malformed JSON is rejected with 422",
+    "unsupported evidence shows supported-type recovery guidance",
+    "supported evidence links after the error",
+    "malformed CSV headings show exact corrective guidance",
+    "corrected CSV imports and renders",
+    "export downloads a ZIP after recovered inputs",
+    "deletion clears the private browser key",
+    "deleted workspace returns 404"
+  ],
+  "apiResponses": [
+    {
+      "method": "POST",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/demo",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/demo",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-07-06&to=2026-10-05",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/records",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-07-06&to=2026-10-05",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-07-06&to=2026-10-05",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/records/97fefce7-dd37-4ec8-bc43-d30d41df57a9/evidence",
+      "status": 415
+    },
+    {
+      "method": "POST",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/records/97fefce7-dd37-4ec8-bc43-d30d41df57a9/evidence",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-07-06&to=2026-10-05",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/records/import",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-07-06&to=2026-10-05",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/export?from=2026-07-06&to=2026-10-05",
+      "status": 200
+    },
+    {
+      "method": "DELETE",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace",
+      "status": 204
+    }
+  ],
+  "requestOrigins": [
+    "https://mtd-evidence-rail.sociobot.in"
+  ],
+  "errors": [
+    {
+      "kind": "console",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 415 ()"
+    }
+  ],
+  "allRequests": [
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/",
+      "type": "document"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/assets/index-DnjC6y5A.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/assets/index-DyrYFmj1.css",
+      "type": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/assets/evidence-rail-hero.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+      "type": "font"
+    },
+    {
+      "method": "POST",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/demo",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+      "type": "fetch"
+    },
+    {
+      "method": "POST",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/demo",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/app",
+      "type": "document"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/assets/index-DnjC6y5A.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/assets/index-DyrYFmj1.css",
+      "type": "stylesheet"
+    },
+    {
+      "method": "POST",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-07-06&to=2026-10-05",
+      "type": "fetch"
+    },
+    {
+      "method": "POST",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/records",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-07-06&to=2026-10-05",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/app",
+      "type": "document"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/assets/index-DnjC6y5A.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/assets/index-DyrYFmj1.css",
+      "type": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-07-06&to=2026-10-05",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+      "type": "font"
+    },
+    {
+      "method": "POST",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/records/97fefce7-dd37-4ec8-bc43-d30d41df57a9/evidence",
+      "type": "fetch"
+    },
+    {
+      "method": "POST",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/records/97fefce7-dd37-4ec8-bc43-d30d41df57a9/evidence",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-07-06&to=2026-10-05",
+      "type": "fetch"
+    },
+    {
+      "method": "POST",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/records/import",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-07-06&to=2026-10-05",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/export?from=2026-07-06&to=2026-10-05",
+      "type": "fetch"
+    },
+    {
+      "method": "DELETE",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/assets/evidence-rail-hero.webp",
+      "type": "image"
+    }
+  ]
+}
