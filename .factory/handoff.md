@@ -1,113 +1,66 @@
-# MTD Evidence Rail repair handoff
+# MTD Evidence Rail verification handoff
 
-Completed 28 August 2026 for work order `mtd-evidence-rail-repair-2`.
+Completed 29 August 2026 for work order `mtd-evidence-rail-verify-3`.
 
 ## Result
 
-**PASS — the verifier's release blocker is repaired.**
+**FAIL — do not release candidate
+`d9774c5d70af912a520d2f349b4b10960ffd7e47`.**
 
-The failure in verifier commit
-`9987438ec75bce0b47f5dc77e4b573daf5b5bf86` was reproduced in the live Azure
-control plane. The generic final image rollout had removed the `/data` mount
-and `SQLITE_VFS`, and had restored `maxReplicas: 3`. Requests could therefore
-reach separate local SQLite files. The researched brief, visual system, product
-flows, artifact class, and container deployment class are unchanged.
+The source candidate passes all 19 declared claim commands from a detached
+clean worktree after `npm ci`, the complete `npm test`, strict TypeScript/Rust
+checks, the locked release build, and independent local end-to-end
+boundary/recovery checks. The exact candidate
+is deployed: `/health` and 100 concurrent health responses report its full SHA,
+and live HTML/JS/CSS hashes match the local production build.
 
-## Repair
+Production is still release-blocked. Azure currently runs three replicas at
+max scale with no `/data` mount, no volume, and no `SQLITE_VFS`. Each replica
+therefore has a separate disposable SQLite database. After concurrency brought
+all replicas into use, 14/15 applicable live tests failed. A final 12-browser
+demo check failed 12/12: every `POST /api/demo` returned 201, then the immediate
+`GET /api/workspace` returned 404. The required one-click demo and real private
+workspaces are not reliable or durable.
 
-- `scripts/deploy.sh` now verifies the active revision count as well as the
-  mount, VFS, and replica limit after the factory image rollout.
-- The deploy command now runs a mandatory data-plane smoke after applying that
-  topology. Rollout fails if any demo or private workspace read fails.
-- `scripts/verify-live-topology.sh` checks single revision mode, one active
-  revision, `maxReplicas: 1`, `/data`, and `unix-dotfile`. It then requires
-  100/100 fresh-connection reads for both a new demo and private workspace.
-- `scripts/live-browser-smoke.mjs` requires 12/12 fresh Chromium contexts to
-  load the one-click demo without any failed API response.
-- `scripts/test-shared-storage.sh` is the exact local regression. Three server
-  processes share one store and must return all 400 workspace reads before and
-  after every process restarts.
-- The shared-state behavior is listed in `.factory/claims.json` and the local
-  regression is part of `npm test`.
+Additional findings:
 
-## Local evidence
+- High: absolute “unlimited transactions” and “unguessable key” copy is not
+  represented by an exact claim test.
+- Medium: three inline mobile links are under the required 44 px target height.
+- Low: three section/404 labels use railway metaphor instead of plain task
+  names.
 
-Commands run from a clean `npm ci` installation:
+Full commands, evidence, headers, rate-limit allowances, Lighthouse results,
+and remediation are in [verification-3.md](verification-3.md). Key evidence is
+under [`evidence/verification-3/`](evidence/verification-3/).
 
-```sh
-npm test
-npm audit --audit-level=low
-cargo fmt --check
-cargo clippy --all-targets --all-features -- -D warnings
-cargo build --release --locked
-bash scripts/test-live-checkout.sh
-```
+## Verification summary
 
-Results:
+- All 19 declared claims: PASS locally after locked install.
+- `npm test`: PASS (4 Rust, 3 runtime/persistence scripts, 17 Chromium).
+- `npm audit --audit-level=low`: PASS, 0 vulnerabilities.
+- `cargo fmt --check`: PASS.
+- `cargo clippy --all-targets --all-features -- -D warnings`: PASS.
+- `cargo build --release --locked`: PASS.
+- `npm run build`: PASS; `dist/` produced.
+- Live topology check: **FAIL** (`max=3`, no mount/VFS).
+- Live applicable Playwright: **FAIL**, 1/15 passed.
+- Final fresh-browser demo: **FAIL**, 0/12 loaded.
+- Live rate limit: 409/600 returned 429 with `Retry-After: 1`; 191 requests
+  reached the three independent limiters during the 2.259-second burst.
+- Factory URL smoke: PASS on landing.
+- Axe serious/critical: 0 across all routes and the error state.
+- Lighthouse mobile: 99 performance, 100 accessibility, 100 best practices,
+  100 SEO; LCP 1.905 s, TBT 5 ms, CLS 0, transfer 180,628 bytes.
 
-- `npm ci`: 34 packages installed; 0 vulnerabilities.
-- `npm test`: PASS — TypeScript, production build, 4 Rust tests, runtime with
-  only `PORT`, restart persistence, the new three-process shared-store test,
-  and 17 Chromium tests all passed.
-- Shared-store regression: 100/100 private and 100/100 demo reads passed across
-  three processes before restart; both sets passed again after restart.
-- Playwright covered desktop, 390 px mobile, keyboard dialog focus and return,
-  reduced-motion styling, privacy requests, deletion, export, paid/free limits,
-  error recovery, and Axe checks on every route. No serious or critical Axe
-  issue was found.
-- Strict Clippy, Rust formatting, locked release compilation, npm audit, and
-  the live hosted-checkout redirect passed.
-- Factory URL verification against the local release found one `h1`, `en-GB`,
-  `main`, complete image alternatives, labelled buttons, and no console error.
-- Production bundles remain unchanged: 30,079 byte JS (10.26 kB gzip), 16,617
-  byte CSS (4.73 kB gzip), 102,036 bytes of local fonts, and a 61,374 byte
-  mobile hero.
+Docker/Podman were unavailable, so a second local image build was not run. The
+live ACR image tag, build SHA, and asset hashes establish candidate identity.
+No production restart was performed because that would mutate live state.
 
-## Deployment and live evidence
+## Next action
 
-Repair implementation commit `a1ec54ab6050a875a8e769e0b76d224b84bdcd9a`
-was built by ACR run `chpn` and deployed through `scripts/deploy.sh`. The final
-handoff commit is deployed through the same command after this file is written.
+Restore and preserve the one-replica Azure Files topology, then repeat the full
+live verification after concurrency and a controlled revision restart. Do not
+release until all fresh demo/private workspace reads survive both.
 
-- Azure reports single revision mode, one active revision, one replica,
-  `maxReplicas: 1`, Azure Files mounted at `/data`, and
-  `SQLITE_VFS=unix-dotfile`.
-- Before a live revision restart, new private and demo keys each returned
-  100/100 HTTP 200 reads over fresh connections.
-- After restarting the live revision, those same keys again returned 100/100
-  HTTP 200 reads. The saved workspaces therefore crossed a real restart.
-- The browser deployment smoke passed 12/12 fresh demo contexts before and
-  after restart. A second 12/12 smoke passed during initial deployment.
-- The applicable live Playwright suite passed 15/15. It covered the core demo,
-  capture, CSV matching, atomic rejection, date validation, evidence types and
-  size boundary, export, deletion, free-limit enforcement, privacy, desktop
-  routes, Axe, keyboard behavior, and 390 px layout.
-- The factory URL verifier reported no console errors and passed title, `en-GB`,
-  one `h1`, `main`, image alternatives, and labelled buttons.
-- A 100-request fixed-client burst returned 11 HTTP 429 responses. Every
-  limited response included `Retry-After: 1`; a separate client remains
-  isolated by the forwarded first hop.
-- CSP, `nosniff`, referrer policy, permissions policy, cache policy, HTTPS,
-  internal routes, and the designed HTTP 404 response passed.
-- Fresh mobile Lighthouse: performance 100, accessibility 100, best practices
-  100, SEO 100; FCP 1.05 s, LCP 1.88 s, TBT 8 ms, CLS 0, and 180,619 bytes
-  transferred.
-
-## Applicability and known boundaries
-
-This product is not a PWA and makes no offline claim, so service-worker update
-tests do not apply. It has no account sign-in, package consumer, library, or CLI,
-so identity-provider and package-consumer checks do not apply. Workspace-key
-identity and isolation were exercised locally and live.
-
-Docker and Podman are unavailable in this worker, so no local image build was
-possible. ACR built the Dockerfile successfully from the source package without
-`.git`. No card purchase was made; the hosted redirect and recorded valid
-licence fixture cover both billing sides without spending. These are not release
-blockers. SQLite must remain on the mounted Azure Files store with one replica;
-the deployment smoke now enforces that requirement.
-
-## Next step
-
-No release-blocking work remains. Monitor Azure Files capacity and keep
-`scripts/deploy.sh` as the final operation for future image rollouts.
+No product code was changed by this verifier.

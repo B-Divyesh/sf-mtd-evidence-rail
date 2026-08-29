@@ -1,0 +1,425 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "title": "MTD Evidence Rail — link expenses to evidence",
+      "lang": "en-GB",
+      "h1Count": 1,
+      "h1": [
+        "Link each expense to evidence"
+      ],
+      "mainCount": 1,
+      "imagesMissingAlt": 0,
+      "seriousCriticalAxe": [],
+      "requestOrigins": [
+        "https://mtd-evidence-rail.sociobot.in"
+      ],
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/",
+          "resourceType": "document"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+          "resourceType": "font"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+          "resourceType": "font"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/assets/index-Duxpj4D7.js",
+          "resourceType": "script"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/assets/index-D1FYdiNU.css",
+          "resourceType": "stylesheet"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/assets/evidence-rail-hero.webp",
+          "resourceType": "image"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+          "resourceType": "font"
+        }
+      ],
+      "errorResponses": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "loadErrorText": 0
+    },
+    {
+      "route": "/demo",
+      "status": 200,
+      "title": "Demo — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1Count": 1,
+      "h1": [
+        "Prepare your quarter record"
+      ],
+      "mainCount": 1,
+      "imagesMissingAlt": 0,
+      "seriousCriticalAxe": [],
+      "requestOrigins": [
+        "https://mtd-evidence-rail.sociobot.in"
+      ],
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/demo",
+          "resourceType": "document"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+          "resourceType": "font"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+          "resourceType": "font"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/assets/index-Duxpj4D7.js",
+          "resourceType": "script"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/assets/index-D1FYdiNU.css",
+          "resourceType": "stylesheet"
+        },
+        {
+          "method": "POST",
+          "url": "https://mtd-evidence-rail.sociobot.in/api/demo",
+          "resourceType": "fetch"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+          "resourceType": "font"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+          "resourceType": "fetch"
+        }
+      ],
+      "errorResponses": [
+        {
+          "status": 404,
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05"
+        }
+      ],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "pageErrors": [],
+      "loadErrorText": 1
+    },
+    {
+      "route": "/app",
+      "status": 200,
+      "title": "Quarter — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1Count": 1,
+      "h1": [
+        "Prepare your quarter record"
+      ],
+      "mainCount": 1,
+      "imagesMissingAlt": 0,
+      "seriousCriticalAxe": [],
+      "requestOrigins": [
+        "https://mtd-evidence-rail.sociobot.in"
+      ],
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/app",
+          "resourceType": "document"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+          "resourceType": "font"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+          "resourceType": "font"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/assets/index-Duxpj4D7.js",
+          "resourceType": "script"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/assets/index-D1FYdiNU.css",
+          "resourceType": "stylesheet"
+        },
+        {
+          "method": "POST",
+          "url": "https://mtd-evidence-rail.sociobot.in/api/workspace",
+          "resourceType": "fetch"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+          "resourceType": "font"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-07-06&to=2026-10-05",
+          "resourceType": "fetch"
+        }
+      ],
+      "errorResponses": [
+        {
+          "status": 404,
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-07-06&to=2026-10-05"
+        }
+      ],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "pageErrors": [],
+      "loadErrorText": 1
+    },
+    {
+      "route": "/privacy",
+      "status": 200,
+      "title": "Privacy — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1Count": 1,
+      "h1": [
+        "Your records and privacy"
+      ],
+      "mainCount": 1,
+      "imagesMissingAlt": 0,
+      "seriousCriticalAxe": [],
+      "requestOrigins": [
+        "https://mtd-evidence-rail.sociobot.in"
+      ],
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/privacy",
+          "resourceType": "document"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+          "resourceType": "font"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+          "resourceType": "font"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/assets/index-Duxpj4D7.js",
+          "resourceType": "script"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/assets/index-D1FYdiNU.css",
+          "resourceType": "stylesheet"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+          "resourceType": "font"
+        }
+      ],
+      "errorResponses": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "loadErrorText": 0
+    },
+    {
+      "route": "/terms",
+      "status": 200,
+      "title": "Terms — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1Count": 1,
+      "h1": [
+        "Terms for using the record aid"
+      ],
+      "mainCount": 1,
+      "imagesMissingAlt": 0,
+      "seriousCriticalAxe": [],
+      "requestOrigins": [
+        "https://mtd-evidence-rail.sociobot.in"
+      ],
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/terms",
+          "resourceType": "document"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+          "resourceType": "font"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+          "resourceType": "font"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/assets/index-Duxpj4D7.js",
+          "resourceType": "script"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/assets/index-D1FYdiNU.css",
+          "resourceType": "stylesheet"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+          "resourceType": "font"
+        }
+      ],
+      "errorResponses": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "loadErrorText": 0
+    },
+    {
+      "route": "/not-a-page",
+      "status": 404,
+      "title": "Page not found — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1Count": 1,
+      "h1": [
+        "This page was not found"
+      ],
+      "mainCount": 1,
+      "imagesMissingAlt": 0,
+      "seriousCriticalAxe": [],
+      "requestOrigins": [
+        "https://mtd-evidence-rail.sociobot.in"
+      ],
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/not-a-page",
+          "resourceType": "document"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+          "resourceType": "font"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+          "resourceType": "font"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/assets/index-Duxpj4D7.js",
+          "resourceType": "script"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/assets/index-D1FYdiNU.css",
+          "resourceType": "stylesheet"
+        },
+        {
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+          "resourceType": "font"
+        }
+      ],
+      "errorResponses": [
+        {
+          "status": 404,
+          "method": "GET",
+          "url": "https://mtd-evidence-rail.sociobot.in/not-a-page"
+        }
+      ],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "pageErrors": [],
+      "loadErrorText": 0
+    }
+  ],
+  "keyboard": {
+    "firstTab": {
+      "text": "Skip to main content",
+      "href": "#main",
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(232, 191, 98)",
+      "boxShadow": "rgb(9, 42, 50) 0px 0px 0px 5px"
+    },
+    "afterEnterHash": "#main"
+  },
+  "mobile": {
+    "viewport": [
+      390,
+      844
+    ],
+    "scrollWidth": 390,
+    "noHorizontalOverflow": true,
+    "h1": "Link each expense to evidence",
+    "ctaVisible": true,
+    "ctaBox": {
+      "x": 12,
+      "y": 391.140625,
+      "width": 366,
+      "height": 54.796875
+    },
+    "targetBoxes": [
+      {
+        "text": "terms",
+        "w": 37,
+        "h": 17
+      }
+    ]
+  },
+  "reducedMotion": {
+    "matches": true,
+    "markerAnimationName": "none",
+    "markerAnimationDuration": "0s",
+    "primaryTransitionDuration": "0s",
+    "scrollBehavior": "auto"
+  },
+  "license": {
+    "requests": [
+      {
+        "method": "GET",
+        "url": "https://api.sociobot.in/api/v1/products/mtd-evidence-rail/verify?license=qa-invalid-browser-token"
+      }
+    ],
+    "responses": [
+      {
+        "status": 200,
+        "url": "https://api.sociobot.in/api/v1/products/mtd-evidence-rail/verify?license=qa-invalid-browser-token",
+        "cacheControl": "no-store",
+        "retryAfter": null
+      }
+    ],
+    "stored": "qa-invalid-browser-token",
+    "url": "https://mtd-evidence-rail.sociobot.in/",
+    "notice": "Your licence is no longer active. Free limits apply."
+  }
+}

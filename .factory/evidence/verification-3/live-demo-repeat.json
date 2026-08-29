@@ -1,0 +1,210 @@
+{
+  "ready": 0,
+  "failed": 12,
+  "results": [
+    {
+      "run": 1,
+      "ready": false,
+      "error": true,
+      "api": [
+        {
+          "method": "POST",
+          "status": 201,
+          "path": "/api/demo"
+        },
+        {
+          "method": "GET",
+          "status": 404,
+          "path": "/api/workspace"
+        }
+      ]
+    },
+    {
+      "run": 2,
+      "ready": false,
+      "error": true,
+      "api": [
+        {
+          "method": "POST",
+          "status": 201,
+          "path": "/api/demo"
+        },
+        {
+          "method": "GET",
+          "status": 404,
+          "path": "/api/workspace"
+        }
+      ]
+    },
+    {
+      "run": 3,
+      "ready": false,
+      "error": true,
+      "api": [
+        {
+          "method": "POST",
+          "status": 201,
+          "path": "/api/demo"
+        },
+        {
+          "method": "GET",
+          "status": 404,
+          "path": "/api/workspace"
+        }
+      ]
+    },
+    {
+      "run": 4,
+      "ready": false,
+      "error": true,
+      "api": [
+        {
+          "method": "POST",
+          "status": 201,
+          "path": "/api/demo"
+        },
+        {
+          "method": "GET",
+          "status": 404,
+          "path": "/api/workspace"
+        }
+      ]
+    },
+    {
+      "run": 5,
+      "ready": false,
+      "error": true,
+      "api": [
+        {
+          "method": "POST",
+          "status": 201,
+          "path": "/api/demo"
+        },
+        {
+          "method": "GET",
+          "status": 404,
+          "path": "/api/workspace"
+        }
+      ]
+    },
+    {
+      "run": 6,
+      "ready": false,
+      "error": true,
+      "api": [
+        {
+          "method": "POST",
+          "status": 201,
+          "path": "/api/demo"
+        },
+        {
+          "method": "GET",
+          "status": 404,
+          "path": "/api/workspace"
+        }
+      ]
+    },
+    {
+      "run": 7,
+      "ready": false,
+      "error": true,
+      "api": [
+        {
+          "method": "POST",
+          "status": 201,
+          "path": "/api/demo"
+        },
+        {
+          "method": "GET",
+          "status": 404,
+          "path": "/api/workspace"
+        }
+      ]
+    },
+    {
+      "run": 8,
+      "ready": false,
+      "error": true,
+      "api": [
+        {
+          "method": "POST",
+          "status": 201,
+          "path": "/api/demo"
+        },
+        {
+          "method": "GET",
+          "status": 404,
+          "path": "/api/workspace"
+        }
+      ]
+    },
+    {
+      "run": 9,
+      "ready": false,
+      "error": true,
+      "api": [
+        {
+          "method": "POST",
+          "status": 201,
+          "path": "/api/demo"
+        },
+        {
+          "method": "GET",
+          "status": 404,
+          "path": "/api/workspace"
+        }
+      ]
+    },
+    {
+      "run": 10,
+      "ready": false,
+      "error": true,
+      "api": [
+        {
+          "method": "POST",
+          "status": 201,
+          "path": "/api/demo"
+        },
+        {
+          "method": "GET",
+          "status": 404,
+          "path": "/api/workspace"
+        }
+      ]
+    },
+    {
+      "run": 11,
+      "ready": false,
+      "error": true,
+      "api": [
+        {
+          "method": "POST",
+          "status": 201,
+          "path": "/api/demo"
+        },
+        {
+          "method": "GET",
+          "status": 404,
+          "path": "/api/workspace"
+        }
+      ]
+    },
+    {
+      "run": 12,
+      "ready": false,
+      "error": true,
+      "api": [
+        {
+          "method": "POST",
+          "status": 201,
+          "path": "/api/demo"
+        },
+        {
+          "method": "GET",
+          "status": 404,
+          "path": "/api/workspace"
+        }
+      ]
+    }
+  ]
+}

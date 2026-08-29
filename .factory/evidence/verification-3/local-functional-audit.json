@@ -1,0 +1,104 @@
+{
+  "firstRead": {
+    "h1": "Link each expense to evidence",
+    "audience": "For sole traders who need a reviewable record before each MTD quarterly update.",
+    "firstAction": "Try it with sample data"
+  },
+  "demoInitial": {
+    "summary": "6 transactions 2 missing evidence £365.00 income recorded £144.19 expenses recorded",
+    "records": 6,
+    "key": "demo:1c7e0267876a46429c9d10c7b609821561cf32bc08ef442196864bcea67b6973",
+    "privateKey": null
+  },
+  "missingQueue": {
+    "shown": 2,
+    "items": [
+      "Train to client session",
+      "Community hall hire"
+    ]
+  },
+  "invalidUiError": "Enter an amount greater than zero.",
+  "recoverySaved": true,
+  "invalidEvidenceError": "Use a PDF, JPG, PNG, WebP, or text file.",
+  "evidenceRecovery": true,
+  "invalidCsvError": "The CSV needs Date, Description, and Amount columns. Rename those headings and try again.",
+  "csvReview": "2 rows read. 1 likely match will be skipped.\nDate\tDescription\tAmount\tReview\n6 Apr 2026\tDuplicate penny\t−£0.01\tLikely recorded\n20 May 2026\tPrinter paper\t−£3.50\tNew",
+  "csvImportedBeforeAsyncReloadFinished": false,
+  "csvImportedFollowUp": "Passed after waiting for the refreshed record list; see local-csv-recovery.json",
+  "export": {
+    "filename": "evidence-pack-2026-27-Q1.zip",
+    "signature": "PK",
+    "hasCsv": true,
+    "hasEvidence": true
+  },
+  "apiBoundaries": {
+    "maxAmount": {
+      "status": 201,
+      "body": {
+        "id": "3097c4f3-1c17-4550-b575-70260a922a0d"
+      }
+    },
+    "nextQuarter": {
+      "status": 201,
+      "body": {
+        "id": "2f02ba84-0e85-4ce4-a5fd-df8d113a3a4e"
+      }
+    },
+    "zero": {
+      "status": 400,
+      "body": {
+        "error": "Enter an amount between £0.01 and £1,000,000."
+      }
+    },
+    "negative": {
+      "status": 400,
+      "body": {
+        "error": "Enter an amount between £0.01 and £1,000,000."
+      }
+    },
+    "overAmount": {
+      "status": 400,
+      "body": {
+        "error": "Enter an amount between £0.01 and £1,000,000."
+      }
+    },
+    "impossibleDate": {
+      "status": 400,
+      "body": {
+        "error": "Enter a real calendar date."
+      }
+    },
+    "invalidKind": {
+      "status": 400,
+      "body": {
+        "error": "Choose expense or income."
+      }
+    },
+    "longDescription": {
+      "status": 400,
+      "body": {
+        "error": "Enter a description under 120 characters."
+      }
+    },
+    "longCategory": {
+      "status": 400,
+      "body": {
+        "error": "Enter a category under 40 characters."
+      }
+    },
+    "malformedJson": {
+      "status": 422,
+      "body": "Failed to deserialize the JSON body into the target type: invalid type: string \"{\", expected struct RecordInput at line 1 column 3"
+    }
+  },
+  "reset": {
+    "changed": true,
+    "privateKey": null,
+    "records": 6
+  },
+  "delete": {
+    "landedHome": true,
+    "storageCleared": true,
+    "statusAfterDelete": 404
+  }
+}

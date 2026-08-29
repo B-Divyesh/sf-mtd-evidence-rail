@@ -1,0 +1,106 @@
+{
+  "touchTargets": {
+    "/": [
+      {
+        "name": "terms",
+        "tag": "a",
+        "w": 37,
+        "h": 17
+      }
+    ],
+    "/privacy": [
+      {
+        "name": "privacy@sociobot.in",
+        "tag": "a",
+        "w": 137,
+        "h": 20
+      }
+    ],
+    "/terms": [
+      {
+        "name": "support@sociobot.in",
+        "tag": "a",
+        "w": 143,
+        "h": 20
+      }
+    ],
+    "/not-a-page": []
+  },
+  "zoom": {
+    "viewport": 390,
+    "scrollWidth": 394,
+    "h1Visible": true,
+    "ctaVisible": true,
+    "bodyTextLength": 2192
+  },
+  "links": [
+    {
+      "url": "https://api.sociobot.in/api/v1/products/mtd-evidence-rail/checkout",
+      "status": 303,
+      "location": "https://checkout.dodopayments.com/session/cks_0NmPIkptolw7sQ9liFmJ9"
+    },
+    {
+      "url": "https://mtd-evidence-rail.sociobot.in/",
+      "status": 200,
+      "location": null
+    },
+    {
+      "url": "https://mtd-evidence-rail.sociobot.in/#main",
+      "status": 200,
+      "location": null
+    },
+    {
+      "url": "https://mtd-evidence-rail.sociobot.in/#price",
+      "status": 200,
+      "location": null
+    },
+    {
+      "url": "https://mtd-evidence-rail.sociobot.in/app",
+      "status": 200,
+      "location": null
+    },
+    {
+      "url": "https://mtd-evidence-rail.sociobot.in/demo",
+      "status": 200,
+      "location": null
+    },
+    {
+      "url": "https://mtd-evidence-rail.sociobot.in/not-a-page#main",
+      "status": 404,
+      "location": null
+    },
+    {
+      "url": "https://mtd-evidence-rail.sociobot.in/privacy",
+      "status": 200,
+      "location": null
+    },
+    {
+      "url": "https://mtd-evidence-rail.sociobot.in/privacy#main",
+      "status": 200,
+      "location": null
+    },
+    {
+      "url": "https://mtd-evidence-rail.sociobot.in/terms",
+      "status": 200,
+      "location": null
+    },
+    {
+      "url": "https://mtd-evidence-rail.sociobot.in/terms#main",
+      "status": 200,
+      "location": null
+    },
+    {
+      "url": "https://sociobot.in/",
+      "status": 200,
+      "location": null
+    },
+    {
+      "url": "mailto:privacy@sociobot.in",
+      "status": "scheme"
+    },
+    {
+      "url": "mailto:support@sociobot.in",
+      "status": "scheme"
+    }
+  ]
+}
