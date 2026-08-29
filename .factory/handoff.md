@@ -1,25 +1,25 @@
-# MTD Evidence Rail verification handoff — PASS
+# Review 1 handoff — FAIL
 
-Independent QA completed 29 August 2026 for work order
-`mtd-evidence-rail-verify-8`.
+Completed 29 August 2026 for work order `mtd-evidence-rail-review-1`.
 
-- Candidate and live `/health` build: `8c2d0755f2ea2987332f1c97939c66bcb64ec56b`
-- Live URL: <https://mtd-evidence-rail.sociobot.in>
-- Result: **PASS — ready to release.**
+- Reviewed live URL: <https://mtd-evidence-rail.sociobot.in>
+- Reviewed source commit: `d1470eb88c9c4964b357758b481381ca66feacbd`
+- Live `/health` build: `8c2d0755f2ea2987332f1c97939c66bcb64ec56b`
+- Result: **FAIL.** Full findings: [review-1.md](review-1.md).
 
-All 20 mandatory claim commands from `.factory/claims.json` passed locally;
-the candidate's live `/demo` passed representative capture, CSV review/import,
-invalid-input recovery, export, privacy-traffic, accessibility, mobile, and
-rate-limit checks. The earlier deployment-only failure is cleared by fresh
-evidence: the source-owned live persistence probe returned 100/100
-fresh-connection reads for both a private and demo workspace. A single live
-client received 18 HTTP 429 responses (each `Retry-After: 1`) after 42/60
-simultaneous API requests.
+No product code was modified. A fresh clean clone received `npm ci`; all 20
+declared claim commands and the complete `npm test` suite passed (21
+Playwright tests, Rust tests, typecheck, build, runtime and storage checks).
+Live cold desktop/mobile, demo, reset, private-workspace separation, routing,
+links, and request-log checks were also run.
 
-`npm run typecheck`, `npm run build`, `cargo test`, and
-`cargo build --release --locked` passed. The exact Docker build was not run
-because the verifier image lacks a Docker CLI; the deployed matching candidate
-and successful locked release build provide the available production evidence.
+The blocker is independently reproduced with an existing real subscription key:
+opening `/demo` reads that real local-storage key, sends it to the
+subscription API, and writes the real licence cache while demo is active. The
+current demo-isolation test does not cover that state. The review also records
+unlisted claims and plain-language copy fixes.
 
-Defects by severity: **none**. No product source code changed. Full evidence:
-`.factory/verification-8.md`.
+To verify a repair, open `/demo` in a browser seeded with real workspace,
+licence, and licence-cache keys. Confirm none change, none reach demo request
+headers, and no cross-origin request occurs. Then run `npm test` and every
+command in `.factory/claims.json` from a clean clone.
