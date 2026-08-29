@@ -543,72 +543,76 @@
       "factory_evidence_verification_5_live_browser_observation_out"
     ],
     "32": [
+      "scripts_assert_build_inputs_committed",
+      "scripts_assert_build_inputs_committed_sh__entry"
+    ],
+    "33": [
       "scripts_assert_live_topology",
       "scripts_assert_live_topology_sh__entry"
     ],
-    "33": [
+    "34": [
       "scripts_optimise_assets",
       "scripts_optimise_assets_source"
     ],
-    "34": [
+    "35": [
       "scripts_render_production_topology",
       "scripts_render_production_topology_sh__entry"
     ],
-    "35": [
+    "36": [
       "scripts_test_deployment_topology",
       "scripts_test_deployment_topology_sh__entry"
     ],
-    "36": [
+    "37": [
       "scripts_test_live_rate_limit",
       "scripts_test_live_rate_limit_sh__entry"
     ],
-    "37": [
+    "38": [
       "tests_product_spec",
       "tests_product_spec_openready"
     ],
-    "38": [
+    "39": [
       "pkg_mtd_evidence_rail"
     ],
-    "39": [
+    "40": [
       "playwright_config"
     ],
-    "40": [
+    "41": [
       "scripts_license_fixture"
     ],
-    "41": [
+    "42": [
       "scripts_live_browser_smoke"
     ],
-    "42": [
+    "43": [
       "src_main_rs_intoresponse"
     ],
-    "43": [
+    "44": [
       "src_main_rs_response"
     ],
-    "44": [
+    "45": [
       "src_main_rs_sqlitepool"
     ],
-    "45": [
+    "46": [
       "src_main_rs_state"
     ],
-    "46": [
+    "47": [
       "src_main_rs_string"
     ],
-    "47": [
+    "48": [
       "src_routes_rs_intoresponse"
     ],
-    "48": [
+    "49": [
       "src_routes_rs_response"
     ],
-    "49": [
+    "50": [
       "src_routes_rs_sqlitepool"
     ],
-    "50": [
+    "51": [
       "src_routes_rs_state"
     ],
-    "51": [
+    "52": [
       "src_routes_rs_string"
     ],
-    "52": [
+    "53": [
       "vite_config"
     ]
   },
@@ -665,7 +669,8 @@
     "49": 1.0,
     "50": 1.0,
     "51": 1.0,
-    "52": 1.0
+    "52": 1.0,
+    "53": 1.0
   },
   "gods": [
     {
