@@ -259,7 +259,7 @@ test('390px mobile and keyboard paths meet interaction requirements', async ({ p
   await expect(page.getByRole('link', { name: 'Skip to main content' })).toBeFocused();
   await page.getByRole('link', { name: 'Try it with sample data' }).focus();
   await page.keyboard.press('Enter');
-  await expect(page).toHaveURL(/\/demo$/);
+  await expect(page).toHaveURL(/\?demo=1$/);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true);
   for (const link of await page.locator('header a, footer a').all()) {
     if (!(await link.isVisible())) continue;
