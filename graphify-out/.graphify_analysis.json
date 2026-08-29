@@ -226,6 +226,17 @@
       "tsconfig_include"
     ],
     "6": [
+      "scripts_verify_live_topology",
+      "scripts_verify_live_topology_assert_control_plane",
+      "scripts_verify_live_topology_assert_reads",
+      "scripts_verify_live_topology_assert_shared_limiter",
+      "scripts_verify_live_topology_assert_workspace_delete",
+      "scripts_verify_live_topology_assert_workspace_is_deleted",
+      "scripts_verify_live_topology_sh__entry",
+      "scripts_verify_live_topology_wait_for_health",
+      "scripts_verify_live_topology_workspace_id"
+    ],
+    "7": [
       "factory_evidence_verification_5_live_api_audit",
       "factory_evidence_verification_5_live_api_audit_body",
       "factory_evidence_verification_5_live_api_audit_headersfor",
@@ -234,7 +245,7 @@
       "factory_evidence_verification_5_live_api_audit_untilowned",
       "factory_evidence_verification_5_live_api_audit_validcases"
     ],
-    "7": [
+    "8": [
       "scripts_test_shared_storage",
       "scripts_test_shared_storage_assert_reads",
       "scripts_test_shared_storage_cleanup",
@@ -242,15 +253,6 @@
       "scripts_test_shared_storage_start_instances",
       "scripts_test_shared_storage_stop_instances",
       "scripts_test_shared_storage_workspace_id"
-    ],
-    "8": [
-      "scripts_verify_live_topology",
-      "scripts_verify_live_topology_assert_control_plane",
-      "scripts_verify_live_topology_assert_reads",
-      "scripts_verify_live_topology_assert_shared_limiter",
-      "scripts_verify_live_topology_sh__entry",
-      "scripts_verify_live_topology_wait_for_health",
-      "scripts_verify_live_topology_workspace_id"
     ],
     "9": [
       "scripts_deploy",
@@ -343,9 +345,9 @@
     "3": 0.058823529411764705,
     "4": 0.1225296442687747,
     "5": 0.1,
-    "6": 0.2857142857142857,
-    "7": 0.42857142857142855,
-    "8": 0.47619047619047616,
+    "6": 0.4166666666666667,
+    "7": 0.2857142857142857,
+    "8": 0.42857142857142855,
     "9": 0.8333333333333334,
     "10": 0.6666666666666666,
     "11": 0.6666666666666666,
