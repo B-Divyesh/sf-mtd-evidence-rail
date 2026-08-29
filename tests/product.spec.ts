@@ -2,26 +2,47 @@ import { test, expect, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { readFileSync } from 'node:fs';
 
-async function openReady(page:Page,path:'/app'|'/demo'){
+async function openReady(page:Page,path:'/app'|'/demo'|'/?demo=1'){
   await page.goto(path);
   await expect(page.locator('#records-view .summary-line')).toBeVisible();
   await expect(page.getByRole('button',{name:'Add a transaction'})).toBeEnabled();
 }
 
-test('@claim:demo-isolation demo uses a separate 24-hour workspace', async ({ page }) => {
+test('@claim:demo-isolation demo isolates private workspace and subscription state for 24 hours', async ({ page }) => {
   let expiry:number|undefined;
+  const outgoing:{url:string; license:string|undefined}[]=[];
+  const realWorkspace='a'.repeat(64);
+  const realLicense='real-subscription-token';
+  const realCache=JSON.stringify({valid:true,checked_at:1});
+  await page.addInitScript(([workspace, license, cache]) => {
+    localStorage.setItem('mtd-evidence-rail:workspace', workspace);
+    localStorage.setItem('sb_license:mtd-evidence-rail', license);
+    localStorage.setItem('sb_license_cache:mtd-evidence-rail', cache);
+  }, [realWorkspace, realLicense, realCache]);
   page.on('response', async response => {
     if (response.url().endsWith('/api/demo') && response.request().method() === 'POST') expiry = (await response.json()).expires_in_hours;
   });
-  await openReady(page,'/demo');
-  await expect(page.getByText('Demo — sample data, nothing is saved to your workspace')).toBeVisible();
+  page.on('request', request => outgoing.push({url:request.url(),license:request.headers()['x-license-key']}));
+  await openReady(page,'/?demo=1');
+  await expect(page).toHaveURL(/\?demo=1$/);
+  await expect(page.getByText('Demo — sample data. Changes stay in this 24-hour demo.')).toBeVisible();
   await expect(page.getByText('6', { exact: true }).first()).toBeVisible();
   const firstKey = await page.evaluate(() => sessionStorage.getItem('demo:mtd-evidence-rail:workspace'));
   expect(firstKey).toMatch(/^demo:[a-f0-9]{64}$/);
-  expect(await page.evaluate(() => localStorage.getItem('mtd-evidence-rail:workspace'))).toBeNull();
+  expect(await page.evaluate(() => localStorage.getItem('mtd-evidence-rail:workspace'))).toBe(realWorkspace);
+  expect(await page.evaluate(() => localStorage.getItem('sb_license:mtd-evidence-rail'))).toBe(realLicense);
+  expect(await page.evaluate(() => localStorage.getItem('sb_license_cache:mtd-evidence-rail'))).toBe(realCache);
   expect(expiry).toBe(24);
+  const productOrigin = new URL(page.url()).origin;
+  for (const request of outgoing) {
+    expect(new URL(request.url).origin).toBe(productOrigin);
+    expect(request.license).toBeUndefined();
+  }
   await page.getByRole('button', { name: 'Reset demo' }).click();
   await expect.poll(() => page.evaluate(() => sessionStorage.getItem('demo:mtd-evidence-rail:workspace'))).not.toBe(firstKey);
+  expect(await page.evaluate(() => localStorage.getItem('mtd-evidence-rail:workspace'))).toBe(realWorkspace);
+  expect(await page.evaluate(() => localStorage.getItem('sb_license:mtd-evidence-rail'))).toBe(realLicense);
+  expect(await page.evaluate(() => localStorage.getItem('sb_license_cache:mtd-evidence-rail'))).toBe(realCache);
 });
 
 test('@claim:no-account starts without sign-in and keeps the key on this device', async ({ page }) => {
@@ -298,9 +319,13 @@ test('release-blocking copy and 44px inline-link regressions stay fixed', async 
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/');
   const landingText = await page.locator('main').innerText();
-  for (const removed of ['Three stops', 'Keep every quarter on the rail', 'unlimited transactions']) {
+  for (const removed of ['Three stops', 'Keep every quarter on the rail', 'unlimited transactions', 'Quarterly evidence, in order', 'Bank lines, invoices, and receipts', 'Clear boundaries', 'Your records stay under your control']) {
     expect(landingText).not.toContain(removed);
   }
+  await expect(page.getByText('Evidence for your MTD quarter', { exact: true })).toBeVisible();
+  await expect(page.getByText('Transactions, invoices, and receipts appear in one dated view.')).toBeVisible();
+  await expect(page.getByText('What this record tool does not do', { exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Workspace privacy, export, and deletion' })).toBeVisible();
   await expect(page.getByText('How it works', { exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Use one workspace for every quarter' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Start monthly subscription' })).toBeVisible();

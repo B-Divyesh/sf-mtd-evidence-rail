@@ -1,10 +1,10 @@
 [
   {
     "id": "demo-isolation",
-    "claim": "Demo records use a separate workspace that expires after 24 hours",
+    "claim": "Demo changes stay in a separate 24-hour workspace",
     "where": "demo banner, privacy page, README",
     "test": "npm test -- --grep @claim:demo-isolation",
-    "sandbox": "fresh browser context; open /demo; inspect demo key, expiry response, and reset"
+    "sandbox": "fresh browser context seeded with real workspace and licence state; open /?demo=1; assert real state is unchanged, no real licence header or cross-origin request occurs, then inspect demo key, expiry response, and reset"
   },
   {
     "id": "no-account",
@@ -58,7 +58,7 @@
   {
     "id": "evidence-pack",
     "claim": "The evidence pack is a ZIP with a transaction CSV and linked files",
-    "where": "how it works, export button, README",
+    "where": "landing facts, how it works, export button, README",
     "test": "npm test -- --grep @claim:evidence-pack",
     "sandbox": "demo data; download pack and inspect ZIP signature and entries"
   },

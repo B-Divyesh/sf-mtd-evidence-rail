@@ -4,7 +4,7 @@ Link each expense to evidence before your quarterly update.
 
 MTD Evidence Rail is for UK sole traders, tutors, and small club operators. It
 keeps transactions, receipts, and invoices together without adding a full
-accounting suite. It does not calculate tax or file with HMRC.
+accounting suite. Use it to organise evidence before your own filing.
 
 ## What it does
 
@@ -22,10 +22,10 @@ open a Dodo-hosted checkout.
 
 ## Try the isolated demo
 
-Open [the sample workspace](https://mtd-evidence-rail.sociobot.in/demo), or use
-`http://localhost:8080/demo` locally. It contains six realistic transactions,
-four linked files, and two missing items. Demo workspaces are separate from
-private workspaces and expire after 24 hours. See [`.factory/demo.md`](.factory/demo.md).
+Open [the sample workspace](https://mtd-evidence-rail.sociobot.in/?demo=1), or
+use `http://localhost:8080/?demo=1` locally. It contains six realistic
+transactions, four linked files, and two missing items. Demo changes stay in a
+separate workspace for 24 hours. See [`.factory/demo.md`](.factory/demo.md).
 
 ## Run locally
 
@@ -62,31 +62,23 @@ and runs Playwright in Chromium. Claim tests are listed in
 
 ## Data and security
 
-Records and evidence are stored in SQLite under `DATA_DIR`. Production mounts
-that directory from Azure Files and runs one replica, so every request reaches
-the same durable database. Its deployment-only `SQLITE_VFS=unix-dotfile`
-setting uses lock files supported by SMB; the one-replica policy remains
-mandatory. A 64-character workspace key scopes every API request. Demo keys use a separate
+Records and evidence are stored in SQLite under `DATA_DIR`. Production uses one
+app instance. Its database is stored on the mounted `/data` volume. A
+64-character workspace key scopes every API request. Demo keys use a separate
 browser and database namespace. API endpoints enforce per-IP burst limits and
 respect the first `X-Forwarded-For` hop. Security headers include a restrictive
 CSP.
 
-There are no advertising trackers or third-party runtime scripts. The product
-contacts `api.sociobot.in` only to verify subscription access or start checkout. The
-server enforces the free quarter limit even if browser storage is changed. See
+There are no advertising trackers or third-party runtime scripts. The server
+enforces the free quarter limit even if browser storage is changed. See
 `/privacy` and `/terms` in the running product.
 
 ## Deploy
 
 The root `Dockerfile` builds the Vite frontend and Rust server in separate
-stages. The runtime image runs as a non-root user, reads `PORT`, and serves
-`/health` with the supplied `BUILD_SHA`. The work-order deployment is wrapped
-by `scripts/deploy.sh`; it mounts Azure Files at `/data` and pins the app to one
-replica because SQLite is a single-writer database. The source-owned
-`.factory/container-app.json` contract is applied after the factory image
-rollout. Deployment fails unless control-plane topology, cross-request reads,
-one shared limiter, 12 fresh browsers, and restart persistence pass. The
-factory owns product registration and billing configuration.
+stages. The runtime image runs as a non-root user. It reads `PORT` and serves
+`/health` with the supplied `BUILD_SHA`. The factory owns product registration
+and billing configuration. Deployment details are recorded in the handoff.
 
 ## Licence
 

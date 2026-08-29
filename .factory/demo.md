@@ -2,15 +2,15 @@
 
 ## Entry point
 
-- Production: `https://mtd-evidence-rail.sociobot.in/demo`
-- Local: `http://localhost:8080/demo`
+- Production: `https://mtd-evidence-rail.sociobot.in/?demo=1` (also `/demo`)
+- Local: `http://localhost:8080/?demo=1` (also `/demo`)
 
 The visible **Try it with sample data** link reaches this route in one click.
 Opening `/demo` provisions a random server-side workspace with a 24-hour expiry.
 
 ## Sample records
 
-The demo starts in Q2 2026 with six transactions:
+The demo starts in Q1 2026 (6 April–5 July 2026) with six transactions:
 
 - two income invoices for tutoring and club fees;
 - four expenses for stationery, venue hire, travel, and teaching materials;
@@ -23,8 +23,9 @@ export without setup.
 
 The browser key is `demo:mtd-evidence-rail:workspace` in `sessionStorage`.
 Private workspaces use `mtd-evidence-rail:workspace` in `localStorage`. The demo
-API workspace id begins with `demo:`. Every read and write carries only the
-active workspace key.
+API workspace id begins with `demo:`. Every demo read and write carries only the
+demo workspace key. Demo mode does not read, write, or send private workspace or
+subscription keys, and it makes no cross-origin requests.
 
 **Reset demo** discards the session key and provisions a fresh sample workspace.
 **Start for real** opens `/app`, where a separate private key is created. Demo

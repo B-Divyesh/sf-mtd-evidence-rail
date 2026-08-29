@@ -682,7 +682,7 @@ pub async fn export_pack(
         .map_err(internal)?;
     zip.write_all(&csv_bytes).map_err(internal)?;
     zip.start_file("README.txt", options).map_err(internal)?;
-    zip.write_all(b"MTD Evidence Rail evidence pack\n\nReview missing rows in transactions.csv before sharing. This pack is a record aid, not an HMRC filing or tax calculation.\n").map_err(internal)?;
+    zip.write_all(b"MTD Evidence Rail evidence pack\n\nReview missing rows in transactions.csv before sharing.\n").map_err(internal)?;
     for r in &records {
         if let (Some(name), Some(data)) = (&r.evidence_name, &r.evidence_data) {
             let safe_name: String = name
