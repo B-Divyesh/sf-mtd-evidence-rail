@@ -104,6 +104,48 @@
       "vec"
     ],
     "2": [
+      "axe_core_playwright",
+      "package",
+      "package_devdependencies",
+      "package_devdependencies_axe_core_playwright",
+      "package_devdependencies_playwright_test",
+      "package_devdependencies_sharp",
+      "package_devdependencies_types_node",
+      "package_devdependencies_typescript",
+      "package_devdependencies_vite",
+      "package_name",
+      "package_overrides",
+      "package_overrides_playwright_core",
+      "package_private",
+      "package_scripts",
+      "package_scripts_assets",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_lint",
+      "package_scripts_start",
+      "package_scripts_test",
+      "package_scripts_test_deployment_topology",
+      "package_scripts_test_durable_storage",
+      "package_scripts_test_e2e",
+      "package_scripts_test_live_checkout",
+      "package_scripts_test_live_rate_limit",
+      "package_scripts_test_live_release",
+      "package_scripts_test_live_workspace_consistency",
+      "package_scripts_test_runtime_defaults",
+      "package_scripts_test_shared_storage",
+      "package_scripts_test_verification_15_regression",
+      "package_scripts_test_verification_16_regression",
+      "package_scripts_typecheck",
+      "package_scripts_verify_live_topology",
+      "package_type",
+      "package_version",
+      "playwright_test",
+      "sharp",
+      "types_node",
+      "typescript",
+      "vite"
+    ],
+    "3": [
       "factory_evidence_verification_5_live_index_cimka9hu",
       "factory_evidence_verification_5_live_index_cimka9hu_a",
       "factory_evidence_verification_5_live_index_cimka9hu_ae",
@@ -145,48 +187,37 @@
       "factory_evidence_verification_5_live_index_cimka9hu_ye",
       "factory_evidence_verification_5_live_index_cimka9hu_z"
     ],
-    "3": [
-      "axe_core_playwright",
-      "package",
-      "package_devdependencies",
-      "package_devdependencies_axe_core_playwright",
-      "package_devdependencies_playwright_test",
-      "package_devdependencies_sharp",
-      "package_devdependencies_types_node",
-      "package_devdependencies_typescript",
-      "package_devdependencies_vite",
-      "package_name",
-      "package_overrides",
-      "package_overrides_playwright_core",
-      "package_private",
-      "package_scripts",
-      "package_scripts_assets",
-      "package_scripts_build",
-      "package_scripts_dev",
-      "package_scripts_lint",
-      "package_scripts_start",
-      "package_scripts_test",
-      "package_scripts_test_deployment_topology",
-      "package_scripts_test_durable_storage",
-      "package_scripts_test_e2e",
-      "package_scripts_test_live_checkout",
-      "package_scripts_test_live_rate_limit",
-      "package_scripts_test_live_release",
-      "package_scripts_test_live_workspace_consistency",
-      "package_scripts_test_runtime_defaults",
-      "package_scripts_test_shared_storage",
-      "package_scripts_test_verification_15_regression",
-      "package_scripts_typecheck",
-      "package_scripts_verify_live_topology",
-      "package_type",
-      "package_version",
-      "playwright_test",
-      "sharp",
-      "types_node",
-      "typescript",
-      "vite"
-    ],
     "4": [
+      "arc",
+      "client",
+      "mutex",
+      "next",
+      "request",
+      "response",
+      "result",
+      "router",
+      "sqlitepool",
+      "src_main",
+      "src_main_api_rate_limit_returns_retry_after",
+      "src_main_app",
+      "src_main_appstate",
+      "src_main_azure_runtime_accepts_the_durable_data_mount_and_required_vfs",
+      "src_main_azure_runtime_rejects_a_durable_mount_without_the_required_vfs",
+      "src_main_azure_runtime_rejects_the_generic_container_local_filesystem",
+      "src_main_health_reports_build_sha",
+      "src_main_main",
+      "src_main_production_topology_patch",
+      "src_main_request_azure_topology_repair",
+      "src_main_security_headers",
+      "src_main_shutdown_signal",
+      "src_main_test_app",
+      "src_main_unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated",
+      "src_main_validate_azure_storage_contract",
+      "src_main_validate_runtime_storage",
+      "src_main_verification_16_generic_rollout_is_reconciled_before_it_can_serve",
+      "src_main_workspace_deletion_removes_records_evidence_and_audit"
+    ],
+    "5": [
       "factory_review_2",
       "factory_review_2_adversarial_first_read_review_2_fail",
       "factory_review_2_claims",
@@ -214,33 +245,6 @@
       "factory_review_2_structure_accessibility_and_links",
       "factory_review_2_verdict",
       "factory_review_2_what_would_make_this_perfect"
-    ],
-    "5": [
-      "arc",
-      "client",
-      "mutex",
-      "next",
-      "request",
-      "response",
-      "result",
-      "router",
-      "sqlitepool",
-      "src_main",
-      "src_main_api_rate_limit_returns_retry_after",
-      "src_main_app",
-      "src_main_appstate",
-      "src_main_azure_runtime_accepts_the_durable_data_mount_and_required_vfs",
-      "src_main_azure_runtime_rejects_a_durable_mount_without_the_required_vfs",
-      "src_main_azure_runtime_rejects_the_generic_container_local_filesystem",
-      "src_main_health_reports_build_sha",
-      "src_main_main",
-      "src_main_security_headers",
-      "src_main_shutdown_signal",
-      "src_main_test_app",
-      "src_main_unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated",
-      "src_main_validate_azure_storage_contract",
-      "src_main_validate_runtime_storage",
-      "src_main_workspace_deletion_removes_records_evidence_and_audit"
     ],
     "6": [
       "factory_demo",
@@ -503,140 +507,148 @@
       "scripts_deploy_wait_for_topology"
     ],
     "24": [
+      "scripts_test_topology_self_repair",
+      "scripts_test_topology_self_repair_address",
+      "scripts_test_topology_self_repair_binary",
+      "scripts_test_topology_self_repair_child",
+      "scripts_test_topology_self_repair_repodir",
+      "scripts_test_topology_self_repair_server"
+    ],
+    "25": [
       "factory_polish_2",
       "factory_polish_2_cumulative_release_evidence",
       "factory_polish_2_polish_2_cumulative_adversarial_finding_closure",
       "factory_polish_2_review_1_findings",
       "factory_polish_2_review_2_findings"
     ],
-    "25": [
+    "26": [
       "scripts_test_live_checkout",
       "scripts_test_live_checkout_checkouturl",
       "scripts_test_live_checkout_contractpage",
       "scripts_test_live_checkout_hosted",
       "scripts_test_live_checkout_includes"
     ],
-    "26": [
+    "27": [
       "agents",
       "agents_definition_of_done_a_worker_may_not_claim_completion_without_all_of_these",
       "agents_mtd_evidence_rail_mtd_evidence_rail_factory_product_contract",
       "agents_working_rules"
     ],
-    "27": [
+    "28": [
       "scripts_test_durable_storage",
       "scripts_test_durable_storage_cleanup",
       "scripts_test_durable_storage_sh__entry",
       "scripts_test_durable_storage_start_server"
     ],
-    "28": [
+    "29": [
       "scripts_test_live_workspace_consistency",
       "scripts_test_live_workspace_consistency_assert_reads",
       "scripts_test_live_workspace_consistency_sh__entry",
       "scripts_test_live_workspace_consistency_workspace_id"
     ],
-    "29": [
+    "30": [
       "scripts_test_live_release_guard",
       "scripts_test_live_release_guard_run_guard",
       "scripts_test_live_release_guard_sh__entry"
     ],
-    "30": [
+    "31": [
       "scripts_test_runtime_defaults",
       "scripts_test_runtime_defaults_cleanup",
       "scripts_test_runtime_defaults_sh__entry"
     ],
-    "31": [
+    "32": [
       "factory_evidence_verification_5_live_audit",
       "factory_evidence_verification_5_live_audit_report"
     ],
-    "32": [
+    "33": [
       "factory_evidence_verification_5_live_browser_observation",
       "factory_evidence_verification_5_live_browser_observation_out"
     ],
-    "33": [
+    "34": [
       "scripts_assert_build_inputs_committed",
       "scripts_assert_build_inputs_committed_sh__entry"
     ],
-    "34": [
+    "35": [
       "scripts_assert_live_topology",
       "scripts_assert_live_topology_sh__entry"
     ],
-    "35": [
+    "36": [
       "scripts_optimise_assets",
       "scripts_optimise_assets_source"
     ],
-    "36": [
+    "37": [
       "scripts_render_production_topology",
       "scripts_render_production_topology_sh__entry"
     ],
-    "37": [
+    "38": [
       "scripts_test_deployment_topology",
       "scripts_test_deployment_topology_sh__entry"
     ],
-    "38": [
+    "39": [
       "scripts_test_live_rate_limit",
       "scripts_test_live_rate_limit_sh__entry"
     ],
-    "39": [
+    "40": [
       "scripts_test_live_release",
       "scripts_test_live_release_sh__entry"
     ],
-    "40": [
+    "41": [
       "tests_product_spec",
       "tests_product_spec_openready"
     ],
-    "41": [
+    "42": [
       "pkg_mtd_evidence_rail"
     ],
-    "42": [
+    "43": [
       "playwright_config"
     ],
-    "43": [
+    "44": [
       "scripts_license_fixture"
     ],
-    "44": [
+    "45": [
       "scripts_live_browser_smoke"
     ],
-    "45": [
+    "46": [
       "src_main_rs_intoresponse"
     ],
-    "46": [
+    "47": [
       "src_main_rs_response"
     ],
-    "47": [
+    "48": [
       "src_main_rs_sqlitepool"
     ],
-    "48": [
+    "49": [
       "src_main_rs_state"
     ],
-    "49": [
+    "50": [
       "src_main_rs_string"
     ],
-    "50": [
+    "51": [
       "src_routes_rs_intoresponse"
     ],
-    "51": [
+    "52": [
       "src_routes_rs_response"
     ],
-    "52": [
+    "53": [
       "src_routes_rs_sqlitepool"
     ],
-    "53": [
+    "54": [
       "src_routes_rs_state"
     ],
-    "54": [
+    "55": [
       "src_routes_rs_string"
     ],
-    "55": [
+    "56": [
       "vite_config"
     ]
   },
   "cohesion": {
     "0": 0.11611030478955008,
     "1": 0.18067632850241547,
-    "2": 0.13974358974358975,
-    "3": 0.05128205128205128,
-    "4": 0.07407407407407407,
-    "5": 0.12666666666666668,
+    "2": 0.05,
+    "3": 0.13974358974358975,
+    "4": 0.12169312169312169,
+    "5": 0.07407407407407407,
     "6": 0.08695652173913043,
     "7": 0.08695652173913043,
     "8": 0.1,
@@ -655,14 +667,14 @@
     "21": 0.42857142857142855,
     "22": 0.3333333333333333,
     "23": 0.6,
-    "24": 0.4,
+    "24": 0.3333333333333333,
     "25": 0.4,
-    "26": 0.5,
-    "27": 0.6666666666666666,
+    "26": 0.4,
+    "27": 0.5,
     "28": 0.6666666666666666,
-    "29": 1.0,
-    "30": 0.6666666666666666,
-    "31": 1.0,
+    "29": 0.6666666666666666,
+    "30": 1.0,
+    "31": 0.6666666666666666,
     "32": 1.0,
     "33": 1.0,
     "34": 1.0,
@@ -686,13 +698,14 @@
     "52": 1.0,
     "53": 1.0,
     "54": 1.0,
-    "55": 1.0
+    "55": 1.0,
+    "56": 1.0
   },
   "gods": [
     {
       "id": "package_scripts",
       "label": "scripts",
-      "degree": 19
+      "degree": 20
     },
     {
       "id": "frontend_src_main_bindapp",
@@ -750,7 +763,7 @@
       ],
       "confidence": "EXTRACTED",
       "relation": "references",
-      "note": "Bridges community 1 \u2192 community 5"
+      "note": "Bridges community 1 \u2192 community 4"
     }
   ],
   "tokens": {
