@@ -1,0 +1,29 @@
+{
+  "activeRevisionsMode": "Single",
+  "scale": {
+    "minReplicas": 1,
+    "maxReplicas": 1,
+    "rules": []
+  },
+  "container": {
+    "environment": [
+      {
+        "name": "SQLITE_VFS",
+        "value": "unix-dotfile"
+      }
+    ],
+    "volumeMounts": [
+      {
+        "volumeName": "data",
+        "mountPath": "/data"
+      }
+    ]
+  },
+  "volumes": [
+    {
+      "name": "data",
+      "storageName": "mtd-evidence-rail-data",
+      "storageType": "AzureFile"
+    }
+  ]
+}

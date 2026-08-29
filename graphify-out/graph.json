@@ -9,7 +9,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "importrow",
       "source_file": "frontend/src/main.ts",
@@ -21,7 +21,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "quarter",
       "source_file": "frontend/src/main.ts",
@@ -33,7 +33,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "recorditem",
       "source_file": "frontend/src/main.ts",
@@ -45,7 +45,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "workspaceresponse",
       "source_file": "frontend/src/main.ts",
@@ -56,7 +56,7 @@
       "label": "api()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "api()",
       "source_file": "frontend/src/main.ts",
@@ -67,7 +67,7 @@
       "label": "apiError()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "apierror()",
       "source_file": "frontend/src/main.ts",
@@ -78,7 +78,7 @@
       "label": "appBanner()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "appbanner()",
       "source_file": "frontend/src/main.ts",
@@ -89,7 +89,7 @@
       "label": "appPage()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "apppage()",
       "source_file": "frontend/src/main.ts",
@@ -100,7 +100,7 @@
       "label": "bindApp()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "bindapp()",
       "source_file": "frontend/src/main.ts",
@@ -111,7 +111,7 @@
       "label": "bindLicenseButtons()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "bindlicensebuttons()",
       "source_file": "frontend/src/main.ts",
@@ -122,7 +122,7 @@
       "label": "bindRoutes()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "bindroutes()",
       "source_file": "frontend/src/main.ts",
@@ -133,7 +133,7 @@
       "label": "captureLicense()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "capturelicense()",
       "source_file": "frontend/src/main.ts",
@@ -144,7 +144,7 @@
       "label": "closeDialog()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "closedialog()",
       "source_file": "frontend/src/main.ts",
@@ -155,7 +155,7 @@
       "label": "confirmImport()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "confirmimport()",
       "source_file": "frontend/src/main.ts",
@@ -166,7 +166,7 @@
       "label": "deleteWorkspace()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "deleteworkspace()",
       "source_file": "frontend/src/main.ts",
@@ -177,7 +177,7 @@
       "label": "dialogs()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "dialogs()",
       "source_file": "frontend/src/main.ts",
@@ -188,7 +188,7 @@
       "label": "escapeHtml()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "escapehtml()",
       "source_file": "frontend/src/main.ts",
@@ -199,7 +199,7 @@
       "label": "exportPack()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "exportpack()",
       "source_file": "frontend/src/main.ts",
@@ -210,7 +210,7 @@
       "label": "footer()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "footer()",
       "source_file": "frontend/src/main.ts",
@@ -221,7 +221,7 @@
       "label": "header()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "header()",
       "source_file": "frontend/src/main.ts",
@@ -232,7 +232,7 @@
       "label": "icon()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "icon()",
       "source_file": "frontend/src/main.ts",
@@ -243,7 +243,7 @@
       "label": "isPaid()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "ispaid()",
       "source_file": "frontend/src/main.ts",
@@ -254,7 +254,7 @@
       "label": "landing()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "landing()",
       "source_file": "frontend/src/main.ts",
@@ -265,7 +265,7 @@
       "label": "legal()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "legal()",
       "source_file": "frontend/src/main.ts",
@@ -276,7 +276,7 @@
       "label": "licenseInactive()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "licenseinactive()",
       "source_file": "frontend/src/main.ts",
@@ -287,7 +287,7 @@
       "label": "linkEvidence()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "linkevidence()",
       "source_file": "frontend/src/main.ts",
@@ -298,7 +298,7 @@
       "label": "loadRecords()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "loadrecords()",
       "source_file": "frontend/src/main.ts",
@@ -309,7 +309,7 @@
       "label": "message()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "message()",
       "source_file": "frontend/src/main.ts",
@@ -320,7 +320,7 @@
       "label": "money()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "money()",
       "source_file": "frontend/src/main.ts",
@@ -331,7 +331,7 @@
       "label": "normaliseDate()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "normalisedate()",
       "source_file": "frontend/src/main.ts",
@@ -342,7 +342,7 @@
       "label": "notFound()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "notfound()",
       "source_file": "frontend/src/main.ts",
@@ -353,7 +353,7 @@
       "label": "offlineNotice()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "offlinenotice()",
       "source_file": "frontend/src/main.ts",
@@ -364,7 +364,7 @@
       "label": "openDialog()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "opendialog()",
       "source_file": "frontend/src/main.ts",
@@ -375,7 +375,7 @@
       "label": "prettyDate()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "prettydate()",
       "source_file": "frontend/src/main.ts",
@@ -386,7 +386,7 @@
       "label": "quarterFor()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "quarterfor()",
       "source_file": "frontend/src/main.ts",
@@ -397,7 +397,7 @@
       "label": "quarterOptions()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "quarteroptions()",
       "source_file": "frontend/src/main.ts",
@@ -408,7 +408,7 @@
       "label": "readCsv()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "readcsv()",
       "source_file": "frontend/src/main.ts",
@@ -419,7 +419,7 @@
       "label": "removeEvidence()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "removeevidence()",
       "source_file": "frontend/src/main.ts",
@@ -430,7 +430,7 @@
       "label": "render()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "render()",
       "source_file": "frontend/src/main.ts",
@@ -441,7 +441,7 @@
       "label": "renderRecords()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "renderrecords()",
       "source_file": "frontend/src/main.ts",
@@ -452,7 +452,7 @@
       "label": "saveRecord()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "saverecord()",
       "source_file": "frontend/src/main.ts",
@@ -463,7 +463,7 @@
       "label": "setFormError()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "setformerror()",
       "source_file": "frontend/src/main.ts",
@@ -474,7 +474,7 @@
       "label": "setNotice()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "setnotice()",
       "source_file": "frontend/src/main.ts",
@@ -485,7 +485,7 @@
       "label": "splitCsv()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "splitcsv()",
       "source_file": "frontend/src/main.ts",
@@ -496,7 +496,7 @@
       "label": "verifyLicense()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "verifylicense()",
       "source_file": "frontend/src/main.ts",
@@ -507,7 +507,7 @@
       "label": "workspaceKey()",
       "_callable": true,
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "workspacekey()",
       "source_file": "frontend/src/main.ts",
@@ -518,17 +518,537 @@
       "label": "openReady()",
       "_callable": true,
       "_origin": "ast",
-      "community": 17,
+      "community": 15,
       "file_type": "code",
       "norm_label": "openready()",
       "source_file": "tests/product.spec.ts",
       "source_location": "L5"
     },
     {
+      "id": "apiresult",
+      "label": "ApiResult",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "apiresult",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "arc",
+      "label": "Arc",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "arc",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "client",
+      "label": "Client",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "client",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "date",
+      "label": "Date",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "date",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "e",
+      "label": "E",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "e",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "headermap",
+      "label": "HeaderMap",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "headermap",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "json",
+      "label": "Json",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "json",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "mutex",
+      "label": "Mutex",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "mutex",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "option",
+      "label": "Option",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "option",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "path",
+      "label": "Path",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "path",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "query",
+      "label": "Query",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "query",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "sqliteconnection",
+      "label": "SqliteConnection",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "sqliteconnection",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "src_main_appstate",
+      "label": "AppState",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "appstate",
+      "source_file": "src/main.rs",
+      "source_location": "L25"
+    },
+    {
+      "id": "src_main_rs_sqlitepool",
+      "label": "SqlitePool",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "sqlitepool",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "src_main_rs_string",
+      "label": "String",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "string",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "src_routes",
+      "label": "routes.rs",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "routes.rs",
+      "source_file": "src/routes.rs",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_routes_add_evidence",
+      "label": "add_evidence()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "add_evidence()",
+      "source_file": "src/routes.rs",
+      "source_location": "L500"
+    },
+    {
+      "id": "src_routes_check_workspace",
+      "label": "check_workspace()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "check_workspace()",
+      "source_file": "src/routes.rs",
+      "source_location": "L87"
+    },
+    {
+      "id": "src_routes_create_demo",
+      "label": "create_demo()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "create_demo()",
+      "source_file": "src/routes.rs",
+      "source_location": "L129"
+    },
+    {
+      "id": "src_routes_create_record",
+      "label": "create_record()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "create_record()",
+      "source_file": "src/routes.rs",
+      "source_location": "L444"
+    },
+    {
+      "id": "src_routes_create_workspace",
+      "label": "create_workspace()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "create_workspace()",
+      "source_file": "src/routes.rs",
+      "source_location": "L115"
+    },
+    {
+      "id": "src_routes_delete_record",
+      "label": "delete_record()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "delete_record()",
+      "source_file": "src/routes.rs",
+      "source_location": "L570"
+    },
+    {
+      "id": "src_routes_delete_workspace",
+      "label": "delete_workspace()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "delete_workspace()",
+      "source_file": "src/routes.rs",
+      "source_location": "L586"
+    },
+    {
+      "id": "src_routes_enforce_quarter_limits",
+      "label": "enforce_quarter_limits()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "enforce_quarter_limits()",
+      "source_file": "src/routes.rs",
+      "source_location": "L396"
+    },
+    {
+      "id": "src_routes_error",
+      "label": "error()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "error()",
+      "source_file": "src/routes.rs",
+      "source_location": "L65"
+    },
+    {
+      "id": "src_routes_evidenceinput",
+      "label": "EvidenceInput",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "evidenceinput",
+      "source_file": "src/routes.rs",
+      "source_location": "L53"
+    },
+    {
+      "id": "src_routes_export_pack",
+      "label": "export_pack()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "export_pack()",
+      "source_file": "src/routes.rs",
+      "source_location": "L623"
+    },
+    {
+      "id": "src_routes_exportrecord",
+      "label": "ExportRecord",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "exportrecord",
+      "source_file": "src/routes.rs",
+      "source_location": "L610"
+    },
+    {
+      "id": "src_routes_get_workspace",
+      "label": "get_workspace()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "get_workspace()",
+      "source_file": "src/routes.rs",
+      "source_location": "L233"
+    },
+    {
+      "id": "src_routes_has_paid_access",
+      "label": "has_paid_access()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "has_paid_access()",
+      "source_file": "src/routes.rs",
+      "source_location": "L339"
+    },
+    {
+      "id": "src_routes_import_records",
+      "label": "import_records()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "import_records()",
+      "source_file": "src/routes.rs",
+      "source_location": "L460"
+    },
+    {
+      "id": "src_routes_importinput",
+      "label": "ImportInput",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "importinput",
+      "source_file": "src/routes.rs",
+      "source_location": "L48"
+    },
+    {
+      "id": "src_routes_insert_record",
+      "label": "insert_record()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "insert_record()",
+      "source_file": "src/routes.rs",
+      "source_location": "L423"
+    },
+    {
+      "id": "src_routes_internal",
+      "label": "internal()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "internal()",
+      "source_file": "src/routes.rs",
+      "source_location": "L107"
+    },
+    {
+      "id": "src_routes_now",
+      "label": "now()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "now()",
+      "source_file": "src/routes.rs",
+      "source_location": "L83"
+    },
+    {
+      "id": "src_routes_parse_date",
+      "label": "parse_date()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "parse_date()",
+      "source_file": "src/routes.rs",
+      "source_location": "L250"
+    },
+    {
+      "id": "src_routes_periodquery",
+      "label": "PeriodQuery",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "periodquery",
+      "source_file": "src/routes.rs",
+      "source_location": "L60"
+    },
+    {
+      "id": "src_routes_quarter_bounds",
+      "label": "quarter_bounds()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "quarter_bounds()",
+      "source_file": "src/routes.rs",
+      "source_location": "L309"
+    },
+    {
+      "id": "src_routes_quarter_bounds_for_record",
+      "label": "quarter_bounds_for_record()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "quarter_bounds_for_record()",
+      "source_file": "src/routes.rs",
+      "source_location": "L329"
+    },
+    {
+      "id": "src_routes_record",
+      "label": "Record",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "record",
+      "source_file": "src/routes.rs",
+      "source_location": "L21"
+    },
+    {
+      "id": "src_routes_recordinput",
+      "label": "RecordInput",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "recordinput",
+      "source_file": "src/routes.rs",
+      "source_location": "L37"
+    },
+    {
+      "id": "src_routes_remove_evidence",
+      "label": "remove_evidence()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "remove_evidence()",
+      "source_file": "src/routes.rs",
+      "source_location": "L550"
+    },
+    {
+      "id": "src_routes_rs_intoresponse",
+      "label": "IntoResponse",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "intoresponse",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "src_routes_rs_response",
+      "label": "Response",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "response",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "src_routes_rs_sqlitepool",
+      "label": "SqlitePool",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "sqlitepool",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "src_routes_rs_state",
+      "label": "State",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "state",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "src_routes_rs_string",
+      "label": "String",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "string",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "src_routes_validate",
+      "label": "validate()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "validate()",
+      "source_file": "src/routes.rs",
+      "source_location": "L274"
+    },
+    {
+      "id": "src_routes_workspace",
+      "label": "workspace()",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "workspace()",
+      "source_file": "src/routes.rs",
+      "source_location": "L69"
+    },
+    {
+      "id": "statuscode",
+      "label": "StatusCode",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "statuscode",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "value",
+      "label": "Value",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "value",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "vec",
+      "label": "Vec",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "vec",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "frontend_src_main",
       "label": "main.ts",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "main.ts",
       "source_file": "frontend/src/main.ts",
@@ -538,7 +1058,7 @@
       "id": "frontend_src_main_currentrecords",
       "label": "currentRecords",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "currentrecords",
       "source_file": "frontend/src/main.ts",
@@ -548,511 +1068,17 @@
       "id": "frontend_src_main_importrows",
       "label": "importRows",
       "_origin": "ast",
-      "community": 0,
+      "community": 1,
       "file_type": "code",
       "norm_label": "importrows",
       "source_file": "frontend/src/main.ts",
       "source_location": "L142"
     },
     {
-      "id": "tsconfig",
-      "label": "tsconfig.json",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "tsconfig.json",
-      "source_file": "tsconfig.json",
-      "source_location": "L1"
-    },
-    {
-      "id": "tsconfig_compileroptions",
-      "label": "compilerOptions",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "compileroptions",
-      "source_file": "tsconfig.json",
-      "source_location": "L2"
-    },
-    {
-      "id": "tsconfig_compileroptions_allowimportingtsextensions",
-      "label": "allowImportingTsExtensions",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "allowimportingtsextensions",
-      "source_file": "tsconfig.json",
-      "source_location": "L9"
-    },
-    {
-      "id": "tsconfig_compileroptions_isolatedmodules",
-      "label": "isolatedModules",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "isolatedmodules",
-      "source_file": "tsconfig.json",
-      "source_location": "L10"
-    },
-    {
-      "id": "tsconfig_compileroptions_lib",
-      "label": "lib",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "lib",
-      "source_file": "tsconfig.json",
-      "source_location": "L6"
-    },
-    {
-      "id": "tsconfig_compileroptions_module",
-      "label": "module",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "module",
-      "source_file": "tsconfig.json",
-      "source_location": "L5"
-    },
-    {
-      "id": "tsconfig_compileroptions_moduledetection",
-      "label": "moduleDetection",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "moduledetection",
-      "source_file": "tsconfig.json",
-      "source_location": "L11"
-    },
-    {
-      "id": "tsconfig_compileroptions_moduleresolution",
-      "label": "moduleResolution",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "moduleresolution",
-      "source_file": "tsconfig.json",
-      "source_location": "L8"
-    },
-    {
-      "id": "tsconfig_compileroptions_noemit",
-      "label": "noEmit",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "noemit",
-      "source_file": "tsconfig.json",
-      "source_location": "L12"
-    },
-    {
-      "id": "tsconfig_compileroptions_skiplibcheck",
-      "label": "skipLibCheck",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "skiplibcheck",
-      "source_file": "tsconfig.json",
-      "source_location": "L7"
-    },
-    {
-      "id": "tsconfig_compileroptions_strict",
-      "label": "strict",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "strict",
-      "source_file": "tsconfig.json",
-      "source_location": "L13"
-    },
-    {
-      "id": "tsconfig_compileroptions_target",
-      "label": "target",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "target",
-      "source_file": "tsconfig.json",
-      "source_location": "L3"
-    },
-    {
-      "id": "tsconfig_compileroptions_usedefineforclassfields",
-      "label": "useDefineForClassFields",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "usedefineforclassfields",
-      "source_file": "tsconfig.json",
-      "source_location": "L4"
-    },
-    {
-      "id": "tsconfig_include",
-      "label": "include",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "include",
-      "source_file": "tsconfig.json",
-      "source_location": "L15"
-    },
-    {
-      "id": "ref_dom",
-      "label": "DOM",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "concept",
-      "norm_label": "dom",
-      "source_file": "tsconfig.json",
-      "source_location": "L6"
-    },
-    {
-      "id": "ref_dom_iterable",
-      "label": "DOM.Iterable",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "concept",
-      "norm_label": "dom.iterable",
-      "source_file": "tsconfig.json",
-      "source_location": "L6"
-    },
-    {
-      "id": "ref_es2022",
-      "label": "ES2022",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "concept",
-      "norm_label": "es2022",
-      "source_file": "tsconfig.json",
-      "source_location": "L6"
-    },
-    {
-      "id": "ref_frontend_src",
-      "label": "frontend/src",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "concept",
-      "norm_label": "frontend/src",
-      "source_file": "tsconfig.json",
-      "source_location": "L15"
-    },
-    {
-      "id": "ref_tests",
-      "label": "tests",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "concept",
-      "norm_label": "tests",
-      "source_file": "tsconfig.json",
-      "source_location": "L15"
-    },
-    {
-      "id": "ref_vite_config_ts",
-      "label": "vite.config.ts",
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "concept",
-      "norm_label": "vite.config.ts",
-      "source_file": "tsconfig.json",
-      "source_location": "L15"
-    },
-    {
-      "id": "scripts_test_shared_storage",
-      "label": "test-shared-storage.sh",
-      "_origin": "ast",
-      "community": 10,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "file"
-      },
-      "norm_label": "test-shared-storage.sh",
-      "source_file": "scripts/test-shared-storage.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_test_shared_storage_assert_reads",
-      "label": "assert_reads()",
-      "_origin": "ast",
-      "community": 10,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_function"
-      },
-      "norm_label": "assert_reads()",
-      "source_file": "scripts/test-shared-storage.sh",
-      "source_location": "L43"
-    },
-    {
-      "id": "scripts_test_shared_storage_cleanup",
-      "label": "cleanup()",
-      "_origin": "ast",
-      "community": 10,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_function"
-      },
-      "norm_label": "cleanup()",
-      "source_file": "scripts/test-shared-storage.sh",
-      "source_location": "L9"
-    },
-    {
-      "id": "scripts_test_shared_storage_sh__entry",
-      "label": "test-shared-storage.sh script",
-      "_origin": "ast",
-      "community": 10,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_entrypoint"
-      },
-      "norm_label": "test-shared-storage.sh script",
-      "source_file": "scripts/test-shared-storage.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_test_shared_storage_start_instances",
-      "label": "start_instances()",
-      "_origin": "ast",
-      "community": 10,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_function"
-      },
-      "norm_label": "start_instances()",
-      "source_file": "scripts/test-shared-storage.sh",
-      "source_location": "L16"
-    },
-    {
-      "id": "scripts_test_shared_storage_stop_instances",
-      "label": "stop_instances()",
-      "_origin": "ast",
-      "community": 10,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_function"
-      },
-      "norm_label": "stop_instances()",
-      "source_file": "scripts/test-shared-storage.sh",
-      "source_location": "L33"
-    },
-    {
-      "id": "scripts_test_shared_storage_workspace_id",
-      "label": "workspace_id()",
-      "_origin": "ast",
-      "community": 10,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_function"
-      },
-      "norm_label": "workspace_id()",
-      "source_file": "scripts/test-shared-storage.sh",
-      "source_location": "L39"
-    },
-    {
-      "id": "scripts_verify_live_topology",
-      "label": "verify-live-topology.sh",
-      "_origin": "ast",
-      "community": 11,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "file"
-      },
-      "norm_label": "verify-live-topology.sh",
-      "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_verify_live_topology_assert_control_plane",
-      "label": "assert_control_plane()",
-      "_origin": "ast",
-      "community": 11,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_function"
-      },
-      "norm_label": "assert_control_plane()",
-      "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L27"
-    },
-    {
-      "id": "scripts_verify_live_topology_assert_reads",
-      "label": "assert_reads()",
-      "_origin": "ast",
-      "community": 11,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_function"
-      },
-      "norm_label": "assert_reads()",
-      "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L41"
-    },
-    {
-      "id": "scripts_verify_live_topology_sh__entry",
-      "label": "verify-live-topology.sh script",
-      "_origin": "ast",
-      "community": 11,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_entrypoint"
-      },
-      "norm_label": "verify-live-topology.sh script",
-      "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_verify_live_topology_wait_for_health",
-      "label": "wait_for_health()",
-      "_origin": "ast",
-      "community": 11,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_function"
-      },
-      "norm_label": "wait_for_health()",
-      "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L14"
-    },
-    {
-      "id": "scripts_verify_live_topology_workspace_id",
-      "label": "workspace_id()",
-      "_origin": "ast",
-      "community": 11,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_function"
-      },
-      "norm_label": "workspace_id()",
-      "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L10"
-    },
-    {
-      "id": "scripts_deploy",
-      "label": "deploy.sh",
-      "_origin": "ast",
-      "community": 12,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "file"
-      },
-      "norm_label": "deploy.sh",
-      "source_file": "scripts/deploy.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_deploy_patch_app",
-      "label": "patch_app()",
-      "_origin": "ast",
-      "community": 12,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_function"
-      },
-      "norm_label": "patch_app()",
-      "source_file": "scripts/deploy.sh",
-      "source_location": "L15"
-    },
-    {
-      "id": "scripts_deploy_sh__entry",
-      "label": "deploy.sh script",
-      "_origin": "ast",
-      "community": 12,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_entrypoint"
-      },
-      "norm_label": "deploy.sh script",
-      "source_file": "scripts/deploy.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_deploy_wait_for_app",
-      "label": "wait_for_app()",
-      "_origin": "ast",
-      "community": 12,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_function"
-      },
-      "norm_label": "wait_for_app()",
-      "source_file": "scripts/deploy.sh",
-      "source_location": "L24"
-    },
-    {
-      "id": "scripts_test_durable_storage",
-      "label": "test-durable-storage.sh",
-      "_origin": "ast",
-      "community": 13,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "file"
-      },
-      "norm_label": "test-durable-storage.sh",
-      "source_file": "scripts/test-durable-storage.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_test_durable_storage_cleanup",
-      "label": "cleanup()",
-      "_origin": "ast",
-      "community": 13,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_function"
-      },
-      "norm_label": "cleanup()",
-      "source_file": "scripts/test-durable-storage.sh",
-      "source_location": "L7"
-    },
-    {
-      "id": "scripts_test_durable_storage_sh__entry",
-      "label": "test-durable-storage.sh script",
-      "_origin": "ast",
-      "community": 13,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_entrypoint"
-      },
-      "norm_label": "test-durable-storage.sh script",
-      "source_file": "scripts/test-durable-storage.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_test_durable_storage_start_server",
-      "label": "start_server()",
-      "_origin": "ast",
-      "community": 13,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_function"
-      },
-      "norm_label": "start_server()",
-      "source_file": "scripts/test-durable-storage.sh",
-      "source_location": "L13"
-    },
-    {
       "id": "scripts_test_runtime_defaults",
       "label": "test-runtime-defaults.sh",
       "_origin": "ast",
-      "community": 14,
+      "community": 10,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -1066,7 +1092,7 @@
       "id": "scripts_test_runtime_defaults_cleanup",
       "label": "cleanup()",
       "_origin": "ast",
-      "community": 14,
+      "community": 10,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -1080,7 +1106,7 @@
       "id": "scripts_test_runtime_defaults_sh__entry",
       "label": "test-runtime-defaults.sh script",
       "_origin": "ast",
-      "community": 14,
+      "community": 10,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -1094,7 +1120,7 @@
       "id": "scripts_optimise_assets",
       "label": "optimise-assets.mjs",
       "_origin": "ast",
-      "community": 15,
+      "community": 11,
       "file_type": "code",
       "norm_label": "optimise-assets.mjs",
       "source_file": "scripts/optimise-assets.mjs",
@@ -1104,17 +1130,73 @@
       "id": "scripts_optimise_assets_source",
       "label": "source",
       "_origin": "ast",
-      "community": 15,
+      "community": 11,
       "file_type": "code",
       "norm_label": "source",
       "source_file": "scripts/optimise-assets.mjs",
       "source_location": "L5"
     },
     {
+      "id": "scripts_render_production_topology",
+      "label": "render-production-topology.sh",
+      "_origin": "ast",
+      "community": 12,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "render-production-topology.sh",
+      "source_file": "scripts/render-production-topology.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_render_production_topology_sh__entry",
+      "label": "render-production-topology.sh script",
+      "_origin": "ast",
+      "community": 12,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "render-production-topology.sh script",
+      "source_file": "scripts/render-production-topology.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_test_deployment_topology",
+      "label": "test-deployment-topology.sh",
+      "_origin": "ast",
+      "community": 13,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "test-deployment-topology.sh",
+      "source_file": "scripts/test-deployment-topology.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_test_deployment_topology_sh__entry",
+      "label": "test-deployment-topology.sh script",
+      "_origin": "ast",
+      "community": 13,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "test-deployment-topology.sh script",
+      "source_file": "scripts/test-deployment-topology.sh",
+      "source_location": "L1"
+    },
+    {
       "id": "scripts_test_live_checkout",
       "label": "test-live-checkout.sh",
       "_origin": "ast",
-      "community": 16,
+      "community": 14,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -1128,7 +1210,7 @@
       "id": "scripts_test_live_checkout_sh__entry",
       "label": "test-live-checkout.sh script",
       "_origin": "ast",
-      "community": 16,
+      "community": 14,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -1142,7 +1224,7 @@
       "id": "tests_product_spec",
       "label": "product.spec.ts",
       "_origin": "ast",
-      "community": 17,
+      "community": 15,
       "file_type": "code",
       "norm_label": "product.spec.ts",
       "source_file": "tests/product.spec.ts",
@@ -1152,7 +1234,7 @@
       "id": "pkg_mtd_evidence_rail",
       "label": "mtd-evidence-rail",
       "_origin": "ast",
-      "community": 18,
+      "community": 16,
       "ecosystem": "cargo",
       "file_type": "code",
       "norm_label": "mtd-evidence-rail",
@@ -1165,10 +1247,30 @@
       "id": "playwright_config",
       "label": "playwright.config.ts",
       "_origin": "ast",
-      "community": 19,
+      "community": 17,
       "file_type": "code",
       "norm_label": "playwright.config.ts",
       "source_file": "playwright.config.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_license_fixture",
+      "label": "license-fixture.mjs",
+      "_origin": "ast",
+      "community": 18,
+      "file_type": "code",
+      "norm_label": "license-fixture.mjs",
+      "source_file": "scripts/license-fixture.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_live_browser_smoke",
+      "label": "live-browser-smoke.mjs",
+      "_origin": "ast",
+      "community": 19,
+      "file_type": "code",
+      "norm_label": "live-browser-smoke.mjs",
+      "source_file": "scripts/live-browser-smoke.mjs",
       "source_location": "L1"
     },
     {
@@ -1199,7 +1301,7 @@
       "file_type": "code",
       "norm_label": "overrides",
       "source_file": "package.json",
-      "source_location": "L27"
+      "source_location": "L28"
     },
     {
       "id": "package_overrides_playwright_core",
@@ -1209,7 +1311,7 @@
       "file_type": "code",
       "norm_label": "playwright-core",
       "source_file": "package.json",
-      "source_location": "L28"
+      "source_location": "L29"
     },
     {
       "id": "package_private",
@@ -1239,7 +1341,7 @@
       "file_type": "code",
       "norm_label": "assets",
       "source_file": "package.json",
-      "source_location": "L17"
+      "source_location": "L18"
     },
     {
       "id": "package_scripts_build",
@@ -1282,6 +1384,16 @@
       "source_location": "L10"
     },
     {
+      "id": "package_scripts_test_deployment_topology",
+      "label": "test:deployment-topology",
+      "_origin": "ast",
+      "community": 2,
+      "file_type": "code",
+      "norm_label": "test:deployment-topology",
+      "source_file": "package.json",
+      "source_location": "L15"
+    },
+    {
       "id": "package_scripts_test_durable_storage",
       "label": "test:durable-storage",
       "_origin": "ast",
@@ -1299,7 +1411,7 @@
       "file_type": "code",
       "norm_label": "test:e2e",
       "source_file": "package.json",
-      "source_location": "L16"
+      "source_location": "L17"
     },
     {
       "id": "package_scripts_test_runtime_defaults",
@@ -1339,7 +1451,7 @@
       "file_type": "code",
       "norm_label": "verify:live-topology",
       "source_file": "package.json",
-      "source_location": "L15"
+      "source_location": "L16"
     },
     {
       "id": "package_type",
@@ -1362,40 +1474,220 @@
       "source_location": "L3"
     },
     {
-      "id": "scripts_license_fixture",
-      "label": "license-fixture.mjs",
-      "_origin": "ast",
-      "community": 20,
-      "file_type": "code",
-      "norm_label": "license-fixture.mjs",
-      "source_file": "scripts/license-fixture.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_live_browser_smoke",
-      "label": "live-browser-smoke.mjs",
-      "_origin": "ast",
-      "community": 21,
-      "file_type": "code",
-      "norm_label": "live-browser-smoke.mjs",
-      "source_file": "scripts/live-browser-smoke.mjs",
-      "source_location": "L1"
-    },
-    {
       "id": "vite_config",
       "label": "vite.config.ts",
       "_origin": "ast",
-      "community": 22,
+      "community": 20,
       "file_type": "code",
       "norm_label": "vite.config.ts",
       "source_file": "vite.config.ts",
       "source_location": "L1"
     },
     {
+      "id": "tsconfig",
+      "label": "tsconfig.json",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "tsconfig.json",
+      "source_file": "tsconfig.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "compileroptions",
+      "source_file": "tsconfig.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "tsconfig_compileroptions_allowimportingtsextensions",
+      "label": "allowImportingTsExtensions",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "allowimportingtsextensions",
+      "source_file": "tsconfig.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "tsconfig_compileroptions_isolatedmodules",
+      "label": "isolatedModules",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "isolatedmodules",
+      "source_file": "tsconfig.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "tsconfig_compileroptions_lib",
+      "label": "lib",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "lib",
+      "source_file": "tsconfig.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "tsconfig_compileroptions_module",
+      "label": "module",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "module",
+      "source_file": "tsconfig.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "tsconfig_compileroptions_moduledetection",
+      "label": "moduleDetection",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "moduledetection",
+      "source_file": "tsconfig.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "tsconfig_compileroptions_moduleresolution",
+      "label": "moduleResolution",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "moduleresolution",
+      "source_file": "tsconfig.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "tsconfig_compileroptions_noemit",
+      "label": "noEmit",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "noemit",
+      "source_file": "tsconfig.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "tsconfig_compileroptions_skiplibcheck",
+      "label": "skipLibCheck",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "skiplibcheck",
+      "source_file": "tsconfig.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "tsconfig_compileroptions_strict",
+      "label": "strict",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "strict",
+      "source_file": "tsconfig.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "tsconfig_compileroptions_target",
+      "label": "target",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "target",
+      "source_file": "tsconfig.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "tsconfig_compileroptions_usedefineforclassfields",
+      "label": "useDefineForClassFields",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "usedefineforclassfields",
+      "source_file": "tsconfig.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "tsconfig_include",
+      "label": "include",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "include",
+      "source_file": "tsconfig.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "ref_dom",
+      "label": "DOM",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "concept",
+      "norm_label": "dom",
+      "source_file": "tsconfig.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "ref_dom_iterable",
+      "label": "DOM.Iterable",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "concept",
+      "norm_label": "dom.iterable",
+      "source_file": "tsconfig.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "ref_es2022",
+      "label": "ES2022",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "concept",
+      "norm_label": "es2022",
+      "source_file": "tsconfig.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "ref_frontend_src",
+      "label": "frontend/src",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "concept",
+      "norm_label": "frontend/src",
+      "source_file": "tsconfig.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "ref_tests",
+      "label": "tests",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "concept",
+      "norm_label": "tests",
+      "source_file": "tsconfig.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "ref_vite_config_ts",
+      "label": "vite.config.ts",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "concept",
+      "norm_label": "vite.config.ts",
+      "source_file": "tsconfig.json",
+      "source_location": "L15"
+    },
+    {
       "id": "next",
       "label": "Next",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "next",
       "source_file": "",
@@ -1405,7 +1697,7 @@
       "id": "request",
       "label": "Request",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "request",
       "source_file": "",
@@ -1415,7 +1707,7 @@
       "id": "router",
       "label": "Router",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "router",
       "source_file": "",
@@ -1425,7 +1717,7 @@
       "id": "src_main",
       "label": "main.rs",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "main.rs",
       "source_file": "src/main.rs",
@@ -1435,7 +1727,7 @@
       "id": "src_main_api_rate_limit_returns_retry_after",
       "label": "api_rate_limit_returns_retry_after()",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "api_rate_limit_returns_retry_after()",
       "source_file": "src/main.rs",
@@ -1445,7 +1737,7 @@
       "id": "src_main_app",
       "label": "app()",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "app()",
       "source_file": "src/main.rs",
@@ -1455,7 +1747,7 @@
       "id": "src_main_health",
       "label": "health()",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "health()",
       "source_file": "src/main.rs",
@@ -1465,7 +1757,7 @@
       "id": "src_main_health_reports_build_sha",
       "label": "health_reports_build_sha()",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "health_reports_build_sha()",
       "source_file": "src/main.rs",
@@ -1475,7 +1767,7 @@
       "id": "src_main_main",
       "label": "main()",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "src/main.rs",
@@ -1485,7 +1777,7 @@
       "id": "src_main_rs_intoresponse",
       "label": "IntoResponse",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "intoresponse",
       "source_file": "",
@@ -1495,7 +1787,7 @@
       "id": "src_main_rs_response",
       "label": "Response",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "response",
       "source_file": "",
@@ -1505,7 +1797,7 @@
       "id": "src_main_rs_state",
       "label": "State",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "state",
       "source_file": "",
@@ -1515,7 +1807,7 @@
       "id": "src_main_security_headers",
       "label": "security_headers()",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "security_headers()",
       "source_file": "src/main.rs",
@@ -1525,7 +1817,7 @@
       "id": "src_main_shutdown_signal",
       "label": "shutdown_signal()",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "shutdown_signal()",
       "source_file": "src/main.rs",
@@ -1535,7 +1827,7 @@
       "id": "src_main_test_app",
       "label": "test_app()",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "test_app()",
       "source_file": "src/main.rs",
@@ -1545,7 +1837,7 @@
       "id": "src_main_unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated",
       "label": "unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated()",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated()",
       "source_file": "src/main.rs",
@@ -1555,7 +1847,7 @@
       "id": "src_main_workspace_deletion_removes_records_evidence_and_audit",
       "label": "workspace_deletion_removes_records_evidence_and_audit()",
       "_origin": "ast",
-      "community": 3,
+      "community": 4,
       "file_type": "code",
       "norm_label": "workspace_deletion_removes_records_evidence_and_audit()",
       "source_file": "src/main.rs",
@@ -1565,651 +1857,439 @@
       "id": "package_devdependencies",
       "label": "devDependencies",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "package.json",
-      "source_location": "L19"
+      "source_location": "L20"
     },
     {
       "id": "package_devdependencies_axe_core_playwright",
       "label": "@axe-core/playwright",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "file_type": "code",
       "norm_label": "@axe-core/playwright",
       "source_file": "package.json",
-      "source_location": "L20"
+      "source_location": "L21"
     },
     {
       "id": "package_devdependencies_playwright_test",
       "label": "@playwright/test",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "file_type": "code",
       "norm_label": "@playwright/test",
       "source_file": "package.json",
-      "source_location": "L21"
+      "source_location": "L22"
     },
     {
       "id": "package_devdependencies_sharp",
       "label": "sharp",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "file_type": "code",
       "norm_label": "sharp",
       "source_file": "package.json",
-      "source_location": "L23"
+      "source_location": "L24"
     },
     {
       "id": "package_devdependencies_types_node",
       "label": "@types/node",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "file_type": "code",
       "norm_label": "@types/node",
       "source_file": "package.json",
-      "source_location": "L22"
+      "source_location": "L23"
     },
     {
       "id": "package_devdependencies_typescript",
       "label": "typescript",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "file_type": "code",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L24"
+      "source_location": "L25"
     },
     {
       "id": "package_devdependencies_vite",
       "label": "vite",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "file_type": "code",
       "norm_label": "vite",
       "source_file": "package.json",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "axe_core_playwright",
       "label": "@axe-core/playwright",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "file_type": "concept",
       "norm_label": "@axe-core/playwright",
       "source_file": "package.json",
-      "source_location": "L20"
+      "source_location": "L21"
     },
     {
       "id": "playwright_test",
       "label": "@playwright/test",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "file_type": "concept",
       "norm_label": "@playwright/test",
       "source_file": "package.json",
-      "source_location": "L21"
+      "source_location": "L22"
     },
     {
       "id": "sharp",
       "label": "sharp",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "file_type": "concept",
       "norm_label": "sharp",
       "source_file": "package.json",
-      "source_location": "L23"
+      "source_location": "L24"
     },
     {
       "id": "types_node",
       "label": "@types/node",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "file_type": "concept",
       "norm_label": "@types/node",
       "source_file": "package.json",
-      "source_location": "L22"
+      "source_location": "L23"
     },
     {
       "id": "typescript",
       "label": "typescript",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "file_type": "concept",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L24"
+      "source_location": "L25"
     },
     {
       "id": "vite",
       "label": "vite",
       "_origin": "ast",
-      "community": 4,
+      "community": 5,
       "file_type": "concept",
       "norm_label": "vite",
       "source_file": "package.json",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
-      "id": "option",
-      "label": "Option",
+      "id": "scripts_test_shared_storage",
+      "label": "test-shared-storage.sh",
       "_origin": "ast",
-      "community": 5,
+      "community": 6,
       "file_type": "code",
-      "norm_label": "option",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "sqliteconnection",
-      "label": "SqliteConnection",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "sqliteconnection",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "src_routes",
-      "label": "routes.rs",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "routes.rs",
-      "source_file": "src/routes.rs",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "test-shared-storage.sh",
+      "source_file": "scripts/test-shared-storage.sh",
       "source_location": "L1"
     },
     {
-      "id": "src_routes_evidenceinput",
-      "label": "EvidenceInput",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "evidenceinput",
-      "source_file": "src/routes.rs",
-      "source_location": "L53"
-    },
-    {
-      "id": "src_routes_exportrecord",
-      "label": "ExportRecord",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "exportrecord",
-      "source_file": "src/routes.rs",
-      "source_location": "L610"
-    },
-    {
-      "id": "src_routes_importinput",
-      "label": "ImportInput",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "importinput",
-      "source_file": "src/routes.rs",
-      "source_location": "L48"
-    },
-    {
-      "id": "src_routes_insert_record",
-      "label": "insert_record()",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "insert_record()",
-      "source_file": "src/routes.rs",
-      "source_location": "L423"
-    },
-    {
-      "id": "src_routes_periodquery",
-      "label": "PeriodQuery",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "periodquery",
-      "source_file": "src/routes.rs",
-      "source_location": "L60"
-    },
-    {
-      "id": "src_routes_record",
-      "label": "Record",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "record",
-      "source_file": "src/routes.rs",
-      "source_location": "L21"
-    },
-    {
-      "id": "src_routes_recordinput",
-      "label": "RecordInput",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "recordinput",
-      "source_file": "src/routes.rs",
-      "source_location": "L37"
-    },
-    {
-      "id": "src_routes_rs_string",
-      "label": "String",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "string",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "vec",
-      "label": "Vec",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "vec",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "apiresult",
-      "label": "ApiResult",
+      "id": "scripts_test_shared_storage_assert_reads",
+      "label": "assert_reads()",
       "_origin": "ast",
       "community": 6,
       "file_type": "code",
-      "norm_label": "apiresult",
-      "source_file": "",
-      "source_location": ""
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "assert_reads()",
+      "source_file": "scripts/test-shared-storage.sh",
+      "source_location": "L43"
     },
     {
-      "id": "date",
-      "label": "Date",
+      "id": "scripts_test_shared_storage_cleanup",
+      "label": "cleanup()",
       "_origin": "ast",
       "community": 6,
       "file_type": "code",
-      "norm_label": "date",
-      "source_file": "",
-      "source_location": ""
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "cleanup()",
+      "source_file": "scripts/test-shared-storage.sh",
+      "source_location": "L9"
     },
     {
-      "id": "headermap",
-      "label": "HeaderMap",
+      "id": "scripts_test_shared_storage_sh__entry",
+      "label": "test-shared-storage.sh script",
       "_origin": "ast",
       "community": 6,
       "file_type": "code",
-      "norm_label": "headermap",
-      "source_file": "",
-      "source_location": ""
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "test-shared-storage.sh script",
+      "source_file": "scripts/test-shared-storage.sh",
+      "source_location": "L1"
     },
     {
-      "id": "src_routes_enforce_quarter_limits",
-      "label": "enforce_quarter_limits()",
+      "id": "scripts_test_shared_storage_start_instances",
+      "label": "start_instances()",
       "_origin": "ast",
       "community": 6,
       "file_type": "code",
-      "norm_label": "enforce_quarter_limits()",
-      "source_file": "src/routes.rs",
-      "source_location": "L396"
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "start_instances()",
+      "source_file": "scripts/test-shared-storage.sh",
+      "source_location": "L16"
     },
     {
-      "id": "src_routes_has_paid_access",
-      "label": "has_paid_access()",
+      "id": "scripts_test_shared_storage_stop_instances",
+      "label": "stop_instances()",
       "_origin": "ast",
       "community": 6,
       "file_type": "code",
-      "norm_label": "has_paid_access()",
-      "source_file": "src/routes.rs",
-      "source_location": "L339"
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "stop_instances()",
+      "source_file": "scripts/test-shared-storage.sh",
+      "source_location": "L33"
     },
     {
-      "id": "src_routes_import_records",
-      "label": "import_records()",
+      "id": "scripts_test_shared_storage_workspace_id",
+      "label": "workspace_id()",
       "_origin": "ast",
       "community": 6,
       "file_type": "code",
-      "norm_label": "import_records()",
-      "source_file": "src/routes.rs",
-      "source_location": "L460"
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "workspace_id()",
+      "source_file": "scripts/test-shared-storage.sh",
+      "source_location": "L39"
     },
     {
-      "id": "src_routes_parse_date",
-      "label": "parse_date()",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "parse_date()",
-      "source_file": "src/routes.rs",
-      "source_location": "L250"
-    },
-    {
-      "id": "src_routes_quarter_bounds",
-      "label": "quarter_bounds()",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "quarter_bounds()",
-      "source_file": "src/routes.rs",
-      "source_location": "L309"
-    },
-    {
-      "id": "src_routes_quarter_bounds_for_record",
-      "label": "quarter_bounds_for_record()",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "quarter_bounds_for_record()",
-      "source_file": "src/routes.rs",
-      "source_location": "L329"
-    },
-    {
-      "id": "src_routes_validate",
-      "label": "validate()",
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "validate()",
-      "source_file": "src/routes.rs",
-      "source_location": "L274"
-    },
-    {
-      "id": "arc",
-      "label": "Arc",
+      "id": "scripts_verify_live_topology",
+      "label": "verify-live-topology.sh",
       "_origin": "ast",
       "community": 7,
       "file_type": "code",
-      "norm_label": "arc",
-      "source_file": "",
-      "source_location": ""
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "verify-live-topology.sh",
+      "source_file": "scripts/verify-live-topology.sh",
+      "source_location": "L1"
     },
     {
-      "id": "client",
-      "label": "Client",
+      "id": "scripts_verify_live_topology_assert_control_plane",
+      "label": "assert_control_plane()",
       "_origin": "ast",
       "community": 7,
       "file_type": "code",
-      "norm_label": "client",
-      "source_file": "",
-      "source_location": ""
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "assert_control_plane()",
+      "source_file": "scripts/verify-live-topology.sh",
+      "source_location": "L27"
     },
     {
-      "id": "mutex",
-      "label": "Mutex",
+      "id": "scripts_verify_live_topology_assert_reads",
+      "label": "assert_reads()",
       "_origin": "ast",
       "community": 7,
       "file_type": "code",
-      "norm_label": "mutex",
-      "source_file": "",
-      "source_location": ""
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "assert_reads()",
+      "source_file": "scripts/verify-live-topology.sh",
+      "source_location": "L46"
     },
     {
-      "id": "query",
-      "label": "Query",
+      "id": "scripts_verify_live_topology_assert_shared_limiter",
+      "label": "assert_shared_limiter()",
       "_origin": "ast",
       "community": 7,
       "file_type": "code",
-      "norm_label": "query",
-      "source_file": "",
-      "source_location": ""
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "assert_shared_limiter()",
+      "source_file": "scripts/verify-live-topology.sh",
+      "source_location": "L64"
     },
     {
-      "id": "src_main_appstate",
-      "label": "AppState",
+      "id": "scripts_verify_live_topology_sh__entry",
+      "label": "verify-live-topology.sh script",
       "_origin": "ast",
       "community": 7,
       "file_type": "code",
-      "norm_label": "appstate",
-      "source_file": "src/main.rs",
-      "source_location": "L25"
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "verify-live-topology.sh script",
+      "source_file": "scripts/verify-live-topology.sh",
+      "source_location": "L1"
     },
     {
-      "id": "src_main_rs_sqlitepool",
-      "label": "SqlitePool",
+      "id": "scripts_verify_live_topology_wait_for_health",
+      "label": "wait_for_health()",
       "_origin": "ast",
       "community": 7,
       "file_type": "code",
-      "norm_label": "sqlitepool",
-      "source_file": "",
-      "source_location": ""
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "wait_for_health()",
+      "source_file": "scripts/verify-live-topology.sh",
+      "source_location": "L14"
     },
     {
-      "id": "src_main_rs_string",
-      "label": "String",
+      "id": "scripts_verify_live_topology_workspace_id",
+      "label": "workspace_id()",
       "_origin": "ast",
       "community": 7,
       "file_type": "code",
-      "norm_label": "string",
-      "source_file": "",
-      "source_location": ""
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "workspace_id()",
+      "source_file": "scripts/verify-live-topology.sh",
+      "source_location": "L10"
     },
     {
-      "id": "src_routes_export_pack",
-      "label": "export_pack()",
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "code",
-      "norm_label": "export_pack()",
-      "source_file": "src/routes.rs",
-      "source_location": "L623"
-    },
-    {
-      "id": "src_routes_get_workspace",
-      "label": "get_workspace()",
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "code",
-      "norm_label": "get_workspace()",
-      "source_file": "src/routes.rs",
-      "source_location": "L233"
-    },
-    {
-      "id": "src_routes_rs_response",
-      "label": "Response",
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "code",
-      "norm_label": "response",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "e",
-      "label": "E",
+      "id": "scripts_deploy",
+      "label": "deploy.sh",
       "_origin": "ast",
       "community": 8,
       "file_type": "code",
-      "norm_label": "e",
-      "source_file": "",
-      "source_location": ""
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "deploy.sh",
+      "source_file": "scripts/deploy.sh",
+      "source_location": "L1"
     },
     {
-      "id": "path",
-      "label": "Path",
+      "id": "scripts_deploy_patch_app",
+      "label": "patch_app()",
       "_origin": "ast",
       "community": 8,
       "file_type": "code",
-      "norm_label": "path",
-      "source_file": "",
-      "source_location": ""
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "patch_app()",
+      "source_file": "scripts/deploy.sh",
+      "source_location": "L15"
     },
     {
-      "id": "src_routes_delete_record",
-      "label": "delete_record()",
+      "id": "scripts_deploy_sh__entry",
+      "label": "deploy.sh script",
       "_origin": "ast",
       "community": 8,
       "file_type": "code",
-      "norm_label": "delete_record()",
-      "source_file": "src/routes.rs",
-      "source_location": "L570"
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "deploy.sh script",
+      "source_file": "scripts/deploy.sh",
+      "source_location": "L1"
     },
     {
-      "id": "src_routes_delete_workspace",
-      "label": "delete_workspace()",
+      "id": "scripts_deploy_wait_for_app",
+      "label": "wait_for_app()",
       "_origin": "ast",
       "community": 8,
       "file_type": "code",
-      "norm_label": "delete_workspace()",
-      "source_file": "src/routes.rs",
-      "source_location": "L586"
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "wait_for_app()",
+      "source_file": "scripts/deploy.sh",
+      "source_location": "L24"
     },
     {
-      "id": "src_routes_error",
-      "label": "error()",
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "error()",
-      "source_file": "src/routes.rs",
-      "source_location": "L65"
-    },
-    {
-      "id": "src_routes_internal",
-      "label": "internal()",
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "internal()",
-      "source_file": "src/routes.rs",
-      "source_location": "L107"
-    },
-    {
-      "id": "src_routes_remove_evidence",
-      "label": "remove_evidence()",
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "remove_evidence()",
-      "source_file": "src/routes.rs",
-      "source_location": "L550"
-    },
-    {
-      "id": "src_routes_workspace",
-      "label": "workspace()",
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "workspace()",
-      "source_file": "src/routes.rs",
-      "source_location": "L69"
-    },
-    {
-      "id": "statuscode",
-      "label": "StatusCode",
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "statuscode",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "value",
-      "label": "Value",
-      "_origin": "ast",
-      "community": 8,
-      "file_type": "code",
-      "norm_label": "value",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "json",
-      "label": "Json",
+      "id": "scripts_test_durable_storage",
+      "label": "test-durable-storage.sh",
       "_origin": "ast",
       "community": 9,
       "file_type": "code",
-      "norm_label": "json",
-      "source_file": "",
-      "source_location": ""
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "test-durable-storage.sh",
+      "source_file": "scripts/test-durable-storage.sh",
+      "source_location": "L1"
     },
     {
-      "id": "src_routes_add_evidence",
-      "label": "add_evidence()",
+      "id": "scripts_test_durable_storage_cleanup",
+      "label": "cleanup()",
       "_origin": "ast",
       "community": 9,
       "file_type": "code",
-      "norm_label": "add_evidence()",
-      "source_file": "src/routes.rs",
-      "source_location": "L500"
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "cleanup()",
+      "source_file": "scripts/test-durable-storage.sh",
+      "source_location": "L7"
     },
     {
-      "id": "src_routes_check_workspace",
-      "label": "check_workspace()",
+      "id": "scripts_test_durable_storage_sh__entry",
+      "label": "test-durable-storage.sh script",
       "_origin": "ast",
       "community": 9,
       "file_type": "code",
-      "norm_label": "check_workspace()",
-      "source_file": "src/routes.rs",
-      "source_location": "L87"
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "test-durable-storage.sh script",
+      "source_file": "scripts/test-durable-storage.sh",
+      "source_location": "L1"
     },
     {
-      "id": "src_routes_create_demo",
-      "label": "create_demo()",
+      "id": "scripts_test_durable_storage_start_server",
+      "label": "start_server()",
       "_origin": "ast",
       "community": 9,
       "file_type": "code",
-      "norm_label": "create_demo()",
-      "source_file": "src/routes.rs",
-      "source_location": "L129"
-    },
-    {
-      "id": "src_routes_create_record",
-      "label": "create_record()",
-      "_origin": "ast",
-      "community": 9,
-      "file_type": "code",
-      "norm_label": "create_record()",
-      "source_file": "src/routes.rs",
-      "source_location": "L444"
-    },
-    {
-      "id": "src_routes_create_workspace",
-      "label": "create_workspace()",
-      "_origin": "ast",
-      "community": 9,
-      "file_type": "code",
-      "norm_label": "create_workspace()",
-      "source_file": "src/routes.rs",
-      "source_location": "L115"
-    },
-    {
-      "id": "src_routes_now",
-      "label": "now()",
-      "_origin": "ast",
-      "community": 9,
-      "file_type": "code",
-      "norm_label": "now()",
-      "source_file": "src/routes.rs",
-      "source_location": "L83"
-    },
-    {
-      "id": "src_routes_rs_intoresponse",
-      "label": "IntoResponse",
-      "_origin": "ast",
-      "community": 9,
-      "file_type": "code",
-      "norm_label": "intoresponse",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "src_routes_rs_sqlitepool",
-      "label": "SqlitePool",
-      "_origin": "ast",
-      "community": 9,
-      "file_type": "code",
-      "norm_label": "sqlitepool",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "src_routes_rs_state",
-      "label": "State",
-      "_origin": "ast",
-      "community": 9,
-      "file_type": "code",
-      "norm_label": "state",
-      "source_file": "",
-      "source_location": ""
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "start_server()",
+      "source_file": "scripts/test-durable-storage.sh",
+      "source_location": "L13"
     }
   ],
   "links": [
@@ -3350,7 +3430,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L59",
+      "source_location": "L100",
       "weight": 1.0
     },
     {
@@ -3362,7 +3442,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L60",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -3374,7 +3454,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L65",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_verify_live_topology_sh__entry",
+      "target": "scripts_verify_live_topology_assert_shared_limiter",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/verify-live-topology.sh",
+      "source_location": "L109",
       "weight": 1.0
     },
     {
@@ -4790,7 +4882,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -4802,7 +4894,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -4814,7 +4906,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -4826,7 +4918,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -4838,7 +4930,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -4850,7 +4942,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -6187,17 +6279,6 @@
     },
     {
       "source": "package",
-      "target": "package_devdependencies",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "package.json",
-      "source_location": "L19",
-      "weight": 1.0
-    },
-    {
-      "source": "package",
       "target": "package_name",
       "relation": "contains",
       "_origin": "ast",
@@ -6209,13 +6290,24 @@
     },
     {
       "source": "package",
+      "target": "package_devdependencies",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "package",
       "target": "package_overrides",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -6270,7 +6362,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -6281,7 +6373,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -6292,7 +6384,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -6303,7 +6395,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -6314,7 +6406,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -6325,7 +6417,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -6336,7 +6428,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -6396,7 +6488,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_verify_live_topology",
+      "target": "package_scripts_test_deployment_topology",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6407,7 +6499,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_e2e",
+      "target": "package_scripts_verify_live_topology",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6418,13 +6510,24 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_assets",
+      "target": "package_scripts_test_e2e",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_assets",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -6480,6 +6583,28 @@
       "confidence_score": 1.0,
       "source_file": "scripts/optimise-assets.mjs",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_render_production_topology",
+      "target": "scripts_render_production_topology_sh__entry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/render-production-topology.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_test_deployment_topology",
+      "target": "scripts_test_deployment_topology_sh__entry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/test-deployment-topology.sh",
+      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -7271,7 +7396,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L41",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_verify_live_topology",
+      "target": "scripts_verify_live_topology_assert_shared_limiter",
+      "relation": "defines",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/verify-live-topology.sh",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -7372,5 +7508,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d9774c5d70af912a520d2f349b4b10960ffd7e47"
+  "built_at_commit": "505846e9e76bfd7b465b58f1de89a67229c904cc"
 }

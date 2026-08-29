@@ -8,7 +8,7 @@
   },
   {
     "id": "no-account",
-    "claim": "A private workspace needs no account and its key is stored on this device",
+    "claim": "A private workspace needs no account and uses a 64-character key stored on this device",
     "where": "landing facts, privacy page, README",
     "test": "npm test -- --grep @claim:no-account",
     "sandbox": "fresh browser context; start /app without credentials; inspect local and demo storage namespaces"
@@ -124,6 +124,13 @@
     "where": "README, deployment handoff",
     "test": "npm run build && cargo build && npm run test:shared-storage",
     "sandbox": "three service processes share one temporary DATA_DIR; demo and private keys each return 100/100 reads before and after all processes restart"
+  },
+  {
+    "id": "production-topology",
+    "claim": "Production runs one service replica with a durable Azure Files mount at /data",
+    "where": "README and deployment handoff",
+    "test": "npm run test:deployment-topology",
+    "sandbox": "render the production topology over the verifier's unsafe three-replica shape; assert one replica, one container, Azure Files at /data, and unix-dotfile"
   },
   {
     "id": "api-rate-limit",

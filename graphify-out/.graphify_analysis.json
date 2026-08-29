@@ -1,6 +1,60 @@
 {
   "communities": {
     "0": [
+      "apiresult",
+      "arc",
+      "client",
+      "date",
+      "e",
+      "headermap",
+      "json",
+      "mutex",
+      "option",
+      "path",
+      "query",
+      "sqliteconnection",
+      "src_main_appstate",
+      "src_main_rs_sqlitepool",
+      "src_main_rs_string",
+      "src_routes",
+      "src_routes_add_evidence",
+      "src_routes_check_workspace",
+      "src_routes_create_demo",
+      "src_routes_create_record",
+      "src_routes_create_workspace",
+      "src_routes_delete_record",
+      "src_routes_delete_workspace",
+      "src_routes_enforce_quarter_limits",
+      "src_routes_error",
+      "src_routes_evidenceinput",
+      "src_routes_export_pack",
+      "src_routes_exportrecord",
+      "src_routes_get_workspace",
+      "src_routes_has_paid_access",
+      "src_routes_import_records",
+      "src_routes_importinput",
+      "src_routes_insert_record",
+      "src_routes_internal",
+      "src_routes_now",
+      "src_routes_parse_date",
+      "src_routes_periodquery",
+      "src_routes_quarter_bounds",
+      "src_routes_quarter_bounds_for_record",
+      "src_routes_record",
+      "src_routes_recordinput",
+      "src_routes_remove_evidence",
+      "src_routes_rs_intoresponse",
+      "src_routes_rs_response",
+      "src_routes_rs_sqlitepool",
+      "src_routes_rs_state",
+      "src_routes_rs_string",
+      "src_routes_validate",
+      "src_routes_workspace",
+      "statuscode",
+      "value",
+      "vec"
+    ],
+    "1": [
       "frontend_src_main",
       "frontend_src_main_api",
       "frontend_src_main_apierror",
@@ -51,7 +105,29 @@
       "frontend_src_main_workspacekey",
       "frontend_src_main_workspaceresponse"
     ],
-    "1": [
+    "2": [
+      "package",
+      "package_name",
+      "package_overrides",
+      "package_overrides_playwright_core",
+      "package_private",
+      "package_scripts",
+      "package_scripts_assets",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_start",
+      "package_scripts_test",
+      "package_scripts_test_deployment_topology",
+      "package_scripts_test_durable_storage",
+      "package_scripts_test_e2e",
+      "package_scripts_test_runtime_defaults",
+      "package_scripts_test_shared_storage",
+      "package_scripts_typecheck",
+      "package_scripts_verify_live_topology",
+      "package_type",
+      "package_version"
+    ],
+    "3": [
       "ref_dom",
       "ref_dom_iterable",
       "ref_es2022",
@@ -73,28 +149,7 @@
       "tsconfig_compileroptions_usedefineforclassfields",
       "tsconfig_include"
     ],
-    "2": [
-      "package",
-      "package_name",
-      "package_overrides",
-      "package_overrides_playwright_core",
-      "package_private",
-      "package_scripts",
-      "package_scripts_assets",
-      "package_scripts_build",
-      "package_scripts_dev",
-      "package_scripts_start",
-      "package_scripts_test",
-      "package_scripts_test_durable_storage",
-      "package_scripts_test_e2e",
-      "package_scripts_test_runtime_defaults",
-      "package_scripts_test_shared_storage",
-      "package_scripts_typecheck",
-      "package_scripts_verify_live_topology",
-      "package_type",
-      "package_version"
-    ],
-    "3": [
+    "4": [
       "next",
       "request",
       "router",
@@ -113,7 +168,7 @@
       "src_main_unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated",
       "src_main_workspace_deletion_removes_records_evidence_and_audit"
     ],
-    "4": [
+    "5": [
       "axe_core_playwright",
       "package_devdependencies",
       "package_devdependencies_axe_core_playwright",
@@ -128,69 +183,7 @@
       "typescript",
       "vite"
     ],
-    "5": [
-      "option",
-      "sqliteconnection",
-      "src_routes",
-      "src_routes_evidenceinput",
-      "src_routes_exportrecord",
-      "src_routes_importinput",
-      "src_routes_insert_record",
-      "src_routes_periodquery",
-      "src_routes_record",
-      "src_routes_recordinput",
-      "src_routes_rs_string",
-      "vec"
-    ],
     "6": [
-      "apiresult",
-      "date",
-      "headermap",
-      "src_routes_enforce_quarter_limits",
-      "src_routes_has_paid_access",
-      "src_routes_import_records",
-      "src_routes_parse_date",
-      "src_routes_quarter_bounds",
-      "src_routes_quarter_bounds_for_record",
-      "src_routes_validate"
-    ],
-    "7": [
-      "arc",
-      "client",
-      "mutex",
-      "query",
-      "src_main_appstate",
-      "src_main_rs_sqlitepool",
-      "src_main_rs_string",
-      "src_routes_export_pack",
-      "src_routes_get_workspace",
-      "src_routes_rs_response"
-    ],
-    "8": [
-      "e",
-      "path",
-      "src_routes_delete_record",
-      "src_routes_delete_workspace",
-      "src_routes_error",
-      "src_routes_internal",
-      "src_routes_remove_evidence",
-      "src_routes_workspace",
-      "statuscode",
-      "value"
-    ],
-    "9": [
-      "json",
-      "src_routes_add_evidence",
-      "src_routes_check_workspace",
-      "src_routes_create_demo",
-      "src_routes_create_record",
-      "src_routes_create_workspace",
-      "src_routes_now",
-      "src_routes_rs_intoresponse",
-      "src_routes_rs_sqlitepool",
-      "src_routes_rs_state"
-    ],
-    "10": [
       "scripts_test_shared_storage",
       "scripts_test_shared_storage_assert_reads",
       "scripts_test_shared_storage_cleanup",
@@ -199,83 +192,90 @@
       "scripts_test_shared_storage_stop_instances",
       "scripts_test_shared_storage_workspace_id"
     ],
-    "11": [
+    "7": [
       "scripts_verify_live_topology",
       "scripts_verify_live_topology_assert_control_plane",
       "scripts_verify_live_topology_assert_reads",
+      "scripts_verify_live_topology_assert_shared_limiter",
       "scripts_verify_live_topology_sh__entry",
       "scripts_verify_live_topology_wait_for_health",
       "scripts_verify_live_topology_workspace_id"
     ],
-    "12": [
+    "8": [
       "scripts_deploy",
       "scripts_deploy_patch_app",
       "scripts_deploy_sh__entry",
       "scripts_deploy_wait_for_app"
     ],
-    "13": [
+    "9": [
       "scripts_test_durable_storage",
       "scripts_test_durable_storage_cleanup",
       "scripts_test_durable_storage_sh__entry",
       "scripts_test_durable_storage_start_server"
     ],
-    "14": [
+    "10": [
       "scripts_test_runtime_defaults",
       "scripts_test_runtime_defaults_cleanup",
       "scripts_test_runtime_defaults_sh__entry"
     ],
-    "15": [
+    "11": [
       "scripts_optimise_assets",
       "scripts_optimise_assets_source"
     ],
-    "16": [
+    "12": [
+      "scripts_render_production_topology",
+      "scripts_render_production_topology_sh__entry"
+    ],
+    "13": [
+      "scripts_test_deployment_topology",
+      "scripts_test_deployment_topology_sh__entry"
+    ],
+    "14": [
       "scripts_test_live_checkout",
       "scripts_test_live_checkout_sh__entry"
     ],
-    "17": [
+    "15": [
       "tests_product_spec",
       "tests_product_spec_openready"
     ],
-    "18": [
+    "16": [
       "pkg_mtd_evidence_rail"
     ],
-    "19": [
+    "17": [
       "playwright_config"
     ],
-    "20": [
+    "18": [
       "scripts_license_fixture"
     ],
-    "21": [
+    "19": [
       "scripts_live_browser_smoke"
     ],
-    "22": [
+    "20": [
       "vite_config"
     ]
   },
   "cohesion": {
-    "0": 0.12244897959183673,
-    "1": 0.1,
-    "2": 0.10526315789473684,
-    "3": 0.16911764705882354,
-    "4": 0.15384615384615385,
-    "5": 0.3333333333333333,
-    "6": 0.4444444444444444,
-    "7": 0.2222222222222222,
-    "8": 0.37777777777777777,
-    "9": 0.4,
-    "10": 0.42857142857142855,
-    "11": 0.5333333333333333,
-    "12": 0.8333333333333334,
-    "13": 0.6666666666666666,
-    "14": 0.6666666666666666,
+    "0": 0.14404223227752638,
+    "1": 0.12244897959183673,
+    "2": 0.1,
+    "3": 0.1,
+    "4": 0.16911764705882354,
+    "5": 0.15384615384615385,
+    "6": 0.42857142857142855,
+    "7": 0.47619047619047616,
+    "8": 0.8333333333333334,
+    "9": 0.6666666666666666,
+    "10": 0.6666666666666666,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
     "15": 1.0,
     "16": 1.0,
     "17": 1.0,
     "18": 1.0,
     "19": 1.0,
-    "20": 1.0,
-    "21": 1.0,
-    "22": 1.0
+    "20": 1.0
   },
   "gods": [
     {
@@ -289,24 +289,19 @@
       "degree": 16
     },
     {
-      "id": "frontend_src_main_bindapp",
-      "label": "bindApp()",
+      "id": "src_routes_import_records",
+      "label": "import_records()",
       "degree": 15
     },
     {
-      "id": "src_routes_import_records",
-      "label": "import_records()",
+      "id": "frontend_src_main_bindapp",
+      "label": "bindApp()",
       "degree": 15
     },
     {
       "id": "src_routes_add_evidence",
       "label": "add_evidence()",
       "degree": 14
-    },
-    {
-      "id": "frontend_src_main_apppage",
-      "label": "appPage()",
-      "degree": 13
     },
     {
       "id": "src_routes_remove_evidence",
@@ -324,9 +319,14 @@
       "degree": 13
     },
     {
-      "id": "tsconfig_compileroptions",
-      "label": "compilerOptions",
-      "degree": 12
+      "id": "frontend_src_main_apppage",
+      "label": "appPage()",
+      "degree": 13
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 13
     }
   ],
   "surprises": [
@@ -339,7 +339,7 @@
       ],
       "confidence": "EXTRACTED",
       "relation": "references",
-      "why": "bridges separate communities"
+      "why": "cross-file semantic connection"
     },
     {
       "source": "has_paid_access()",
@@ -350,7 +350,7 @@
       ],
       "confidence": "EXTRACTED",
       "relation": "references",
-      "why": "bridges separate communities"
+      "why": "cross-file semantic connection"
     },
     {
       "source": "import_records()",
@@ -361,7 +361,7 @@
       ],
       "confidence": "EXTRACTED",
       "relation": "references",
-      "why": "bridges separate communities"
+      "why": "cross-file semantic connection"
     },
     {
       "source": "add_evidence()",
@@ -372,7 +372,7 @@
       ],
       "confidence": "EXTRACTED",
       "relation": "references",
-      "why": "bridges separate communities"
+      "why": "cross-file semantic connection"
     },
     {
       "source": "create_demo()",
@@ -383,7 +383,7 @@
       ],
       "confidence": "EXTRACTED",
       "relation": "references",
-      "why": "bridges separate communities"
+      "why": "cross-file semantic connection"
     }
   ],
   "tokens": {

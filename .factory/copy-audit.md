@@ -1,6 +1,6 @@
 # Landing copy audit
 
-Audited 28 August 2026 against the plain-words contract. Interface labels and
+Audited 29 August 2026 against the plain-words contract. Interface labels and
 headings are included even when they are not sentences.
 
 ## First screen
@@ -35,7 +35,7 @@ product name.
 | Match | 1 |
 | Review | 1 |
 | Export | 1 |
-| Three stops | 2 |
+| How it works | 3 |
 | Prepare the quarter while it happens | 6 |
 | Add each transaction | 3 |
 | Record income or expenses. | 4 |
@@ -60,10 +60,10 @@ product name.
 | You can export or delete your workspace. | 7 |
 | No advertising trackers or third-party scripts run here. | 8 |
 | Paid access | 2 |
-| Keep every quarter on the rail | 6 |
-| Use the free workspace for 25 transactions in a quarter. | 10 |
-| One purchase removes that limit. | 5 |
-| Paid access includes unlimited transactions across your quarters. | 8 |
+| Use one workspace for every quarter | 6 |
+| The free workspace accepts 25 transactions in a quarter. | 9 |
+| Paid access accepts more than 25. | 6 |
+| The server verifies a paid licence before accepting more than 25 transactions. | 12 |
 | Receipt and invoice evidence | 4 |
 | Bank CSV review | 3 |
 | Accountant evidence packs | 3 |

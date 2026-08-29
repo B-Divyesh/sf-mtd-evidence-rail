@@ -26,6 +26,9 @@ test('@claim:demo-isolation demo uses a separate 24-hour workspace', async ({ pa
 
 test('@claim:no-account starts without sign-in and keeps the key on this device', async ({ page }) => {
   await page.goto('/');
+  await page.getByRole('navigation').getByRole('link', { name: 'Privacy' }).click();
+  await expect(page.getByText('Your browser stores a 64-character workspace key.')).toBeVisible();
+  await page.goto('/');
   await page.getByRole('link', { name: 'Start a private workspace' }).click();
   await expect(page).toHaveURL(/\/app$/);
   await expect(page.getByRole('heading', { level: 1, name: 'Prepare your quarter record' })).toBeVisible();
@@ -100,6 +103,8 @@ test('@claim:free-limit server stops a 26th free transaction', async ({ page }) 
 });
 
 test('@claim:paid-limit server verifies a licence before allowing more than 25', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.getByText('The server verifies a paid licence before accepting more than 25 transactions.')).toBeVisible();
   await openReady(page,'/demo');
   const key = await page.evaluate(() => sessionStorage.getItem('demo:mtd-evidence-rail:workspace'));
   const records = Array.from({ length: 20 }, (_, i) => ({
@@ -237,6 +242,34 @@ test('390px mobile and keyboard paths meet interaction requirements', async ({ p
   await expect(page.locator('#kind')).toBeFocused();
   await page.keyboard.press('Escape');
   await expect(add).toBeFocused();
+});
+
+test('release-blocking copy and 44px inline-link regressions stay fixed', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/');
+  const landingText = await page.locator('main').innerText();
+  for (const removed of ['Three stops', 'Keep every quarter on the rail', 'unlimited transactions']) {
+    expect(landingText).not.toContain(removed);
+  }
+  await expect(page.getByText('How it works', { exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Use one workspace for every quarter' })).toBeVisible();
+
+  const terms = page.locator('.price-ticket .help a', { hasText: 'terms' });
+  const termsBox = await terms.boundingBox();
+  expect(termsBox?.width).toBeGreaterThanOrEqual(44);
+  expect(termsBox?.height).toBeGreaterThanOrEqual(44);
+
+  for (const [path, name] of [['/privacy', 'privacy@sociobot.in'], ['/terms', 'support@sociobot.in']] as const) {
+    await page.goto(path);
+    const link = page.getByRole('link', { name });
+    const box = await link.boundingBox();
+    expect(box?.width).toBeGreaterThanOrEqual(44);
+    expect(box?.height).toBeGreaterThanOrEqual(44);
+  }
+
+  await page.goto('/not-a-page');
+  await expect(page.getByText('Page not found', { exact: true }).first()).toBeVisible();
+  await expect(page.locator('main')).not.toContainText('The rail ends here');
 });
 
 test('unversioned assets revalidate instead of caching forever', async ({ request }) => {

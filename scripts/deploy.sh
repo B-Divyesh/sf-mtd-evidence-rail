@@ -76,7 +76,7 @@ az containerapp revision set-mode \
   --output none
 
 resource=$(az containerapp show --resource-group "$resource_group" --name "$app_name" --output json)
-patch=$(printf '%s' "$resource" | jq -c '{properties:{template:{containers:[.properties.template.containers[0] + {env:([.properties.template.containers[0].env[]? | select(.name != "SQLITE_VFS")] + [{name:"SQLITE_VFS",value:"unix-dotfile"}]),volumeMounts:[{volumeName:"data",mountPath:"/data"}]}],scale:{minReplicas:1,maxReplicas:1,rules:(.properties.template.scale.rules // [])},volumes:[{name:"data",storageName:"mtd-evidence-rail-data",storageType:"AzureFile"}]}}}')
+patch=$(printf '%s' "$resource" | "$repo_dir/scripts/render-production-topology.sh")
 az rest \
   --method patch \
   --uri "https://management.azure.com/subscriptions/${subscription}/resourceGroups/${resource_group}/providers/Microsoft.App/containerApps/${app_name}?api-version=2024-03-01" \
@@ -116,6 +116,6 @@ done
 [ "$live_sha" = "$source_sha" ]
 
 EXPECTED_SHA="$source_sha" BASE_URL="https://${hostname}" \
-  bash "$repo_dir/scripts/verify-live-topology.sh"
+  bash "$repo_dir/scripts/verify-live-topology.sh" --restart
 
-echo "Deployed ${source_sha}; one active replica and the durable workspace smoke are verified."
+echo "Deployed ${source_sha}; one active replica, one limiter, and restart persistence are verified."

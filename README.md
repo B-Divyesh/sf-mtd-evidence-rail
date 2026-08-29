@@ -15,9 +15,9 @@ accounting suite. It does not calculate tax or file with HMRC.
 - Exports a ZIP evidence pack with a transaction CSV and linked files.
 - Deletes a workspace and its files on request.
 
-A workspace needs no account. Its unguessable key stays in the browser. The
+A workspace needs no account. Its 64-character key stays in the browser. The
 free plan accepts 25 transactions per quarter. Paid access costs £15 once and
-removes that limit. Checkout and licence checks use the Sociobot billing API.
+accepts more than 25. Checkout and licence checks use the Sociobot billing API.
 
 ## Try the isolated demo
 
@@ -48,6 +48,7 @@ proxies `/api` and `/health` to port 8080.
 ```sh
 npm test
 npm run build       # writes the frontend to dist/
+npm run test:deployment-topology # rejects the verifier's unsafe rollout shape
 npm run verify:live-topology # checks 12 fresh demos and 100 reads per workspace
 docker build --build-arg BUILD_SHA=local -t mtd-evidence-rail .
 docker run --rm -p 8080:8080 mtd-evidence-rail
@@ -63,8 +64,7 @@ Records and evidence are stored in SQLite under `DATA_DIR`. Production mounts
 that directory from Azure Files and runs one replica, so every request reaches
 the same durable database. Its deployment-only `SQLITE_VFS=unix-dotfile`
 setting uses lock files supported by SMB; the one-replica policy remains
-mandatory. An
-unguessable workspace key scopes every API request. Demo keys use a separate
+mandatory. A 64-character workspace key scopes every API request. Demo keys use a separate
 browser and database namespace. API endpoints enforce per-IP burst limits and
 respect the first `X-Forwarded-For` hop. Security headers include a restrictive
 CSP.
@@ -80,10 +80,11 @@ The root `Dockerfile` builds the Vite frontend and Rust server in separate
 stages. The runtime image runs as a non-root user, reads `PORT`, and serves
 `/health` with the supplied `BUILD_SHA`. The work-order deployment is wrapped
 by `scripts/deploy.sh`; it mounts Azure Files at `/data` and pins the app to one
-replica because SQLite is a single-writer database. The deploy command applies
-that storage topology after the factory image rollout. Deployment fails unless
-the control plane and cross-connection workspace smoke both pass. The factory
-owns product registration and billing configuration.
+replica because SQLite is a single-writer database. The source-owned
+`.factory/container-app.json` contract is applied after the factory image
+rollout. Deployment fails unless control-plane topology, cross-request reads,
+one shared limiter, 12 fresh browsers, and restart persistence pass. The
+factory owns product registration and billing configuration.
 
 ## Licence
 

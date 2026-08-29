@@ -147,6 +147,7 @@ dialog::backdrop{background:rgba(5,30,36,.72)}
 .form-grid .wide{grid-column:1/-1}
 .form-actions{display:flex;justify-content:flex-end;gap:12px;margin-top:24px}
 .help{font-size:.88rem;color:var(--fog);margin:4px 0 0}
+.help a,.legal a{display:inline-flex;min-width:44px;min-height:44px;align-items:center}
 .import-table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:20px}
 .import-table th,.import-table td{text-align:left;padding:9px;border-bottom:1px solid var(--line)}
 .legal{padding:72px 0 96px}
