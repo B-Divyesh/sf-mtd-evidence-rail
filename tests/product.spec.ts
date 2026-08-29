@@ -26,6 +26,7 @@ test('@claim:demo-isolation demo isolates private workspace and subscription sta
   await openReady(page,'/?demo=1');
   await expect(page).toHaveURL(/\?demo=1$/);
   await expect(page.getByText('Demo — sample data. Changes stay in this 24-hour demo.')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Start a private workspace' })).toHaveAttribute('href', '/app');
   await expect(page.getByText('6', { exact: true }).first()).toBeVisible();
   const firstKey = await page.evaluate(() => sessionStorage.getItem('demo:mtd-evidence-rail:workspace'));
   expect(firstKey).toMatch(/^demo:[a-f0-9]{64}$/);

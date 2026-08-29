@@ -8,7 +8,9 @@ repo_dir=$(cd "$(dirname "$0")/.." && pwd)
 resource_group=${AZURE_RESOURCE_GROUP:-sociobot}
 app_name=${AZURE_CONTAINER_APP:-sf-mtd-evidence-rail}
 base_url=${BASE_URL:-https://mtd-evidence-rail.sociobot.in}
-expected_sha=${EXPECTED_SHA:-$(git -C "$repo_dir" rev-parse HEAD)}
+release_manifest=${RELEASE_MANIFEST:-"$repo_dir/.factory/release.json"}
+published_sha=$(jq -er '.source_commit | select(test("^[0-9a-f]{40}$"))' "$release_manifest")
+expected_sha=${EXPECTED_SHA:-$published_sha}
 expected_image=${EXPECTED_IMAGE:-sociobotregistry.azurecr.io/${app_name}:${expected_sha:0:12}}
 contract_file=${TOPOLOGY_CONTRACT:-"$repo_dir/.factory/container-app.json"}
 

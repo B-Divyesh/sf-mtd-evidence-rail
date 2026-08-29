@@ -1,1 +1,1 @@
-Link transactions to evidence and export a quarter pack before your MTD update.
+Link each transaction to evidence and export an MTD quarter pack.

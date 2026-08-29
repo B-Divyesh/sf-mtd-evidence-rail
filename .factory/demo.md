@@ -28,8 +28,8 @@ demo workspace key. Demo mode does not read, write, or send private workspace or
 subscription keys, and it makes no cross-origin requests.
 
 **Reset demo** discards the session key and provisions a fresh sample workspace.
-**Start for real** opens `/app`, where a separate private key is created. Demo
-records are never copied into the private workspace.
+**Start a private workspace** opens `/app`, where a separate private key is
+created. Demo records are never copied into the private workspace.
 
 The backend refuses expired demo keys. Each new demo also removes expired demo
 workspaces and their records through database cascade deletion.

@@ -66,4 +66,16 @@ grep -F "expected_sha=$candidate live_sha=$older" "$identity_log" >/dev/null
 
 run_guard "$tmp_dir/safe-resource.json" "$tmp_dir/safe-ready.json" "$tmp_dir/safe-health.json" 1 1 >/dev/null
 
-echo 'Release guard regression PASS — the verification 13 stale-build/two-revision shape is rejected, and only an exact healthy release passes.'
+# Review-only commits can follow a deployment. The exact claim command reads
+# the committed published revision instead of assuming repository HEAD is live.
+jq -n --arg sha "$candidate" '{source_commit:$sha}' > "$tmp_dir/release.json"
+PATH="$tmp_dir:$PATH" \
+  RELEASE_MANIFEST="$tmp_dir/release.json" \
+  FAKE_RESOURCE="$tmp_dir/safe-resource.json" \
+  FAKE_READY="$tmp_dir/safe-ready.json" \
+  FAKE_HEALTH="$tmp_dir/safe-health.json" \
+  FAKE_ACTIVE=1 \
+  FAKE_RUNNING=1 \
+  "$repo_dir/scripts/assert-live-topology.sh" >/dev/null
+
+echo 'Release guard regression PASS — stale releases are rejected and the committed published revision is accepted.'

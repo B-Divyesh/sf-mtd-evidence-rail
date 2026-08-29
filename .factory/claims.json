@@ -165,7 +165,7 @@
     "claim": "The deployed health response and ready container image identify the exact published source revision",
     "where": "README and deployment handoff",
     "test": "npm run test:live-release",
-    "sandbox": "public deployed service and Azure control plane; require repository HEAD, /health build_sha, the ready revision image tag, the latest revision, and the single durable topology to agree"
+    "sandbox": "public deployed service and Azure control plane; read the committed release manifest and require its source revision, /health build_sha, the ready revision image tag, the latest revision, and the single durable topology to agree"
   },
   {
     "id": "api-rate-limit",

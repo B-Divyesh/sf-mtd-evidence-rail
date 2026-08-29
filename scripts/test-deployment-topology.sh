@@ -29,6 +29,8 @@ test "$(jq -r '[.properties.template.containers[0].env[] | select(.name == "BUIL
 grep -F 'assert-live-topology.sh' "$repo_dir/scripts/test-live-workspace-consistency.sh" >/dev/null
 grep -F 'assert-live-topology.sh' "$repo_dir/scripts/test-live-rate-limit.sh" >/dev/null
 grep -F 'one_limiter_max=' "$repo_dir/scripts/test-live-rate-limit.sh" >/dev/null
+grep -F '.factory/release.json' "$repo_dir/scripts/assert-live-topology.sh" >/dev/null
+jq -e '.source_commit | test("^[0-9a-f]{40}$")' "$repo_dir/.factory/release.json" >/dev/null
 "$repo_dir/scripts/test-live-release-guard.sh"
 
 # Verification 6 found that the live checker had a stale literal `data` even

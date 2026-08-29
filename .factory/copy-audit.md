@@ -1,6 +1,6 @@
 # Landing copy audit
 
-Audited 29 August 2026 after adversarial review 2. Visible landing sentences,
+Audited 29 August 2026 after adversarial review 3. Visible landing sentences,
 headings, labels, and actions are listed below. Every sentence is 22 words or
 fewer and no banned marketing word remains.
 
@@ -48,6 +48,15 @@ audience, and first action in one breath.
 | Likely CSV matches are flagged before import. | 7 |
 | Export the evidence pack | 4 |
 | Download one ZIP with a transaction CSV and every linked file. | 11 |
+
+## Demo controls
+
+| Copy | Words |
+| --- | ---: |
+| Demo — sample data. | 3 |
+| Changes stay in this 24-hour demo. | 6 |
+| Reset demo | 2 |
+| Start a private workspace | 4 |
 
 ## Privacy, limits, and subscription
 
