@@ -22,6 +22,7 @@
       "frontend_src_main_icon",
       "frontend_src_main_importrow",
       "frontend_src_main_importrows",
+      "frontend_src_main_isdemolocation",
       "frontend_src_main_ispaid",
       "frontend_src_main_landing",
       "frontend_src_main_legal",
@@ -339,7 +340,7 @@
     ]
   },
   "cohesion": {
-    "0": 0.12244897959183673,
+    "0": 0.12,
     "1": 0.17206290471785385,
     "2": 0.13974358974358975,
     "3": 0.058823529411764705,
@@ -389,18 +390,23 @@
       "degree": 15
     },
     {
-      "id": "src_routes_add_evidence",
-      "label": "add_evidence()",
-      "degree": 14
-    },
-    {
       "id": "package_scripts",
       "label": "scripts",
       "degree": 14
     },
     {
+      "id": "src_routes_add_evidence",
+      "label": "add_evidence()",
+      "degree": 14
+    },
+    {
       "id": "frontend_src_main_apppage",
       "label": "appPage()",
+      "degree": 13
+    },
+    {
+      "id": "src_routes_workspace",
+      "label": "workspace()",
       "degree": 13
     },
     {
@@ -411,11 +417,6 @@
     {
       "id": "src_routes_remove_evidence",
       "label": "remove_evidence()",
-      "degree": 13
-    },
-    {
-      "id": "src_routes_workspace",
-      "label": "workspace()",
       "degree": 13
     },
     {
