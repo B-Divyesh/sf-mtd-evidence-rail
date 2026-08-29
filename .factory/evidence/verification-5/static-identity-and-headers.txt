@@ -1,0 +1,62 @@
+LOCAL / LIVE SHA256
+de747d576cd7297507006dac5d26704350e0a02f405ea41ca5c98771561459f4  dist/index.html
+de747d576cd7297507006dac5d26704350e0a02f405ea41ca5c98771561459f4  .factory/evidence/verification-5/live-index.html
+5a272dc11a171c9ad45d35016642c948918dbd71070e67ea2fa921b26e1efd73  dist/assets/index-CIMKa9Hu.js
+5a272dc11a171c9ad45d35016642c948918dbd71070e67ea2fa921b26e1efd73  .factory/evidence/verification-5/live-index-CIMKa9Hu.js
+cecf9fbed7c66e817b05566aeea6f614f375574cdae7595c2352b361b926c7bd  dist/assets/index-BCwV1doZ.css
+cecf9fbed7c66e817b05566aeea6f614f375574cdae7595c2352b361b926c7bd  .factory/evidence/verification-5/live-index-BCwV1doZ.css
+BUNDLE BYTES
+ 30362 dist/assets/index-CIMKa9Hu.js
+ 16961 dist/assets/index-BCwV1doZ.css
+ 17208 dist/fonts/atkinson-400.woff2
+ 17524 dist/fonts/atkinson-700.woff2
+ 67304 dist/fonts/fraunces-600-700.woff2
+ 61374 dist/assets/evidence-rail-hero-768.webp
+173422 dist/assets/evidence-rail-hero.webp
+384155 total
+ASSET HEADERS
+HTTP/2 200
+content-type: text/javascript
+accept-ranges: bytes
+last-modified: Sat, 29 Aug 2026 03:29:41 GMT
+content-length: 30362
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+permissions-policy: camera=(), microphone=(), geolocation=()
+content-security-policy: default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'
+cache-control: public, max-age=31536000, immutable
+date: Sat, 29 Aug 2026 03:58:36 GMT
+
+HTTP/2 200
+content-type: image/webp
+accept-ranges: bytes
+last-modified: Sat, 29 Aug 2026 03:29:41 GMT
+content-length: 173422
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+permissions-policy: camera=(), microphone=(), geolocation=()
+content-security-policy: default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'
+cache-control: public, max-age=3600, must-revalidate
+date: Sat, 29 Aug 2026 03:58:36 GMT
+
+HTTP/2 200
+content-type: font/woff2
+accept-ranges: bytes
+last-modified: Sat, 29 Aug 2026 03:29:41 GMT
+content-length: 17208
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+permissions-policy: camera=(), microphone=(), geolocation=()
+content-security-policy: default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'
+cache-control: public, max-age=3600, must-revalidate
+date: Sat, 29 Aug 2026 03:58:36 GMT
+
+ROUTE STATUS
+/ 200
+/demo 200
+/app 200
+/privacy 200
+/terms 200
+/not-a-page 404
+/robots.txt 200
+/sitemap.xml 200

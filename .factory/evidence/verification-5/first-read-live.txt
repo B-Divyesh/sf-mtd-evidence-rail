@@ -1,0 +1,71 @@
+{
+  "status": 200,
+  "url": "https://mtd-evidence-rail.sociobot.in/",
+  "title": "MTD Evidence Rail — link expenses to evidence",
+  "h1": [
+    "Link each expense to evidence"
+  ],
+  "visibleText": "Skip to main content\nMTD Evidence Rail\nHome\nDemo\nPrice\nPrivacy\n\nQUARTERLY EVIDENCE, IN ORDER\n\nLink each expense to evidence\n\nFor sole traders who need a reviewable record before each MTD quarterly update.\n\nTry it with sample data\nSee a ready quarter. Nothing is saved.\nStart a private workspace\nYour workspace needs no account.\n£15/month for more than 25 transactions.\nThis record aid does not file with HMRC.\n\nA quarter at a glance\n\nSee what still needs evidence\n\nBank lines, invoices, and receipts share one dated view. Missing files stay visible until you link them.\n\n6 Apr – 5 Jul 2026\nCapture\nMatch\nReview\nExport\nQuarter record\n6 transactions\n2 need evidence\n11 Jun\nTeaching card supplies\nMaterials · £32.99\nEvidence linked\n19 May\nTrain to client session\nTravel · £27.80\nEvidence missing\n15 Apr\nSpring maths tutoring\nInvoice INV-026 · £120.00\nEvidence linked\n\nHow it works\n\nPrepare the quarter while it happens\nAdd each transaction\n\nRecord income or expenses. You can also import a bank CSV.\n\nLink the evidence\n\nAdd a receipt, invoice, or note. Likely CSV matches are flagged before import.\n\nExport the evidence pack\n\nDownload one ZIP with a transaction CSV and every linked file.\n\nClear boundaries\n\nA record aid, not tax software\n\nMTD Evidence Rail helps you organise source records. It does not calculate tax or send an update to HMRC.\n\nYour records stay under your control\nWorkspace keys are stored on this device.\nDemo records use a separate 24-hour workspace.\nYou can export or delete your workspace.\nNo advertising trackers or third-party scripts run here.\n\nMonthly subscription\n\nUse one workspace for every quarter\n\nThe free workspace accepts 25 transactions in a quarter. A £15/month subscription accepts more than 25.\n\n£15\nper month\n\nThe server verifies an active subscription before accepting more than 25 transactions.\n\nReceipt and invoice evidence\nBank CSV review\nAccountant evidence packs\nStart monthly subscription\n\nSociobot and Dodo handle subscription checkout and refunds. See the terms.\n\nHave a subscription token? Paste it here.\nRestore subscription access\n\nMTD Evidence Rail\n\nLink each expense to evidence before your quarterly update.\n\nPrivacy\nTerms\nBuilt by Param Factory\n(external site)\n\nVersion 1.0 · Build 2026.08 · Generated hero imagery is original to this product.\n\nMTD Evidence Rail — link expenses to evidence",
+  "links": [
+    {
+      "text": "Skip to main content",
+      "href": "https://mtd-evidence-rail.sociobot.in/#main"
+    },
+    {
+      "text": "MTD Evidence Rail",
+      "href": "https://mtd-evidence-rail.sociobot.in/"
+    },
+    {
+      "text": "Home",
+      "href": "https://mtd-evidence-rail.sociobot.in/"
+    },
+    {
+      "text": "Demo",
+      "href": "https://mtd-evidence-rail.sociobot.in/demo"
+    },
+    {
+      "text": "Price",
+      "href": "https://mtd-evidence-rail.sociobot.in/#price"
+    },
+    {
+      "text": "Privacy",
+      "href": "https://mtd-evidence-rail.sociobot.in/privacy"
+    },
+    {
+      "text": "Try it with sample data",
+      "href": "https://mtd-evidence-rail.sociobot.in/demo"
+    },
+    {
+      "text": "Start a private workspace",
+      "href": "https://mtd-evidence-rail.sociobot.in/app"
+    },
+    {
+      "text": "Start monthly subscription",
+      "href": "https://api.sociobot.in/api/v1/products/mtd-evidence-rail/checkout"
+    },
+    {
+      "text": "terms",
+      "href": "https://mtd-evidence-rail.sociobot.in/terms"
+    },
+    {
+      "text": "MTD Evidence Rail",
+      "href": "https://mtd-evidence-rail.sociobot.in/"
+    },
+    {
+      "text": "Privacy",
+      "href": "https://mtd-evidence-rail.sociobot.in/privacy"
+    },
+    {
+      "text": "Terms",
+      "href": "https://mtd-evidence-rail.sociobot.in/terms"
+    },
+    {
+      "text": "Built by Param Factory (external site)",
+      "href": "https://sociobot.in/"
+    }
+  ],
+  "buttons": [
+    "Restore subscription access"
+  ],
+  "errors": []
+}

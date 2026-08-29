@@ -1,0 +1,12 @@
+
+===== CLAIM api-rate-limit =====
+COMMAND: cargo test api_rate_limit_returns_retry_after
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.18s
+     Running unittests src/main.rs (target/debug/deps/mtd_evidence_rail-5a07e857f86d9def)
+
+running 1 test
+test tests::api_rate_limit_returns_retry_after ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3 filtered out; finished in 0.04s
+
+RESULT: api-rate-limit exit=0

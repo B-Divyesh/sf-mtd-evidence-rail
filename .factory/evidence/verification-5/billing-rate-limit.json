@@ -1,0 +1,18 @@
+{
+  "requests": 120,
+  "elapsed_ms": 1069,
+  "status_counts": {
+    "200": 30,
+    "429": 90
+  },
+  "retry_after_values": [
+    "4"
+  ],
+  "missing_retry_after": 0,
+  "success_cache_control": [
+    "no-store"
+  ],
+  "cors": [
+    "https://mtd-evidence-rail.sociobot.in"
+  ]
+}

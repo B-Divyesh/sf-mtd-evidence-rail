@@ -1,0 +1,9 @@
+
+===== CLAIM production-topology =====
+COMMAND: npm run test:deployment-topology
+
+> mtd-evidence-rail@1.0.0 test:deployment-topology
+> bash scripts/test-deployment-topology.sh
+
+@claim:production-topology PASS — an unsafe three-replica payload renders as one replica with Azure Files at /data and the SMB-safe SQLite VFS
+RESULT: production-topology exit=0

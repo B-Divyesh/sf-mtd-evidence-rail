@@ -1,0 +1,321 @@
+{
+  "base": "https://mtd-evidence-rail.sociobot.in",
+  "generated_at": "2026-08-29T04:04:12.814Z",
+  "landing": {
+    "status": 200,
+    "headers": {
+      "cache-control": "no-cache",
+      "content-encoding": "gzip",
+      "content-security-policy": "default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'",
+      "content-type": "text/html",
+      "date": "Sat, 29 Aug 2026 04:04:13 GMT",
+      "last-modified": "Sat, 29 Aug 2026 03:29:41 GMT",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "vary": "accept-encoding",
+      "x-content-type-options": "nosniff"
+    },
+    "title": "MTD Evidence Rail — link expenses to evidence",
+    "lang": "en-GB",
+    "h1": [
+      "Link each expense to evidence"
+    ],
+    "h1Count": 1,
+    "mainCount": 1,
+    "primaryText": "Try it with sample data",
+    "primaryBox": {
+      "x": 130,
+      "y": 644.046875,
+      "width": 250.390625,
+      "height": 56.609375
+    },
+    "skipFocused": true,
+    "focusStyle": {
+      "outline": "rgb(232, 191, 98) solid 3px",
+      "outlineOffset": "3px",
+      "boxShadow": "rgb(9, 42, 50) 0px 0px 0px 5px"
+    }
+  },
+  "demo": {
+    "url": "https://mtd-evidence-rail.sociobot.in/demo",
+    "loaded": true,
+    "attempts": [
+      {
+        "n": 1,
+        "ready": false,
+        "retryVisible": true,
+        "body": "EVIDENCE WORKSPACE\n\nPrepare your quarter record\n\nLink every transaction to evidence, then export the quarter.\n\nQuarter\nQuarter 1 · 2025/26 · 6 Apr 2025 to 5 Jul 2025\nQuarter 2 · 2025/26 · 6 Jul 2025 to 5 Oct 2025\nQuarter 3 · 2025/26 · 6 Oct 2025 to 5 Jan 2026\nQuarter 4 · 2025/26 · 6 Jan 2026 to 5 Apr 2026\nQuarter 1 · 2026/27 · 6 Apr 2026 to 5 Jul 2026\nQuarter 2 · 2026/27 · 6 Jul 2026 to 5 Oct 2026\nQuarter 3 · 2026/27 · 6 Oct 2026 to 5 Jan 2027\nQuarter 4 · 2026/27 · 6 Jan 2027 to 5 Apr 2027\nQuart"
+      },
+      {
+        "n": 2,
+        "ready": false,
+        "retryVisible": true,
+        "body": "EVIDENCE WORKSPACE\n\nPrepare your quarter record\n\nLink every transaction to evidence, then export the quarter.\n\nQuarter\nQuarter 1 · 2025/26 · 6 Apr 2025 to 5 Jul 2025\nQuarter 2 · 2025/26 · 6 Jul 2025 to 5 Oct 2025\nQuarter 3 · 2025/26 · 6 Oct 2025 to 5 Jan 2026\nQuarter 4 · 2025/26 · 6 Jan 2026 to 5 Apr 2026\nQuarter 1 · 2026/27 · 6 Apr 2026 to 5 Jul 2026\nQuarter 2 · 2026/27 · 6 Jul 2026 to 5 Oct 2026\nQuarter 3 · 2026/27 · 6 Oct 2026 to 5 Jan 2027\nQuarter 4 · 2026/27 · 6 Jan 2027 to 5 Apr 2027\nQuart"
+      },
+      {
+        "n": 3,
+        "ready": true,
+        "retryVisible": false,
+        "body": "EVIDENCE WORKSPACE\n\nPrepare your quarter record\n\nLink every transaction to evidence, then export the quarter.\n\nQuarter\nQuarter 1 · 2025/26 · 6 Apr 2025 to 5 Jul 2025\nQuarter 2 · 2025/26 · 6 Jul 2025 to 5 Oct 2025\nQuarter 3 · 2025/26 · 6 Oct 2025 to 5 Jan 2026\nQuarter 4 · 2025/26 · 6 Jan 2026 to 5 Apr 2026\nQuarter 1 · 2026/27 · 6 Apr 2026 to 5 Jul 2026\nQuarter 2 · 2026/27 · 6 Jul 2026 to 5 Oct 2026\nQuarter 3 · 2026/27 · 6 Oct 2026 to 5 Jan 2027\nQuarter 4 · 2026/27 · 6 Jan 2027 to 5 Apr 2027\nQuart"
+      }
+    ],
+    "bannerVisible": true,
+    "apiResponses": [
+      {
+        "method": "POST",
+        "status": 201,
+        "url": "https://mtd-evidence-rail.sociobot.in/api/demo",
+        "retryAfter": null
+      },
+      {
+        "method": "GET",
+        "status": 404,
+        "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+        "retryAfter": null
+      },
+      {
+        "method": "GET",
+        "status": 404,
+        "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+        "retryAfter": null
+      },
+      {
+        "method": "GET",
+        "status": 200,
+        "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+        "retryAfter": null
+      }
+    ]
+  },
+  "network": {
+    "requests": [
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/",
+        "type": "document"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+        "type": "font"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+        "type": "font"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/assets/index-CIMKa9Hu.js",
+        "type": "script"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/assets/index-BCwV1doZ.css",
+        "type": "stylesheet"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/assets/evidence-rail-hero.webp",
+        "type": "image"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+        "type": "font"
+      },
+      {
+        "method": "POST",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/demo",
+        "type": "fetch"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+        "type": "fetch"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+        "type": "fetch"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+        "type": "fetch"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/",
+        "type": "document"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+        "type": "font"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+        "type": "font"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/assets/index-CIMKa9Hu.js",
+        "type": "script"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/assets/index-BCwV1doZ.css",
+        "type": "stylesheet"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/assets/evidence-rail-hero.webp",
+        "type": "image"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+        "type": "font"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/privacy",
+        "type": "document"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+        "type": "font"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+        "type": "font"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/assets/index-CIMKa9Hu.js",
+        "type": "script"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/assets/index-BCwV1doZ.css",
+        "type": "stylesheet"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+        "type": "font"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/terms",
+        "type": "document"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+        "type": "font"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+        "type": "font"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/assets/index-CIMKa9Hu.js",
+        "type": "script"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/assets/index-BCwV1doZ.css",
+        "type": "stylesheet"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+        "type": "font"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/not-a-page",
+        "type": "document"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+        "type": "font"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+        "type": "font"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/assets/index-CIMKa9Hu.js",
+        "type": "script"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/assets/index-BCwV1doZ.css",
+        "type": "stylesheet"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+        "type": "font"
+      }
+    ],
+    "origins": [
+      "https://mtd-evidence-rail.sociobot.in"
+    ],
+    "errors": [
+      "console: Failed to load resource: the server responded with a status of 404 ()",
+      "console: Failed to load resource: the server responded with a status of 404 ()",
+      "console: Failed to load resource: the server responded with a status of 404 ()"
+    ]
+  },
+  "axe": {
+    "/": {
+      "status": 200,
+      "violations": []
+    },
+    "/privacy": {
+      "status": 200,
+      "violations": []
+    },
+    "/terms": {
+      "status": 200,
+      "violations": []
+    },
+    "/not-a-page": {
+      "status": 404,
+      "violations": []
+    }
+  },
+  "mobile": {
+    "primary": {
+      "x": 12,
+      "y": 391.140625,
+      "width": 366,
+      "height": 54.796875
+    },
+    "primaryAboveFold": true,
+    "geometry": {
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "clientWidth": 390,
+      "scrollWidth": 390
+    }
+  },
+  "reducedMotion": {
+    "mediaMatches": true,
+    "animationName": "none",
+    "transitionDuration": "0s",
+    "scrollBehavior": "auto"
+  }
+}

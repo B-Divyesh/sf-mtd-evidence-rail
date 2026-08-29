@@ -1,0 +1,45 @@
+$ git status
+## main...origin/main
+ M graphify-out/.graphify_analysis.json
+ M graphify-out/cache/stat-index.json
+ M graphify-out/graph.json
+ M graphify-out/manifest.json
+?? .factory/evidence/verification-5/
+?? graphify-out/cache/ast/v0.9.48-s2/2bb3b9f357c38ef145cbc1a642670268f855be1f45196b931a975993a8b68b87.json
+?? graphify-out/cache/ast/v0.9.48-s2/9625d8601611e647e99130e9eb13b157eb13080d4f6ca18f3800ca49c2911867.json
+$ git log
+27670a3 factory: repair mtd-evidence-rail-repair-4
+8344638 docs: record subscription repair verification
+9d54aa9 fix: align paid access with monthly subscription
+7dbbaac factory: verifier mtd-evidence-rail-verify-4
+2d2d8d9 qa: record independent verification 4 failure
+$ curl /health
+{"build_sha":"27670a3936562efa179e7a9bc6ad0b97546bc099","status":"ok"}
+$ root headers
+HTTP/2 200
+content-type: application/json
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+permissions-policy: camera=(), microphone=(), geolocation=()
+content-security-policy: default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'
+cache-control: no-cache
+vary: accept-encoding
+content-length: 70
+date: Sat, 29 Aug 2026 03:58:17 GMT
+
+HTTP/2 200
+content-type: text/html
+accept-ranges: bytes
+last-modified: Sat, 29 Aug 2026 03:29:41 GMT
+content-length: 2056
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+permissions-policy: camera=(), microphone=(), geolocation=()
+content-security-policy: default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'
+cache-control: no-cache
+vary: accept-encoding
+date: Sat, 29 Aug 2026 03:58:17 GMT
+
+$ assets referenced
+assets/index-CIMKa9Hu.js
+assets/index-BCwV1doZ.css

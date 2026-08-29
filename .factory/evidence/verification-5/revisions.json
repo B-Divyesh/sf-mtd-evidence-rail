@@ -1,0 +1,49 @@
+[
+  {
+    "id": "/subscriptions/283af945-693b-4a6e-b952-df928d0a18a9/resourceGroups/sociobot/providers/Microsoft.App/containerApps/sf-mtd-evidence-rail/revisions/sf-mtd-evidence-rail--0000024",
+    "name": "sf-mtd-evidence-rail--0000024",
+    "properties": {
+      "active": true,
+      "createdTime": "2026-08-29T03:35:02+00:00",
+      "fqdn": "sf-mtd-evidence-rail--0000024.orangepond-1638693f.eastus2.azurecontainerapps.io",
+      "healthState": "Healthy",
+      "provisioningState": "Provisioned",
+      "replicas": 3,
+      "runningState": "RunningAtMaxScale",
+      "template": {
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "PORT",
+                "value": "8080"
+              }
+            ],
+            "image": "sociobotregistry.azurecr.io/sf-mtd-evidence-rail:27670a393656",
+            "name": "app",
+            "probes": [],
+            "resources": {
+              "cpu": 0.5,
+              "memory": "1Gi"
+            }
+          }
+        ],
+        "initContainers": null,
+        "revisionSuffix": null,
+        "scale": {
+          "cooldownPeriod": null,
+          "maxReplicas": 3,
+          "minReplicas": 1,
+          "pollingInterval": null,
+          "rules": null
+        },
+        "serviceBinds": null,
+        "terminationGracePeriodSeconds": null,
+        "volumes": null
+      },
+      "trafficWeight": 100
+    },
+    "resourceGroup": "sociobot",
+    "type": "Microsoft.App/containerapps/revisions"
+  }
+]

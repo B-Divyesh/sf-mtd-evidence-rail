@@ -1,0 +1,87 @@
+
+> mtd-evidence-rail@1.0.0 test
+> npm run typecheck && npm run build && cargo test && cargo build && npm run test:runtime-defaults && npm run test:durable-storage && npm run test:shared-storage && npm run test:deployment-topology && playwright test
+
+
+> mtd-evidence-rail@1.0.0 typecheck
+> tsc --noEmit
+
+
+> mtd-evidence-rail@1.0.0 build
+> vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 4 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/index.html                  2.06 kB │ gzip:  0.75 kB
+../dist/assets/index-BCwV1doZ.css  16.96 kB │ gzip:  4.80 kB
+../dist/assets/index-CIMKa9Hu.js   30.36 kB │ gzip: 10.31 kB │ map: 54.78 kB
+✓ built in 313ms
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.19s
+     Running unittests src/main.rs (target/debug/deps/mtd_evidence_rail-5a07e857f86d9def)
+
+running 4 tests
+test tests::api_rate_limit_returns_retry_after ... ok
+test tests::health_reports_build_sha ... ok
+test tests::unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated ... ok
+test tests::workspace_deletion_removes_records_evidence_and_audit ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.20s
+
+> mtd-evidence-rail@1.0.0 test:runtime-defaults
+> bash scripts/test-runtime-defaults.sh
+
+@claim:runtime-defaults PASS — server started with only PORT
+
+> mtd-evidence-rail@1.0.0 test:durable-storage
+> bash scripts/test-durable-storage.sh
+
+@claim:durable-storage PASS — workspace survived a server restart
+
+> mtd-evidence-rail@1.0.0 test:shared-storage
+> bash scripts/test-shared-storage.sh
+
+@claim:shared-state-boundary PASS — three processes returned 400/400 workspace reads before and after restart
+
+> mtd-evidence-rail@1.0.0 test:deployment-topology
+> bash scripts/test-deployment-topology.sh
+
+@claim:production-topology PASS — an unsafe three-replica payload renders as one replica with Azure Files at /data and the SMB-safe SQLite VFS
+[WebServer] (node:16961) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer]     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.20s
+[WebServer]      Running `target/debug/mtd-evidence-rail`
+
+Running 21 tests using 1 worker
+
+(node:16976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:16976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/product.spec.ts:11:1 › @claim:demo-isolation demo uses a separate 24-hour workspace (978ms)
+  ✓   2 [chromium] › tests/product.spec.ts:27:1 › @claim:no-account starts without sign-in and keeps the key on this device (1.4s)
+  ✓   3 [chromium] › tests/product.spec.ts:40:1 › @claim:quarter-capture saves income and expenses in the dated quarter (786ms)
+  ✓   4 [chromium] › tests/product.spec.ts:58:1 › @claim:csv-matching bank CSV review flags likely matches (1.1s)
+  ✓   5 [chromium] › tests/product.spec.ts:72:1 › @claim:evidence-pack exports a ZIP with CSV and linked files (780ms)
+  ✓   6 [chromium] › tests/product.spec.ts:86:1 › @claim:free-limit server stops a 26th free transaction (984ms)
+  ✓   7 [chromium] › tests/product.spec.ts:105:1 › @claim:paid-limit server verifies a licence before allowing more than 25 (965ms)
+  ✓   8 [chromium] › tests/product.spec.ts:122:1 › @claim:atomic-import rejects the whole file when one row is invalid (690ms)
+  ✓   9 [chromium] › tests/product.spec.ts:137:1 › @claim:calendar-dates rejects impossible dates at the API edge (612ms)
+  ✓  10 [chromium] › tests/product.spec.ts:148:1 › @claim:evidence-types accepts PDF, JPG, PNG, WebP, and text evidence (1.5s)
+  ✓  11 [chromium] › tests/product.spec.ts:170:1 › @claim:workspace-delete removes the workspace and its evidence (692ms)
+  ✓  12 [chromium] › tests/product.spec.ts:186:1 › @claim:missing-review shows only transactions without evidence (786ms)
+  ✓  13 [chromium] › tests/product.spec.ts:194:1 › @claim:no-trackers demo core flow sends only same-origin requests (683ms)
+  ✓  14 [chromium] › tests/product.spec.ts:205:1 › offline connection gives a clear recovery notice (609ms)
+  ✓  15 [chromium] › tests/product.spec.ts:211:1 › @claim:license-return stores and verifies a returned licence (888ms)
+  ✓  16 [chromium] › tests/product.spec.ts:219:1 › all routes have one h1 and no accessibility violations (7.3s)
+  ✓  17 [chromium] › tests/product.spec.ts:233:1 › 390px mobile and keyboard paths meet interaction requirements (1.2s)
+  ✓  18 [chromium] › tests/product.spec.ts:256:1 › 390px at 200% text size has no horizontal overflow (625ms)
+  ✓  19 [chromium] › tests/product.spec.ts:280:1 › subscription copy is monthly across the product, terms, and README (753ms)
+  ✓  20 [chromium] › tests/product.spec.ts:297:1 › release-blocking copy and 44px inline-link regressions stay fixed (1.0s)
+  ✓  21 [chromium] › tests/product.spec.ts:326:1 › unversioned assets revalidate instead of caching forever (45ms)
+
+  21 passed (27.5s)

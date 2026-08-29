@@ -1,0 +1,77 @@
+[
+  {
+    "id": "/subscriptions/283af945-693b-4a6e-b952-df928d0a18a9/resourceGroups/sociobot/providers/Microsoft.App/containerApps/sf-mtd-evidence-rail/revisions/sf-mtd-evidence-rail--0000024/replicas/sf-mtd-evidence-rail--0000024-756b9c7665-57jsb",
+    "name": "sf-mtd-evidence-rail--0000024-756b9c7665-57jsb",
+    "properties": {
+      "containers": [
+        {
+          "containerId": "containerd://7a2a6b73504e4f619fee2de2e51b4e74",
+          "execEndpoint": "wss://eastus2.azurecontainerapps.dev/subscriptions/283af945-693b-4a6e-b952-df928d0a18a9/resourceGroups/sociobot/containerApps/sf-mtd-evidence-rail/revisions/sf-mtd-evidence-rail--0000024/replicas/sf-mtd-evidence-rail--0000024-756b9c7665-57jsb/containers/app/exec",
+          "logStreamEndpoint": "https://eastus2.azurecontainerapps.dev/subscriptions/283af945-693b-4a6e-b952-df928d0a18a9/resourceGroups/sociobot/containerApps/sf-mtd-evidence-rail/revisions/sf-mtd-evidence-rail--0000024/replicas/sf-mtd-evidence-rail--0000024-756b9c7665-57jsb/containers/app/logstream",
+          "name": "app",
+          "ready": true,
+          "restartCount": 0,
+          "runningState": "Running",
+          "runningStateDetails": "Container started at: 8/29/2026 3:35:20 AM.",
+          "started": true
+        }
+      ],
+      "createdTime": "2026-08-29T03:35:02Z",
+      "initContainers": [],
+      "runningState": "Running",
+      "runningStateDetails": ""
+    },
+    "resourceGroup": "sociobot",
+    "type": "Microsoft.App/containerapps/revisions/replicas"
+  },
+  {
+    "id": "/subscriptions/283af945-693b-4a6e-b952-df928d0a18a9/resourceGroups/sociobot/providers/Microsoft.App/containerApps/sf-mtd-evidence-rail/revisions/sf-mtd-evidence-rail--0000024/replicas/sf-mtd-evidence-rail--0000024-756b9c7665-8z8fk",
+    "name": "sf-mtd-evidence-rail--0000024-756b9c7665-8z8fk",
+    "properties": {
+      "containers": [
+        {
+          "containerId": "containerd://6520045c97f64ac5b9e086fa8028b44f",
+          "execEndpoint": "wss://eastus2.azurecontainerapps.dev/subscriptions/283af945-693b-4a6e-b952-df928d0a18a9/resourceGroups/sociobot/containerApps/sf-mtd-evidence-rail/revisions/sf-mtd-evidence-rail--0000024/replicas/sf-mtd-evidence-rail--0000024-756b9c7665-8z8fk/containers/app/exec",
+          "logStreamEndpoint": "https://eastus2.azurecontainerapps.dev/subscriptions/283af945-693b-4a6e-b952-df928d0a18a9/resourceGroups/sociobot/containerApps/sf-mtd-evidence-rail/revisions/sf-mtd-evidence-rail--0000024/replicas/sf-mtd-evidence-rail--0000024-756b9c7665-8z8fk/containers/app/logstream",
+          "name": "app",
+          "ready": true,
+          "restartCount": 0,
+          "runningState": "Running",
+          "runningStateDetails": "Container started at: 8/29/2026 3:59:08 AM.",
+          "started": true
+        }
+      ],
+      "createdTime": "2026-08-29T03:58:59Z",
+      "initContainers": [],
+      "runningState": "Running",
+      "runningStateDetails": ""
+    },
+    "resourceGroup": "sociobot",
+    "type": "Microsoft.App/containerapps/revisions/replicas"
+  },
+  {
+    "id": "/subscriptions/283af945-693b-4a6e-b952-df928d0a18a9/resourceGroups/sociobot/providers/Microsoft.App/containerApps/sf-mtd-evidence-rail/revisions/sf-mtd-evidence-rail--0000024/replicas/sf-mtd-evidence-rail--0000024-756b9c7665-dqvh5",
+    "name": "sf-mtd-evidence-rail--0000024-756b9c7665-dqvh5",
+    "properties": {
+      "containers": [
+        {
+          "containerId": "containerd://855a2fb317ea4245a67c365b538c8814",
+          "execEndpoint": "wss://eastus2.azurecontainerapps.dev/subscriptions/283af945-693b-4a6e-b952-df928d0a18a9/resourceGroups/sociobot/containerApps/sf-mtd-evidence-rail/revisions/sf-mtd-evidence-rail--0000024/replicas/sf-mtd-evidence-rail--0000024-756b9c7665-dqvh5/containers/app/exec",
+          "logStreamEndpoint": "https://eastus2.azurecontainerapps.dev/subscriptions/283af945-693b-4a6e-b952-df928d0a18a9/resourceGroups/sociobot/containerApps/sf-mtd-evidence-rail/revisions/sf-mtd-evidence-rail--0000024/replicas/sf-mtd-evidence-rail--0000024-756b9c7665-dqvh5/containers/app/logstream",
+          "name": "app",
+          "ready": true,
+          "restartCount": 0,
+          "runningState": "Running",
+          "runningStateDetails": "Container started at: 8/29/2026 3:59:15 AM.",
+          "started": true
+        }
+      ],
+      "createdTime": "2026-08-29T03:58:59Z",
+      "initContainers": [],
+      "runningState": "Running",
+      "runningStateDetails": ""
+    },
+    "resourceGroup": "sociobot",
+    "type": "Microsoft.App/containerapps/revisions/replicas"
+  }
+]

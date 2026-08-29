@@ -1,0 +1,23 @@
+
+===== CLAIM durable-storage =====
+COMMAND: npm run build && cargo build && npm run test:durable-storage
+
+> mtd-evidence-rail@1.0.0 build
+> vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 4 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/index.html                  2.06 kB │ gzip:  0.75 kB
+../dist/assets/index-BCwV1doZ.css  16.96 kB │ gzip:  4.80 kB
+../dist/assets/index-CIMKa9Hu.js   30.36 kB │ gzip: 10.31 kB │ map: 54.78 kB
+✓ built in 360ms
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.20s
+
+> mtd-evidence-rail@1.0.0 test:durable-storage
+> bash scripts/test-durable-storage.sh
+
+@claim:durable-storage PASS — workspace survived a server restart
+RESULT: durable-storage exit=0

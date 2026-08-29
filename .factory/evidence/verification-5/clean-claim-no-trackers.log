@@ -1,0 +1,71 @@
+
+===== CLEAN CLAIM no-trackers =====
+COMMAND: npm test -- --grep @claim:no-trackers
+
+> mtd-evidence-rail@1.0.0 test
+> npm run typecheck && npm run build && cargo test && cargo build && npm run test:runtime-defaults && npm run test:durable-storage && npm run test:shared-storage && npm run test:deployment-topology && playwright test --grep @claim:no-trackers
+
+
+> mtd-evidence-rail@1.0.0 typecheck
+> tsc --noEmit
+
+
+> mtd-evidence-rail@1.0.0 build
+> vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 4 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/index.html                  2.06 kB │ gzip:  0.75 kB
+../dist/assets/index-BCwV1doZ.css  16.96 kB │ gzip:  4.80 kB
+../dist/assets/index-CIMKa9Hu.js   30.36 kB │ gzip: 10.31 kB │ map: 54.78 kB
+✓ built in 326ms
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.18s
+     Running unittests src/main.rs (target/debug/deps/mtd_evidence_rail-5a07e857f86d9def)
+
+running 4 tests
+test tests::api_rate_limit_returns_retry_after ... ok
+test tests::health_reports_build_sha ... ok
+test tests::unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated ... ok
+test tests::workspace_deletion_removes_records_evidence_and_audit ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.17s
+
+> mtd-evidence-rail@1.0.0 test:runtime-defaults
+> bash scripts/test-runtime-defaults.sh
+
+@claim:runtime-defaults PASS — server started with only PORT
+
+> mtd-evidence-rail@1.0.0 test:durable-storage
+> bash scripts/test-durable-storage.sh
+
+@claim:durable-storage PASS — workspace survived a server restart
+
+> mtd-evidence-rail@1.0.0 test:shared-storage
+> bash scripts/test-shared-storage.sh
+
+@claim:shared-state-boundary PASS — three processes returned 400/400 workspace reads before and after restart
+
+> mtd-evidence-rail@1.0.0 test:deployment-topology
+> bash scripts/test-deployment-topology.sh
+
+@claim:production-topology PASS — an unsafe three-replica payload renders as one replica with Azure Files at /data and the SMB-safe SQLite VFS
+[WebServer] (node:43508) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer]     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.21s
+[WebServer]      Running `target/debug/mtd-evidence-rail`
+
+Running 1 test using 1 worker
+
+(node:43523) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:43523) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/product.spec.ts:194:1 › @claim:no-trackers demo core flow sends only same-origin requests (1.1s)
+
+  1 passed (4.2s)
+RESULT: no-trackers exit=0

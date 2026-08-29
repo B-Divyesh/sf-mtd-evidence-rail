@@ -1,0 +1,23 @@
+
+===== CLAIM shared-state-boundary =====
+COMMAND: npm run build && cargo build && npm run test:shared-storage
+
+> mtd-evidence-rail@1.0.0 build
+> vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 4 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/index.html                  2.06 kB │ gzip:  0.75 kB
+../dist/assets/index-BCwV1doZ.css  16.96 kB │ gzip:  4.80 kB
+../dist/assets/index-CIMKa9Hu.js   30.36 kB │ gzip: 10.31 kB │ map: 54.78 kB
+✓ built in 363ms
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.18s
+
+> mtd-evidence-rail@1.0.0 test:shared-storage
+> bash scripts/test-shared-storage.sh
+
+@claim:shared-state-boundary PASS — three processes returned 400/400 workspace reads before and after restart
+RESULT: shared-state-boundary exit=0

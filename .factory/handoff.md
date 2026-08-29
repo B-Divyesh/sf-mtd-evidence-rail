@@ -1,87 +1,38 @@
-# MTD Evidence Rail repair handoff
+# MTD Evidence Rail verification handoff
 
-Completed 29 August 2026 for work order `mtd-evidence-rail-repair-4`.
+Completed 29 August 2026 for work order `mtd-evidence-rail-verify-5`.
 
-## Result
+## Result: FAIL
 
-Repair commit `9d54aa99c8bd4fb3f07e0ed9146fa6b84147f2a1` is pushed to `main` and
-deployed to <https://mtd-evidence-rail.sociobot.in>. The live `/health` route
-reported that exact build SHA after the rollout.
+Candidate `27670a3936562efa179e7a9bc6ad0b97546bc099` is the exact artifact served
+at <https://mtd-evidence-rail.sociobot.in>, but the live backend is not safe to
+release. Azure runs three replicas with no `/data` volume. Each replica has its
+own SQLite database, so workspaces, writes, and deletions are inconsistent.
 
-The product, README, terms, claims, and checkout test now use the researched
-**£15/month subscription**. The landing page links to the Sociobot checkout
-endpoint, which returns a Dodo-hosted subscription session. The old redirect-
-only checker was removed.
+Fresh evidence:
 
-## What changed
+- 72/120 reads of twelve newly created demo workspaces returned 404.
+- The one-click demo needed two manual retries before sample data appeared.
+- 20 concurrent writes produced 7 successes and 13 false workspace 404s.
+- A delete returned 204, but two of six later reads still returned the retained
+  workspace.
+- The live limiter returned 429 with `Retry-After: 1`, but three process-local
+  limiters admitted 183/600 requests in 2.168 seconds.
 
-- Replaced obsolete payment wording with £15/month subscription wording in
-  the product, terms, README, claim registry, and recovery/error messages.
-- Added `npm run test:live-checkout`. It follows the checkout response without
-  paying and proves the Dodo session host, `mtd-evidence-rail` slug,
-  `pdt_0NmPnl9rqkKtKbVXh6baV`, GBP minor-unit amount `1500`, and one-month
-  recurring cadence.
-- Made the demo banner a labelled top-level complementary landmark; removed an
-  unrelated nested preview aside landmark found while tightening the Axe test.
-- Removed the 390 px / 200% text overflow by containing the mobile preview,
-  preserving the hero image inside the shell, and letting status text wrap.
-- Added focused browser coverage for the subscription copy, Dodo link, demo
-  landmark/Axe result, 200% text sizing, and the offline recovery notice.
+The local candidate is healthy: all 20 exact claim commands pass in a detached
+clean worktree, `npm test` passes 21/21 browser tests, the typecheck and exact
+production build pass, strict Rust format/lint and locked release build pass,
+and the live checkout proves GBP 1500 monthly Dodo billing. Static live hashes
+match the build. Lighthouse scores 99/100/100/100 with LCP 1.8 s and CLS 0.
 
-## How to run
+Full findings and evidence are in
+[verification-5.md](verification-5.md) and
+[evidence/verification-5](evidence/verification-5/).
 
-```sh
-npm ci
-npm test
-npm run test:live-checkout
-npm run build
-STATIC_DIR=dist DATA_DIR=data PORT=8080 cargo run
-```
+## Required next step
 
-For the deployed topology check:
+Redeploy with one replica, Azure Files mounted at `/data`, and
+`SQLITE_VFS=unix-dotfile`. Re-run live read, write, deletion, restart, and
+single-client limiter checks before release.
 
-```sh
-EXPECTED_SHA=9d54aa99c8bd4fb3f07e0ed9146fa6b84147f2a1 \
-  BASE_URL=https://mtd-evidence-rail.sociobot.in \
-  bash scripts/verify-live-topology.sh --restart
-```
-
-## Verification evidence
-
-- Clean suite: `npm ci && npm test` passed: TypeScript, Vite build, 4 Rust
-  tests, runtime-defaults, durable storage restart, shared storage,
-  deployment-topology, and **21/21** Chromium tests.
-- Checkout contract: `npm run test:live-checkout` passed with HTTP 303 to
-  `https://checkout.dodopayments.com/session/...`; it asserted the product
-  slug, product ID, GBP 1500 amount, and monthly subscription cadence.
-- Format and lint: `cargo fmt -- --check` and
-  `cargo clippy --all-targets -- -D warnings` passed.
-- Accessibility, keyboard, mobile, privacy, and offline: local and live
-  Playwright checks passed. All six routes had one h1 and no Axe violations;
-  the 390 px keyboard flow and 200% text-size check passed. The core demo flow
-  made same-origin requests only, and the offline event shows a recovery
-  notice.
-- Live identity and service: `/health` matched the deployed SHA. The live
-  topology script created private and demo workspaces and returned 100/100
-  fresh-connection reads for each, loaded 12/12 clean demo browser contexts,
-  and completed a revision restart during deployment.
-- Live rate limit: repeat limiter check returned 78/240 HTTP 429 responses;
-  accepted responses (162) stayed below its single-limiter bound (189), and
-  429 responses carried `Retry-After: 1`.
-- Live URL verification: no console errors; title, `lang=en-GB`, one h1, main
-  landmark, image alt text, and button labels were present. See
-  `.factory/evidence/repair-4-live/verify.json` and screenshots.
-- Live Lighthouse with Chromium: Performance 100, Accessibility 100, Best
-  Practices 100, SEO 100; LCP 1.9 s and CLS 0. See
-  `.factory/evidence/repair-4-live/lighthouse.json`.
-
-## Deployment
-
-Deployment used `bash scripts/deploy.sh`. The container app is configured as
-one active replica with Azure Files at `/data` and `SQLITE_VFS=unix-dotfile`.
-The deployment script verified the revision, shared persistent state, restart
-recovery, and the live limiter before returning successfully.
-
-## Known gaps
-
-None identified for this repair.
+No product code was changed. Only QA documentation and evidence were added.

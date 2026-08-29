@@ -1,0 +1,13 @@
+{
+  "requests": 600,
+  "elapsed_ms": 2168,
+  "status_counts": {
+    "401": 183,
+    "429": 417
+  },
+  "first_429_index": 17,
+  "retry_after_values": [
+    "1"
+  ],
+  "missing_retry_after": 0
+}

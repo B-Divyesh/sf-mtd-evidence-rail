@@ -1,0 +1,305 @@
+{
+  "base": "https://mtd-evidence-rail.sociobot.in",
+  "generated_at": "2026-08-29T04:05:07.118Z",
+  "cases": [
+    {
+      "name": "minimum-boundary",
+      "expected": 201,
+      "attempts": [
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 201,
+          "text": "{\"id\":\"9fd42631-dc7c-4b40-b6b5-25cc7f8d788c\"}"
+        }
+      ]
+    },
+    {
+      "name": "maximum-amount",
+      "expected": 201,
+      "attempts": [
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 201,
+          "text": "{\"id\":\"d0197aee-6f60-4d53-b703-fb8b31116c0f\"}"
+        }
+      ]
+    },
+    {
+      "name": "zero-amount",
+      "expected": 400,
+      "attempts": [
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 400,
+          "text": "{\"error\":\"Enter an amount between £0.01 and £1,000,000.\"}"
+        }
+      ]
+    },
+    {
+      "name": "negative-amount",
+      "expected": 400,
+      "attempts": [
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 400,
+          "text": "{\"error\":\"Enter an amount between £0.01 and £1,000,000.\"}"
+        }
+      ]
+    },
+    {
+      "name": "over-maximum",
+      "expected": 400,
+      "attempts": [
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 400,
+          "text": "{\"error\":\"Enter an amount between £0.01 and £1,000,000.\"}"
+        }
+      ]
+    },
+    {
+      "name": "impossible-date",
+      "expected": 400,
+      "attempts": [
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 400,
+          "text": "{\"error\":\"Enter a real calendar date.\"}"
+        }
+      ]
+    },
+    {
+      "name": "unknown-kind",
+      "expected": 400,
+      "attempts": [
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 400,
+          "text": "{\"error\":\"Choose expense or income.\"}"
+        }
+      ]
+    },
+    {
+      "name": "long-description",
+      "expected": 400,
+      "attempts": [
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 400,
+          "text": "{\"error\":\"Enter a description under 120 characters.\"}"
+        }
+      ]
+    },
+    {
+      "name": "long-category",
+      "expected": 400,
+      "attempts": [
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 400,
+          "text": "{\"error\":\"Enter a category under 40 characters.\"}"
+        }
+      ]
+    },
+    {
+      "name": "unsupported-evidence",
+      "expected": 415,
+      "attempts": [
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 415,
+          "text": "{\"error\":\"Use a PDF, JPG, PNG, WebP, or text file.\"}"
+        }
+      ]
+    },
+    {
+      "name": "supported-evidence-recovery",
+      "expected": 200,
+      "attempts": [
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 404,
+          "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+        },
+        {
+          "status": 200,
+          "text": "{\"linked\":true}"
+        }
+      ]
+    }
+  ],
+  "create": {
+    "status": 201,
+    "keyLength": 64
+  },
+  "workspaceBeforeFiles": {
+    "attempts": [
+      {
+        "status": 404,
+        "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+      },
+      {
+        "status": 404,
+        "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+      },
+      {
+        "status": 200,
+        "text": "{\"records\":[{\"amount_pence\":1,\"category\":\"Office\",\"created_at\":1787976307,\"description\":\"Quarter boundary penny\",\"evidence_mime\":null,\"evidence_name\":null,\"id\":\"9fd42631-dc7c-4b40-b6b5-25cc7f8d788c\",\"invoice_number\":null,\"kind\":\"expense\",\"record_date\":\"2026-04-05\",\"source\":\"manual\",\"updated_at\":1787"
+      }
+    ],
+    "total": 2
+  },
+  "export": {
+    "attempts": [
+      {
+        "status": 404,
+        "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+      },
+      {
+        "status": 404,
+        "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+      },
+      {
+        "status": 200,
+        "text": "PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000\u0000\u0000!\u0000�\u0018GT�\u0000\u0000\u0000�\u0000\u0000\u0000\u0010\u0000\u0000\u0000transactions.csvM�Aj�0\u0010E�9�\u000f01Jhr�R\nݛ���\f�FB\u001a\u0005���\u0016ڼ�ۼ\u0017�A~\u0014PD���5\u001bq��|Z�B5׃Z�U@jϬ��z�Q\tO�0���k����\u001a��sx;�\u001b�IN�w�5�4�\b�#\u000e�+��\u001f�\u0010�{�j+%��\u001b\u0011%mMm}�a/�\u0006��\\\u001du�s���\u0018\n�\u000e\nc��ǲ��/S!���N��\u0003��\rPK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000\u0000\u0000!\u0000�m\b3x\u0000\u0000\u0000�\u0000\u0000\u0000\n\u0000\u0000\u0000README.txt5�1\u000e�0\f\u0005н��\u0007@�\u0004 �t�z\u0001㸭Ep�\u001dR������7�\u0017\\�f1\u0016$�\u0002��E�"
+      }
+    ],
+    "signature": "PK",
+    "contentType": "application/zip"
+  },
+  "concurrentWrites": {
+    "requested": 20,
+    "counts": {
+      "201": 7,
+      "404": 13
+    },
+    "statuses": [
+      404,
+      404,
+      404,
+      201,
+      201,
+      404,
+      404,
+      201,
+      404,
+      201,
+      404,
+      404,
+      201,
+      404,
+      201,
+      404,
+      404,
+      201,
+      404,
+      404
+    ]
+  },
+  "workspaceAfterConcurrency": {
+    "attempts": [
+      {
+        "status": 404,
+        "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+      },
+      {
+        "status": 404,
+        "text": "{\"error\":\"This workspace was not found. Start a new workspace.\"}"
+      },
+      {
+        "status": 200,
+        "text": "{\"records\":[{\"amount_pence\":1,\"category\":\"Office\",\"created_at\":1787976307,\"description\":\"Quarter boundary penny\",\"evidence_mime\":\"text/plain\",\"evidence_name\":\"receipt.txt\",\"id\":\"9fd42631-dc7c-4b40-b6b5-25cc7f8d788c\",\"invoice_number\":null,\"kind\":\"expense\",\"record_date\":\"2026-04-05\",\"source\":\"manual\","
+      }
+    ],
+    "total": 9
+  },
+  "delete": {
+    "attempts": [
+      {
+        "status": 204,
+        "text": ""
+      }
+    ]
+  },
+  "readAfterDelete": [
+    404,
+    200,
+    404,
+    404,
+    200,
+    404
+  ]
+}
