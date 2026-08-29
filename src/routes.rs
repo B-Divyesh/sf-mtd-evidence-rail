@@ -369,13 +369,13 @@ async fn has_paid_access(state: &AppState, headers: &HeaderMap) -> ApiResult<boo
             tracing::warn!(error = %err, "licence verification unavailable");
             error(
                 StatusCode::SERVICE_UNAVAILABLE,
-                "Paid access could not be checked. Try again in a moment.",
+                "Subscription access could not be checked. Try again in a moment.",
             )
         })?;
     if !response.status().is_success() {
         return Err(error(
             StatusCode::SERVICE_UNAVAILABLE,
-            "Paid access could not be checked. Try again in a moment.",
+            "Subscription access could not be checked. Try again in a moment.",
         ));
     }
     #[derive(Deserialize)]
@@ -413,7 +413,7 @@ async fn enforce_quarter_limits(
         if existing.0 + *additions as i64 > 25 && !has_paid_access(state, headers).await? {
             return Err(error(
                 StatusCode::PAYMENT_REQUIRED,
-                "The free quarter has 25 transactions. Restore paid access or use another quarter.",
+                "The free quarter has 25 transactions. Restore subscription access or use another quarter.",
             ));
         }
     }

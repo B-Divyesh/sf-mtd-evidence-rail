@@ -15,7 +15,7 @@ headings are included even when they are not sentences.
 | Nothing is saved. | 3 |
 | Start a private workspace | 4 |
 | Your workspace needs no account. | 5 |
-| £15 once for more than 25 transactions. | 7 |
+| £15/month for more than 25 transactions. | 6 |
 | This record aid does not file with HMRC. | 8 |
 
 Read-aloud check: the headline, audience line, and sample action fit in one
@@ -59,21 +59,21 @@ product name.
 | Demo records use a separate 24-hour workspace. | 7 |
 | You can export or delete your workspace. | 7 |
 | No advertising trackers or third-party scripts run here. | 8 |
-| Paid access | 2 |
+| Monthly subscription | 2 |
 | Use one workspace for every quarter | 6 |
 | The free workspace accepts 25 transactions in a quarter. | 9 |
-| Paid access accepts more than 25. | 6 |
-| The server verifies a paid licence before accepting more than 25 transactions. | 12 |
+| A £15/month subscription accepts more than 25. | 7 |
+| The server verifies an active subscription before accepting more than 25 transactions. | 12 |
 | Receipt and invoice evidence | 4 |
 | Bank CSV review | 3 |
 | Accountant evidence packs | 3 |
-| Buy paid access | 3 |
-| Sociobot and Dodo handle checkout and refunds. | 7 |
+| Start monthly subscription | 3 |
+| Sociobot and Dodo handle subscription checkout and refunds. | 8 |
 | See the terms. | 3 |
-| Have a licence? | 3 |
+| Have a subscription token? | 4 |
 | Paste it here. | 3 |
-| Restore paid access | 3 |
-| Your licence is no longer active. | 6 |
+| Restore subscription access | 3 |
+| Your subscription is no longer active. | 6 |
 | Free limits apply. | 3 |
 
 ## Results
@@ -93,4 +93,4 @@ product name.
 | Download for an accountant | evidence pack |
 | Items requiring attention | missing evidence |
 | Server-side record area | workspace |
-| Paid proof | licence |
+| Paid proof | subscription token |

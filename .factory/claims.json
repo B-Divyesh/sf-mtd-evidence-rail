@@ -78,22 +78,22 @@
   },
   {
     "id": "paid-limit",
-    "claim": "The server verifies a paid licence before accepting more than 25 transactions",
+    "claim": "The server verifies an active subscription before accepting more than 25 transactions",
     "where": "pricing, terms, README",
     "test": "npm test -- --grep @claim:paid-limit",
     "sandbox": "demo workspace and recorded Sociobot verification fixture; submit 26 rows with a valid token and assert all 26 persist"
   },
   {
     "id": "hosted-checkout",
-    "claim": "The £15 purchase starts on the hosted Sociobot checkout",
+    "claim": "The £15/month subscription starts on the hosted Dodo checkout",
     "where": "pricing, terms, README",
-    "test": "bash scripts/test-live-checkout.sh",
-    "sandbox": "live Sociobot billing route; assert a redirect response without completing or spending on a purchase"
+    "test": "npm run test:live-checkout",
+    "sandbox": "live Sociobot billing route; assert the Dodo session hostname, product slug and ID, GBP 1500 price, and monthly subscription cadence without completing payment"
   },
   {
     "id": "license-return",
-    "claim": "A returned Sociobot licence is stored and verified",
-    "where": "paid access section, README",
+    "claim": "A returned Sociobot subscription token is stored and verified",
+    "where": "subscription section, README",
     "test": "npm test -- --grep @claim:license-return",
     "sandbox": "fresh browser; recorded valid verify response; assert URL stripping and cached verdict"
   },

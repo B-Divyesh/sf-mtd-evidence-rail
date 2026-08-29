@@ -16,8 +16,9 @@ accounting suite. It does not calculate tax or file with HMRC.
 - Deletes a workspace and its files on request.
 
 A workspace needs no account. Its 64-character key stays in the browser. The
-free plan accepts 25 transactions per quarter. Paid access costs £15 once and
-accepts more than 25. Checkout and licence checks use the Sociobot billing API.
+free plan accepts 25 transactions per quarter. A £15/month subscription accepts
+more than 25. Checkout and subscription checks use the Sociobot billing API and
+open a Dodo-hosted checkout.
 
 ## Try the isolated demo
 
@@ -49,6 +50,7 @@ proxies `/api` and `/health` to port 8080.
 npm test
 npm run build       # writes the frontend to dist/
 npm run test:deployment-topology # rejects the verifier's unsafe rollout shape
+npm run test:live-checkout # checks the live Dodo subscription contract
 npm run verify:live-topology # checks 12 fresh demos and 100 reads per workspace
 docker build --build-arg BUILD_SHA=local -t mtd-evidence-rail .
 docker run --rm -p 8080:8080 mtd-evidence-rail
@@ -70,7 +72,7 @@ respect the first `X-Forwarded-For` hop. Security headers include a restrictive
 CSP.
 
 There are no advertising trackers or third-party runtime scripts. The product
-contacts `api.sociobot.in` only to verify paid access or start checkout. The
+contacts `api.sociobot.in` only to verify subscription access or start checkout. The
 server enforces the free quarter limit even if browser storage is changed. See
 `/privacy` and `/terms` in the running product.
 

@@ -104,7 +104,7 @@ test('@claim:free-limit server stops a 26th free transaction', async ({ page }) 
 
 test('@claim:paid-limit server verifies a licence before allowing more than 25', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByText('The server verifies a paid licence before accepting more than 25 transactions.')).toBeVisible();
+  await expect(page.getByText('The server verifies an active subscription before accepting more than 25 transactions.')).toBeVisible();
   await openReady(page,'/demo');
   const key = await page.evaluate(() => sessionStorage.getItem('demo:mtd-evidence-rail:workspace'));
   const records = Array.from({ length: 20 }, (_, i) => ({
@@ -210,14 +210,17 @@ test('@claim:license-return stores and verifies a returned licence', async ({ pa
   await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem('sb_license_cache:mtd-evidence-rail') || '{}').valid)).toBe(true);
 });
 
-test('all routes have one h1 and no serious accessibility violations', async ({ page }) => {
+test('all routes have one h1 and no accessibility violations', async ({ page }) => {
   for (const path of ['/', '/demo', '/app', '/privacy', '/terms', '/not-a-page']) {
     const response = await page.goto(path);
     expect(response?.status()).toBe(path === '/not-a-page' ? 404 : 200);
     expect(await page.locator('h1').count()).toBe(1);
-    if (path === '/demo') await expect(page.getByText('Community hall hire')).toBeVisible();
+    if (path === '/demo') {
+      await expect(page.getByText('Community hall hire')).toBeVisible();
+      await expect(page.getByRole('complementary', { name: 'Demo controls' })).toBeVisible();
+    }
     const results = await new AxeBuilder({ page }).analyze();
-    expect(results.violations.filter(v => ['serious', 'critical'].includes(v.impact || '')), path).toEqual([]);
+    expect(results.violations, path).toEqual([]);
   }
 });
 
@@ -244,6 +247,47 @@ test('390px mobile and keyboard paths meet interaction requirements', async ({ p
   await expect(add).toBeFocused();
 });
 
+test('390px at 200% text size has no horizontal overflow', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.route('**/*.css', async route => {
+    const stylesheet = await route.fetch();
+    await route.fulfill({ response: stylesheet, body: `${await stylesheet.text()}\nhtml { font-size: 200%; }` });
+  });
+  await page.goto('/');
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  const dimensions = await page.evaluate(() => ({
+    clientWidth: document.documentElement.clientWidth,
+    scrollWidth: document.documentElement.scrollWidth,
+    overflowing: [...document.querySelectorAll<HTMLElement>('*')].map(element => {
+      const rect = element.getBoundingClientRect();
+      return { tag: element.tagName, className: element.className, right: rect.right, text: element.innerText?.slice(0, 48) };
+    }).filter(element => element.right > document.documentElement.clientWidth + 1),
+  }));
+  expect(dimensions.scrollWidth <= dimensions.clientWidth).toBe(true);
+  for (const selector of ['.site-header', '.hero-copy', '.price-ticket', '.site-footer']) {
+    const box = await page.locator(selector).boundingBox();
+    expect(box?.x, selector).toBeGreaterThanOrEqual(0);
+    expect((box?.x || 0) + (box?.width || 0), selector).toBeLessThanOrEqual(390);
+  }
+});
+
+test('subscription copy is monthly across the product, terms, and README', async ({ page }) => {
+  for (const [path, expected] of [
+    ['/', '£15/month for more than 25 transactions.'],
+    ['/terms', 'The subscription costs £15 per month and allows more than 25 transactions in a quarter.'],
+  ] as const) {
+    await page.goto(path);
+    const copy = await page.locator('main').innerText();
+    expect(copy).toContain(expected);
+    expect(copy.toLowerCase()).not.toContain('£15 once');
+    expect(copy.toLowerCase()).not.toContain('one-time');
+  }
+  const readme = readFileSync('README.md', 'utf8').toLowerCase();
+  expect(readme).toContain('£15/month subscription');
+  expect(readme).not.toContain('£15 once');
+  expect(readme).not.toContain('one-time');
+});
+
 test('release-blocking copy and 44px inline-link regressions stay fixed', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/');
@@ -253,6 +297,7 @@ test('release-blocking copy and 44px inline-link regressions stay fixed', async 
   }
   await expect(page.getByText('How it works', { exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Use one workspace for every quarter' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Start monthly subscription' })).toBeVisible();
 
   const terms = page.locator('.price-ticket .help a', { hasText: 'terms' });
   const termsBox = await terms.boundingBox();
