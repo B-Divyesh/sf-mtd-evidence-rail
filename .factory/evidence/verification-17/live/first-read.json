@@ -1,0 +1,154 @@
+{
+  "status": 200,
+  "headers": {
+    "cache-control": "no-cache",
+    "content-encoding": "gzip",
+    "content-security-policy": "default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'",
+    "content-type": "text/html",
+    "date": "Sat, 29 Aug 2026 23:40:21 GMT",
+    "last-modified": "Sat, 29 Aug 2026 22:48:04 GMT",
+    "permissions-policy": "camera=(), microphone=(), geolocation=()",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "vary": "accept-encoding",
+    "x-content-type-options": "nosniff"
+  },
+  "cold": {
+    "title": "MTD Evidence Rail — link expenses to evidence",
+    "lang": "en-GB",
+    "h1": [
+      "Link each expense to evidence"
+    ],
+    "main": true,
+    "viewportText": [
+      {
+        "tag": "A",
+        "text": "MTD Evidence Rail",
+        "top": 14
+      },
+      {
+        "tag": "A",
+        "text": "Home",
+        "top": 13
+      },
+      {
+        "tag": "A",
+        "text": "Demo",
+        "top": 13
+      },
+      {
+        "tag": "A",
+        "text": "Price",
+        "top": 13
+      },
+      {
+        "tag": "A",
+        "text": "Privacy",
+        "top": 13
+      },
+      {
+        "tag": "P",
+        "text": "Evidence for your MTD quarter",
+        "top": 223
+      },
+      {
+        "tag": "H1",
+        "text": "Link each expense to evidence",
+        "top": 258
+      },
+      {
+        "tag": "P",
+        "text": "For UK sole traders, tutors, and small club operators preparing an MTD quarterly update.",
+        "top": 542
+      },
+      {
+        "tag": "A",
+        "text": "Try it with sample data",
+        "top": 627
+      },
+      {
+        "tag": "A",
+        "text": "Start a private workspace",
+        "top": 730
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Open an existing workspace",
+        "top": 733
+      },
+      {
+        "tag": "LI",
+        "text": "Your workspace needs no account.",
+        "top": 809
+      },
+      {
+        "tag": "LI",
+        "text": "£15/month for more than 25 transactions.",
+        "top": 843
+      },
+      {
+        "tag": "LI",
+        "text": "Export a ZIP evidence pack.",
+        "top": 876
+      }
+    ],
+    "buttons": [
+      "MTD Evidence Rail",
+      "Home",
+      "Demo",
+      "Price",
+      "Privacy",
+      "Try it with sample data",
+      "Start a private workspace",
+      "Open an existing workspace"
+    ]
+  },
+  "demoActionCount": 1,
+  "after": {
+    "url": "https://mtd-evidence-rail.sociobot.in/?demo=1",
+    "text": "Skip to main content\nMTD Evidence Rail\nHome\nDemo\nPrice\nPrivacy\nDemo — sample data. Changes stay in this 24-hour demo.\nReset demo\nStart a private workspace\n\nEVIDENCE WORKSPACE\n\nPrepare your quarter record\n\nLink every transaction to evidence, then export the quarter.\n\nQuarter\nQuarter 1 · 2025/26 · 6 Apr 2025 to 5 Jul 2025\nQuarter 2 · 2025/26 · 6 Jul 2025 to 5 Oct 2025\nQuarter 3 · 2025/26 · 6 Oct 2025 to 5 Jan 2026\nQuarter 4 · 2025/26 · 6 Jan 2026 to 5 Apr 2026\nQuarter 1 · 2026/27 · 6 Apr 2026 to 5 Jul 2026\nQuarter 2 · 2026/27 · 6 Jul 2026 to 5 Oct 2026\nQuarter 3 · 2026/27 · 6 Oct 2026 to 5 Jan 2027\nQuarter 4 · 2026/27 · 6 Jan 2027 to 5 Apr 2027\nQuarter 1 · 2027/28 · 6 Apr 2027 to 5 Jul 2027\nQuarter 2 · 2027/28 · 6 Jul 2027 to 5 Oct 2027\nQuarter 3 · 2027/28 · 6 Oct 2027 to 5 Jan 2028\nQuarter 4 · 2027/28 · 6 Jan 2028 to 5 Apr 2028\n6 Apr 2026 to 5 Jul 2026\nAdd a transaction\nImport bank CSV\nShow missing evidence\nExport evidence pack\nWorkspace settings\nLoading quarter records…\nMTD Evidence Rail\n\nLink each expense to evidence before your quarterly update.\n\nPrivacy\nTerms\nBuilt by Param Factory\n(external site)\n\nVersion 1.0 · Build 2026.08 · Generated hero imagery is original to this product.\n\nMTD Evidence Rail — link expenses to evidence"
+  },
+  "requests": [
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/",
+      "type": "document"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/assets/index-CbYEboLH.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/assets/index-B2Qaf5JO.css",
+      "type": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/assets/evidence-rail-hero.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+      "type": "font"
+    },
+    {
+      "method": "POST",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/demo",
+      "type": "fetch"
+    }
+  ],
+  "consoles": [],
+  "pageErrors": []
+}

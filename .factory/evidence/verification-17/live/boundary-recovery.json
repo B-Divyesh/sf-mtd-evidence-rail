@@ -1,0 +1,56 @@
+{
+  "invalidCsv": "The CSV needs Date, Description, and Amount columns. Rename those headings and try again.",
+  "zeroCsv": "No valid transactions were found. Check the dates and amounts.",
+  "amountMin": {
+    "status": 201,
+    "body": {
+      "id": "1e683ee5-56c0-4d92-8271-c5c7b003e396"
+    }
+  },
+  "amountMax": {
+    "status": 201,
+    "body": {
+      "id": "8c6f6e20-56e3-46f6-94f5-f3d8e3bd2377"
+    }
+  },
+  "amountZero": {
+    "status": 400,
+    "body": {
+      "error": "Enter an amount between £0.01 and £1,000,000."
+    }
+  },
+  "amountOver": {
+    "status": 400,
+    "body": {
+      "error": "Enter an amount between £0.01 and £1,000,000."
+    }
+  },
+  "blankDescription": {
+    "status": 400,
+    "body": {
+      "error": "Enter a description under 120 characters."
+    }
+  },
+  "invalidKind": {
+    "status": 400,
+    "body": {
+      "error": "Choose expense or income."
+    }
+  },
+  "invalidDate": {
+    "status": 400,
+    "body": {
+      "error": "Enter a real calendar date."
+    }
+  },
+  "acceptedCount": 2,
+  "deleteWithoutConfirm": {
+    "status": 400
+  },
+  "deleteConfirmed": {
+    "status": 204
+  },
+  "afterDelete": {
+    "status": 404
+  }
+}

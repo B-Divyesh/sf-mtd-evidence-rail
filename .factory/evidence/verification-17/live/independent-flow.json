@@ -1,0 +1,343 @@
+{
+  "desktopFlow": {
+    "starting": {
+      "summary": "6\ntransactions\n2\nmissing evidence\n£365.00\nincome recorded\n£144.19\nexpenses recorded",
+      "records": 6
+    },
+    "missing": {
+      "shown": 2,
+      "texts": [
+        "19 May 2026\nTrain to client session\nTravel · Bank import\n−£27.80\nMissing\nLink file",
+        "2 May 2026\nCommunity hall hire\nVenue · Bank import\n−£65.00\nMissing\nLink file"
+      ]
+    },
+    "zeroError": "Enter an amount greater than zero.",
+    "savedNotice": "Transaction saved. Link its evidence when you have it.",
+    "oversizeError": "The evidence file is over 5 MB. Choose a smaller file.",
+    "linkNotice": "qa-receipt.txt is linked.",
+    "csvError": "",
+    "csvReview": "2 rows read. 1 likely match will be skipped.\nDate\tDescription\tAmount\tReview\n19 May 2026\tKnown match\t−£27.80\tLikely recorded\n21 Jun 2026\tQA new bank row\t−£10.50\tNew",
+    "importNotice": "1 bank transaction imported.",
+    "exported": {
+      "filename": "evidence-pack-2026-27-Q1.zip",
+      "signature": "PK",
+      "containsCsv": true,
+      "containsEvidence": true
+    },
+    "reset": {
+      "summary": "6\ntransactions\n2\nmissing evidence\n£365.00\nincome recorded\n£144.19\nexpenses recorded",
+      "records": 6
+    },
+    "axeViolations": [],
+    "requestOrigins": [
+      "https://mtd-evidence-rail.sociobot.in"
+    ],
+    "requests": [
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/demo",
+        "resource": "document"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+        "resource": "font"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+        "resource": "font"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/assets/index-CbYEboLH.js",
+        "resource": "script"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/assets/index-B2Qaf5JO.css",
+        "resource": "stylesheet"
+      },
+      {
+        "method": "POST",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/demo",
+        "resource": "fetch"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+        "resource": "font"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+        "resource": "fetch"
+      },
+      {
+        "method": "POST",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/records",
+        "resource": "fetch"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+        "resource": "fetch"
+      },
+      {
+        "method": "POST",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/records/d9609b2f-c66d-46c4-a52e-33330319b2d2/evidence",
+        "resource": "fetch"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+        "resource": "fetch"
+      },
+      {
+        "method": "POST",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/records/import",
+        "resource": "fetch"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+        "resource": "fetch"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/export?from=2026-04-06&to=2026-07-05",
+        "resource": "fetch"
+      },
+      {
+        "method": "POST",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/demo",
+        "resource": "fetch"
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+        "resource": "fetch"
+      }
+    ],
+    "apiResponses": [
+      {
+        "method": "POST",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/demo",
+        "status": 201,
+        "headers": {
+          "content-security-policy": "default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'",
+          "cache-control": "no-cache",
+          "content-encoding": "gzip",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "permissions-policy": "camera=(), microphone=(), geolocation=()",
+          "date": "Sat, 29 Aug 2026 23:45:58 GMT",
+          "content-type": "application/json",
+          "vary": "accept-encoding"
+        }
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+        "status": 200,
+        "headers": {
+          "content-security-policy": "default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'",
+          "cache-control": "no-cache",
+          "content-encoding": "gzip",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "permissions-policy": "camera=(), microphone=(), geolocation=()",
+          "date": "Sat, 29 Aug 2026 23:45:59 GMT",
+          "content-type": "application/json",
+          "vary": "accept-encoding"
+        }
+      },
+      {
+        "method": "POST",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/records",
+        "status": 201,
+        "headers": {
+          "content-security-policy": "default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'",
+          "cache-control": "no-cache",
+          "content-encoding": "gzip",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "permissions-policy": "camera=(), microphone=(), geolocation=()",
+          "date": "Sat, 29 Aug 2026 23:45:59 GMT",
+          "content-type": "application/json",
+          "vary": "accept-encoding"
+        }
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+        "status": 200,
+        "headers": {
+          "content-security-policy": "default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'",
+          "cache-control": "no-cache",
+          "content-encoding": "gzip",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "permissions-policy": "camera=(), microphone=(), geolocation=()",
+          "date": "Sat, 29 Aug 2026 23:45:59 GMT",
+          "content-type": "application/json",
+          "vary": "accept-encoding"
+        }
+      },
+      {
+        "method": "POST",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/records/d9609b2f-c66d-46c4-a52e-33330319b2d2/evidence",
+        "status": 200,
+        "headers": {
+          "content-security-policy": "default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'",
+          "cache-control": "no-cache",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "permissions-policy": "camera=(), microphone=(), geolocation=()",
+          "content-length": "15",
+          "date": "Sat, 29 Aug 2026 23:46:00 GMT",
+          "content-type": "application/json"
+        }
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+        "status": 200,
+        "headers": {
+          "content-security-policy": "default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'",
+          "cache-control": "no-cache",
+          "content-encoding": "gzip",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "permissions-policy": "camera=(), microphone=(), geolocation=()",
+          "date": "Sat, 29 Aug 2026 23:46:01 GMT",
+          "content-type": "application/json",
+          "vary": "accept-encoding"
+        }
+      },
+      {
+        "method": "POST",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/records/import",
+        "status": 201,
+        "headers": {
+          "content-security-policy": "default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'",
+          "cache-control": "no-cache",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "permissions-policy": "camera=(), microphone=(), geolocation=()",
+          "content-length": "14",
+          "date": "Sat, 29 Aug 2026 23:46:01 GMT",
+          "content-type": "application/json"
+        }
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+        "status": 200,
+        "headers": {
+          "content-security-policy": "default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'",
+          "cache-control": "no-cache",
+          "content-encoding": "gzip",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "permissions-policy": "camera=(), microphone=(), geolocation=()",
+          "date": "Sat, 29 Aug 2026 23:46:01 GMT",
+          "content-type": "application/json",
+          "vary": "accept-encoding"
+        }
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/export?from=2026-04-06&to=2026-07-05",
+        "status": 200,
+        "headers": {
+          "content-security-policy": "default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'",
+          "cache-control": "no-cache",
+          "content-encoding": "gzip",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "permissions-policy": "camera=(), microphone=(), geolocation=()",
+          "date": "Sat, 29 Aug 2026 23:46:01 GMT",
+          "content-type": "application/zip",
+          "content-disposition": "attachment; filename=\"evidence-pack-2026-04-06-to-2026-07-05.zip\"",
+          "vary": "accept-encoding"
+        }
+      },
+      {
+        "method": "POST",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/demo",
+        "status": 201,
+        "headers": {
+          "content-security-policy": "default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'",
+          "cache-control": "no-cache",
+          "content-encoding": "gzip",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "permissions-policy": "camera=(), microphone=(), geolocation=()",
+          "date": "Sat, 29 Aug 2026 23:46:02 GMT",
+          "content-type": "application/json",
+          "vary": "accept-encoding"
+        }
+      },
+      {
+        "method": "GET",
+        "url": "https://mtd-evidence-rail.sociobot.in/api/workspace?from=2026-04-06&to=2026-07-05",
+        "status": 200,
+        "headers": {
+          "content-security-policy": "default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'",
+          "cache-control": "no-cache",
+          "content-encoding": "gzip",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "permissions-policy": "camera=(), microphone=(), geolocation=()",
+          "date": "Sat, 29 Aug 2026 23:46:02 GMT",
+          "content-type": "application/json",
+          "vary": "accept-encoding"
+        }
+      }
+    ],
+    "consoleMessages": [],
+    "pageErrors": []
+  },
+  "mobileKeyboard": {
+    "skipFocused": true,
+    "focusStyle": {
+      "outline": "rgb(232, 191, 98) solid 3px",
+      "boxShadow": "rgb(9, 42, 50) 0px 0px 0px 5px",
+      "color": "rgb(9, 42, 50)",
+      "background": "rgb(232, 191, 98)"
+    },
+    "dimensions": {
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "reduce": true,
+      "animated": []
+    },
+    "visibleTargetCount": 26,
+    "smallTargets": [
+      {
+        "tag": "LABEL",
+        "text": "Quarter",
+        "w": 366,
+        "h": 22
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "w": 1,
+        "h": 48
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "w": 1,
+        "h": 48
+      }
+    ],
+    "axeViolations": [],
+    "dialogFirstFocus": true,
+    "triggerFocusReturned": true,
+    "consoleMessages": [],
+    "pageErrors": []
+  }
+}

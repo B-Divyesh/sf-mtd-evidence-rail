@@ -1,0 +1,21 @@
+
+> mtd-evidence-rail@1.0.0 test:live-rate-limit
+> bash scripts/test-live-rate-limit.sh
+
+Live release: build=bced2406fb8e1abdeb374ef13a40c78131799b0a; image=sociobotregistry.azurecr.io/sf-mtd-evidence-rail:bced2406fb8e; revision=sf-mtd-evidence-rail--0000061; Single; replicas=1/1; running=1; mtd-data mounted at /data; VFS=unix-dotfile.
+curl: (28) Operation timed out after 30001 milliseconds with 0 bytes received
+curl: (28) Operation timed out after 30000 milliseconds with 0 bytes received
+curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received
+curl: (28) Operation timed out after 30001 milliseconds with 0 bytes received
+curl: (28) Operation timed out after 30001 milliseconds with 0 bytes received
+curl: (28) Operation timed out after 30003 milliseconds with 0 bytes received
+curl: (28) Operation timed out after 30001 milliseconds with 0 bytes received
+curl: (28) Operation timed out after 30001 milliseconds with 0 bytes received
+curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received
+curl: (28) Operation timed out after 30001 milliseconds with 0 bytes received
+curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received
+curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received
+curl: (28) Operation timed out after 30000 milliseconds with 0 bytes received
+curl: (28) Operation timed out after 30001 milliseconds with 0 bytes received
+curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received
+Live limiter returned 15 unexpected responses:      15 000     136 201      49 429 
