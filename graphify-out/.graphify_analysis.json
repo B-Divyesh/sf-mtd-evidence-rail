@@ -1,36 +1,55 @@
 {
   "communities": {
     "0": [
-      "axe_core_playwright",
-      "package",
-      "package_devdependencies",
-      "package_devdependencies_axe_core_playwright",
-      "package_devdependencies_playwright_test",
-      "package_devdependencies_sharp",
-      "package_devdependencies_types_node",
-      "package_devdependencies_typescript",
-      "package_devdependencies_vite",
-      "package_name",
-      "package_overrides",
-      "package_overrides_playwright_core",
-      "package_private",
-      "package_scripts",
-      "package_scripts_assets",
-      "package_scripts_build",
-      "package_scripts_dev",
-      "package_scripts_start",
-      "package_scripts_test",
-      "package_scripts_test_durable_storage",
-      "package_scripts_test_e2e",
-      "package_scripts_test_runtime_defaults",
-      "package_scripts_typecheck",
-      "package_type",
-      "package_version",
-      "playwright_test",
-      "sharp",
-      "types_node",
-      "typescript",
-      "vite"
+      "frontend_src_main",
+      "frontend_src_main_api",
+      "frontend_src_main_apierror",
+      "frontend_src_main_appbanner",
+      "frontend_src_main_apppage",
+      "frontend_src_main_bindapp",
+      "frontend_src_main_bindlicensebuttons",
+      "frontend_src_main_bindroutes",
+      "frontend_src_main_capturelicense",
+      "frontend_src_main_closedialog",
+      "frontend_src_main_confirmimport",
+      "frontend_src_main_currentrecords",
+      "frontend_src_main_deleteworkspace",
+      "frontend_src_main_dialogs",
+      "frontend_src_main_escapehtml",
+      "frontend_src_main_exportpack",
+      "frontend_src_main_footer",
+      "frontend_src_main_header",
+      "frontend_src_main_icon",
+      "frontend_src_main_importrow",
+      "frontend_src_main_importrows",
+      "frontend_src_main_ispaid",
+      "frontend_src_main_landing",
+      "frontend_src_main_legal",
+      "frontend_src_main_licenseinactive",
+      "frontend_src_main_linkevidence",
+      "frontend_src_main_loadrecords",
+      "frontend_src_main_message",
+      "frontend_src_main_money",
+      "frontend_src_main_normalisedate",
+      "frontend_src_main_notfound",
+      "frontend_src_main_offlinenotice",
+      "frontend_src_main_opendialog",
+      "frontend_src_main_prettydate",
+      "frontend_src_main_quarter",
+      "frontend_src_main_quarterfor",
+      "frontend_src_main_quarteroptions",
+      "frontend_src_main_readcsv",
+      "frontend_src_main_recorditem",
+      "frontend_src_main_removeevidence",
+      "frontend_src_main_render",
+      "frontend_src_main_renderrecords",
+      "frontend_src_main_saverecord",
+      "frontend_src_main_setformerror",
+      "frontend_src_main_setnotice",
+      "frontend_src_main_splitcsv",
+      "frontend_src_main_verifylicense",
+      "frontend_src_main_workspacekey",
+      "frontend_src_main_workspaceresponse"
     ],
     "1": [
       "ref_dom",
@@ -55,25 +74,25 @@
       "tsconfig_include"
     ],
     "2": [
-      "frontend_src_main",
-      "frontend_src_main_appbanner",
-      "frontend_src_main_apppage",
-      "frontend_src_main_currentrecords",
-      "frontend_src_main_dialogs",
-      "frontend_src_main_importrow",
-      "frontend_src_main_importrows",
-      "frontend_src_main_licenseinactive",
-      "frontend_src_main_money",
-      "frontend_src_main_normalisedate",
-      "frontend_src_main_prettydate",
-      "frontend_src_main_quarter",
-      "frontend_src_main_quarterfor",
-      "frontend_src_main_quarteroptions",
-      "frontend_src_main_readcsv",
-      "frontend_src_main_recorditem",
-      "frontend_src_main_setformerror",
-      "frontend_src_main_splitcsv",
-      "frontend_src_main_workspaceresponse"
+      "package",
+      "package_name",
+      "package_overrides",
+      "package_overrides_playwright_core",
+      "package_private",
+      "package_scripts",
+      "package_scripts_assets",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_start",
+      "package_scripts_test",
+      "package_scripts_test_durable_storage",
+      "package_scripts_test_e2e",
+      "package_scripts_test_runtime_defaults",
+      "package_scripts_test_shared_storage",
+      "package_scripts_typecheck",
+      "package_scripts_verify_live_topology",
+      "package_type",
+      "package_version"
     ],
     "3": [
       "next",
@@ -95,22 +114,19 @@
       "src_main_workspace_deletion_removes_records_evidence_and_audit"
     ],
     "4": [
-      "frontend_src_main_api",
-      "frontend_src_main_bindapp",
-      "frontend_src_main_closedialog",
-      "frontend_src_main_confirmimport",
-      "frontend_src_main_escapehtml",
-      "frontend_src_main_exportpack",
-      "frontend_src_main_ispaid",
-      "frontend_src_main_linkevidence",
-      "frontend_src_main_loadrecords",
-      "frontend_src_main_message",
-      "frontend_src_main_offlinenotice",
-      "frontend_src_main_opendialog",
-      "frontend_src_main_removeevidence",
-      "frontend_src_main_renderrecords",
-      "frontend_src_main_saverecord",
-      "frontend_src_main_setnotice"
+      "axe_core_playwright",
+      "package_devdependencies",
+      "package_devdependencies_axe_core_playwright",
+      "package_devdependencies_playwright_test",
+      "package_devdependencies_sharp",
+      "package_devdependencies_types_node",
+      "package_devdependencies_typescript",
+      "package_devdependencies_vite",
+      "playwright_test",
+      "sharp",
+      "types_node",
+      "typescript",
+      "vite"
     ],
     "5": [
       "option",
@@ -175,84 +191,84 @@
       "src_routes_rs_state"
     ],
     "10": [
-      "frontend_src_main_bindroutes",
-      "frontend_src_main_footer",
-      "frontend_src_main_header",
-      "frontend_src_main_icon",
-      "frontend_src_main_landing",
-      "frontend_src_main_legal",
-      "frontend_src_main_notfound",
-      "frontend_src_main_render"
+      "scripts_test_shared_storage",
+      "scripts_test_shared_storage_assert_reads",
+      "scripts_test_shared_storage_cleanup",
+      "scripts_test_shared_storage_sh__entry",
+      "scripts_test_shared_storage_start_instances",
+      "scripts_test_shared_storage_stop_instances",
+      "scripts_test_shared_storage_workspace_id"
     ],
     "11": [
+      "scripts_verify_live_topology",
+      "scripts_verify_live_topology_assert_control_plane",
+      "scripts_verify_live_topology_assert_reads",
+      "scripts_verify_live_topology_sh__entry",
+      "scripts_verify_live_topology_wait_for_health",
+      "scripts_verify_live_topology_workspace_id"
+    ],
+    "12": [
       "scripts_deploy",
       "scripts_deploy_patch_app",
       "scripts_deploy_sh__entry",
       "scripts_deploy_wait_for_app"
     ],
-    "12": [
+    "13": [
       "scripts_test_durable_storage",
       "scripts_test_durable_storage_cleanup",
       "scripts_test_durable_storage_sh__entry",
       "scripts_test_durable_storage_start_server"
     ],
-    "13": [
-      "frontend_src_main_apierror",
-      "frontend_src_main_deleteworkspace",
-      "frontend_src_main_workspacekey"
-    ],
     "14": [
-      "frontend_src_main_bindlicensebuttons",
-      "frontend_src_main_capturelicense",
-      "frontend_src_main_verifylicense"
-    ],
-    "15": [
       "scripts_test_runtime_defaults",
       "scripts_test_runtime_defaults_cleanup",
       "scripts_test_runtime_defaults_sh__entry"
     ],
-    "16": [
+    "15": [
       "scripts_optimise_assets",
       "scripts_optimise_assets_source"
     ],
-    "17": [
+    "16": [
       "scripts_test_live_checkout",
       "scripts_test_live_checkout_sh__entry"
     ],
-    "18": [
+    "17": [
       "tests_product_spec",
       "tests_product_spec_openready"
     ],
-    "19": [
+    "18": [
       "pkg_mtd_evidence_rail"
     ],
-    "20": [
+    "19": [
       "playwright_config"
     ],
-    "21": [
+    "20": [
       "scripts_license_fixture"
+    ],
+    "21": [
+      "scripts_live_browser_smoke"
     ],
     "22": [
       "vite_config"
     ]
   },
   "cohesion": {
-    "0": 0.06666666666666667,
+    "0": 0.12244897959183673,
     "1": 0.1,
-    "2": 0.17543859649122806,
+    "2": 0.10526315789473684,
     "3": 0.16911764705882354,
-    "4": 0.36666666666666664,
+    "4": 0.15384615384615385,
     "5": 0.3333333333333333,
     "6": 0.4444444444444444,
     "7": 0.2222222222222222,
     "8": 0.37777777777777777,
     "9": 0.4,
     "10": 0.42857142857142855,
-    "11": 0.8333333333333334,
-    "12": 0.6666666666666666,
-    "13": 1.0,
+    "11": 0.5333333333333333,
+    "12": 0.8333333333333334,
+    "13": 0.6666666666666666,
     "14": 0.6666666666666666,
-    "15": 0.6666666666666666,
+    "15": 1.0,
     "16": 1.0,
     "17": 1.0,
     "18": 1.0,
