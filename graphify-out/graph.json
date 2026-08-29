@@ -2503,7 +2503,7 @@
       },
       "norm_label": "assert_control_plane()",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L40"
+      "source_location": "L42"
     },
     {
       "id": "scripts_verify_live_topology_assert_reads",
@@ -2517,7 +2517,7 @@
       },
       "norm_label": "assert_reads()",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L46"
+      "source_location": "L48"
     },
     {
       "id": "scripts_verify_live_topology_assert_shared_limiter",
@@ -2531,7 +2531,7 @@
       },
       "norm_label": "assert_shared_limiter()",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L100"
+      "source_location": "L102"
     },
     {
       "id": "scripts_verify_live_topology_assert_workspace_delete",
@@ -2545,7 +2545,7 @@
       },
       "norm_label": "assert_workspace_delete()",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L64"
+      "source_location": "L66"
     },
     {
       "id": "scripts_verify_live_topology_assert_workspace_is_deleted",
@@ -2559,7 +2559,7 @@
       },
       "norm_label": "assert_workspace_is_deleted()",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L85"
+      "source_location": "L87"
     },
     {
       "id": "scripts_verify_live_topology_sh__entry",
@@ -2587,7 +2587,7 @@
       },
       "norm_label": "wait_for_health()",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L27"
+      "source_location": "L29"
     },
     {
       "id": "scripts_verify_live_topology_workspace_id",
@@ -2601,7 +2601,7 @@
       },
       "norm_label": "workspace_id()",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L23"
+      "source_location": "L25"
     },
     {
       "id": "factory_copy_audit",
@@ -7653,7 +7653,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L82",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -7665,7 +7665,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L154",
+      "source_location": "L156",
       "weight": 1.0
     },
     {
@@ -7677,7 +7677,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L155",
+      "source_location": "L157",
       "weight": 1.0
     },
     {
@@ -7689,7 +7689,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L157",
+      "source_location": "L159",
       "weight": 1.0
     },
     {
@@ -7701,7 +7701,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L164",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -7713,7 +7713,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L166",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -7725,7 +7725,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L177",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -14634,7 +14634,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L100",
+      "source_location": "L102",
       "weight": 1.0
     },
     {
@@ -14645,7 +14645,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -14656,7 +14656,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L27",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -14667,7 +14667,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L40",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -14678,7 +14678,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L46",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -14689,7 +14689,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L64",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -14700,7 +14700,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L85",
+      "source_location": "L87",
       "weight": 1.0
     },
     {
@@ -14954,5 +14954,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "30ee26e4c198732be1190f432ece6b14c86999a2"
+  "built_at_commit": "6eb1695789f2fcefa3e28c754dd4bef53798f3b4"
 }

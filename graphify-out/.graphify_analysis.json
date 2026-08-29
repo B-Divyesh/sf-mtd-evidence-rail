@@ -716,11 +716,6 @@
       "degree": 14
     },
     {
-      "id": "frontend_src_main_apppage",
-      "label": "appPage()",
-      "degree": 13
-    },
-    {
       "id": "src_routes_check_workspace",
       "label": "check_workspace()",
       "degree": 13
@@ -733,6 +728,11 @@
     {
       "id": "src_routes_remove_evidence",
       "label": "remove_evidence()",
+      "degree": 13
+    },
+    {
+      "id": "src_routes_workspace",
+      "label": "workspace()",
       "degree": 13
     }
   ],
