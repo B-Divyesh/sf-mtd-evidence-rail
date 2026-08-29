@@ -202,6 +202,12 @@ test('@claim:no-trackers demo core flow sends only same-origin requests', async 
   for (const url of outgoing) expect(new URL(url).origin).toBe(productOrigin);
 });
 
+test('offline connection gives a clear recovery notice', async ({ page }) => {
+  await openReady(page,'/demo');
+  await page.evaluate(() => window.dispatchEvent(new Event('offline')));
+  await expect(page.getByText('You are offline. Saved records will load again after you reconnect.')).toBeVisible();
+});
+
 test('@claim:license-return stores and verifies a returned licence', async ({ page }) => {
   await page.route('https://api.sociobot.in/**', route => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ valid: true, reason: 'ok', expires_at: null }) }));
   await page.goto('/?license=test-token-123');
