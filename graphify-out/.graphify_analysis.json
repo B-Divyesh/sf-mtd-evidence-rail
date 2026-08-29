@@ -66,9 +66,8 @@
       "option",
       "path",
       "query",
-      "response",
       "sqliteconnection",
-      "sqlitepool",
+      "src_main_health",
       "src_routes",
       "src_routes_add_evidence",
       "src_routes_check_workspace",
@@ -220,23 +219,24 @@
       "mutex",
       "next",
       "request",
+      "response",
+      "result",
       "router",
+      "sqlitepool",
       "src_main",
       "src_main_api_rate_limit_returns_retry_after",
       "src_main_app",
       "src_main_appstate",
-      "src_main_health",
+      "src_main_azure_runtime_accepts_the_durable_data_mount",
+      "src_main_azure_runtime_rejects_the_generic_container_local_filesystem",
       "src_main_health_reports_build_sha",
       "src_main_main",
-      "src_main_rs_intoresponse",
-      "src_main_rs_response",
-      "src_main_rs_sqlitepool",
-      "src_main_rs_state",
-      "src_main_rs_string",
       "src_main_security_headers",
       "src_main_shutdown_signal",
       "src_main_test_app",
       "src_main_unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated",
+      "src_main_validate_azure_storage_contract",
+      "src_main_validate_runtime_storage",
       "src_main_workspace_deletion_removes_records_evidence_and_audit"
     ],
     "6": [
@@ -543,63 +543,82 @@
       "factory_evidence_verification_5_live_browser_observation_out"
     ],
     "32": [
+      "scripts_assert_live_topology",
+      "scripts_assert_live_topology_sh__entry"
+    ],
+    "33": [
       "scripts_optimise_assets",
       "scripts_optimise_assets_source"
     ],
-    "33": [
+    "34": [
       "scripts_render_production_topology",
       "scripts_render_production_topology_sh__entry"
     ],
-    "34": [
+    "35": [
       "scripts_test_deployment_topology",
       "scripts_test_deployment_topology_sh__entry"
     ],
-    "35": [
+    "36": [
       "scripts_test_live_rate_limit",
       "scripts_test_live_rate_limit_sh__entry"
     ],
-    "36": [
+    "37": [
       "tests_product_spec",
       "tests_product_spec_openready"
     ],
-    "37": [
+    "38": [
       "pkg_mtd_evidence_rail"
     ],
-    "38": [
+    "39": [
       "playwright_config"
     ],
-    "39": [
+    "40": [
       "scripts_license_fixture"
     ],
-    "40": [
+    "41": [
       "scripts_live_browser_smoke"
     ],
-    "41": [
-      "src_routes_rs_intoresponse"
-    ],
     "42": [
-      "src_routes_rs_response"
+      "src_main_rs_intoresponse"
     ],
     "43": [
-      "src_routes_rs_sqlitepool"
+      "src_main_rs_response"
     ],
     "44": [
-      "src_routes_rs_state"
+      "src_main_rs_sqlitepool"
     ],
     "45": [
-      "src_routes_rs_string"
+      "src_main_rs_state"
     ],
     "46": [
+      "src_main_rs_string"
+    ],
+    "47": [
+      "src_routes_rs_intoresponse"
+    ],
+    "48": [
+      "src_routes_rs_response"
+    ],
+    "49": [
+      "src_routes_rs_sqlitepool"
+    ],
+    "50": [
+      "src_routes_rs_state"
+    ],
+    "51": [
+      "src_routes_rs_string"
+    ],
+    "52": [
       "vite_config"
     ]
   },
   "cohesion": {
     "0": 0.11611030478955008,
-    "1": 0.17298797409805736,
+    "1": 0.18067632850241547,
     "2": 0.13974358974358975,
     "3": 0.05405405405405406,
     "4": 0.07407407407407407,
-    "5": 0.1225296442687747,
+    "5": 0.13043478260869565,
     "6": 0.08695652173913043,
     "7": 0.08695652173913043,
     "8": 0.1,
@@ -640,7 +659,13 @@
     "43": 1.0,
     "44": 1.0,
     "45": 1.0,
-    "46": 1.0
+    "46": 1.0,
+    "47": 1.0,
+    "48": 1.0,
+    "49": 1.0,
+    "50": 1.0,
+    "51": 1.0,
+    "52": 1.0
   },
   "gods": [
     {
@@ -694,7 +719,19 @@
       "degree": 13
     }
   ],
-  "surprises": [],
+  "surprises": [
+    {
+      "source": "export_pack()",
+      "target": "Response",
+      "source_files": [
+        "src/routes.rs",
+        ""
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "note": "Bridges community 5 \u2192 community 1"
+    }
+  ],
   "tokens": {
     "input": 0,
     "output": 0
