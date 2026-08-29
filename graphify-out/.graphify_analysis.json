@@ -175,6 +175,7 @@
       "package_scripts_test_live_workspace_consistency",
       "package_scripts_test_runtime_defaults",
       "package_scripts_test_shared_storage",
+      "package_scripts_test_verification_15_regression",
       "package_scripts_typecheck",
       "package_scripts_verify_live_topology",
       "package_type",
@@ -228,7 +229,8 @@
       "src_main_api_rate_limit_returns_retry_after",
       "src_main_app",
       "src_main_appstate",
-      "src_main_azure_runtime_accepts_the_durable_data_mount",
+      "src_main_azure_runtime_accepts_the_durable_data_mount_and_required_vfs",
+      "src_main_azure_runtime_rejects_a_durable_mount_without_the_required_vfs",
       "src_main_azure_runtime_rejects_the_generic_container_local_filesystem",
       "src_main_health_reports_build_sha",
       "src_main_main",
@@ -493,30 +495,32 @@
       "factory_handoff_what_changed"
     ],
     "23": [
+      "scripts_deploy",
+      "scripts_deploy_deactivate_stale_revisions",
+      "scripts_deploy_patch_app",
+      "scripts_deploy_sh__entry",
+      "scripts_deploy_wait_for_candidate_readiness",
+      "scripts_deploy_wait_for_topology"
+    ],
+    "24": [
       "factory_polish_2",
       "factory_polish_2_cumulative_release_evidence",
       "factory_polish_2_polish_2_cumulative_adversarial_finding_closure",
       "factory_polish_2_review_1_findings",
       "factory_polish_2_review_2_findings"
     ],
-    "24": [
+    "25": [
       "scripts_test_live_checkout",
       "scripts_test_live_checkout_checkouturl",
       "scripts_test_live_checkout_contractpage",
       "scripts_test_live_checkout_hosted",
       "scripts_test_live_checkout_includes"
     ],
-    "25": [
+    "26": [
       "agents",
       "agents_definition_of_done_a_worker_may_not_claim_completion_without_all_of_these",
       "agents_mtd_evidence_rail_mtd_evidence_rail_factory_product_contract",
       "agents_working_rules"
-    ],
-    "26": [
-      "scripts_deploy",
-      "scripts_deploy_patch_app",
-      "scripts_deploy_sh__entry",
-      "scripts_deploy_wait_for_topology"
     ],
     "27": [
       "scripts_test_durable_storage",
@@ -630,9 +634,9 @@
     "0": 0.11611030478955008,
     "1": 0.18067632850241547,
     "2": 0.13974358974358975,
-    "3": 0.05263157894736842,
+    "3": 0.05128205128205128,
     "4": 0.07407407407407407,
-    "5": 0.13043478260869565,
+    "5": 0.12666666666666668,
     "6": 0.08695652173913043,
     "7": 0.08695652173913043,
     "8": 0.1,
@@ -650,10 +654,10 @@
     "20": 0.2857142857142857,
     "21": 0.42857142857142855,
     "22": 0.3333333333333333,
-    "23": 0.4,
+    "23": 0.6,
     "24": 0.4,
-    "25": 0.5,
-    "26": 0.8333333333333334,
+    "25": 0.4,
+    "26": 0.5,
     "27": 0.6666666666666666,
     "28": 0.6666666666666666,
     "29": 1.0,
@@ -688,7 +692,7 @@
     {
       "id": "package_scripts",
       "label": "scripts",
-      "degree": 18
+      "degree": 19
     },
     {
       "id": "frontend_src_main_bindapp",
@@ -738,11 +742,11 @@
   ],
   "surprises": [
     {
-      "source": "health()",
-      "target": "AppState",
+      "source": "validate_azure_storage_contract()",
+      "target": "Option",
       "source_files": [
         "src/main.rs",
-        "src/main.rs"
+        ""
       ],
       "confidence": "EXTRACTED",
       "relation": "references",
