@@ -1,0 +1,88 @@
+{
+  "demo": {
+    "title": "Demo — MTD Evidence Rail",
+    "banner": "Demo — sample data. Changes stay in this 24-hour demo.\nReset demo\nStart for real",
+    "sampleBottom": 344.53125,
+    "viewportHeight": 844,
+    "keyReset": true,
+    "privateState": {
+      "workspace": "private-sentinel",
+      "license": "license-sentinel",
+      "cache": "cache-sentinel"
+    },
+    "allSameOrigin": true,
+    "licenseHeaders": [],
+    "consoleErrors": []
+  },
+  "root": {
+    "audience": true,
+    "removedCopyAbsent": true,
+    "accessFocused": true,
+    "recoveryVisible": true,
+    "routes": [
+      {
+        "path": "/",
+        "status": 200,
+        "title": "MTD Evidence Rail — link expenses to evidence",
+        "titlePass": true,
+        "canonical": "https://mtd-evidence-rail.sociobot.in/",
+        "canonicalPass": true,
+        "h1": 1,
+        "privacyLinks": 2,
+        "termsLinks": 1
+      },
+      {
+        "path": "/demo",
+        "status": 200,
+        "title": "Demo — MTD Evidence Rail",
+        "titlePass": true,
+        "canonical": "https://mtd-evidence-rail.sociobot.in/demo",
+        "canonicalPass": true,
+        "h1": 1,
+        "privacyLinks": 2,
+        "termsLinks": 1
+      },
+      {
+        "path": "/app",
+        "status": 200,
+        "title": "Quarter — MTD Evidence Rail",
+        "titlePass": true,
+        "canonical": "https://mtd-evidence-rail.sociobot.in/app",
+        "canonicalPass": true,
+        "h1": 1,
+        "privacyLinks": 2,
+        "termsLinks": 1
+      },
+      {
+        "path": "/privacy",
+        "status": 200,
+        "title": "Privacy — MTD Evidence Rail",
+        "titlePass": true,
+        "canonical": "https://mtd-evidence-rail.sociobot.in/privacy",
+        "canonicalPass": true,
+        "h1": 1,
+        "privacyLinks": 2,
+        "termsLinks": 1
+      },
+      {
+        "path": "/terms",
+        "status": 200,
+        "title": "Terms — MTD Evidence Rail",
+        "titlePass": true,
+        "canonical": "https://mtd-evidence-rail.sociobot.in/terms",
+        "canonicalPass": true,
+        "h1": 1,
+        "privacyLinks": 2,
+        "termsLinks": 1
+      }
+    ],
+    "focusForward": true,
+    "focusBack": true,
+    "notFound": {
+      "status": 404,
+      "title": "Page not found — MTD Evidence Rail",
+      "home": "/"
+    },
+    "coldConsoleErrors": []
+  }
+}
