@@ -53,6 +53,8 @@ grep -F 'PREBUILT_IMAGE' "$repo_dir/scripts/deploy.sh" >/dev/null
 grep -F 'render-production-topology.sh" --image "$image"' "$repo_dir/scripts/deploy.sh" >/dev/null
 grep -F 'storageType // ""):\(.storageName // "")' "$repo_dir/scripts/deploy.sh" >/dev/null
 grep -F 'assert-build-inputs-committed.sh' "$repo_dir/scripts/deploy.sh" >/dev/null
+grep -F 'deactivate_stale_revisions' "$repo_dir/scripts/deploy.sh" >/dev/null
+grep -F 'az containerapp revision deactivate' "$repo_dir/scripts/deploy.sh" >/dev/null
 if grep -F '/opt/fleet/lib/deploy-container.sh' "$repo_dir/scripts/deploy.sh" >/dev/null; then
   echo 'Regression: deployment delegates to the generic three-replica helper.' >&2
   exit 1

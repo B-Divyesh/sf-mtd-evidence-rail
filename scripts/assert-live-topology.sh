@@ -38,6 +38,7 @@ vfs=$(printf '%s' "$resource" | jq -r '[.properties.template.containers[0].env[]
 active=$(az containerapp revision list --resource-group "$resource_group" --name "$app_name" --query '[?properties.active==`true`] | length(@)' --output tsv)
 ready_resource=$(az containerapp revision show --resource-group "$resource_group" --name "$app_name" --revision "$ready" --output json)
 ready_image=$(printf '%s' "$ready_resource" | jq -r '.properties.template.containers[0].image // ""')
+ready_active=$(printf '%s' "$ready_resource" | jq -r '.properties.active // false')
 running=$(az containerapp replica list --resource-group "$resource_group" --name "$app_name" --revision "$ready" --query '[?properties.runningState==`Running`] | length(@)' --output tsv)
 health=$(curl -fsS --max-time 15 "$base_url/health")
 live_sha=$(printf '%s' "$health" | jq -r '.build_sha // ""')
@@ -45,9 +46,9 @@ live_sha=$(printf '%s' "$health" | jq -r '.build_sha // ""')
 if [ "$mode" != Single ] || [ "$minimum" != 1 ] || [ "$maximum" != 1 ] || [ "$containers" != 1 ] ||
    [ "$mount" != "$mount_path" ] || [ "$volume" != "$storage_type:$storage_name" ] ||
    [ "$vfs" != "$vfs_name" ] || [ "$active" != 1 ] || [ "$running" != 1 ] ||
-   [ "$latest" != "$ready" ] || [ "$ready_image" != "$expected_image" ] ||
+   [ "$latest" != "$ready" ] || [ "$ready_active" != true ] || [ "$ready_image" != "$expected_image" ] ||
    [ "$live_sha" != "$expected_sha" ]; then
-  echo "Unsafe live release: expected_sha=$expected_sha live_sha=$live_sha expected_image=$expected_image ready_image=$ready_image latest=$latest ready=$ready mode=$mode min=$minimum max=$maximum containers=$containers mount=$mount volume=$volume vfs=$vfs active=$active running=$running" >&2
+  echo "Unsafe live release: expected_sha=$expected_sha live_sha=$live_sha expected_image=$expected_image ready_image=$ready_image latest=$latest ready=$ready ready_active=$ready_active mode=$mode min=$minimum max=$maximum containers=$containers mount=$mount volume=$volume vfs=$vfs active=$active running=$running" >&2
   exit 1
 fi
 

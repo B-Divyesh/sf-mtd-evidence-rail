@@ -1,24 +1,25 @@
 #!/bin/bash
 set -euo pipefail
 
-# Reproduce verification 13 without touching Azure: the desired candidate is
-# latest, but it cannot start after the generic work-order deploy, so an older
-# ready revision continues to answer /health.
+# Reproduce independent verification 15 exactly without touching Azure. The
+# generic work-order rollout made candidate 6eb169 the latest revision with
+# 100% traffic, but it omitted the durable SQLite contract. That revision
+# failed activation while the older ba974 ready revision still answered health.
 repo_dir=$(cd "$(dirname "$0")/.." && pwd)
 tmp_dir=$(mktemp -d)
 trap 'rm -rf "$tmp_dir"' EXIT
 
-candidate=dc3b37c98d580be466ea3fa3f5cc84a455d50daa
-older=8eabb53a7fdaebe7372c655d4e265c02dd0d21bb
+candidate=6eb1695789f2fcefa3e28c754dd4bef53798f3b4
+older=ba9749453d21c02fa05467dcd5190832ccb255a7
 candidate_image="sociobotregistry.azurecr.io/sf-mtd-evidence-rail:${candidate:0:12}"
 older_image="sociobotregistry.azurecr.io/sf-mtd-evidence-rail:${older:0:12}"
 
-jq -n --arg image "$candidate_image" '{properties:{configuration:{activeRevisionsMode:"Single"},latestRevisionName:"sf-mtd-evidence-rail--0000048",latestReadyRevisionName:"sf-mtd-evidence-rail--0000047",template:{containers:[{image:$image,env:[{name:"PORT",value:"8080"}],volumeMounts:null}],scale:{minReplicas:1,maxReplicas:3},volumes:null}}}' > "$tmp_dir/unsafe-resource.json"
-jq -n --arg image "$older_image" '{properties:{template:{containers:[{image:$image}]}}}' > "$tmp_dir/old-ready.json"
+jq -n --arg image "$candidate_image" '{properties:{configuration:{activeRevisionsMode:"Single"},latestRevisionName:"sf-mtd-evidence-rail--0000052",latestReadyRevisionName:"sf-mtd-evidence-rail--0000051",template:{containers:[{image:$image,env:[{name:"PORT",value:"8080"}],volumeMounts:null}],scale:{minReplicas:1,maxReplicas:3},volumes:null}}}' > "$tmp_dir/unsafe-resource.json"
+jq -n --arg image "$older_image" '{properties:{active:true,template:{containers:[{image:$image}]}}}' > "$tmp_dir/old-ready.json"
 jq -n --arg sha "$older" '{status:"ok",build_sha:$sha}' > "$tmp_dir/old-health.json"
 
 jq -n --arg image "$candidate_image" '{properties:{configuration:{activeRevisionsMode:"Single"},latestRevisionName:"sf-mtd-evidence-rail--safe",latestReadyRevisionName:"sf-mtd-evidence-rail--safe",template:{containers:[{image:$image,env:[{name:"PORT",value:"8080"},{name:"SQLITE_VFS",value:"unix-dotfile"}],volumeMounts:[{volumeName:"mtd-data",mountPath:"/data"}]}],scale:{minReplicas:1,maxReplicas:1},volumes:[{name:"mtd-data",storageName:"mtd-evidence-rail-data",storageType:"AzureFile"}]}}}' > "$tmp_dir/safe-resource.json"
-jq -n --arg image "$candidate_image" '{properties:{template:{containers:[{image:$image}]}}}' > "$tmp_dir/safe-ready.json"
+jq -n --arg image "$candidate_image" '{properties:{active:true,template:{containers:[{image:$image}]}}}' > "$tmp_dir/safe-ready.json"
 jq -n --arg sha "$candidate" '{status:"ok",build_sha:$sha}' > "$tmp_dir/safe-health.json"
 
 printf '%s\n' '#!/bin/bash' 'set -euo pipefail' \
@@ -34,8 +35,8 @@ chmod +x "$tmp_dir/az" "$tmp_dir/curl"
 
 run_guard() {
   PATH="$tmp_dir:$PATH" \
-    EXPECTED_SHA="$candidate" \
-    EXPECTED_IMAGE="$candidate_image" \
+    EXPECTED_SHA="$6" \
+    EXPECTED_IMAGE="$7" \
     FAKE_RESOURCE="$1" \
     FAKE_READY="$2" \
     FAKE_HEALTH="$3" \
@@ -45,12 +46,12 @@ run_guard() {
 }
 
 unsafe_log="$tmp_dir/unsafe.log"
-if run_guard "$tmp_dir/unsafe-resource.json" "$tmp_dir/old-ready.json" "$tmp_dir/old-health.json" 2 1 >"$unsafe_log" 2>&1; then
-  echo 'Regression: verification 13 unsafe deployment passed the live release guard.' >&2
+if run_guard "$tmp_dir/unsafe-resource.json" "$tmp_dir/old-ready.json" "$tmp_dir/old-health.json" 2 1 "$older" "$older_image" >"$unsafe_log" 2>&1; then
+  echo 'Regression: verification 15 unsafe deployment passed the live release guard.' >&2
   exit 1
 fi
-grep -F "expected_sha=$candidate live_sha=$older" "$unsafe_log" >/dev/null
-grep -F 'latest=sf-mtd-evidence-rail--0000048 ready=sf-mtd-evidence-rail--0000047' "$unsafe_log" >/dev/null
+grep -F "expected_sha=$older live_sha=$older" "$unsafe_log" >/dev/null
+grep -F 'latest=sf-mtd-evidence-rail--0000052 ready=sf-mtd-evidence-rail--0000051' "$unsafe_log" >/dev/null
 grep -F 'max=3' "$unsafe_log" >/dev/null
 grep -F 'mount= volume=:' "$unsafe_log" >/dev/null
 grep -F 'active=2 running=1' "$unsafe_log" >/dev/null
@@ -58,13 +59,13 @@ grep -F 'active=2 running=1' "$unsafe_log" >/dev/null
 # A safe topology must still fail if an older build answers health. This keeps
 # identity from becoming a separate manual check outside the declared claims.
 identity_log="$tmp_dir/identity.log"
-if run_guard "$tmp_dir/safe-resource.json" "$tmp_dir/safe-ready.json" "$tmp_dir/old-health.json" 1 1 >"$identity_log" 2>&1; then
+if run_guard "$tmp_dir/safe-resource.json" "$tmp_dir/safe-ready.json" "$tmp_dir/old-health.json" 1 1 "$candidate" "$candidate_image" >"$identity_log" 2>&1; then
   echo 'Regression: a stale live build passed the release identity guard.' >&2
   exit 1
 fi
 grep -F "expected_sha=$candidate live_sha=$older" "$identity_log" >/dev/null
 
-run_guard "$tmp_dir/safe-resource.json" "$tmp_dir/safe-ready.json" "$tmp_dir/safe-health.json" 1 1 >/dev/null
+run_guard "$tmp_dir/safe-resource.json" "$tmp_dir/safe-ready.json" "$tmp_dir/safe-health.json" 1 1 "$candidate" "$candidate_image" >/dev/null
 
 # Review-only commits can follow a deployment. The exact claim command reads
 # the committed published revision instead of assuming repository HEAD is live.

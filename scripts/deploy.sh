@@ -35,7 +35,7 @@ patch_app() {
   return 1
 }
 
-wait_for_topology() {
+wait_for_candidate_readiness() {
   local resource state latest ready mount volume vfs minimum maximum active replicas deployed_image
   for _ in $(seq 1 60); do
     resource=$(az containerapp show --resource-group "$resource_group" --name "$app_name" --output json)
@@ -48,14 +48,39 @@ wait_for_topology() {
     vfs=$(printf '%s' "$resource" | jq -r '[.properties.template.containers[0].env[]? | select(.name == "SQLITE_VFS")][0].value // ""')
     minimum=$(printf '%s' "$resource" | jq -r .properties.template.scale.minReplicas)
     maximum=$(printf '%s' "$resource" | jq -r .properties.template.scale.maxReplicas)
-    active=$(az containerapp revision list --resource-group "$resource_group" --name "$app_name" --query '[?properties.active==`true`] | length(@)' --output tsv)
     replicas=$(az containerapp replica list --resource-group "$resource_group" --name "$app_name" --revision "$ready" --query 'length(@)' --output tsv 2>/dev/null || true)
-    if [ "$state" = Succeeded ] && [ "$latest" = "$ready" ] && [ "$deployed_image" = "$image" ] && [ "$mount" = "$mount_path" ] && [ "$volume" = "$storage_type:$storage_name" ] && [ "$vfs" = unix-dotfile ] && [ "$minimum" = 1 ] && [ "$maximum" = 1 ] && [ "$active" = 1 ] && [ "$replicas" = 1 ]; then
+    if [ "$state" = Succeeded ] && [ "$latest" = "$ready" ] && [ "$deployed_image" = "$image" ] && [ "$mount" = "$mount_path" ] && [ "$volume" = "$storage_type:$storage_name" ] && [ "$vfs" = unix-dotfile ] && [ "$minimum" = 1 ] && [ "$maximum" = 1 ] && [ "$replicas" = 1 ]; then
       return 0
     fi
     sleep 5
   done
-  echo "Unsafe or incomplete deployment: state=$state latest=$latest ready=$ready image=$deployed_image mount=$mount volume=$volume vfs=$vfs min=$minimum max=$maximum active=$active replicas=$replicas" >&2
+  echo "Candidate did not become a ready durable revision: state=$state latest=$latest ready=$ready image=$deployed_image mount=$mount volume=$volume vfs=$vfs min=$minimum max=$maximum replicas=$replicas" >&2
+  return 1
+}
+
+deactivate_stale_revisions() {
+  local ready stale_revision
+  ready=$(az containerapp show --resource-group "$resource_group" --name "$app_name" --query properties.latestReadyRevisionName --output tsv)
+  for stale_revision in $(az containerapp revision list --resource-group "$resource_group" --name "$app_name" --query "[?properties.active==\`true\` && name != '$ready'].name" --output tsv); do
+    echo "Deactivating stale revision $stale_revision after $ready became ready."
+    az containerapp revision deactivate --resource-group "$resource_group" --name "$app_name" --revision "$stale_revision" --only-show-errors --output none
+  done
+}
+
+wait_for_topology() {
+  local resource latest ready active running
+  for _ in $(seq 1 60); do
+    resource=$(az containerapp show --resource-group "$resource_group" --name "$app_name" --output json)
+    latest=$(printf '%s' "$resource" | jq -r '.properties.latestRevisionName // ""')
+    ready=$(printf '%s' "$resource" | jq -r '.properties.latestReadyRevisionName // ""')
+    active=$(az containerapp revision list --resource-group "$resource_group" --name "$app_name" --query '[?properties.active==`true`] | length(@)' --output tsv)
+    running=$(az containerapp replica list --resource-group "$resource_group" --name "$app_name" --revision "$ready" --query '[?properties.runningState==`Running`] | length(@)' --output tsv 2>/dev/null || true)
+    if [ "$latest" = "$ready" ] && [ "$active" = 1 ] && [ "$running" = 1 ]; then
+      return 0
+    fi
+    sleep 5
+  done
+  echo "Candidate ready revision was not the sole active running revision: latest=$latest ready=$ready active=$active running=$running" >&2
   return 1
 }
 
@@ -120,6 +145,8 @@ fi
 resource=$(az containerapp show --resource-group "$resource_group" --name "$app_name" --output json)
 patch=$(printf '%s' "$resource" | "$repo_dir/scripts/render-production-topology.sh" --image "$image")
 patch_app "$patch"
+wait_for_candidate_readiness
+deactivate_stale_revisions
 wait_for_topology
 
 domain_binding=$(az containerapp show --resource-group "$resource_group" --name "$app_name" --output json | jq -r --arg hostname "$hostname" '[.properties.configuration.ingress.customDomains[]? | select(.name == $hostname)][0].bindingType // ""')

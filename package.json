@@ -13,6 +13,7 @@
     "test:durable-storage": "bash scripts/test-durable-storage.sh",
     "test:shared-storage": "bash scripts/test-shared-storage.sh",
     "test:deployment-topology": "bash scripts/test-deployment-topology.sh",
+    "test:verification-15-regression": "bash scripts/test-live-release-guard.sh",
     "test:live-release": "bash scripts/test-live-release.sh",
     "test:live-checkout": "node scripts/test-live-checkout.mjs",
     "test:live-workspace-consistency": "bash scripts/test-live-workspace-consistency.sh",
