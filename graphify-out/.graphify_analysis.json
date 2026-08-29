@@ -171,6 +171,7 @@
       "package_scripts_test_e2e",
       "package_scripts_test_live_checkout",
       "package_scripts_test_live_rate_limit",
+      "package_scripts_test_live_release",
       "package_scripts_test_live_workspace_consistency",
       "package_scripts_test_runtime_defaults",
       "package_scripts_test_shared_storage",
@@ -530,89 +531,98 @@
       "scripts_test_live_workspace_consistency_workspace_id"
     ],
     "29": [
+      "scripts_test_live_release_guard",
+      "scripts_test_live_release_guard_run_guard",
+      "scripts_test_live_release_guard_sh__entry"
+    ],
+    "30": [
       "scripts_test_runtime_defaults",
       "scripts_test_runtime_defaults_cleanup",
       "scripts_test_runtime_defaults_sh__entry"
     ],
-    "30": [
+    "31": [
       "factory_evidence_verification_5_live_audit",
       "factory_evidence_verification_5_live_audit_report"
     ],
-    "31": [
+    "32": [
       "factory_evidence_verification_5_live_browser_observation",
       "factory_evidence_verification_5_live_browser_observation_out"
     ],
-    "32": [
+    "33": [
       "scripts_assert_build_inputs_committed",
       "scripts_assert_build_inputs_committed_sh__entry"
     ],
-    "33": [
+    "34": [
       "scripts_assert_live_topology",
       "scripts_assert_live_topology_sh__entry"
     ],
-    "34": [
+    "35": [
       "scripts_optimise_assets",
       "scripts_optimise_assets_source"
     ],
-    "35": [
+    "36": [
       "scripts_render_production_topology",
       "scripts_render_production_topology_sh__entry"
     ],
-    "36": [
+    "37": [
       "scripts_test_deployment_topology",
       "scripts_test_deployment_topology_sh__entry"
     ],
-    "37": [
+    "38": [
       "scripts_test_live_rate_limit",
       "scripts_test_live_rate_limit_sh__entry"
     ],
-    "38": [
+    "39": [
+      "scripts_test_live_release",
+      "scripts_test_live_release_sh__entry"
+    ],
+    "40": [
       "tests_product_spec",
       "tests_product_spec_openready"
     ],
-    "39": [
+    "41": [
       "pkg_mtd_evidence_rail"
     ],
-    "40": [
+    "42": [
       "playwright_config"
     ],
-    "41": [
+    "43": [
       "scripts_license_fixture"
     ],
-    "42": [
+    "44": [
       "scripts_live_browser_smoke"
     ],
-    "43": [
+    "45": [
       "src_main_rs_intoresponse"
     ],
-    "44": [
+    "46": [
       "src_main_rs_response"
     ],
-    "45": [
+    "47": [
       "src_main_rs_sqlitepool"
     ],
-    "46": [
+    "48": [
       "src_main_rs_state"
     ],
-    "47": [
+    "49": [
       "src_main_rs_string"
     ],
-    "48": [
+    "50": [
       "src_routes_rs_intoresponse"
     ],
-    "49": [
+    "51": [
       "src_routes_rs_response"
     ],
-    "50": [
+    "52": [
       "src_routes_rs_sqlitepool"
     ],
-    "51": [
+    "53": [
       "src_routes_rs_state"
     ],
-    "52": [
+    "54": [
       "src_routes_rs_string"
     ],
-    "53": [
+    "55": [
       "vite_config"
     ]
   },
@@ -620,7 +630,7 @@
     "0": 0.11611030478955008,
     "1": 0.18067632850241547,
     "2": 0.13974358974358975,
-    "3": 0.05405405405405406,
+    "3": 0.05263157894736842,
     "4": 0.07407407407407407,
     "5": 0.13043478260869565,
     "6": 0.08695652173913043,
@@ -646,8 +656,8 @@
     "26": 0.8333333333333334,
     "27": 0.6666666666666666,
     "28": 0.6666666666666666,
-    "29": 0.6666666666666666,
-    "30": 1.0,
+    "29": 1.0,
+    "30": 0.6666666666666666,
     "31": 1.0,
     "32": 1.0,
     "33": 1.0,
@@ -670,17 +680,19 @@
     "50": 1.0,
     "51": 1.0,
     "52": 1.0,
-    "53": 1.0
+    "53": 1.0,
+    "54": 1.0,
+    "55": 1.0
   },
   "gods": [
     {
-      "id": "frontend_src_main_bindapp",
-      "label": "bindApp()",
-      "degree": 17
-    },
-    {
       "id": "package_scripts",
       "label": "scripts",
+      "degree": 18
+    },
+    {
+      "id": "frontend_src_main_bindapp",
+      "label": "bindApp()",
       "degree": 17
     },
     {
