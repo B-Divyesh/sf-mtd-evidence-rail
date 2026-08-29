@@ -57,20 +57,18 @@
     ],
     "1": [
       "apiresult",
-      "arc",
-      "client",
+      "appstate",
       "date",
       "e",
       "headermap",
+      "intoresponse",
       "json",
-      "mutex",
       "option",
       "path",
       "query",
+      "response",
       "sqliteconnection",
-      "src_main_appstate",
-      "src_main_rs_sqlitepool",
-      "src_main_rs_string",
+      "sqlitepool",
       "src_routes",
       "src_routes_add_evidence",
       "src_routes_check_workspace",
@@ -98,14 +96,11 @@
       "src_routes_record",
       "src_routes_recordinput",
       "src_routes_remove_evidence",
-      "src_routes_rs_intoresponse",
-      "src_routes_rs_response",
-      "src_routes_rs_sqlitepool",
-      "src_routes_rs_state",
-      "src_routes_rs_string",
       "src_routes_validate",
       "src_routes_workspace",
+      "state",
       "statuscode",
+      "string",
       "value",
       "vec"
     ],
@@ -169,12 +164,14 @@
       "package_scripts_assets",
       "package_scripts_build",
       "package_scripts_dev",
+      "package_scripts_lint",
       "package_scripts_start",
       "package_scripts_test",
       "package_scripts_test_deployment_topology",
       "package_scripts_test_durable_storage",
       "package_scripts_test_e2e",
       "package_scripts_test_live_checkout",
+      "package_scripts_test_live_rate_limit",
       "package_scripts_test_live_workspace_consistency",
       "package_scripts_test_runtime_defaults",
       "package_scripts_test_shared_storage",
@@ -218,6 +215,31 @@
       "factory_review_2_what_would_make_this_perfect"
     ],
     "5": [
+      "arc",
+      "client",
+      "mutex",
+      "next",
+      "request",
+      "router",
+      "src_main",
+      "src_main_api_rate_limit_returns_retry_after",
+      "src_main_app",
+      "src_main_appstate",
+      "src_main_health",
+      "src_main_health_reports_build_sha",
+      "src_main_main",
+      "src_main_rs_intoresponse",
+      "src_main_rs_response",
+      "src_main_rs_sqlitepool",
+      "src_main_rs_state",
+      "src_main_rs_string",
+      "src_main_security_headers",
+      "src_main_shutdown_signal",
+      "src_main_test_app",
+      "src_main_unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated",
+      "src_main_workspace_deletion_removes_records_evidence_and_audit"
+    ],
+    "6": [
       "factory_demo",
       "factory_demo_demo_sandbox",
       "factory_demo_entry_point",
@@ -242,7 +264,7 @@
       "readme_try_the_isolated_demo",
       "readme_what_it_does"
     ],
-    "6": [
+    "7": [
       "factory_polish_1",
       "factory_polish_1_live_evidence",
       "factory_polish_1_polish_1_review_finding_closure",
@@ -267,7 +289,7 @@
       "factory_review_1_verdict",
       "factory_review_1_what_would_make_this_perfect"
     ],
-    "7": [
+    "8": [
       "ref_dom",
       "ref_dom_iterable",
       "ref_es2022",
@@ -289,7 +311,7 @@
       "tsconfig_compileroptions_usedefineforclassfields",
       "tsconfig_include"
     ],
-    "8": [
+    "9": [
       "factory_verification",
       "factory_verification_accessibility_and_responsive_behavior",
       "factory_verification_claims_gate",
@@ -310,7 +332,7 @@
       "factory_verification_release_blockers",
       "factory_verification_required_remediation_before_another_candidate"
     ],
-    "9": [
+    "10": [
       "factory_verification_3",
       "factory_verification_3_accessibility_responsive_behavior_and_motion",
       "factory_verification_3_candidate_and_deployment_identity",
@@ -330,7 +352,7 @@
       "factory_verification_3_release_blockers",
       "factory_verification_3_required_remediation"
     ],
-    "10": [
+    "11": [
       "factory_verification_4",
       "factory_verification_4_accessibility_mobile_routes_and_motion",
       "factory_verification_4_claims_gate",
@@ -348,25 +370,6 @@
       "factory_verification_4_privacy_headers_and_caching",
       "factory_verification_4_release_blocking_findings",
       "factory_verification_4_required_action"
-    ],
-    "11": [
-      "next",
-      "request",
-      "router",
-      "src_main",
-      "src_main_api_rate_limit_returns_retry_after",
-      "src_main_app",
-      "src_main_health",
-      "src_main_health_reports_build_sha",
-      "src_main_main",
-      "src_main_rs_intoresponse",
-      "src_main_rs_response",
-      "src_main_rs_state",
-      "src_main_security_headers",
-      "src_main_shutdown_signal",
-      "src_main_test_app",
-      "src_main_unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated",
-      "src_main_workspace_deletion_removes_records_evidence_and_audit"
     ],
     "12": [
       "factory_verification_5",
@@ -512,7 +515,7 @@
       "scripts_deploy",
       "scripts_deploy_patch_app",
       "scripts_deploy_sh__entry",
-      "scripts_deploy_wait_for_app"
+      "scripts_deploy_wait_for_topology"
     ],
     "27": [
       "scripts_test_durable_storage",
@@ -552,38 +555,57 @@
       "scripts_test_deployment_topology_sh__entry"
     ],
     "35": [
+      "scripts_test_live_rate_limit",
+      "scripts_test_live_rate_limit_sh__entry"
+    ],
+    "36": [
       "tests_product_spec",
       "tests_product_spec_openready"
     ],
-    "36": [
+    "37": [
       "pkg_mtd_evidence_rail"
     ],
-    "37": [
+    "38": [
       "playwright_config"
     ],
-    "38": [
+    "39": [
       "scripts_license_fixture"
     ],
-    "39": [
+    "40": [
       "scripts_live_browser_smoke"
     ],
-    "40": [
+    "41": [
+      "src_routes_rs_intoresponse"
+    ],
+    "42": [
+      "src_routes_rs_response"
+    ],
+    "43": [
+      "src_routes_rs_sqlitepool"
+    ],
+    "44": [
+      "src_routes_rs_state"
+    ],
+    "45": [
+      "src_routes_rs_string"
+    ],
+    "46": [
       "vite_config"
     ]
   },
   "cohesion": {
     "0": 0.11611030478955008,
-    "1": 0.14479638009049775,
+    "1": 0.17298797409805736,
     "2": 0.13974358974358975,
-    "3": 0.05714285714285714,
+    "3": 0.05405405405405406,
     "4": 0.07407407407407407,
-    "5": 0.08695652173913043,
+    "5": 0.1225296442687747,
     "6": 0.08695652173913043,
-    "7": 0.1,
-    "8": 0.10526315789473684,
-    "9": 0.1111111111111111,
-    "10": 0.11764705882352941,
-    "11": 0.16911764705882354,
+    "7": 0.08695652173913043,
+    "8": 0.1,
+    "9": 0.10526315789473684,
+    "10": 0.1111111111111111,
+    "11": 0.11764705882352941,
     "12": 0.14285714285714285,
     "13": 0.15384615384615385,
     "14": 0.2222222222222222,
@@ -612,17 +634,23 @@
     "37": 1.0,
     "38": 1.0,
     "39": 1.0,
-    "40": 1.0
+    "40": 1.0,
+    "41": 1.0,
+    "42": 1.0,
+    "43": 1.0,
+    "44": 1.0,
+    "45": 1.0,
+    "46": 1.0
   },
   "gods": [
     {
-      "id": "src_main_appstate",
-      "label": "AppState",
-      "degree": 21
-    },
-    {
       "id": "frontend_src_main_bindapp",
       "label": "bindApp()",
+      "degree": 17
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
       "degree": 17
     },
     {
@@ -631,18 +659,13 @@
       "degree": 16
     },
     {
-      "id": "src_routes_import_records",
-      "label": "import_records()",
-      "degree": 15
-    },
-    {
-      "id": "package_scripts",
-      "label": "scripts",
-      "degree": 15
-    },
-    {
       "id": "factory_review_2_findings",
       "label": "Findings",
+      "degree": 15
+    },
+    {
+      "id": "src_routes_import_records",
+      "label": "import_records()",
       "degree": 15
     },
     {
@@ -656,73 +679,22 @@
       "degree": 13
     },
     {
+      "id": "factory_verification_3_independent_product_verification_3_fail",
+      "label": "Independent product verification 3 \u2014 FAIL",
+      "degree": 13
+    },
+    {
+      "id": "src_routes_workspace",
+      "label": "workspace()",
+      "degree": 13
+    },
+    {
       "id": "src_routes_check_workspace",
       "label": "check_workspace()",
       "degree": 13
-    },
-    {
-      "id": "src_routes_create_record",
-      "label": "create_record()",
-      "degree": 13
     }
   ],
-  "surprises": [
-    {
-      "source": "add_evidence()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "cross-file semantic connection"
-    },
-    {
-      "source": "create_demo()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "cross-file semantic connection"
-    },
-    {
-      "source": "create_record()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "cross-file semantic connection"
-    },
-    {
-      "source": "create_workspace()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "cross-file semantic connection"
-    },
-    {
-      "source": "delete_record()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "cross-file semantic connection"
-    }
-  ],
+  "surprises": [],
   "tokens": {
     "input": 0,
     "output": 0
