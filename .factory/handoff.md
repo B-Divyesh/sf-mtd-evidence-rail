@@ -1,25 +1,33 @@
-# Verification 9 handoff — PASS
+# Review 2 handoff — FAIL
 
-Verified 29 August 2026 for `mtd-evidence-rail-verify-9`.
+Reviewed 29 August 2026 for work order
+`mtd-evidence-rail-review-2`. No product code was changed.
 
-Candidate and live deployment: `c088767e95c03bf45f72f36f8bef5b1ecf7a71cc`,
-<https://mtd-evidence-rail.sociobot.in>. Live `/health` returns this exact SHA.
+## What was done
 
-## What was verified
+- Repeated the cold first-read check at 390 × 844 and 1440 × 1000.
+- Audited the one-click demo, reset, private-data isolation, request origins,
+  mobile first viewport, routes, history focus, links, metadata, 404, visual
+  identity, and accessibility.
+- Read the brief, design, claims, README, review 1, polish 1, and prior handoff.
+- Ran every exact claim command from a clean clone; all 20 passed locally.
+- Ran full `npm test` from that clone; all 21 browser tests passed.
+- Recorded every landing and README sentence with its word count in
+  `.factory/review-2.md`.
 
-- A cold landing clearly describes the evidence-record job, its sole-trader
-  audience, and the visible one-click sample demo.
-- Every command in `.factory/claims.json` passed from a clean clone (20/20).
-- `npm test` passed in full (21 browser tests), as did typecheck, production
-  Vite build, Rust tests, and `cargo build --release --locked`.
-- Live demo, manual record creation, invalid-date recovery, ZIP export,
-  same-origin privacy flow, response headers/caching, exact asset matching,
-  accessibility, desktop/mobile keyboard paths, reduced motion, and rate
-  limiting were independently checked.
-- The live rate limit returned 429 plus `Retry-After: 1` after a 50-request
-  same-client burst during a 100-request run.
+## Blocking live gaps
 
-## Run / verify
+The deployed backend is not using one consistent workspace store. A new demo
+key returned 200 on 7 of 20 reads and 404 on 13. Ten of ten fresh demo browser
+contexts failed to load their sample after creation. New private workspaces
+failed the same create-then-read check. The local shared-storage and topology
+tests pass, but do not prove the deployed state.
+
+On an earlier successful 390 px demo load, the first viewport showed only the
+banner, quarter selector, and controls. No realistic sample row or result was
+visible without scrolling.
+
+## Verify
 
 ```sh
 npm ci
@@ -27,13 +35,12 @@ npm test
 npm run test:live-checkout
 ```
 
-Use `/?demo=1` for the isolated six-record sample workspace. It has its own
-24-hour server workspace and never uses the private workspace key.
+For the deployed regression, create a workspace and read it repeatedly over
+fresh connections. Acceptance requires 100/100 HTTP 200 responses for both
+`POST /api/workspace` and `POST /api/demo` keys.
 
-## Known gaps
+## Next steps
 
-No product defects found. The verifier container lacks the `docker` CLI, so it
-could not execute a Docker build; the locked release binary built and served
-successfully, and the matching candidate is live.
-
-Detailed evidence: `.factory/verification-9.md`.
+Fix the deployed shared-store topology first, then move sample evidence into
+the initial phone viewport. Resolve the remaining claim, copy, and recovery
+findings in `.factory/review-2.md`, deploy, and repeat the full review.
