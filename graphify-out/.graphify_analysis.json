@@ -1,60 +1,6 @@
 {
   "communities": {
     "0": [
-      "apiresult",
-      "arc",
-      "client",
-      "date",
-      "e",
-      "headermap",
-      "json",
-      "mutex",
-      "option",
-      "path",
-      "query",
-      "sqliteconnection",
-      "src_main_appstate",
-      "src_main_rs_sqlitepool",
-      "src_main_rs_string",
-      "src_routes",
-      "src_routes_add_evidence",
-      "src_routes_check_workspace",
-      "src_routes_create_demo",
-      "src_routes_create_record",
-      "src_routes_create_workspace",
-      "src_routes_delete_record",
-      "src_routes_delete_workspace",
-      "src_routes_enforce_quarter_limits",
-      "src_routes_error",
-      "src_routes_evidenceinput",
-      "src_routes_export_pack",
-      "src_routes_exportrecord",
-      "src_routes_get_workspace",
-      "src_routes_has_paid_access",
-      "src_routes_import_records",
-      "src_routes_importinput",
-      "src_routes_insert_record",
-      "src_routes_internal",
-      "src_routes_now",
-      "src_routes_parse_date",
-      "src_routes_periodquery",
-      "src_routes_quarter_bounds",
-      "src_routes_quarter_bounds_for_record",
-      "src_routes_record",
-      "src_routes_recordinput",
-      "src_routes_remove_evidence",
-      "src_routes_rs_intoresponse",
-      "src_routes_rs_response",
-      "src_routes_rs_sqlitepool",
-      "src_routes_rs_state",
-      "src_routes_rs_string",
-      "src_routes_validate",
-      "src_routes_workspace",
-      "statuscode",
-      "value",
-      "vec"
-    ],
-    "1": [
       "frontend_src_main",
       "frontend_src_main_api",
       "frontend_src_main_apierror",
@@ -105,7 +51,81 @@
       "frontend_src_main_workspacekey",
       "frontend_src_main_workspaceresponse"
     ],
+    "1": [
+      "apiresult",
+      "appstate",
+      "date",
+      "e",
+      "headermap",
+      "intoresponse",
+      "json",
+      "option",
+      "path",
+      "query",
+      "response",
+      "sqliteconnection",
+      "sqlitepool",
+      "src_routes",
+      "src_routes_add_evidence",
+      "src_routes_check_workspace",
+      "src_routes_create_demo",
+      "src_routes_create_record",
+      "src_routes_create_workspace",
+      "src_routes_delete_record",
+      "src_routes_delete_workspace",
+      "src_routes_enforce_quarter_limits",
+      "src_routes_error",
+      "src_routes_evidenceinput",
+      "src_routes_export_pack",
+      "src_routes_exportrecord",
+      "src_routes_get_workspace",
+      "src_routes_has_paid_access",
+      "src_routes_import_records",
+      "src_routes_importinput",
+      "src_routes_insert_record",
+      "src_routes_internal",
+      "src_routes_now",
+      "src_routes_parse_date",
+      "src_routes_periodquery",
+      "src_routes_quarter_bounds",
+      "src_routes_quarter_bounds_for_record",
+      "src_routes_record",
+      "src_routes_recordinput",
+      "src_routes_remove_evidence",
+      "src_routes_validate",
+      "src_routes_workspace",
+      "state",
+      "statuscode",
+      "string",
+      "value",
+      "vec"
+    ],
     "2": [
+      "arc",
+      "client",
+      "mutex",
+      "next",
+      "request",
+      "router",
+      "src_main",
+      "src_main_api_rate_limit_returns_retry_after",
+      "src_main_app",
+      "src_main_appstate",
+      "src_main_health",
+      "src_main_health_reports_build_sha",
+      "src_main_main",
+      "src_main_rs_intoresponse",
+      "src_main_rs_response",
+      "src_main_rs_sqlitepool",
+      "src_main_rs_state",
+      "src_main_rs_string",
+      "src_main_security_headers",
+      "src_main_shutdown_signal",
+      "src_main_test_app",
+      "src_main_unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated",
+      "src_main_workspace_deletion_removes_records_evidence_and_audit"
+    ],
+    "3": [
       "package",
       "package_name",
       "package_overrides",
@@ -120,6 +140,7 @@
       "package_scripts_test_deployment_topology",
       "package_scripts_test_durable_storage",
       "package_scripts_test_e2e",
+      "package_scripts_test_live_checkout",
       "package_scripts_test_runtime_defaults",
       "package_scripts_test_shared_storage",
       "package_scripts_typecheck",
@@ -127,7 +148,7 @@
       "package_type",
       "package_version"
     ],
-    "3": [
+    "4": [
       "ref_dom",
       "ref_dom_iterable",
       "ref_es2022",
@@ -148,25 +169,6 @@
       "tsconfig_compileroptions_target",
       "tsconfig_compileroptions_usedefineforclassfields",
       "tsconfig_include"
-    ],
-    "4": [
-      "next",
-      "request",
-      "router",
-      "src_main",
-      "src_main_api_rate_limit_returns_retry_after",
-      "src_main_app",
-      "src_main_health",
-      "src_main_health_reports_build_sha",
-      "src_main_main",
-      "src_main_rs_intoresponse",
-      "src_main_rs_response",
-      "src_main_rs_state",
-      "src_main_security_headers",
-      "src_main_shutdown_signal",
-      "src_main_test_app",
-      "src_main_unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated",
-      "src_main_workspace_deletion_removes_records_evidence_and_audit"
     ],
     "5": [
       "axe_core_playwright",
@@ -231,35 +233,58 @@
       "scripts_test_deployment_topology_sh__entry"
     ],
     "14": [
-      "scripts_test_live_checkout",
-      "scripts_test_live_checkout_sh__entry"
-    ],
-    "15": [
       "tests_product_spec",
       "tests_product_spec_openready"
     ],
-    "16": [
+    "15": [
       "pkg_mtd_evidence_rail"
     ],
-    "17": [
+    "16": [
       "playwright_config"
     ],
-    "18": [
+    "17": [
       "scripts_license_fixture"
     ],
-    "19": [
+    "18": [
       "scripts_live_browser_smoke"
     ],
+    "19": [
+      "scripts_test_live_checkout_checkouturl"
+    ],
     "20": [
+      "scripts_test_live_checkout_contractpage"
+    ],
+    "21": [
+      "scripts_test_live_checkout_hosted"
+    ],
+    "22": [
+      "scripts_test_live_checkout_includes"
+    ],
+    "23": [
+      "src_routes_rs_intoresponse"
+    ],
+    "24": [
+      "src_routes_rs_response"
+    ],
+    "25": [
+      "src_routes_rs_sqlitepool"
+    ],
+    "26": [
+      "src_routes_rs_state"
+    ],
+    "27": [
+      "src_routes_rs_string"
+    ],
+    "28": [
       "vite_config"
     ]
   },
   "cohesion": {
-    "0": 0.14404223227752638,
-    "1": 0.12244897959183673,
-    "2": 0.1,
-    "3": 0.1,
-    "4": 0.16911764705882354,
+    "0": 0.12244897959183673,
+    "1": 0.17206290471785385,
+    "2": 0.1225296442687747,
+    "3": 0.09523809523809523,
+    "4": 0.1,
     "5": 0.15384615384615385,
     "6": 0.42857142857142855,
     "7": 0.47619047619047616,
@@ -275,14 +300,17 @@
     "17": 1.0,
     "18": 1.0,
     "19": 1.0,
-    "20": 1.0
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0
   },
   "gods": [
-    {
-      "id": "src_main_appstate",
-      "label": "AppState",
-      "degree": 21
-    },
     {
       "id": "src_routes_error",
       "label": "error()",
@@ -299,6 +327,11 @@
       "degree": 15
     },
     {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 14
+    },
+    {
       "id": "src_routes_add_evidence",
       "label": "add_evidence()",
       "degree": 14
@@ -306,6 +339,11 @@
     {
       "id": "frontend_src_main_apppage",
       "label": "appPage()",
+      "degree": 13
+    },
+    {
+      "id": "src_routes_workspace",
+      "label": "workspace()",
       "degree": 13
     },
     {
@@ -319,73 +357,12 @@
       "degree": 13
     },
     {
-      "id": "src_routes_workspace",
-      "label": "workspace()",
-      "degree": 13
-    },
-    {
-      "id": "package_scripts",
-      "label": "scripts",
-      "degree": 13
+      "id": "tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 12
     }
   ],
-  "surprises": [
-    {
-      "source": "add_evidence()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "cross-file semantic connection"
-    },
-    {
-      "source": "create_demo()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "cross-file semantic connection"
-    },
-    {
-      "source": "create_record()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "cross-file semantic connection"
-    },
-    {
-      "source": "create_workspace()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "cross-file semantic connection"
-    },
-    {
-      "source": "delete_record()",
-      "target": "AppState",
-      "source_files": [
-        "src/routes.rs",
-        "src/main.rs"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "cross-file semantic connection"
-    }
-  ],
+  "surprises": [],
   "tokens": {
     "input": 0,
     "output": 0
