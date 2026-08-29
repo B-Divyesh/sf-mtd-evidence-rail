@@ -1,0 +1,12 @@
+{
+  "serviceWorkers": 0,
+  "caches": 0,
+  "reducedMotion": true,
+  "overflow": 0,
+  "h1": 1,
+  "main": 1,
+  "errors": [],
+  "requestOrigins": [
+    "https://mtd-evidence-rail.sociobot.in"
+  ]
+}

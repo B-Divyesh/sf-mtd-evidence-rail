@@ -1,0 +1,5 @@
+
+> mtd-evidence-rail@1.0.0 test:live-workspace-consistency
+> bash scripts/test-live-workspace-consistency.sh
+
+@claim:live-workspace-consistency PASS — private and demo workspaces each returned 200 on 100/100 fresh-connection reads
