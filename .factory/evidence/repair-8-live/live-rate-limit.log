@@ -2,4 +2,5 @@
 > mtd-evidence-rail@1.0.0 test:live-rate-limit
 > bash scripts/test-live-rate-limit.sh
 
-@claim:live-api-rate-limit PASS — one forwarded client received 76 HTTP 429 responses with Retry-After: 1; 124/200 requests were accepted over 28005ms.
+Live topology: Single; replicas=1/1; running=1; mtd-data mounted at /data; VFS=unix-dotfile.
+@claim:live-api-rate-limit PASS — one forwarded client received 95 HTTP 429 responses with Retry-After: 1; accepted=105 within one-limiter bound=529 over 24165ms.

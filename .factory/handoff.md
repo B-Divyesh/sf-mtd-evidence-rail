@@ -40,6 +40,13 @@ Exact regression coverage was added in two layers:
   Azure identity variables and container-local `/data` shape. It requires
   status 78 and the durable-mount error. The existing renderer assertions also
   retain one replica, the canonical volume, and the SMB-safe SQLite VFS.
+- Both live blocker commands now inspect the Azure control plane before making
+  requests. A quiet 1–3 rollout cannot pass merely because only one replica is
+  warm. The limiter probe also caps accepted requests to one limiter's measured
+  burst plus refill allowance.
+- `scripts/deploy.sh` accepts only a `PREBUILT_IMAGE` whose tag matches the
+  checked-out commit, allowing the work-order builder and product topology
+  reconciliation to share one identity without a second build.
 
 ## Local release evidence
 
@@ -100,7 +107,8 @@ Fresh independent commands after deployment passed:
 npm run test:live-workspace-consistency
   private 100/100 = 200; demo 100/100 = 200
 npm run test:live-rate-limit
-  76/200 = 429; all limited responses had Retry-After: 1
+  topology 1/1 with /data and unix-dotfile; 95/200 = 429; all limited
+  responses had Retry-After: 1; 105 accepted within the measured bound
 npm run test:live-checkout
   303 to Dodo; mtd-evidence-rail; GBP 1500; monthly
 ```
