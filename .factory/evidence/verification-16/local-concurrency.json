@@ -1,0 +1,13 @@
+{
+  "createStatus": 201,
+  "writeStatuses": {
+    "201": 25,
+    "402": 5
+  },
+  "readStatus": 200,
+  "total": 25,
+  "health": {
+    "build_sha": "560392b27a89568a3e88ca461b060f42fec7e61f",
+    "status": "ok"
+  }
+}

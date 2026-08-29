@@ -1,0 +1,190 @@
+{
+  "routes": [
+    {
+      "mode": "desktop",
+      "path": "/",
+      "status": 200,
+      "title": "MTD Evidence Rail — link expenses to evidence",
+      "lang": "en-GB",
+      "h1": 1,
+      "main": 1,
+      "axeTotal": 0,
+      "axeSeriousCritical": [],
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "mode": "desktop",
+      "path": "/demo",
+      "status": 200,
+      "title": "Demo — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1": 1,
+      "main": 1,
+      "axeTotal": 0,
+      "axeSeriousCritical": [],
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "mode": "desktop",
+      "path": "/app",
+      "status": 200,
+      "title": "Quarter — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1": 1,
+      "main": 1,
+      "axeTotal": 0,
+      "axeSeriousCritical": [],
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "mode": "desktop",
+      "path": "/privacy",
+      "status": 200,
+      "title": "Privacy — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1": 1,
+      "main": 1,
+      "axeTotal": 0,
+      "axeSeriousCritical": [],
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "mode": "desktop",
+      "path": "/terms",
+      "status": 200,
+      "title": "Terms — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1": 1,
+      "main": 1,
+      "axeTotal": 0,
+      "axeSeriousCritical": [],
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "mode": "desktop",
+      "path": "/not-a-page",
+      "status": 404,
+      "title": "Page not found — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1": 1,
+      "main": 1,
+      "axeTotal": 0,
+      "axeSeriousCritical": [],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "pageErrors": []
+    },
+    {
+      "mode": "mobile",
+      "path": "/",
+      "status": 200,
+      "title": "MTD Evidence Rail — link expenses to evidence",
+      "lang": "en-GB",
+      "h1": 1,
+      "main": 1,
+      "axeTotal": 0,
+      "axeSeriousCritical": [],
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "mode": "mobile",
+      "path": "/demo",
+      "status": 200,
+      "title": "Demo — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1": 1,
+      "main": 1,
+      "axeTotal": 0,
+      "axeSeriousCritical": [],
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "mode": "mobile",
+      "path": "/app",
+      "status": 200,
+      "title": "Quarter — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1": 1,
+      "main": 1,
+      "axeTotal": 0,
+      "axeSeriousCritical": [],
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "mode": "mobile",
+      "path": "/privacy",
+      "status": 200,
+      "title": "Privacy — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1": 1,
+      "main": 1,
+      "axeTotal": 0,
+      "axeSeriousCritical": [],
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "mode": "mobile",
+      "path": "/terms",
+      "status": 200,
+      "title": "Terms — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1": 1,
+      "main": 1,
+      "axeTotal": 0,
+      "axeSeriousCritical": [],
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "mode": "mobile",
+      "path": "/not-a-page",
+      "status": 404,
+      "title": "Page not found — MTD Evidence Rail",
+      "lang": "en-GB",
+      "h1": 1,
+      "main": 1,
+      "axeTotal": 0,
+      "axeSeriousCritical": [],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "pageErrors": []
+    }
+  ],
+  "mobile": {
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "undersizedTargets": []
+  },
+  "keyboard": {
+    "skip": {
+      "text": "Skip to main content",
+      "outline": {
+        "style": "solid",
+        "width": "3px",
+        "color": "rgb(232, 191, 98)"
+      }
+    },
+    "routeFocus": {
+      "tag": "H1",
+      "text": "Prepare your quarter record"
+    },
+    "dialogFocus": "kind",
+    "returned": "Add a transaction"
+  },
+  "reducedMotion": {
+    "matches": true,
+    "active": []
+  },
+  "errors": []
+}

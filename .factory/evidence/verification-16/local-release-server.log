@@ -1,0 +1,1 @@
+{"timestamp":"2026-08-29T22:10:56.558076Z","level":"INFO","fields":{"message":"configuration ready; local database generated if absent; no secret configuration required","port":18765,"database":"/tmp/tmp.oPqzmqWV3A/evidence-rail.sqlite","sqlite_vfs":"platform default","build_sha":"560392b27a89568a3e88ca461b060f42fec7e61f"},"target":"mtd_evidence_rail"}

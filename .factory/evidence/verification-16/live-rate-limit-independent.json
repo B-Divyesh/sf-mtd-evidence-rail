@@ -1,0 +1,39 @@
+{
+  "total": 200,
+  "elapsedMs": 8387,
+  "counts": {
+    "201": 47,
+    "429": 153
+  },
+  "limited": 153,
+  "allLimitedHaveRetryAfter1": true,
+  "acceptedBeforeFirst429": 5,
+  "sample429": [
+    {
+      "i": 5,
+      "status": 429,
+      "retryAfter": "1"
+    },
+    {
+      "i": 7,
+      "status": 429,
+      "retryAfter": "1"
+    },
+    {
+      "i": 11,
+      "status": 429,
+      "retryAfter": "1"
+    },
+    {
+      "i": 14,
+      "status": 429,
+      "retryAfter": "1"
+    },
+    {
+      "i": 16,
+      "status": 429,
+      "retryAfter": "1"
+    }
+  ],
+  "errors": []
+}

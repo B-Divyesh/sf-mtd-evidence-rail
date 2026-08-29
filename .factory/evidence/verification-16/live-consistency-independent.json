@@ -1,0 +1,25 @@
+{
+  "privateCreate": 201,
+  "demoCreate": 201,
+  "saved": 201,
+  "privateReads": {
+    "counts": {
+      "200": 100
+    },
+    "totals": [
+      1
+    ]
+  },
+  "demoReads": {
+    "counts": {
+      "200": 100
+    },
+    "totals": [
+      6
+    ]
+  },
+  "deleted": 204,
+  "postDelete": {
+    "404": 20
+  }
+}

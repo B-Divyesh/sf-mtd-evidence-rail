@@ -1,110 +1,71 @@
-# Repair 11 handoff — PASS
+# Verification 16 handoff — FAIL
 
-**Released product commit:** `5779508e0a5c4eb3dcae6abd2dcbd709fa7167a9`
-**Public URL:** <https://mtd-evidence-rail.sociobot.in>
-**Released revision:** `sf-mtd-evidence-rail--0000053`
-**Status:** **PASS — verifier 15 release blockers repaired**
+**Candidate:** `560392b27a89568a3e88ca461b060f42fec7e61f`
 
-## What was repaired
+**Live URL:** <https://mtd-evidence-rail.sociobot.in>
 
-Independent verification 15 was reproduced before the change. All three live
-claim commands stopped at the same unsafe control-plane state: live health and
-the ready image were `ba974945…`, the generic candidate revision was latest but
-not ready, `maxReplicas=3`, two revisions were active, and neither the Azure
-Files `/data` mount nor `SQLITE_VFS=unix-dotfile` existed.
+**Verified:** 29 August 2026 UTC
 
-The repair makes the Container App deployment contract enforceable in three
-places:
+**Status:** **FAIL — do not release**
 
-1. The backend refuses to serve in Azure Container Apps unless `/data` is a
-   dedicated mount **and** `SQLITE_VFS=unix-dotfile` is supplied.
-2. The live guard now requires that the ready revision is active, in addition
-   to requiring exactly one active revision, one running replica, the expected
-   image/SHA, mount, volume, and VFS.
-3. The deployment waits for the desired durable revision to be ready, then
-   explicitly deactivates every other active revision before accepting the
-   rollout.
+## Release blocker
 
-`npm run test:verification-15-regression` is an exact offline fixture of the
-reported `6eb169…` latest / `ba974945…` ready failure, including revisions
-`0000052` and `0000051`, two active revisions, `maxReplicas=3`, no volume, and
-no VFS. It must fail the guard. The same fixture proves a safe revision and a
-stale `/health` response are rejected independently.
+Fresh required claim tests show the live Azure Container App in an unsafe state:
 
-## Live deployment evidence
-
-The deployed `sf-mtd-evidence-rail--0000053` revision reports:
-
-- `/health` → `{"build_sha":"5779508e0a5c4eb3dcae6abd2dcbd709fa7167a9","status":"ok"}`.
-- Image → `sociobotregistry.azurecr.io/sf-mtd-evidence-rail:5779508e0a5c`.
-- Active revisions → exactly **one**; it is also the latest and ready revision.
-- Scale → `minReplicas=1`, `maxReplicas=1`; exactly one running replica.
-- Storage → Azure Files volume `mtd-data` (`mtd-evidence-rail-data`) mounted at
-  `/data`; `SQLITE_VFS=unix-dotfile`.
-
-`npm run verify:live-topology -- --restart` passed against that release. It
-created separate private and demo workspaces, then observed 100/100 fresh
-connection reads for each; the deleted private workspace returned 404 for
-20/20 reads. After a real revision restart, the demo again returned 100/100
-and the deleted workspace remained absent for 20/20. The live browser smoke
-loaded sample data in 12/12 fresh contexts before and after restart. Its shared
-limiter probes returned 103/240 and 104/240 HTTP 429 responses, respectively,
-within the one-replica bounds.
-
-The formerly blocked declared commands also passed directly:
-
-- `npm run test:live-release`
-- `npm run test:live-workspace-consistency` — private and demo each 100/100
-  HTTP 200 reads.
-- `npm run test:live-rate-limit` — 85/200 HTTP 429 responses, each with
-  `Retry-After: 1`.
-
-The hosted checkout contract remains live: `npm run test:live-checkout` got a
-303 to Sociobot/Dodo for `mtd-evidence-rail`, GBP 1500, monthly.
-
-## Verification run
-
-- `npm ci` — passed; audit reported 0 vulnerabilities.
-- `npm test` — passed: TypeScript, Vite production build, 7 Rust tests,
-  runtime defaults, durable storage, shared storage, exact topology regression,
-  and 25/25 Chromium tests.
-- `npm run lint` — passed: TypeScript, `cargo fmt --check`, and warning-denied
-  Clippy.
-- `npm run build` and `cargo build --release --locked` — passed. Dist output:
-  JS 33.90 kB raw / 11.05 kB gzip; CSS 18.13 kB raw / 5.01 kB gzip.
-- The exact production image was built by Azure Container Registry from the
-  released commit and is the image named above.
-- Live Chromium ran the 24 non-fixture browser checks successfully: desktop and
-  390 px mobile, keyboard/dialog flow, route titles/focus/404, real-page axe,
-  no tracker requests in the demo flow, and offline recovery messaging. The
-  paid-limit test is deliberately a local billing-fixture test; on production
-  its dummy `fixture-valid-license` correctly receives 402. Its valid-license
-  branch passed locally, while the real checkout redirect passed live.
-- Live response policy check passed: `lang=en-GB`, title, rendered H1/main,
-  `nosniff`, strict-origin referrer policy, restrictive CSP including
-  `frame-ancestors 'none'`, and no-cache HTML.
-
-## How to verify again
-
-```bash
-npm ci
-npm test
-npm run lint
-npm run test:verification-15-regression
-npm run test:live-release
-npm run test:live-workspace-consistency
-npm run test:live-rate-limit
-npm run verify:live-topology -- --restart
+```text
+latest=sf-mtd-evidence-rail--0000054
+ready=sf-mtd-evidence-rail--0000053
+mode=Single min=1 max=3
+mount= volume=: vfs=
+active=2 running=1
 ```
 
-Deploy with `bash scripts/deploy.sh`. It builds the current committed product
-source, applies the source-owned durable Container App topology, waits for the
-new revision, deactivates stale revisions, and then runs the restart-backed
-live verification. `.factory/release.json` is the published source identity
-used by the live claim guards.
+The service stores financial evidence in SQLite, yet production may scale to
+three replicas and has no Azure Files `/data` mount or required
+`SQLITE_VFS=unix-dotfile`. Three mandatory claims fail:
 
-## Known gaps
+- `npm run test:live-workspace-consistency`
+- `npm run test:live-release`
+- `npm run test:live-rate-limit`
 
-None. The only live browser test excluded from the 24-test product smoke is a
-test-only successful billing fixture; it has no production-valid token and its
-real response-policy outcome (402 for a fake token) is expected.
+This is release blocking even though the currently running replica served all
+fresh functional probes successfully.
+
+## What passed
+
+- Cold first-read and one-click sample demo.
+- 23/26 declared claims from a detached candidate checkout.
+- `npm test` (7 Rust tests and 25 Chromium tests).
+- `npm run lint`, `npm run build`, and `cargo build --release --locked`.
+- Live add/validate/link/import/missing/export/reset flow and API boundaries.
+- Independent limiter burst: 47 accepted, 153 limited; every 429 had
+  `Retry-After: 1`.
+- Live fresh-connection reads: private 100/100 and demo 100/100; deleted private
+  workspace 404 on 20/20 reads.
+- Axe: zero violations on six routes at desktop and 390 px; keyboard, focus,
+  reduced motion, touch targets, 200% text, and mobile overflow checks pass.
+- Lighthouse mobile: 99 performance, 100 accessibility, 100 best practices,
+  100 SEO; LCP 1.80 s, TBT 80 ms, CLS 0.
+- No third-party core-flow request, console error, page error, or broken link.
+- Security headers and caching policy pass; JS/CSS/font/hero budgets pass.
+- Hosted checkout redirects to Dodo for GBP 15/month.
+
+The live HTML/JS/CSS are byte-identical to the candidate build. `/health`
+identifies published product source `5779508…`; candidate `560392b…` adds only
+factory metadata/graph changes after that source commit.
+
+## Environment limitation
+
+Docker, Podman, Buildah, and nerdctl are unavailable, so the container image
+could not be rebuilt locally. The Dockerfile's frontend and locked Rust release
+build stages were run directly and passed.
+
+## Required next step
+
+Deploy the source-owned topology with one active ready revision,
+`minReplicas=maxReplicas=1`, Azure Files mounted at `/data`, and
+`SQLITE_VFS=unix-dotfile`. Re-run the three failed live claims and a real
+restart-backed persistence check before changing the verdict.
+
+Full findings: [`.factory/verification-16.md`](verification-16.md). Evidence:
+[`.factory/evidence/verification-16`](evidence/verification-16/).

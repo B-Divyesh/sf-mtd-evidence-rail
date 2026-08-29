@@ -1,0 +1,211 @@
+{
+  "workspaceKeyPattern": true,
+  "results": [
+    {
+      "name": "create demo",
+      "status": 201,
+      "retryAfter": null,
+      "body": {
+        "expires_in_hours": 24,
+        "workspace_id": "demo:9be94ab46be845cd8915a0d129adc1bfeb3fc09e106e4e62b4ee76bb21cd136f"
+      }
+    },
+    {
+      "name": "missing key",
+      "status": 401,
+      "retryAfter": null,
+      "body": {
+        "error": "This workspace key is missing. Start a workspace again."
+      }
+    },
+    {
+      "name": "unknown key",
+      "status": 404,
+      "retryAfter": null,
+      "body": {
+        "error": "This workspace was not found. Start a new workspace."
+      }
+    },
+    {
+      "name": "minimum amount £0.01",
+      "status": 201,
+      "retryAfter": null,
+      "body": {
+        "id": "87c0f09c-b2c5-43ba-a436-d0442e9f9fd3"
+      }
+    },
+    {
+      "name": "maximum amount £1,000,000",
+      "status": 201,
+      "retryAfter": null,
+      "body": {
+        "id": "7bc3df2c-21de-4d4b-9105-54926107984e"
+      }
+    },
+    {
+      "name": "over maximum amount",
+      "status": 400,
+      "retryAfter": null,
+      "body": {
+        "error": "Enter an amount between £0.01 and £1,000,000."
+      }
+    },
+    {
+      "name": "zero amount",
+      "status": 400,
+      "retryAfter": null,
+      "body": {
+        "error": "Enter an amount between £0.01 and £1,000,000."
+      }
+    },
+    {
+      "name": "impossible date",
+      "status": 400,
+      "retryAfter": null,
+      "body": {
+        "error": "Enter a real calendar date."
+      }
+    },
+    {
+      "name": "empty description",
+      "status": 400,
+      "retryAfter": null,
+      "body": {
+        "error": "Enter a description under 120 characters."
+      }
+    },
+    {
+      "name": "invalid kind",
+      "status": 400,
+      "retryAfter": null,
+      "body": {
+        "error": "Choose expense or income."
+      }
+    },
+    {
+      "name": "final workspace read",
+      "status": 200,
+      "retryAfter": null,
+      "body": {
+        "records": [
+          {
+            "amount_pence": 100000000,
+            "category": "Office",
+            "created_at": 1788041272,
+            "description": "Maximum boundary",
+            "evidence_mime": null,
+            "evidence_name": null,
+            "id": "7bc3df2c-21de-4d4b-9105-54926107984e",
+            "invoice_number": null,
+            "kind": "expense",
+            "record_date": "2026-06-30",
+            "source": "manual",
+            "updated_at": 1788041272
+          },
+          {
+            "amount_pence": 1,
+            "category": "Office",
+            "created_at": 1788041271,
+            "description": "Boundary item",
+            "evidence_mime": null,
+            "evidence_name": null,
+            "id": "87c0f09c-b2c5-43ba-a436-d0442e9f9fd3",
+            "invoice_number": null,
+            "kind": "expense",
+            "record_date": "2026-06-30",
+            "source": "manual",
+            "updated_at": 1788041271
+          },
+          {
+            "amount_pence": 3299,
+            "category": "Materials",
+            "created_at": 1788041271,
+            "description": "Teaching card supplies",
+            "evidence_mime": "text/plain",
+            "evidence_name": "teaching-cards.jpg",
+            "id": "49cf6f22-aeb6-4922-a1ca-a6194d9f0a85",
+            "invoice_number": null,
+            "kind": "expense",
+            "record_date": "2026-06-11",
+            "source": "bank",
+            "updated_at": 1788041271
+          },
+          {
+            "amount_pence": 24500,
+            "category": "Club fees",
+            "created_at": 1788041271,
+            "description": "After-school club fees",
+            "evidence_mime": "text/plain",
+            "evidence_name": "invoice-031.pdf",
+            "id": "fe31573b-995d-43ba-8e18-550c96e6738f",
+            "invoice_number": "INV-031",
+            "kind": "income",
+            "record_date": "2026-06-03",
+            "source": "manual",
+            "updated_at": 1788041271
+          },
+          {
+            "amount_pence": 2780,
+            "category": "Travel",
+            "created_at": 1788041271,
+            "description": "Train to client session",
+            "evidence_mime": null,
+            "evidence_name": null,
+            "id": "722680ce-823f-4940-a34a-df952f24b51f",
+            "invoice_number": null,
+            "kind": "expense",
+            "record_date": "2026-05-19",
+            "source": "bank",
+            "updated_at": 1788041271
+          },
+          {
+            "amount_pence": 6500,
+            "category": "Venue",
+            "created_at": 1788041271,
+            "description": "Community hall hire",
+            "evidence_mime": null,
+            "evidence_name": null,
+            "id": "2657ac68-b72f-47c9-9027-97e8866b1726",
+            "invoice_number": null,
+            "kind": "expense",
+            "record_date": "2026-05-02",
+            "source": "bank",
+            "updated_at": 1788041271
+          },
+          {
+            "amount_pence": 12000,
+            "category": "Tutoring",
+            "created_at": 1788041271,
+            "description": "Spring maths tutoring",
+            "evidence_mime": "text/plain",
+            "evidence_name": "invoice-026.pdf",
+            "id": "12ab5732-7f15-4ea0-837b-49f85f375539",
+            "invoice_number": "INV-026",
+            "kind": "income",
+            "record_date": "2026-04-15",
+            "source": "manual",
+            "updated_at": 1788041271
+          },
+          {
+            "amount_pence": 1840,
+            "category": "Office",
+            "created_at": 1788041271,
+            "description": "Stationery from Paper Mill",
+            "evidence_mime": "text/plain",
+            "evidence_name": "paper-mill-receipt.pdf",
+            "id": "fc742688-d0a4-4ff1-9689-4a383c1e1928",
+            "invoice_number": null,
+            "kind": "expense",
+            "record_date": "2026-04-08",
+            "source": "bank",
+            "updated_at": 1788041271
+          }
+        ],
+        "summary": {
+          "missing": 4,
+          "total": 8
+        }
+      }
+    }
+  ]
+}

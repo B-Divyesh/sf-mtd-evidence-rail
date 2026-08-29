@@ -1,0 +1,75 @@
+{
+  "status": 200,
+  "title": "Demo — MTD Evidence Rail",
+  "initialH1": [
+    "Link each expense to evidence"
+  ],
+  "initialViewportText": [
+    "MTD Evidence Rail",
+    "Home",
+    "Demo",
+    "Price",
+    "Privacy",
+    "Evidence for your MTD quarter",
+    "Link each expense to evidence",
+    "For UK sole traders, tutors, and small club operators preparing an MTD quarterly update.",
+    "Try it with sample data",
+    "See a ready quarter. Changes stay in this 24-hour demo.",
+    "Start a private workspace",
+    "Open an existing workspace",
+    "Your workspace needs no account.",
+    "£15/month for more than 25 transactions.",
+    "Export a ZIP evidence pack."
+  ],
+  "demoActionCount": 1,
+  "afterClick": {
+    "url": "https://mtd-evidence-rail.sociobot.in/?demo=1",
+    "title": "Demo — MTD Evidence Rail",
+    "body": "Skip to main content\nMTD Evidence Rail\nHome\nDemo\nPrice\nPrivacy\nDemo — sample data. Changes stay in this 24-hour demo.\nReset demo\nStart a private workspace\n\nEVIDENCE WORKSPACE\n\nPrepare your quarter record\n\nLink every transaction to evidence, then export the quarter.\n\nQuarter\nQuarter 1 · 2025/26 · 6 Apr 2025 to 5 Jul 2025\nQuarter 2 · 2025/26 · 6 Jul 2025 to 5 Oct 2025\nQuarter 3 · 2025/26 · 6 Oct 2025 to 5 Jan 2026\nQuarter 4 · 2025/26 · 6 Jan 2026 to 5 Apr 2026\nQuarter 1 · 2026/27 · 6 Apr 2026 to 5 Jul 2026\nQuarter 2 · 2026/27 · 6 Jul 2026 to 5 Oct 2026\nQuarter 3 · 2026/27 · 6 Oct 2026 to 5 Jan 2027\nQuarter 4 · 2026/27 · 6 Jan 2027 to 5 Apr 2027\nQuarter 1 · 2027/28 · 6 Apr 2027 to 5 Jul 2027\nQuarter 2 · 2027/28 · 6 Jul 2027 to 5 Oct 2027\nQuarter 3 · 2027/28 · 6 Oct 2027 to 5 Jan 2028\nQuarter 4 · 2027/28 · 6 Jan 2028 to 5 Apr 2028\n6 Apr 2026 to 5 Jul 2026\nAdd a transaction\nImport bank CSV\nShow missing evidence\nExport evidence pack\nWorkspace settings\nLoading quarter records…\nMTD Evidence Rail\n\nLink each expense to evidence before your quarterly update.\n\nPrivacy\nTerms\nBuilt by Param Factory\n(external site)\n\nVersion 1.0 · Build 2026.08 · Generated hero imagery is original to this product.",
+    "demoBanner": 0
+  },
+  "requests": [
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/",
+      "type": "document"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-400.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/fraunces-600-700.woff2",
+      "type": "font"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/assets/index-CbYEboLH.js",
+      "type": "script"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/assets/index-B2Qaf5JO.css",
+      "type": "stylesheet"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/assets/evidence-rail-hero.webp",
+      "type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "https://mtd-evidence-rail.sociobot.in/fonts/atkinson-700.woff2",
+      "type": "font"
+    },
+    {
+      "method": "POST",
+      "url": "https://mtd-evidence-rail.sociobot.in/api/demo",
+      "type": "fetch"
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": []
+}
