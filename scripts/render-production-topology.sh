@@ -28,6 +28,10 @@ contract_file=${TOPOLOGY_CONTRACT:-"$repo_dir/.factory/container-app.json"}
 jq -c --arg image "$image" --slurpfile contract "$contract_file" '
   ($contract[0]) as $wanted |
   .properties.template.containers[0] as $container |
+  # BUILD_SHA is baked into the immutable image. Retaining a value from an
+  # earlier template could make /health identify a different commit than the
+  # image now serving traffic.
+  ([$wanted.container.environment[].name] + ["BUILD_SHA", "GIT_SHA", "SOURCE_COMMIT"]) as $managed_env_names |
   {
     properties: {
       configuration: {
@@ -40,7 +44,7 @@ jq -c --arg image "$image" --slurpfile contract "$contract_file" '
             env: (
               [
                 $container.env[]?
-                | select(.name as $name | [$wanted.container.environment[].name] | index($name) | not)
+                | select(.name as $name | $managed_env_names | index($name) | not)
               ] + $wanted.container.environment
             ),
             volumeMounts: $wanted.container.volumeMounts

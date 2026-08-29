@@ -87,6 +87,7 @@ az containerapp env storage set \
 unset storage_key
 
 source_sha=$(git -C "$repo_dir" rev-parse HEAD)
+"$repo_dir/scripts/assert-build-inputs-committed.sh" "$repo_dir"
 expected_image="${registry}.azurecr.io/${app_name}:${source_sha:0:12}"
 image=${PREBUILT_IMAGE:-$expected_image}
 if [ "$image" != "$expected_image" ]; then
