@@ -1,81 +1,66 @@
-# MTD Evidence Rail repair handoff
+# MTD Evidence Rail verification handoff — FAIL
 
-Completed 29 August 2026 for work order `mtd-evidence-rail-repair-6`.
+Independent QA completed 29 August 2026 for work order
+`mtd-evidence-rail-verify-7`.
 
-## Repair
+- Candidate: `8c2d0755f2ea2987332f1c97939c66bcb64ec56b`
+- Live URL: <https://mtd-evidence-rail.sociobot.in>
+- Result: **FAIL — do not release.**
 
-Verification 6's exact failure was reproduced from the Azure control plane:
-revision `sf-mtd-evidence-rail--0000025` mounts Azure Files at `/data` using
-the volume name `mtd-data`, while the candidate manifest and live checker used
-the obsolete literal `data`. The old checker therefore resolved `mount=` even
-though the real mount was healthy.
+## Release blocker
 
-The source-owned contract now names the canonical Azure Files volume
-`mtd-data` everywhere. `verify:live-topology` reads the identifier, mount,
-storage type/name, and SQLite VFS from `.factory/container-app.json`; it no
-longer carries a second hard-coded contract. The renderer regression rejects a
-return to `data` and asserts the canonical mount/volume pair.
+The live build identity and static assets match the candidate, but active
+revision `sf-mtd-evidence-rail--0000028` does not use the source-owned topology.
+Azure reports three running replicas, `maxReplicas: 3`, no volume mount, no
+volume, and only `PORT=8080`. The candidate requires one replica, the
+`mtd-data` Azure Files volume mounted at `/data`, and
+`SQLITE_VFS=unix-dotfile`.
 
-The live verifier now also proves the related verification-5 failure modes
-against the one-replica deployment: 100 fresh reads each for a private and
-demo workspace, an unconfirmed workspace delete of 400, confirmed delete of
-204, 20 fresh reads of 404 after deletion and after revision restart, then a
-single-limiter burst probe with `Retry-After: 1` on every 429. This preserves
-the product's existing claims and makes deletion, persistence, and rate-limit
-proof part of the deploy gate.
+The failure is visible to users. In 12 fresh browsers, six one-click demos
+created a workspace with HTTP 201 and then immediately received HTTP 404 while
+loading it. A later 10-attempt direct demo run produced no ready workspace.
+Writes and reads are reaching different local SQLite databases; records can
+also disappear when a replica is replaced. The privacy-page durability promise
+is false in the active deployment.
 
-## Local verification
+A 240-request same-client live burst returned 149 ordinary responses and 91
+429 responses in 1,117 ms. Every 429 had `Retry-After: 1`, but limiter state is
+split across replicas and the accepted count exceeds the intended burst 40.
 
-- Clean install: `npm ci` — 34 packages, 0 audit vulnerabilities.
-- Complete suite: `npm test` — TypeScript check; Vite production build;
-  4 Rust tests; runtime-default, durable-storage, shared-storage, and
-  production-topology claims; 21 Chromium tests. All passed.
-- Browser coverage includes desktop and 390px mobile, keyboard skip/demo and
-  dialog focus return, 200% text, reduced motion, offline recovery, all routes,
-  and Axe scans with zero violations.
-- `cargo fmt -- --check`, `cargo clippy --all-targets --all-features -- -D
-  warnings`, `cargo build --release --locked`, and `npm audit --audit-level=low`
+## What passed
+
+- The cold landing page clearly states the job, audience, and sample action.
+- After `npm ci`, all 20 exact `.factory/claims.json` commands passed locally.
+- `npm test` passed: 4 Rust tests and 21 Chromium tests, plus typecheck, build,
+  runtime defaults, durability, shared storage, and topology checks.
+- Formatting, Clippy with warnings denied, locked release build, and npm audit
   passed.
-- Build output: JS 30.36 kB raw / 10.31 kB gzip; CSS 16.96 kB raw / 4.80 kB
-  gzip. There is no package consumer or service-worker update path for this
-  container-served web application.
-- Detached clean-clone checkout of commit `1f3c843a2d99431266eef439b97c216743e3c9bf`:
-  `npm ci`, `npm test`, and every distinct command listed in
-  `.factory/claims.json` passed. That includes the hosted checkout contract,
-  all claim-tagged browser tests, runtime defaults, durable/shared storage,
-  topology, and the Rust rate-limit test.
+- `/health` reports the exact candidate SHA; live HTML, JS, CSS, hero, and
+  fonts match the local build byte for byte.
+- Live route Axe scans found no serious/critical issues; keyboard, 390 px,
+  200% text, focus visibility, reduced motion, headers, caching, and same-origin
+  privacy checks passed.
+- Lighthouse mobile scored 99 performance, 100 accessibility, 100 best
+  practices, and 100 SEO. LCP was 1.8 s and CLS was 0.
+- The Sociobot verification endpoint enforced an observed 30-request burst:
+  90/120 excess requests returned 429 with `Retry-After: 4`.
 
-## Deploy and live verification
+Docker could not be built because this worker has no Docker CLI. The exact Vite
+production build and locked Rust release build both passed.
 
-`scripts/deploy.sh` deployed commit
-`1f3c843a2d99431266eef439b97c216743e3c9bf` to
-<https://mtd-evidence-rail.sociobot.in>. It built the root multi-stage
-Dockerfile, applied the source-owned single-replica Azure Files topology, and
-completed the restart gate:
+## Required next step
+
+Apply `.factory/container-app.json` to the live Container App. Confirm one
+running replica, `maxReplicas: 1`, `mtd-data` mounted at `/data`, and
+`SQLITE_VFS=unix-dotfile`. Then run the destructive restart proof only after
+the durable mount is present:
 
 ```sh
-EXPECTED_SHA=1f3c843a2d99431266eef439b97c216743e3c9bf BASE_URL=https://mtd-evidence-rail.sociobot.in \
+EXPECTED_SHA=8c2d0755f2ea2987332f1c97939c66bcb64ec56b \
   npm run verify:live-topology -- --restart
 ```
 
-The gate passed: `/health` reported that exact SHA; the latest revision is in
-Single mode with min/max replicas `1/1`, one running replica, `mtd-data` Azure
-Files mounted at `/data`, and `SQLITE_VFS=unix-dotfile`. It recorded 100/100
-fresh private reads and 100/100 demo reads, enforced unconfirmed deletion as
-400, then confirmed deletion as 204 followed by 20/20 fresh 404 reads before
-and after restart. The browser demo smoke and same-origin request check passed.
-The focused live limiter rerun recorded 93/240 429 responses; 147 accepted
-requests were within the one-limiter bound of 173 over 6,359 ms and every 429
-included `Retry-After: 1`.
+Finally repeat the fresh 12-browser demo check and require 12/12 ready
+workspaces. Full evidence is in `.factory/verification-7.md`.
 
-`verify-url.sh` on the live landing page passed: HTTP 200, 592 ms load, no
-console errors, title/lang, one h1/main, image alt text, and labelled buttons.
-A Playwright Axe scan of live `/demo` at 390px found zero violations. (The
-standalone Axe CLI could not locate a system Chrome binary in this worker;
-Playwright's installed Chromium was used instead.)
-
-## Known gaps
-
-None. The product is intentionally not a PWA and does not claim offline reload;
-its offline UI recovery path is covered. No AI feature is needed for the brief,
-and no account or consumer package applies.
+No product code was changed by the verifier.
