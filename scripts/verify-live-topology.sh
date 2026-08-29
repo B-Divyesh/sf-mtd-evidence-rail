@@ -6,6 +6,19 @@ expected_sha=${EXPECTED_SHA:-}
 restart=${1:-}
 resource_group=${AZURE_RESOURCE_GROUP:-sociobot}
 app_name=${AZURE_CONTAINER_APP:-sf-mtd-evidence-rail}
+repo_dir=$(cd "$(dirname "$0")/.." && pwd)
+contract_file=${TOPOLOGY_CONTRACT:-"$repo_dir/.factory/container-app.json"}
+
+# The Azure volume name is part of the deployment contract, not an incidental
+# implementation detail. Read it from the source-owned manifest so this probe
+# catches a renamed live volume as well as missing storage.
+volume_name=$(jq -r '.container.volumeMounts[0].volumeName' "$contract_file")
+mount_path=$(jq -r '.container.volumeMounts[0].mountPath' "$contract_file")
+storage_type=$(jq -r '.volumes[] | select(.name == $name) | .storageType' --arg name "$volume_name" "$contract_file")
+storage_name=$(jq -r '.volumes[] | select(.name == $name) | .storageName' --arg name "$volume_name" "$contract_file")
+vfs_name=$(jq -r '.container.environment[] | select(.name == "SQLITE_VFS") | .value' "$contract_file")
+
+test -n "$volume_name" && test -n "$mount_path" && test -n "$storage_type" && test -n "$storage_name" && test -n "$vfs_name"
 
 workspace_id() {
   sed -n 's/.*"workspace_id":"\([^"]*\)".*/\1/p'
@@ -32,18 +45,18 @@ assert_control_plane() {
     minimum=$(printf '%s' "$resource" | jq -r .properties.template.scale.minReplicas)
     maximum=$(printf '%s' "$resource" | jq -r .properties.template.scale.maxReplicas)
     containers=$(printf '%s' "$resource" | jq -r '.properties.template.containers | length')
-    mount=$(printf '%s' "$resource" | jq -r '[.properties.template.containers[0].volumeMounts[]? | select(.volumeName == "data")][0].mountPath // ""')
-    volume=$(printf '%s' "$resource" | jq -r '[.properties.template.volumes[]? | select(.name == "data")][0] | "\(.storageType // ""):\(.storageName // "")"')
+    mount=$(printf '%s' "$resource" | jq -r --arg volume_name "$volume_name" '[.properties.template.containers[0].volumeMounts[]? | select(.volumeName == $volume_name)][0].mountPath // ""')
+    volume=$(printf '%s' "$resource" | jq -r --arg volume_name "$volume_name" '[.properties.template.volumes[]? | select(.name == $volume_name)][0] | "\(.storageType // ""):\(.storageName // "")"')
     vfs=$(printf '%s' "$resource" | jq -r '[.properties.template.containers[0].env[]? | select(.name == "SQLITE_VFS")][0].value // ""')
     active=$(az containerapp revision list --resource-group "$resource_group" --name "$app_name" --query '[?properties.active==`true`] | length(@)' --output tsv)
     revision=$(printf '%s' "$resource" | jq -r .properties.latestReadyRevisionName)
     replicas=$(az containerapp replica list --resource-group "$resource_group" --name "$app_name" --revision "$revision" --query 'length(@)' --output tsv)
-    if [ "$mode" = Single ] && [ "$minimum" = 1 ] && [ "$maximum" = 1 ] && [ "$containers" = 1 ] && [ "$mount" = /data ] && [ "$volume" = AzureFile:mtd-evidence-rail-data ] && [ "$vfs" = unix-dotfile ] && [ "$active" = 1 ] && [ "$replicas" = 1 ]; then
+    if [ "$mode" = Single ] && [ "$minimum" = 1 ] && [ "$maximum" = 1 ] && [ "$containers" = 1 ] && [ "$mount" = "$mount_path" ] && [ "$volume" = "$storage_type:$storage_name" ] && [ "$vfs" = "$vfs_name" ] && [ "$active" = 1 ] && [ "$replicas" = 1 ]; then
       return
     fi
     sleep 5
   done
-  echo "Unsafe topology: mode=$mode min=$minimum max=$maximum containers=$containers mount=$mount volume=$volume vfs=$vfs active=$active replicas=$replicas" >&2
+  echo "Unsafe topology: mode=$mode min=$minimum max=$maximum containers=$containers expected_volume=$volume_name mount=$mount volume=$volume vfs=$vfs active=$active replicas=$replicas" >&2
   exit 1
 }
 
@@ -63,6 +76,42 @@ assert_reads() {
     fi
   done
   echo "$label: 100/100 fresh-connection reads returned 200."
+}
+
+assert_workspace_delete() {
+  local key=$1 status
+  status=$(curl -sS --http1.1 -H 'Connection: close' \
+    -H 'X-Forwarded-For: 198.18.2.1' \
+    -H "X-Workspace-Key: $key" \
+    -X DELETE -o /dev/null -w '%{http_code}' "$base_url/api/workspace")
+  [ "$status" = 400 ] || {
+    echo "Workspace delete without confirmation returned $status, expected 400" >&2
+    exit 1
+  }
+  status=$(curl -sS --http1.1 -H 'Connection: close' \
+    -H 'X-Forwarded-For: 198.18.2.2' \
+    -H "X-Workspace-Key: $key" -H 'X-Confirm-Delete: delete' \
+    -X DELETE -o /dev/null -w '%{http_code}' "$base_url/api/workspace")
+  [ "$status" = 204 ] || {
+    echo "Confirmed workspace delete returned $status, expected 204" >&2
+    exit 1
+  }
+  assert_workspace_is_deleted "$key" deleted
+}
+
+assert_workspace_is_deleted() {
+  local key=$1 label=$2 status request_number
+  for request_number in $(seq 1 20); do
+    status=$(curl -sS --http1.1 -H 'Connection: close' \
+      -H "X-Forwarded-For: 198.18.2.$((request_number + 2))" \
+      -H "X-Workspace-Key: $key" -o /dev/null -w '%{http_code}' \
+      "$base_url/api/workspace?from=2026-04-06&to=2026-07-05")
+    [ "$status" = 404 ] || {
+      echo "$label workspace read $request_number returned $status, expected 404" >&2
+      exit 1
+    }
+  done
+  echo "$label workspace: 20/20 fresh reads returned 404."
 }
 
 assert_shared_limiter() {
@@ -131,6 +180,7 @@ test -n "$private_key"
 test -n "$demo_key"
 assert_reads "$private_key" private
 assert_reads "$demo_key" demo
+assert_workspace_delete "$private_key"
 node "$(dirname "$0")/live-browser-smoke.mjs" "$base_url"
 assert_shared_limiter
 
@@ -140,8 +190,8 @@ if [ "$restart" = --restart ]; then
   az containerapp revision restart --resource-group "$resource_group" --name "$app_name" --revision "$revision" --output none
   wait_for_health
   assert_control_plane
-  assert_reads "$private_key" private-after-restart
   assert_reads "$demo_key" demo-after-restart
+  assert_workspace_is_deleted "$private_key" deleted-after-restart
   node "$(dirname "$0")/live-browser-smoke.mjs" "$base_url"
   assert_shared_limiter
 fi

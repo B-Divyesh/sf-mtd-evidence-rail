@@ -14,14 +14,14 @@
     ],
     "volumeMounts": [
       {
-        "volumeName": "data",
+        "volumeName": "mtd-data",
         "mountPath": "/data"
       }
     ]
   },
   "volumes": [
     {
-      "name": "data",
+      "name": "mtd-data",
       "storageName": "mtd-evidence-rail-data",
       "storageType": "AzureFile"
     }

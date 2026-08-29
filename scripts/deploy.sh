@@ -59,6 +59,11 @@ az containerapp env storage set \
 unset storage_key
 
 source_sha=$(git -C "$repo_dir" rev-parse HEAD)
+volume_name=$(jq -r '.container.volumeMounts[0].volumeName' "$repo_dir/.factory/container-app.json")
+mount_path=$(jq -r '.container.volumeMounts[0].mountPath' "$repo_dir/.factory/container-app.json")
+storage_type=$(jq -r '.volumes[] | select(.name == $name) | .storageType' --arg name "$volume_name" "$repo_dir/.factory/container-app.json")
+storage_name=$(jq -r '.volumes[] | select(.name == $name) | .storageName' --arg name "$volume_name" "$repo_dir/.factory/container-app.json")
+test -n "$volume_name" && test -n "$mount_path" && test -n "$storage_type" && test -n "$storage_name"
 if ! /opt/fleet/lib/deploy-container.sh mtd-evidence-rail "$repo_dir" Dockerfile 8080; then
   current_image=$(az containerapp show --resource-group "$resource_group" --name "$app_name" --query properties.template.containers[0].image --output tsv)
   if [[ "$current_image" != *":${source_sha:0:12}" ]]; then
@@ -88,14 +93,15 @@ for attempt in $(seq 1 30); do
   resource=$(az containerapp show --resource-group "$resource_group" --name "$app_name" --output json)
   latest=$(printf '%s' "$resource" | jq -r .properties.latestRevisionName)
   ready=$(printf '%s' "$resource" | jq -r .properties.latestReadyRevisionName)
-  mount=$(printf '%s' "$resource" | jq -r '.properties.template.containers[0].volumeMounts[0].mountPath // ""')
+  mount=$(printf '%s' "$resource" | jq -r --arg volume_name "$volume_name" '[.properties.template.containers[0].volumeMounts[]? | select(.volumeName == $volume_name)][0].mountPath // ""')
+  volume=$(printf '%s' "$resource" | jq -r --arg volume_name "$volume_name" '[.properties.template.volumes[]? | select(.name == $volume_name)][0] | "\(.storageType // ""):\(.storageName // "")"')
   vfs=$(printf '%s' "$resource" | jq -r '[.properties.template.containers[0].env[]? | select(.name == "SQLITE_VFS")][0].value // ""')
   maximum=$(printf '%s' "$resource" | jq -r .properties.template.scale.maxReplicas)
   active=$(az containerapp revision list --resource-group "$resource_group" --name "$app_name" --query '[?properties.active==`true`] | length(@)' --output tsv)
-  [ "$latest" = "$ready" ] && [ "$mount" = /data ] && [ "$vfs" = unix-dotfile ] && [ "$maximum" = 1 ] && [ "$active" = 1 ] && break
+  [ "$latest" = "$ready" ] && [ "$mount" = "$mount_path" ] && [ "$volume" = "$storage_type:$storage_name" ] && [ "$vfs" = unix-dotfile ] && [ "$maximum" = 1 ] && [ "$active" = 1 ] && break
   sleep 5
 done
-[ "$latest" = "$ready" ] && [ "$mount" = /data ] && [ "$vfs" = unix-dotfile ] && [ "$maximum" = 1 ] && [ "$active" = 1 ]
+[ "$latest" = "$ready" ] && [ "$mount" = "$mount_path" ] && [ "$volume" = "$storage_type:$storage_name" ] && [ "$vfs" = unix-dotfile ] && [ "$maximum" = 1 ] && [ "$active" = 1 ]
 
 domain_binding=$(printf '%s' "$resource" | jq -r --arg hostname "$hostname" '[.properties.configuration.ingress.customDomains[]? | select(.name == $hostname)][0].bindingType // ""')
 if [ "$domain_binding" != SniEnabled ]; then
