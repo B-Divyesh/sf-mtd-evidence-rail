@@ -151,7 +151,7 @@
     "claim": "Production runs one service replica with a durable Azure Files mount at /data",
     "where": "README and deployment handoff",
     "test": "npm run test:deployment-topology",
-    "sandbox": "render the production topology over the verifier's unsafe three-replica shape; assert one replica, one container, Azure Files at /data, and unix-dotfile"
+    "sandbox": "render the production topology over the verifier's unsafe three-replica shape; then start the real binary against local managed-identity and Azure-management fixtures and assert it requests one replica, Azure Files at /data, unix-dotfile, and the last ready image before exiting without serving"
   },
   {
     "id": "live-workspace-consistency",

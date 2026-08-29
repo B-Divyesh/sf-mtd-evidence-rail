@@ -1,20 +1,20 @@
 #!/bin/bash
 set -euo pipefail
 
-# Reproduce independent verification 15 exactly without touching Azure. The
-# generic work-order rollout made candidate 6eb169 the latest revision with
-# 100% traffic, but it omitted the durable SQLite contract. That revision
-# failed activation while the older ba974 ready revision still answered health.
+# Reproduce independent verification 16 exactly without touching Azure. The
+# generic work-order rollout made candidate 560392b the latest revision, but it
+# omitted the durable SQLite contract. That revision failed activation while
+# the older 5779508 ready revision still answered health.
 repo_dir=$(cd "$(dirname "$0")/.." && pwd)
 tmp_dir=$(mktemp -d)
 trap 'rm -rf "$tmp_dir"' EXIT
 
-candidate=6eb1695789f2fcefa3e28c754dd4bef53798f3b4
-older=ba9749453d21c02fa05467dcd5190832ccb255a7
+candidate=560392b27a89568a3e88ca461b060f42fec7e61f
+older=5779508e0a5c4eb3dcae6abd2dcbd709fa7167a9
 candidate_image="sociobotregistry.azurecr.io/sf-mtd-evidence-rail:${candidate:0:12}"
 older_image="sociobotregistry.azurecr.io/sf-mtd-evidence-rail:${older:0:12}"
 
-jq -n --arg image "$candidate_image" '{properties:{configuration:{activeRevisionsMode:"Single"},latestRevisionName:"sf-mtd-evidence-rail--0000052",latestReadyRevisionName:"sf-mtd-evidence-rail--0000051",template:{containers:[{image:$image,env:[{name:"PORT",value:"8080"}],volumeMounts:null}],scale:{minReplicas:1,maxReplicas:3},volumes:null}}}' > "$tmp_dir/unsafe-resource.json"
+jq -n --arg image "$candidate_image" '{properties:{configuration:{activeRevisionsMode:"Single"},latestRevisionName:"sf-mtd-evidence-rail--0000054",latestReadyRevisionName:"sf-mtd-evidence-rail--0000053",template:{containers:[{image:$image,env:[{name:"PORT",value:"8080"}],volumeMounts:null}],scale:{minReplicas:1,maxReplicas:3},volumes:null}}}' > "$tmp_dir/unsafe-resource.json"
 jq -n --arg image "$older_image" '{properties:{active:true,template:{containers:[{image:$image}]}}}' > "$tmp_dir/old-ready.json"
 jq -n --arg sha "$older" '{status:"ok",build_sha:$sha}' > "$tmp_dir/old-health.json"
 
@@ -47,11 +47,11 @@ run_guard() {
 
 unsafe_log="$tmp_dir/unsafe.log"
 if run_guard "$tmp_dir/unsafe-resource.json" "$tmp_dir/old-ready.json" "$tmp_dir/old-health.json" 2 1 "$older" "$older_image" >"$unsafe_log" 2>&1; then
-  echo 'Regression: verification 15 unsafe deployment passed the live release guard.' >&2
+  echo 'Regression: verification 16 unsafe deployment passed the live release guard.' >&2
   exit 1
 fi
 grep -F "expected_sha=$older live_sha=$older" "$unsafe_log" >/dev/null
-grep -F 'latest=sf-mtd-evidence-rail--0000052 ready=sf-mtd-evidence-rail--0000051' "$unsafe_log" >/dev/null
+grep -F 'latest=sf-mtd-evidence-rail--0000054 ready=sf-mtd-evidence-rail--0000053' "$unsafe_log" >/dev/null
 grep -F 'max=3' "$unsafe_log" >/dev/null
 grep -F 'mount= volume=:' "$unsafe_log" >/dev/null
 grep -F 'active=2 running=1' "$unsafe_log" >/dev/null
@@ -79,4 +79,4 @@ PATH="$tmp_dir:$PATH" \
   FAKE_RUNNING=1 \
   "$repo_dir/scripts/assert-live-topology.sh" >/dev/null
 
-echo 'Release guard regression PASS — stale releases are rejected and the committed published revision is accepted.'
+echo 'Verification 16 release guard regression PASS — the exact generic rollout is rejected and a reconciled published revision is accepted.'

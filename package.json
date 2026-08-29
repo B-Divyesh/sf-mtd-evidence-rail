@@ -14,6 +14,7 @@
     "test:shared-storage": "bash scripts/test-shared-storage.sh",
     "test:deployment-topology": "bash scripts/test-deployment-topology.sh",
     "test:verification-15-regression": "bash scripts/test-live-release-guard.sh",
+    "test:verification-16-regression": "cargo build && node scripts/test-topology-self-repair.mjs && bash scripts/test-live-release-guard.sh && cargo test verification_16_generic_rollout_is_reconciled_before_it_can_serve",
     "test:live-release": "bash scripts/test-live-release.sh",
     "test:live-checkout": "node scripts/test-live-checkout.mjs",
     "test:live-workspace-consistency": "bash scripts/test-live-workspace-consistency.sh",

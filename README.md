@@ -89,6 +89,12 @@ The committed `.factory/release.json` records which source revision is live.
 The factory owns product registration and billing configuration.
 Deployment details are recorded in the handoff.
 
+An Azure revision never opens SQLite on the container filesystem. If a later
+factory rollout omits the storage settings, that replica asks Azure to restore
+the last ready image with the source-owned topology, then exits before serving.
+`npm run test:verification-16-regression` covers that complete recovery path
+with local managed-identity and management-API fixtures.
+
 If the work-order runner builds the image first, pass that image to the same
 script with `PREBUILT_IMAGE`.
 

@@ -27,6 +27,12 @@ use tower_http::{
     trace::TraceLayer,
 };
 
+const AZURE_MANAGEMENT_SCOPE: &str = "https://management.azure.com/";
+const AZURE_MANAGEMENT_API_VERSION: &str = "2024-03-01";
+const DEFAULT_AZURE_SUBSCRIPTION_ID: &str = "283af945-693b-4a6e-b952-df928d0a18a9";
+const DEFAULT_AZURE_RESOURCE_GROUP: &str = "sociobot";
+const FACTORY_IDENTITY_CLIENT_ID: &str = "ba10d5bc-6375-4325-8892-4c7a5be500ca";
+
 #[derive(Clone)]
 pub struct AppState {
     pub db: sqlx::SqlitePool,
@@ -52,7 +58,12 @@ async fn main() {
     let data_dir = env::var("DATA_DIR").unwrap_or_else(|_| "data".into());
     let sqlite_vfs = env::var("SQLITE_VFS").ok();
     if let Err(error) = validate_runtime_storage(&data_dir, sqlite_vfs.as_deref()) {
-        tracing::error!(%error, "unsafe runtime configuration");
+        tracing::warn!(%error, "unsafe Azure rollout detected; requesting the durable topology before serving");
+        if let Err(repair_error) = request_azure_topology_repair().await {
+            tracing::error!(%repair_error, "could not request the durable Azure topology");
+            std::process::exit(78);
+        }
+        tracing::info!("durable Azure topology requested; this unsafe replica will exit and the repaired revision will replace it");
         std::process::exit(78);
     }
     std::fs::create_dir_all(&data_dir).expect("create data directory");
@@ -136,6 +147,194 @@ fn validate_azure_storage_contract(
         );
     }
     Ok(())
+}
+
+fn production_topology_patch(
+    resource: &serde_json::Value,
+    target_image: &str,
+) -> Result<serde_json::Value, String> {
+    let mut container = resource
+        .pointer("/properties/template/containers/0")
+        .cloned()
+        .ok_or_else(|| "Azure Container App has no primary container".to_owned())?;
+    let container_object = container
+        .as_object_mut()
+        .ok_or_else(|| "Azure Container App primary container is not an object".to_owned())?;
+    container_object.insert("image".into(), serde_json::json!(target_image));
+    let retained_environment = container_object
+        .get("env")
+        .and_then(serde_json::Value::as_array)
+        .into_iter()
+        .flatten()
+        .filter(|entry| {
+            !matches!(
+                entry.get("name").and_then(serde_json::Value::as_str),
+                Some("SQLITE_VFS" | "BUILD_SHA" | "GIT_SHA" | "SOURCE_COMMIT")
+            )
+        })
+        .cloned()
+        .chain(std::iter::once(
+            serde_json::json!({"name":"SQLITE_VFS","value":"unix-dotfile"}),
+        ))
+        .collect();
+    container_object.insert("env".into(), serde_json::Value::Array(retained_environment));
+    container_object.insert(
+        "volumeMounts".into(),
+        serde_json::json!([{"volumeName":"mtd-data","mountPath":"/data"}]),
+    );
+
+    Ok(serde_json::json!({
+        "properties": {
+            "configuration": {"activeRevisionsMode":"Single"},
+            "template": {
+                "containers": [container],
+                "scale": {"minReplicas":1,"maxReplicas":1,"rules":[]},
+                "volumes": [{
+                    "name":"mtd-data",
+                    "storageName":"mtd-evidence-rail-data",
+                    "storageType":"AzureFile"
+                }]
+            }
+        }
+    }))
+}
+
+async fn request_azure_topology_repair() -> Result<(), String> {
+    let app_name = env::var("CONTAINER_APP_NAME")
+        .map_err(|_| "CONTAINER_APP_NAME is unavailable".to_owned())?;
+    if app_name != "sf-mtd-evidence-rail" {
+        return Err(format!(
+            "refusing to change unexpected Container App {app_name}"
+        ));
+    }
+    let identity_endpoint = env::var("IDENTITY_ENDPOINT")
+        .map_err(|_| "managed identity endpoint is unavailable".to_owned())?;
+    let identity_header = env::var("IDENTITY_HEADER")
+        .map_err(|_| "managed identity header is unavailable".to_owned())?;
+    let client_id =
+        env::var("AZURE_CLIENT_ID").unwrap_or_else(|_| FACTORY_IDENTITY_CLIENT_ID.to_owned());
+    let subscription = env::var("AZURE_SUBSCRIPTION_ID")
+        .unwrap_or_else(|_| DEFAULT_AZURE_SUBSCRIPTION_ID.to_owned());
+    let resource_group = env::var("AZURE_RESOURCE_GROUP")
+        .unwrap_or_else(|_| DEFAULT_AZURE_RESOURCE_GROUP.to_owned());
+    let management_base = env::var("AZURE_MANAGEMENT_ENDPOINT")
+        .unwrap_or_else(|_| "https://management.azure.com".to_owned());
+    let app_uri = format!(
+        "{management_base}/subscriptions/{subscription}/resourceGroups/{resource_group}/providers/Microsoft.App/containerApps/{app_name}"
+    );
+    let http = reqwest::Client::builder()
+        .timeout(Duration::from_secs(30))
+        .build()
+        .map_err(|error| format!("could not build Azure client: {error}"))?;
+    let token_response = http
+        .get(identity_endpoint)
+        .header("X-IDENTITY-HEADER", identity_header)
+        .query(&[
+            ("resource", AZURE_MANAGEMENT_SCOPE),
+            ("api-version", "2019-08-01"),
+            ("client_id", client_id.as_str()),
+        ])
+        .send()
+        .await
+        .map_err(|error| format!("managed identity request failed: {error}"))?;
+    let token_status = token_response.status();
+    let token_body = token_response
+        .text()
+        .await
+        .map_err(|error| format!("could not read managed identity response: {error}"))?;
+    if !token_status.is_success() {
+        return Err(format!(
+            "managed identity returned {token_status}: {}",
+            token_body.chars().take(300).collect::<String>()
+        ));
+    }
+    let token_json: serde_json::Value = serde_json::from_str(&token_body)
+        .map_err(|error| format!("managed identity returned invalid JSON: {error}"))?;
+    let access_token = token_json
+        .get("access_token")
+        .or_else(|| token_json.get("accessToken"))
+        .and_then(serde_json::Value::as_str)
+        .ok_or_else(|| "managed identity response has no access token".to_owned())?;
+
+    let resource_response = http
+        .get(&app_uri)
+        .bearer_auth(access_token)
+        .query(&[("api-version", AZURE_MANAGEMENT_API_VERSION)])
+        .send()
+        .await
+        .map_err(|error| format!("could not read Container App: {error}"))?;
+    let resource_status = resource_response.status();
+    let resource_body = resource_response
+        .text()
+        .await
+        .map_err(|error| format!("could not read Container App response: {error}"))?;
+    if !resource_status.is_success() {
+        return Err(format!(
+            "Container App read returned {resource_status}: {}",
+            resource_body.chars().take(300).collect::<String>()
+        ));
+    }
+    let resource: serde_json::Value = serde_json::from_str(&resource_body)
+        .map_err(|error| format!("Container App returned invalid JSON: {error}"))?;
+    let ready_revision = resource
+        .pointer("/properties/latestReadyRevisionName")
+        .and_then(serde_json::Value::as_str)
+        .ok_or_else(|| "Container App has no ready revision to preserve".to_owned())?;
+    let ready_response = http
+        .get(format!("{app_uri}/revisions/{ready_revision}"))
+        .bearer_auth(access_token)
+        .query(&[("api-version", AZURE_MANAGEMENT_API_VERSION)])
+        .send()
+        .await
+        .map_err(|error| format!("could not read ready Container App revision: {error}"))?;
+    let ready_status = ready_response.status();
+    let ready_body = ready_response
+        .text()
+        .await
+        .map_err(|error| format!("could not read ready revision response: {error}"))?;
+    if !ready_status.is_success() {
+        return Err(format!(
+            "ready revision read returned {ready_status}: {}",
+            ready_body.chars().take(300).collect::<String>()
+        ));
+    }
+    let ready_resource: serde_json::Value = serde_json::from_str(&ready_body)
+        .map_err(|error| format!("ready revision returned invalid JSON: {error}"))?;
+    let ready_image = ready_resource
+        .pointer("/properties/template/containers/0/image")
+        .and_then(serde_json::Value::as_str)
+        .ok_or_else(|| "ready revision has no container image".to_owned())?;
+    let patch = production_topology_patch(&resource, ready_image)?;
+
+    let mut last_error = String::new();
+    for attempt in 1..=12 {
+        let response = http
+            .patch(&app_uri)
+            .bearer_auth(access_token)
+            .query(&[("api-version", AZURE_MANAGEMENT_API_VERSION)])
+            .json(&patch)
+            .send()
+            .await;
+        match response {
+            Ok(response) if response.status().is_success() => return Ok(()),
+            Ok(response) => {
+                let status = response.status();
+                let retryable =
+                    status.as_u16() == 409 || status.as_u16() == 429 || status.is_server_error();
+                let body = response.text().await.unwrap_or_default();
+                last_error = format!(
+                    "Container App repair returned {status}: {}",
+                    body.chars().take(300).collect::<String>()
+                );
+                if !retryable {
+                    return Err(last_error);
+                }
+            }
+            Err(error) => last_error = format!("Container App repair request failed: {error}"),
+        }
+        tokio::time::sleep(Duration::from_secs(attempt * 5)).await;
+    }
+    Err(last_error)
 }
 
 pub fn app(state: AppState) -> Router {
@@ -328,6 +527,64 @@ mod tests {
             "42 29 0:40 / /data rw,relatime - cifs //account/share rw\n"
         );
         validate_azure_storage_contract("/data", mountinfo, Some("unix-dotfile")).unwrap();
+    }
+
+    #[test]
+    fn verification_16_generic_rollout_is_reconciled_before_it_can_serve() {
+        let resource = serde_json::json!({
+            "properties": {
+                "latestRevisionName": "sf-mtd-evidence-rail--0000054",
+                "latestReadyRevisionName": "sf-mtd-evidence-rail--0000053",
+                "configuration": {"activeRevisionsMode":"Single"},
+                "template": {
+                    "containers": [{
+                        "name":"app",
+                        "image":"sociobotregistry.azurecr.io/sf-mtd-evidence-rail:560392b27a89",
+                        "resources":{"cpu":0.5,"memory":"1Gi"},
+                        "env":[
+                            {"name":"PORT","value":"8080"},
+                            {"name":"BUILD_SHA","value":"stale"}
+                        ]
+                    }],
+                    "scale":{"minReplicas":1,"maxReplicas":3},
+                    "volumes":null
+                }
+            }
+        });
+        let ready_image = "sociobotregistry.azurecr.io/sf-mtd-evidence-rail:5779508e0a5c";
+        let patch = production_topology_patch(&resource, ready_image).unwrap();
+        assert_eq!(
+            patch.pointer("/properties/template/scale/maxReplicas"),
+            Some(&serde_json::json!(1))
+        );
+        assert_eq!(
+            patch.pointer("/properties/template/containers/0/image"),
+            Some(&serde_json::json!(ready_image))
+        );
+        assert_eq!(
+            patch.pointer("/properties/template/containers/0/volumeMounts/0"),
+            Some(&serde_json::json!({"volumeName":"mtd-data","mountPath":"/data"}))
+        );
+        assert_eq!(
+            patch.pointer("/properties/template/volumes/0"),
+            Some(&serde_json::json!({
+                "name":"mtd-data",
+                "storageName":"mtd-evidence-rail-data",
+                "storageType":"AzureFile"
+            }))
+        );
+        let environment = patch
+            .pointer("/properties/template/containers/0/env")
+            .unwrap()
+            .as_array()
+            .unwrap();
+        assert!(environment.iter().any(|entry| entry
+            == &serde_json::json!({
+                "name":"SQLITE_VFS","value":"unix-dotfile"
+            })));
+        assert!(!environment.iter().any(|entry| {
+            entry.get("name").and_then(serde_json::Value::as_str) == Some("BUILD_SHA")
+        }));
     }
 
     #[tokio::test]

@@ -105,4 +105,10 @@ set -e
 test "$unsafe_status" -eq 78
 grep -F 'Azure Container Apps has no dedicated /data mount; refusing container-local SQLite' "$unsafe_log" >/dev/null
 
-echo '@claim:production-topology PASS — an unsafe three-replica payload renders as one durable replica, and an Azure revision without the /data mount exits before serving traffic'
+# Verification 16 showed that the factory performs its generic PORT-only PUT
+# after the repository deploy. Exercise the real binary against a local managed
+# identity and ARM fixture: it must request a durable replacement revision and
+# exit before opening ephemeral SQLite.
+node "$repo_dir/scripts/test-topology-self-repair.mjs"
+
+echo '@claim:production-topology PASS — an unsafe three-replica payload renders as one durable replica, and a later generic rollout requests that topology before it can serve'
