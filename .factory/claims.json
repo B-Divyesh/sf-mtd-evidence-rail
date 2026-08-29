@@ -158,7 +158,7 @@
     "claim": "New private and demo workspaces remain available across live service requests",
     "where": "demo banner, README, deployment handoff",
     "test": "npm run test:live-workspace-consistency",
-    "sandbox": "public deployed service; create fresh private and demo workspaces, then require 100/100 fresh-connection reads for each key"
+    "sandbox": "public deployed service and Azure control plane; first require one active revision, one running replica, max replicas 1, Azure Files at /data and unix-dotfile; then create fresh private and demo workspaces and require 100/100 fresh-connection reads for each key"
   },
   {
     "id": "api-rate-limit",
@@ -172,6 +172,6 @@
     "claim": "The deployed API enforces its per-client burst limit and sends Retry-After",
     "where": "deployment handoff",
     "test": "npm run test:live-rate-limit",
-    "sandbox": "public deployed service; send 200 fresh HTTP/1.1 POST /api/demo requests with the same X-Forwarded-For first hop; assert at least one 429 and Retry-After: 1 on every limited response"
+    "sandbox": "public deployed service and Azure control plane; require the production topology, then send 200 fresh HTTP/1.1 POST /api/demo requests with the same X-Forwarded-For first hop; assert at least one 429, Retry-After: 1 on every limited response, and no more acceptances than one 40-token limiter plus its measured 20/second refill"
   }
 ]

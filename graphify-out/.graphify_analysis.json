@@ -659,13 +659,13 @@
       "degree": 16
     },
     {
-      "id": "factory_review_2_findings",
-      "label": "Findings",
+      "id": "src_routes_import_records",
+      "label": "import_records()",
       "degree": 15
     },
     {
-      "id": "src_routes_import_records",
-      "label": "import_records()",
+      "id": "factory_review_2_findings",
+      "label": "Findings",
       "degree": 15
     },
     {
@@ -679,18 +679,18 @@
       "degree": 13
     },
     {
-      "id": "factory_verification_3_independent_product_verification_3_fail",
-      "label": "Independent product verification 3 \u2014 FAIL",
-      "degree": 13
-    },
-    {
-      "id": "src_routes_workspace",
-      "label": "workspace()",
-      "degree": 13
-    },
-    {
       "id": "src_routes_check_workspace",
       "label": "check_workspace()",
+      "degree": 13
+    },
+    {
+      "id": "src_routes_create_record",
+      "label": "create_record()",
+      "degree": 13
+    },
+    {
+      "id": "src_routes_remove_evidence",
+      "label": "remove_evidence()",
       "degree": 13
     }
   ],

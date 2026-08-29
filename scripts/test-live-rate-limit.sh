@@ -5,8 +5,11 @@ set -euo pipefail
 # probe. A single forwarded client must exhaust the deployed app's one shared
 # limiter; testing only the in-process Router cannot detect replica fan-out.
 base_url=${BASE_URL:-https://mtd-evidence-rail.sociobot.in}
+repo_dir=$(cd "$(dirname "$0")/.." && pwd)
 tmp_dir=$(mktemp -d)
 trap 'rm -rf "$tmp_dir"' EXIT
+
+"$repo_dir/scripts/assert-live-topology.sh"
 
 request_count=200
 started_ms=$(date +%s%3N)
@@ -41,6 +44,15 @@ done
   exit 1
 }
 
+# The source limiter starts with 40 tokens and replenishes one every 50 ms.
+# Include a small scheduling margin, but reject the multiplied allowance that
+# appears when the same forwarded client is spread across several processes.
+one_limiter_max=$((40 + (elapsed_ms + 49) / 50 + 5))
+[ "$created" -le "$one_limiter_max" ] || {
+  echo "Live limiter accepted $created requests, above one-process bound $one_limiter_max over ${elapsed_ms}ms." >&2
+  exit 1
+}
+
 for status_file in "$tmp_dir"/*.status; do
   [ "$(tr -d '\r\n' < "$status_file")" = 429 ] || continue
   header_file=${status_file%.status}.headers
@@ -50,4 +62,4 @@ for status_file in "$tmp_dir"/*.status; do
   }
 done
 
-echo "@claim:live-api-rate-limit PASS — one forwarded client received $limited HTTP 429 responses with Retry-After: 1; $created/$request_count requests were accepted over ${elapsed_ms}ms."
+echo "@claim:live-api-rate-limit PASS — one forwarded client received $limited HTTP 429 responses with Retry-After: 1; accepted=$created within one-limiter bound=$one_limiter_max over ${elapsed_ms}ms."

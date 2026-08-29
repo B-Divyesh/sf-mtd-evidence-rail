@@ -87,23 +87,34 @@ az containerapp env storage set \
 unset storage_key
 
 source_sha=$(git -C "$repo_dir" rev-parse HEAD)
-image="${registry}.azurecr.io/${app_name}:${source_sha:0:12}"
+expected_image="${registry}.azurecr.io/${app_name}:${source_sha:0:12}"
+image=${PREBUILT_IMAGE:-$expected_image}
+if [ "$image" != "$expected_image" ]; then
+  echo "Prebuilt image $image does not match committed source $expected_image." >&2
+  exit 1
+fi
 volume_name=$(jq -r '.container.volumeMounts[0].volumeName' "$repo_dir/.factory/container-app.json")
 mount_path=$(jq -r '.container.volumeMounts[0].mountPath' "$repo_dir/.factory/container-app.json")
 storage_type=$(jq -r '.volumes[] | select(.name == $name) | .storageType' --arg name "$volume_name" "$repo_dir/.factory/container-app.json")
 storage_name=$(jq -r '.volumes[] | select(.name == $name) | .storageName' --arg name "$volume_name" "$repo_dir/.factory/container-app.json")
 test -n "$volume_name" && test -n "$mount_path" && test -n "$storage_type" && test -n "$storage_name"
 
-# The image tag and BUILD_SHA both derive from the committed source identity.
-az acr build \
-  --registry "$registry" \
-  --image "${app_name}:${source_sha:0:12}" \
-  --file Dockerfile \
-  --build-arg "BUILD_SHA=$source_sha" \
-  --build-arg "GIT_SHA=$source_sha" \
-  --build-arg "SOURCE_COMMIT=$source_sha" \
-  --only-show-errors \
-  "$repo_dir"
+# The work-order deployer may already have built this exact source image. Its
+# post-deploy hook supplies PREBUILT_IMAGE so the product can repair the unsafe
+# generic topology without rebuilding. Direct operation still builds in ACR.
+if [ -z "${PREBUILT_IMAGE:-}" ]; then
+  az acr build \
+    --registry "$registry" \
+    --image "${app_name}:${source_sha:0:12}" \
+    --file Dockerfile \
+    --build-arg "BUILD_SHA=$source_sha" \
+    --build-arg "GIT_SHA=$source_sha" \
+    --build-arg "SOURCE_COMMIT=$source_sha" \
+    --only-show-errors \
+    "$repo_dir"
+else
+  echo "Using work-order image $image; applying the product topology after the generic rollout."
+fi
 
 resource=$(az containerapp show --resource-group "$resource_group" --name "$app_name" --output json)
 patch=$(printf '%s' "$resource" | "$repo_dir/scripts/render-production-topology.sh" --image "$image")

@@ -23,6 +23,12 @@ test "$(jq -r '[.properties.template.containers[0].env[] | select(.name == "SQLI
 test "$(jq -r '[.properties.template.containers[0].env[] | select(.name == "PORT")][0].value' "$tmp_dir/patch.json")" = 8080
 test "$(jq -r '[.properties.template.containers[0].env[] | select(.name == "SQLITE_VFS")] | length' "$tmp_dir/patch.json")" = 1
 
+# Live claim commands must reject a quiet but unsafe 1-3 deployment before a
+# request happens to hit its only warm replica.
+grep -F 'assert-live-topology.sh' "$repo_dir/scripts/test-live-workspace-consistency.sh" >/dev/null
+grep -F 'assert-live-topology.sh' "$repo_dir/scripts/test-live-rate-limit.sh" >/dev/null
+grep -F 'one_limiter_max=' "$repo_dir/scripts/test-live-rate-limit.sh" >/dev/null
+
 # Verification 6 found that the live checker had a stale literal `data` even
 # though Azure's canonical volume was `mtd-data`. Keep the lookup contract-led.
 grep -F 'select(.volumeName == $volume_name)' "$repo_dir/scripts/verify-live-topology.sh" >/dev/null
@@ -39,6 +45,7 @@ fi
 # boundary. The product deployer must build the image itself and patch the
 # complete desired revision in one operation.
 grep -F 'az acr build' "$repo_dir/scripts/deploy.sh" >/dev/null
+grep -F 'PREBUILT_IMAGE' "$repo_dir/scripts/deploy.sh" >/dev/null
 grep -F 'render-production-topology.sh" --image "$image"' "$repo_dir/scripts/deploy.sh" >/dev/null
 grep -F 'storageType // ""):\(.storageName // "")' "$repo_dir/scripts/deploy.sh" >/dev/null
 if grep -F '/opt/fleet/lib/deploy-container.sh' "$repo_dir/scripts/deploy.sh" >/dev/null; then

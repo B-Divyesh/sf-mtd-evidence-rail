@@ -54,6 +54,7 @@ npm test
 npm run build       # writes the frontend to dist/
 npm run test:deployment-topology # rejects the verifier's unsafe rollout shape
 npm run test:live-checkout # checks the live Dodo subscription contract
+npm run test:live-workspace-consistency # also rejects unsafe live replica/storage topology
 npm run test:live-rate-limit # repeats the deployed burst-limit probe
 npm run verify:live-topology # checks 12 fresh demos and 100 reads per workspace
 docker build --build-arg BUILD_SHA=local -t mtd-evidence-rail .
@@ -87,6 +88,10 @@ topology in one revision and refuses completion unless the live resource
 proves the mount, VFS, replica count, workspace reads, restart recovery, and
 rate limiter. The factory owns product registration and billing configuration.
 Deployment details are recorded in the handoff.
+
+If the work-order runner builds the image first, run the same command with
+`PREBUILT_IMAGE` set to that exact commit-tagged image. The script skips the
+second build but still applies and verifies the product topology.
 
 ## Licence
 

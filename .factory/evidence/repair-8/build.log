@@ -1,0 +1,13 @@
+
+> mtd-evidence-rail@1.0.0 build
+> vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 4 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/index.html                  2.06 kB │ gzip:  0.75 kB
+../dist/assets/index-B2Qaf5JO.css  18.13 kB │ gzip:  5.01 kB
+../dist/assets/index-B8p0AfOh.js   33.89 kB │ gzip: 11.05 kB │ map: 61.26 kB
+✓ built in 1.06s

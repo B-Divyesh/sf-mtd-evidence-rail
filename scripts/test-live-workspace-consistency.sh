@@ -2,6 +2,9 @@
 set -euo pipefail
 
 base_url=${BASE_URL:-https://mtd-evidence-rail.sociobot.in}
+repo_dir=$(cd "$(dirname "$0")/.." && pwd)
+
+"$repo_dir/scripts/assert-live-topology.sh"
 
 workspace_id() {
   sed -n 's/.*"workspace_id":"\([^"]*\)".*/\1/p'
