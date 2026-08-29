@@ -49,4 +49,25 @@ live health SHA and restart persistence.
 
 ## Known gaps
 
-None. Live deployment evidence is appended after the configured deployment.
+None.
+
+## Live deployment evidence
+
+- Configured deployment: `scripts/deploy.sh` built and rolled out
+  `f2c958157581544f98822d49cd1f578d7a437c59`. Its live topology checks passed:
+  100/100 private reads, 100/100 demo reads, 20/20 deleted-workspace 404s,
+  12/12 fresh demo browser contexts, and shared limiter enforcement (98/240
+  requests returned 429).
+- Cold production health: `https://mtd-evidence-rail.sociobot.in/health`
+  returned build SHA `f2c958157581544f98822d49cd1f578d7a437c59`.
+- `/opt/fleet/lib/verify-url.sh` passed on both `/` and `/?demo=1`: HTTP 200,
+  no console errors, correct route title, `lang=en-GB`, one H1, main landmark,
+  and no missing image alt text. Screenshots are in
+  `.factory/evidence/polish-1/live-root/` and
+  `.factory/evidence/polish-1/live-demo/`.
+- `node scripts/live-browser-smoke.mjs https://mtd-evidence-rail.sociobot.in`
+  passed with 12/12 fresh `?demo=1` contexts.
+- A cold seeded-browser check confirmed private workspace, licence, and licence
+  cache values stayed unchanged; all eight demo requests were same-origin and
+  none included `X-License-Key`. A 390 px cold landing check confirmed current
+  copy, no horizontal overflow, and zero console errors.
