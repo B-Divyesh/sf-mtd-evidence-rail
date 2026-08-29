@@ -2,6 +2,7 @@
   "communities": {
     "0": [
       "frontend_src_main",
+      "frontend_src_main_accessdialog",
       "frontend_src_main_api",
       "frontend_src_main_apierror",
       "frontend_src_main_appbanner",
@@ -9,9 +10,11 @@
       "frontend_src_main_bindapp",
       "frontend_src_main_bindlicensebuttons",
       "frontend_src_main_bindroutes",
+      "frontend_src_main_bindworkspaceaccess",
       "frontend_src_main_capturelicense",
       "frontend_src_main_closedialog",
       "frontend_src_main_confirmimport",
+      "frontend_src_main_copyworkspacekey",
       "frontend_src_main_currentrecords",
       "frontend_src_main_deleteworkspace",
       "frontend_src_main_dialogs",
@@ -54,18 +57,20 @@
     ],
     "1": [
       "apiresult",
-      "appstate",
+      "arc",
+      "client",
       "date",
       "e",
       "headermap",
-      "intoresponse",
       "json",
+      "mutex",
       "option",
       "path",
       "query",
-      "response",
       "sqliteconnection",
-      "sqlitepool",
+      "src_main_appstate",
+      "src_main_rs_sqlitepool",
+      "src_main_rs_string",
       "src_routes",
       "src_routes_add_evidence",
       "src_routes_check_workspace",
@@ -93,11 +98,14 @@
       "src_routes_record",
       "src_routes_recordinput",
       "src_routes_remove_evidence",
+      "src_routes_rs_intoresponse",
+      "src_routes_rs_response",
+      "src_routes_rs_sqlitepool",
+      "src_routes_rs_state",
+      "src_routes_rs_string",
       "src_routes_validate",
       "src_routes_workspace",
-      "state",
       "statuscode",
-      "string",
       "value",
       "vec"
     ],
@@ -167,6 +175,7 @@
       "package_scripts_test_durable_storage",
       "package_scripts_test_e2e",
       "package_scripts_test_live_checkout",
+      "package_scripts_test_live_workspace_consistency",
       "package_scripts_test_runtime_defaults",
       "package_scripts_test_shared_storage",
       "package_scripts_typecheck",
@@ -180,31 +189,85 @@
       "vite"
     ],
     "4": [
-      "arc",
-      "client",
-      "mutex",
-      "next",
-      "request",
-      "router",
-      "src_main",
-      "src_main_api_rate_limit_returns_retry_after",
-      "src_main_app",
-      "src_main_appstate",
-      "src_main_health",
-      "src_main_health_reports_build_sha",
-      "src_main_main",
-      "src_main_rs_intoresponse",
-      "src_main_rs_response",
-      "src_main_rs_sqlitepool",
-      "src_main_rs_state",
-      "src_main_rs_string",
-      "src_main_security_headers",
-      "src_main_shutdown_signal",
-      "src_main_test_app",
-      "src_main_unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated",
-      "src_main_workspace_deletion_removes_records_evidence_and_audit"
+      "factory_review_2",
+      "factory_review_2_adversarial_first_read_review_2_fail",
+      "factory_review_2_claims",
+      "factory_review_2_cold_first_read",
+      "factory_review_2_copy_audit",
+      "factory_review_2_demo_privacy_and_sandbox_evidence",
+      "factory_review_2_earlier_finding_verification",
+      "factory_review_2_f_2_10_medium_the_sqlite_storage_statement_is_unlisted",
+      "factory_review_2_f_2_11_minor_the_does_not_do_section_names_no_limitation",
+      "factory_review_2_f_2_12_minor_the_rate_limit_sentence_is_operator_jargon",
+      "factory_review_2_f_2_13_minor_the_checkout_action_names_a_result_it_does_not_complete",
+      "factory_review_2_f_2_14_medium_a_no_account_workspace_has_no_recovery_or_transfer_path",
+      "factory_review_2_f_2_1_blocking_live_workspaces_are_split_across_service_processes",
+      "factory_review_2_f_2_2_blocking_the_successful_mobile_demo_first_screen_shows_no_sample_data",
+      "factory_review_2_f_2_3_medium_the_first_screen_narrows_the_brief_s_audience",
+      "factory_review_2_f_2_4_medium_every_quarter_is_an_unlisted_universal_claim",
+      "factory_review_2_f_2_5_medium_refund_handling_is_an_unlisted_claim",
+      "factory_review_2_f_2_6_medium_the_api_wide_workspace_key_boundary_is_unlisted",
+      "factory_review_2_f_2_7_medium_the_csp_statement_is_vague_jargon_heavy_and_unlisted",
+      "factory_review_2_f_2_8_medium_container_runtime_statements_are_unlisted",
+      "factory_review_2_f_2_9_medium_the_documented_sample_composition_is_not_one_tested_claim",
+      "factory_review_2_findings",
+      "factory_review_2_landing_page",
+      "factory_review_2_readme",
+      "factory_review_2_structure_accessibility_and_links",
+      "factory_review_2_verdict",
+      "factory_review_2_what_would_make_this_perfect"
     ],
     "5": [
+      "factory_demo",
+      "factory_demo_demo_sandbox",
+      "factory_demo_entry_point",
+      "factory_demo_isolation_and_reset",
+      "factory_demo_sample_records",
+      "factory_design",
+      "factory_design_asset_plan_and_provenance",
+      "factory_design_direction_and_rationale",
+      "factory_design_motion",
+      "factory_design_palette",
+      "factory_design_plain_word_terminology",
+      "factory_design_shape_and_interaction_grammar",
+      "factory_design_type_and_spacing",
+      "factory_design_visual_thesis_the_paper_moon_evidence_railway",
+      "readme",
+      "readme_data_and_security",
+      "readme_deploy",
+      "readme_licence",
+      "readme_mtd_evidence_rail",
+      "readme_run_locally",
+      "readme_test_and_build",
+      "readme_try_the_isolated_demo",
+      "readme_what_it_does"
+    ],
+    "6": [
+      "factory_polish_1",
+      "factory_polish_1_live_evidence",
+      "factory_polish_1_polish_1_review_finding_closure",
+      "factory_review_1",
+      "factory_review_1_adversarial_first_read_review_1_fail",
+      "factory_review_1_claims_and_quality_gates",
+      "factory_review_1_cold_first_read",
+      "factory_review_1_copy_audit",
+      "factory_review_1_demo_and_functional_evidence",
+      "factory_review_1_earlier_history",
+      "factory_review_1_f_1_1_blocking_demo_reads_and_writes_real_subscription_state",
+      "factory_review_1_f_1_2_blocking_hmrc_no_filing_no_tax_promise_is_unlisted",
+      "factory_review_1_f_1_3_medium_decorative_non_informative_landing_label",
+      "factory_review_1_f_1_4_medium_inconsistent_term_for_transaction",
+      "factory_review_1_f_1_5_medium_vague_untestable_headings",
+      "factory_review_1_f_1_6_medium_readme_sentence_is_28_words_and_deployment_jargon",
+      "factory_review_1_f_1_7_medium_readme_network_boundary_claim_is_not_tested",
+      "factory_review_1_findings",
+      "factory_review_1_landing",
+      "factory_review_1_readme",
+      "factory_review_1_structure_and_missed_leverage",
+      "factory_review_1_verdict",
+      "factory_review_1_what_would_make_this_perfect"
+    ],
+    "7": [
       "ref_dom",
       "ref_dom_iterable",
       "ref_es2022",
@@ -226,7 +289,150 @@
       "tsconfig_compileroptions_usedefineforclassfields",
       "tsconfig_include"
     ],
-    "6": [
+    "8": [
+      "factory_verification",
+      "factory_verification_accessibility_and_responsive_behavior",
+      "factory_verification_claims_gate",
+      "factory_verification_critical_live_workspaces_are_split_between_backend_replicas",
+      "factory_verification_functional_checks",
+      "factory_verification_high_checkout_is_unavailable_and_paid_limits_are_not_enforced_by_the_server",
+      "factory_verification_high_required_claim_coverage_is_incomplete",
+      "factory_verification_high_the_available_typescript_check_fails",
+      "factory_verification_independent_product_verification_fail",
+      "factory_verification_local_install_test_type_and_build_results",
+      "factory_verification_low",
+      "factory_verification_mandatory_first_read_and_demo_gate",
+      "factory_verification_medium",
+      "factory_verification_other_defects",
+      "factory_verification_performance_and_bundle_budgets",
+      "factory_verification_privacy_network_and_headers",
+      "factory_verification_rate_limits_concurrency_persistence_and_identity",
+      "factory_verification_release_blockers",
+      "factory_verification_required_remediation_before_another_candidate"
+    ],
+    "9": [
+      "factory_verification_3",
+      "factory_verification_3_accessibility_responsive_behavior_and_motion",
+      "factory_verification_3_candidate_and_deployment_identity",
+      "factory_verification_3_claims_gate",
+      "factory_verification_3_critical_live_state_is_split_across_three_ephemeral_replicas",
+      "factory_verification_3_high_absolute_visitor_claims_are_not_represented_by_exact_claim_tests",
+      "factory_verification_3_independent_functional_and_recovery_checks",
+      "factory_verification_3_independent_product_verification_3_fail",
+      "factory_verification_3_install_tests_type_lint_and_production_build",
+      "factory_verification_3_low_some_headings_use_the_railway_metaphor_instead_of_plain_section_names",
+      "factory_verification_3_mandatory_first_read_and_demo_gate",
+      "factory_verification_3_medium_several_mobile_touch_targets_are_below_44_px",
+      "factory_verification_3_other_defects",
+      "factory_verification_3_performance_and_budgets",
+      "factory_verification_3_privacy_requests_headers_routes_and_caching",
+      "factory_verification_3_rate_limits_and_concurrency",
+      "factory_verification_3_release_blockers",
+      "factory_verification_3_required_remediation"
+    ],
+    "10": [
+      "factory_verification_4",
+      "factory_verification_4_accessibility_mobile_routes_and_motion",
+      "factory_verification_4_claims_gate",
+      "factory_verification_4_clean_install_tests_and_production_build",
+      "factory_verification_4_deployment_persistence_and_rate_limits_pass",
+      "factory_verification_4_end_to_end_function_and_recovery_pass",
+      "factory_verification_4_high_the_quantitative_15_checkout_claim_has_no_compliant_test",
+      "factory_verification_4_high_the_shipped_payment_cadence_contradicts_the_source_of_truth_brief",
+      "factory_verification_4_independent_product_verification_4_fail",
+      "factory_verification_4_low_200_text_sizing_introduces_four_pixels_of_horizontal_overflow",
+      "factory_verification_4_mandatory_first_read_and_demo_gate_pass",
+      "factory_verification_4_medium_the_demo_banner_is_outside_a_landmark",
+      "factory_verification_4_other_findings",
+      "factory_verification_4_performance",
+      "factory_verification_4_privacy_headers_and_caching",
+      "factory_verification_4_release_blocking_findings",
+      "factory_verification_4_required_action"
+    ],
+    "11": [
+      "next",
+      "request",
+      "router",
+      "src_main",
+      "src_main_api_rate_limit_returns_retry_after",
+      "src_main_app",
+      "src_main_health",
+      "src_main_health_reports_build_sha",
+      "src_main_main",
+      "src_main_rs_intoresponse",
+      "src_main_rs_response",
+      "src_main_rs_state",
+      "src_main_security_headers",
+      "src_main_shutdown_signal",
+      "src_main_test_app",
+      "src_main_unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated",
+      "src_main_workspace_deletion_removes_records_evidence_and_audit"
+    ],
+    "12": [
+      "factory_verification_5",
+      "factory_verification_5_accessibility_keyboard_mobile_and_motion",
+      "factory_verification_5_claims_gate",
+      "factory_verification_5_critical_deletion_can_report_success_while_retaining_workspace_data",
+      "factory_verification_5_critical_production_runs_three_isolated_ephemeral_databases",
+      "factory_verification_5_high_the_per_client_allowance_is_multiplied_by_the_replica_count",
+      "factory_verification_5_independent_product_verification_5_fail",
+      "factory_verification_5_install_tests_type_lint_and_production_build",
+      "factory_verification_5_live_identity_and_end_to_end_behaviour",
+      "factory_verification_5_mandatory_first_read_and_demo_gate",
+      "factory_verification_5_performance_and_bundle_budgets",
+      "factory_verification_5_privacy_security_headers_and_network_activity",
+      "factory_verification_5_release_blocking_findings",
+      "factory_verification_5_required_release_action"
+    ],
+    "13": [
+      "factory_verification_2",
+      "factory_verification_2_accessibility_responsive_behavior_and_motion",
+      "factory_verification_2_claims_gate",
+      "factory_verification_2_clean_install_tests_type_checks_and_production_build",
+      "factory_verification_2_critical_live_workspace_state_is_split_across_three_request_targets",
+      "factory_verification_2_functional_and_recovery_checks",
+      "factory_verification_2_independent_product_verification_2_fail",
+      "factory_verification_2_mandatory_first_read_and_demo_gate",
+      "factory_verification_2_performance_and_bundle_budgets",
+      "factory_verification_2_privacy_headers_links_and_deployment_identity",
+      "factory_verification_2_rate_limiting",
+      "factory_verification_2_release_blocker",
+      "factory_verification_2_required_remediation"
+    ],
+    "14": [
+      "factory_verification_6",
+      "factory_verification_6_accessibility_and_interaction",
+      "factory_verification_6_build_and_automated_quality_checks",
+      "factory_verification_6_claims_gate_clean_candidate_checkout",
+      "factory_verification_6_high_source_owned_topology_and_active_azure_revision_drift",
+      "factory_verification_6_independent_product_verification_6_fail",
+      "factory_verification_6_live_identity_backend_behaviour_and_privacy",
+      "factory_verification_6_mandatory_cold_read_and_demo_gate",
+      "factory_verification_6_release_blocking_finding"
+    ],
+    "15": [
+      "factory_verification_7",
+      "factory_verification_7_accessibility_mobile_privacy_and_performance",
+      "factory_verification_7_build_and_automated_checks",
+      "factory_verification_7_candidate_identity_and_live_delivery",
+      "factory_verification_7_claims_gate",
+      "factory_verification_7_critical_live_records_are_split_across_three_ephemeral_replicas",
+      "factory_verification_7_independent_product_verification_7_fail",
+      "factory_verification_7_mandatory_first_read_and_demo_gate",
+      "factory_verification_7_release_blocking_finding"
+    ],
+    "16": [
+      "factory_verification_8",
+      "factory_verification_8_accessibility_responsive_behaviour_headers_and_budgets",
+      "factory_verification_8_backend_and_privacy",
+      "factory_verification_8_defects_by_severity",
+      "factory_verification_8_deployment_identity_and_first_read",
+      "factory_verification_8_fresh_live_product_evidence",
+      "factory_verification_8_local_quality_gates",
+      "factory_verification_8_mandatory_claims_all_pass",
+      "factory_verification_8_mtd_evidence_rail_independent_verification_8_pass"
+    ],
+    "17": [
       "scripts_verify_live_topology",
       "scripts_verify_live_topology_assert_control_plane",
       "scripts_verify_live_topology_assert_reads",
@@ -237,7 +443,17 @@
       "scripts_verify_live_topology_wait_for_health",
       "scripts_verify_live_topology_workspace_id"
     ],
-    "7": [
+    "18": [
+      "factory_copy_audit",
+      "factory_copy_audit_first_screen",
+      "factory_copy_audit_footer",
+      "factory_copy_audit_landing_copy_audit",
+      "factory_copy_audit_privacy_limits_and_subscription",
+      "factory_copy_audit_product_preview_and_steps",
+      "factory_copy_audit_results",
+      "factory_copy_audit_terminology_table"
+    ],
+    "19": [
       "factory_evidence_verification_5_live_api_audit",
       "factory_evidence_verification_5_live_api_audit_body",
       "factory_evidence_verification_5_live_api_audit_headersfor",
@@ -246,7 +462,16 @@
       "factory_evidence_verification_5_live_api_audit_untilowned",
       "factory_evidence_verification_5_live_api_audit_validcases"
     ],
-    "8": [
+    "20": [
+      "factory_verification_9",
+      "factory_verification_9_accessibility_responsive_behaviour_headers_and_performance",
+      "factory_verification_9_defects_by_severity",
+      "factory_verification_9_identity_and_first_read",
+      "factory_verification_9_live_product_and_backend_evidence",
+      "factory_verification_9_mtd_evidence_rail_independent_verification_9_pass",
+      "factory_verification_9_required_clean_clone_checks"
+    ],
+    "21": [
       "scripts_test_shared_storage",
       "scripts_test_shared_storage_assert_reads",
       "scripts_test_shared_storage_cleanup",
@@ -255,133 +480,164 @@
       "scripts_test_shared_storage_stop_instances",
       "scripts_test_shared_storage_workspace_id"
     ],
-    "9": [
+    "22": [
+      "factory_handoff",
+      "factory_handoff_deployment",
+      "factory_handoff_known_gaps_and_next_steps",
+      "factory_handoff_polish_2_handoff",
+      "factory_handoff_verification",
+      "factory_handoff_what_changed"
+    ],
+    "23": [
+      "factory_polish_2",
+      "factory_polish_2_cumulative_release_evidence",
+      "factory_polish_2_polish_2_cumulative_adversarial_finding_closure",
+      "factory_polish_2_review_1_findings",
+      "factory_polish_2_review_2_findings"
+    ],
+    "24": [
+      "scripts_test_live_checkout",
+      "scripts_test_live_checkout_checkouturl",
+      "scripts_test_live_checkout_contractpage",
+      "scripts_test_live_checkout_hosted",
+      "scripts_test_live_checkout_includes"
+    ],
+    "25": [
+      "agents",
+      "agents_definition_of_done_a_worker_may_not_claim_completion_without_all_of_these",
+      "agents_mtd_evidence_rail_mtd_evidence_rail_factory_product_contract",
+      "agents_working_rules"
+    ],
+    "26": [
       "scripts_deploy",
       "scripts_deploy_patch_app",
       "scripts_deploy_sh__entry",
       "scripts_deploy_wait_for_app"
     ],
-    "10": [
+    "27": [
       "scripts_test_durable_storage",
       "scripts_test_durable_storage_cleanup",
       "scripts_test_durable_storage_sh__entry",
       "scripts_test_durable_storage_start_server"
     ],
-    "11": [
+    "28": [
+      "scripts_test_live_workspace_consistency",
+      "scripts_test_live_workspace_consistency_assert_reads",
+      "scripts_test_live_workspace_consistency_sh__entry",
+      "scripts_test_live_workspace_consistency_workspace_id"
+    ],
+    "29": [
       "scripts_test_runtime_defaults",
       "scripts_test_runtime_defaults_cleanup",
       "scripts_test_runtime_defaults_sh__entry"
     ],
-    "12": [
+    "30": [
       "factory_evidence_verification_5_live_audit",
       "factory_evidence_verification_5_live_audit_report"
     ],
-    "13": [
+    "31": [
       "factory_evidence_verification_5_live_browser_observation",
       "factory_evidence_verification_5_live_browser_observation_out"
     ],
-    "14": [
+    "32": [
       "scripts_optimise_assets",
       "scripts_optimise_assets_source"
     ],
-    "15": [
+    "33": [
       "scripts_render_production_topology",
       "scripts_render_production_topology_sh__entry"
     ],
-    "16": [
+    "34": [
       "scripts_test_deployment_topology",
       "scripts_test_deployment_topology_sh__entry"
     ],
-    "17": [
+    "35": [
       "tests_product_spec",
       "tests_product_spec_openready"
     ],
-    "18": [
+    "36": [
       "pkg_mtd_evidence_rail"
     ],
-    "19": [
+    "37": [
       "playwright_config"
     ],
-    "20": [
+    "38": [
       "scripts_license_fixture"
     ],
-    "21": [
+    "39": [
       "scripts_live_browser_smoke"
     ],
-    "22": [
-      "scripts_test_live_checkout_checkouturl"
-    ],
-    "23": [
-      "scripts_test_live_checkout_contractpage"
-    ],
-    "24": [
-      "scripts_test_live_checkout_hosted"
-    ],
-    "25": [
-      "scripts_test_live_checkout_includes"
-    ],
-    "26": [
-      "src_routes_rs_intoresponse"
-    ],
-    "27": [
-      "src_routes_rs_response"
-    ],
-    "28": [
-      "src_routes_rs_sqlitepool"
-    ],
-    "29": [
-      "src_routes_rs_state"
-    ],
-    "30": [
-      "src_routes_rs_string"
-    ],
-    "31": [
+    "40": [
       "vite_config"
     ]
   },
   "cohesion": {
-    "0": 0.12,
-    "1": 0.17206290471785385,
+    "0": 0.11611030478955008,
+    "1": 0.14479638009049775,
     "2": 0.13974358974358975,
-    "3": 0.058823529411764705,
-    "4": 0.1225296442687747,
-    "5": 0.1,
-    "6": 0.4166666666666667,
-    "7": 0.2857142857142857,
-    "8": 0.42857142857142855,
-    "9": 0.8333333333333334,
-    "10": 0.6666666666666666,
-    "11": 0.6666666666666666,
-    "12": 1.0,
-    "13": 1.0,
-    "14": 1.0,
-    "15": 1.0,
-    "16": 1.0,
-    "17": 1.0,
-    "18": 1.0,
-    "19": 1.0,
-    "20": 1.0,
-    "21": 1.0,
-    "22": 1.0,
-    "23": 1.0,
-    "24": 1.0,
-    "25": 1.0,
-    "26": 1.0,
-    "27": 1.0,
-    "28": 1.0,
-    "29": 1.0,
+    "3": 0.05714285714285714,
+    "4": 0.07407407407407407,
+    "5": 0.08695652173913043,
+    "6": 0.08695652173913043,
+    "7": 0.1,
+    "8": 0.10526315789473684,
+    "9": 0.1111111111111111,
+    "10": 0.11764705882352941,
+    "11": 0.16911764705882354,
+    "12": 0.14285714285714285,
+    "13": 0.15384615384615385,
+    "14": 0.2222222222222222,
+    "15": 0.2222222222222222,
+    "16": 0.2222222222222222,
+    "17": 0.4166666666666667,
+    "18": 0.25,
+    "19": 0.2857142857142857,
+    "20": 0.2857142857142857,
+    "21": 0.42857142857142855,
+    "22": 0.3333333333333333,
+    "23": 0.4,
+    "24": 0.4,
+    "25": 0.5,
+    "26": 0.8333333333333334,
+    "27": 0.6666666666666666,
+    "28": 0.6666666666666666,
+    "29": 0.6666666666666666,
     "30": 1.0,
-    "31": 1.0
+    "31": 1.0,
+    "32": 1.0,
+    "33": 1.0,
+    "34": 1.0,
+    "35": 1.0,
+    "36": 1.0,
+    "37": 1.0,
+    "38": 1.0,
+    "39": 1.0,
+    "40": 1.0
   },
   "gods": [
+    {
+      "id": "src_main_appstate",
+      "label": "AppState",
+      "degree": 21
+    },
+    {
+      "id": "frontend_src_main_bindapp",
+      "label": "bindApp()",
+      "degree": 17
+    },
     {
       "id": "src_routes_error",
       "label": "error()",
       "degree": 16
     },
     {
-      "id": "frontend_src_main_bindapp",
-      "label": "bindApp()",
+      "id": "factory_review_2_findings",
+      "label": "Findings",
+      "degree": 15
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
       "degree": 15
     },
     {
@@ -395,9 +651,9 @@
       "degree": 14
     },
     {
-      "id": "package_scripts",
-      "label": "scripts",
-      "degree": 14
+      "id": "factory_verification_3_independent_product_verification_3_fail",
+      "label": "Independent product verification 3 \u2014 FAIL",
+      "degree": 13
     },
     {
       "id": "frontend_src_main_apppage",
@@ -405,27 +661,68 @@
       "degree": 13
     },
     {
-      "id": "src_routes_create_record",
-      "label": "create_record()",
-      "degree": 13
-    },
-    {
-      "id": "src_routes_remove_evidence",
-      "label": "remove_evidence()",
-      "degree": 13
-    },
-    {
       "id": "src_routes_workspace",
       "label": "workspace()",
       "degree": 13
-    },
-    {
-      "id": "factory_evidence_verification_5_live_index_cimka9hu_k",
-      "label": "k()",
-      "degree": 12
     }
   ],
-  "surprises": [],
+  "surprises": [
+    {
+      "source": "add_evidence()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "create_demo()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "create_record()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "create_workspace()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "delete_record()",
+      "target": "AppState",
+      "source_files": [
+        "src/routes.rs",
+        "src/main.rs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "cross-file semantic connection"
+    }
+  ],
   "tokens": {
     "input": 0,
     "output": 0
