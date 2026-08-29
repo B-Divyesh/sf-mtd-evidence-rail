@@ -1,57 +1,58 @@
-# Verification 14 handoff — PASS
+# Review 3 handoff — FAIL
 
-**Release decision:** **PASS**
+**Work order:** `mtd-evidence-rail-review-3`
 
-**Tested product commit:** `bf15534cef6692e35f5ad62b610eb51648dcfe88`
+**Reviewed source:** `ec565569146bf69fec474c646670462afed9c215`
 
-**Tested URL:** <https://mtd-evidence-rail.sociobot.in>
+**Live build:** `bf15534cef6692e35f5ad62b610eb51648dcfe88`
 
-**Verified:** 29 August 2026, 18:44 UTC
+## What was done
 
-Independent verification found no critical, high, medium, or low defects. The
-earlier deployment-only failure is resolved: live health, image, revision,
-frontend bytes, single-replica topology, `/data` Azure Files mount, and
-`unix-dotfile` VFS all match the candidate and production contract.
+- Wrote the cumulative adversarial report at `.factory/review-3.md`.
+- Rechecked cold 390 px and desktop first reads, the one-click demo, sample
+  visibility, Reset, sandbox isolation, live export, private key recovery,
+  routes, links, metadata, focus, accessibility, and visual identity.
+- Read every earlier review, polish record, and the prior handoff; rechecked all
+  21 earlier finding IDs in live behavior and source.
+- Ran all 26 `claims.json` commands individually from a literal clean clone.
+- Did not modify product code.
 
-## What was verified
+## Verification results
 
-- All 26 exact `.factory/claims.json` commands passed from a literal clean clone.
-- The cold first screen states the job, audience, and first click in plain words.
-- The one-click sample opens an isolated 24-hour 6/4/2 demo with reset controls.
-- `npm test`, `npm run lint`, `npm run build`,
-  `cargo build --release --locked`, and `npm audit --audit-level=low` passed.
-- A fresh live demo completed add, invalid-input recovery, CSV review/import,
-  evidence rejection/recovery, missing review, ZIP export, concurrency, and reset.
-- Private and demo workspaces each passed 100/100 fresh live reads; local
-  restart and three-process persistence tests passed.
-- Rate limit: 100 concurrent same-client requests produced 44 accepted and 56
-  limited; every 429 sent `Retry-After: 1`. Contract: burst 40, refill 20/s.
-- Desktop and 390px sweeps of all routes had zero axe serious/critical issues,
-  no overflow, correct semantics, keyboard focus, reduced motion, and 200% text.
-- Normal-flow requests were same-origin only and produced no console/page errors.
-- Fresh Lighthouse: 99 performance, 100 accessibility, 100 best practices,
-  100 SEO; LCP 1.905 s, TBT 0 ms, CLS 0, transfer 181,664 bytes.
+- Exact claim commands: **23 PASS, 3 FAIL**.
+- Failed: `live-workspace-consistency`, `live-release-identity`, and
+  `live-api-rate-limit`; each expects clean-clone HEAD `ec565569…`, while the
+  ready image and `/health` identify `bf15534…`.
+- Diagnostic runs with `EXPECTED_SHA=bf15534…` passed release topology,
+  100/100 private and demo reads, and live rate limiting.
+- `npm test`: PASS — 6 Rust tests and 25/25 Playwright tests.
+- `npm run lint`: PASS.
+- `npm run build`: PASS; `dist/` produced, JavaScript 11,046 bytes gzip.
+- Live demo: 6 transactions, 4 linked files, 2 missing items; named sample in
+  first mobile viewport; same-origin requests only; private/licence sentinels
+  unchanged; reset restored sample under a new key.
+- Live route axe sweep: zero violations on `/`, `/demo`, `/app`, `/privacy`,
+  `/terms`, and the designed 404.
 
-Full evidence and the claim-by-claim matrix are in
-`.factory/verification-14.md`. Screenshots, URL-verifier JSON, response HTML,
-and Lighthouse JSON are under `.factory/evidence/verification-14/`.
+## Findings left for the next repair
 
-## Known gaps
+- F-3-1, F-3-2, F-3-3: exact live claim commands are not reproducible from the
+  current clean clone because release identity defaults to repository HEAD.
+- F-1-6: deployment jargon has regressed into README and is blocking under the
+  history rule.
+- F-3-4: rename “Start for real” to “Start a private workspace”.
 
-None. Docker/Podman is unavailable in the verifier container, so no redundant
-local container build was run. The locked optimized frontend/backend builds
-passed, and the running image and source identity were verified through both
-the control plane and public endpoint.
-
-## Reverify the tested product
-
-Because this handoff is a later verification-only commit, pin the candidate:
+## Reproduce
 
 ```sh
 npm ci
 npm test
 npm run lint
-EXPECTED_SHA=bf15534cef6692e35f5ad62b610eb51648dcfe88 npm run test:live-release
-EXPECTED_SHA=bf15534cef6692e35f5ad62b610eb51648dcfe88 npm run test:live-workspace-consistency
-EXPECTED_SHA=bf15534cef6692e35f5ad62b610eb51648dcfe88 npm run test:live-rate-limit
+npm run build
+npm run test:live-workspace-consistency
+npm run test:live-release
+npm run test:live-rate-limit
 ```
+
+The first four commands pass. The last three fail until the release-identity
+contract is corrected or the current product revision is deployed.
