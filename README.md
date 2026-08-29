@@ -53,6 +53,7 @@ proxies `/api` and `/health` to port 8080.
 npm test
 npm run build       # writes the frontend to dist/
 npm run test:deployment-topology # rejects the verifier's unsafe rollout shape
+npm run test:live-release # matches HEAD to /health and the ready revision image
 npm run test:live-checkout # checks the live Dodo subscription contract
 npm run test:live-workspace-consistency # also rejects unsafe live replica/storage topology
 npm run test:live-rate-limit # repeats the deployed burst-limit probe
@@ -84,11 +85,11 @@ enforces the free quarter limit even if browser storage is changed. See
 The root `Dockerfile` builds the Vite frontend and Rust server in separate
 stages. Run `scripts/deploy.sh` through the factory work order. It builds the
 committed image, then applies that image with the one-replica Azure Files
-topology in one revision and refuses completion unless the live resource
-proves the mount, VFS, replica count, workspace reads, restart recovery, and
-rate limiter. At startup, an Azure Container Apps revision also checks that
-`/data` is a dedicated mount. It exits before serving traffic if a later
-generic rollout replaces the durable topology with container-local storage.
+topology in one revision. It checks the source identity, image, mount, VFS,
+replica count, workspace reads, restart recovery, and rate limiter. At startup,
+an Azure Container Apps revision checks that `/data` is a dedicated mount. It
+exits before serving traffic if a later generic rollout replaces the durable
+topology with container-local storage.
 The factory owns product registration and billing configuration.
 Deployment details are recorded in the handoff.
 

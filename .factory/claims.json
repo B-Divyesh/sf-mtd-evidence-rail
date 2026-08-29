@@ -161,6 +161,13 @@
     "sandbox": "public deployed service and Azure control plane; first require one active revision, one running replica, max replicas 1, Azure Files at /data and unix-dotfile; then create fresh private and demo workspaces and require 100/100 fresh-connection reads for each key"
   },
   {
+    "id": "live-release-identity",
+    "claim": "The deployed health response and ready container image identify the exact published source revision",
+    "where": "README and deployment handoff",
+    "test": "npm run test:live-release",
+    "sandbox": "public deployed service and Azure control plane; require repository HEAD, /health build_sha, the ready revision image tag, the latest revision, and the single durable topology to agree"
+  },
+  {
     "id": "api-rate-limit",
     "claim": "API endpoints enforce a per-client burst limit using the first forwarded IP and return Retry-After",
     "where": "README, handoff",

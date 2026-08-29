@@ -2,11 +2,11 @@
 set -euo pipefail
 
 base_url=${BASE_URL:-https://mtd-evidence-rail.sociobot.in}
-expected_sha=${EXPECTED_SHA:-}
+repo_dir=$(cd "$(dirname "$0")/.." && pwd)
+expected_sha=${EXPECTED_SHA:-$(git -C "$repo_dir" rev-parse HEAD)}
 restart=${1:-}
 resource_group=${AZURE_RESOURCE_GROUP:-sociobot}
 app_name=${AZURE_CONTAINER_APP:-sf-mtd-evidence-rail}
-repo_dir=$(cd "$(dirname "$0")/.." && pwd)
 contract_file=${TOPOLOGY_CONTRACT:-"$repo_dir/.factory/container-app.json"}
 
 # The Azure volume name is part of the deployment contract, not an incidental
@@ -38,26 +38,9 @@ wait_for_health() {
 }
 
 assert_control_plane() {
-  command -v az >/dev/null || return
-  for _ in $(seq 1 60); do
-    resource=$(az containerapp show --resource-group "$resource_group" --name "$app_name" --output json)
-    mode=$(printf '%s' "$resource" | jq -r .properties.configuration.activeRevisionsMode)
-    minimum=$(printf '%s' "$resource" | jq -r .properties.template.scale.minReplicas)
-    maximum=$(printf '%s' "$resource" | jq -r .properties.template.scale.maxReplicas)
-    containers=$(printf '%s' "$resource" | jq -r '.properties.template.containers | length')
-    mount=$(printf '%s' "$resource" | jq -r --arg volume_name "$volume_name" '[.properties.template.containers[0].volumeMounts[]? | select(.volumeName == $volume_name)][0].mountPath // ""')
-    volume=$(printf '%s' "$resource" | jq -r --arg volume_name "$volume_name" '[.properties.template.volumes[]? | select(.name == $volume_name)][0] | "\(.storageType // ""):\(.storageName // "")"')
-    vfs=$(printf '%s' "$resource" | jq -r '[.properties.template.containers[0].env[]? | select(.name == "SQLITE_VFS")][0].value // ""')
-    active=$(az containerapp revision list --resource-group "$resource_group" --name "$app_name" --query '[?properties.active==`true`] | length(@)' --output tsv)
-    revision=$(printf '%s' "$resource" | jq -r .properties.latestReadyRevisionName)
-    replicas=$(az containerapp replica list --resource-group "$resource_group" --name "$app_name" --revision "$revision" --query 'length(@)' --output tsv)
-    if [ "$mode" = Single ] && [ "$minimum" = 1 ] && [ "$maximum" = 1 ] && [ "$containers" = 1 ] && [ "$mount" = "$mount_path" ] && [ "$volume" = "$storage_type:$storage_name" ] && [ "$vfs" = "$vfs_name" ] && [ "$active" = 1 ] && [ "$replicas" = 1 ]; then
-      return
-    fi
-    sleep 5
-  done
-  echo "Unsafe topology: mode=$mode min=$minimum max=$maximum containers=$containers expected_volume=$volume_name mount=$mount volume=$volume vfs=$vfs active=$active replicas=$replicas" >&2
-  exit 1
+  EXPECTED_SHA="$expected_sha" BASE_URL="$base_url" \
+    AZURE_RESOURCE_GROUP="$resource_group" AZURE_CONTAINER_APP="$app_name" \
+    TOPOLOGY_CONTRACT="$contract_file" "$repo_dir/scripts/assert-live-topology.sh"
 }
 
 assert_reads() {

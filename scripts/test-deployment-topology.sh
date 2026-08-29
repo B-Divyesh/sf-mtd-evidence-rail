@@ -29,12 +29,13 @@ test "$(jq -r '[.properties.template.containers[0].env[] | select(.name == "BUIL
 grep -F 'assert-live-topology.sh' "$repo_dir/scripts/test-live-workspace-consistency.sh" >/dev/null
 grep -F 'assert-live-topology.sh' "$repo_dir/scripts/test-live-rate-limit.sh" >/dev/null
 grep -F 'one_limiter_max=' "$repo_dir/scripts/test-live-rate-limit.sh" >/dev/null
+"$repo_dir/scripts/test-live-release-guard.sh"
 
 # Verification 6 found that the live checker had a stale literal `data` even
 # though Azure's canonical volume was `mtd-data`. Keep the lookup contract-led.
-grep -F 'select(.volumeName == $volume_name)' "$repo_dir/scripts/verify-live-topology.sh" >/dev/null
-grep -F 'select(.name == $volume_name)' "$repo_dir/scripts/verify-live-topology.sh" >/dev/null
-! grep -F 'volumeName == "data"' "$repo_dir/scripts/verify-live-topology.sh" >/dev/null
+grep -F 'select(.volumeName == $volume_name)' "$repo_dir/scripts/assert-live-topology.sh" >/dev/null
+grep -F 'select(.name == $volume_name)' "$repo_dir/scripts/assert-live-topology.sh" >/dev/null
+! grep -F 'volumeName == "data"' "$repo_dir/scripts/assert-live-topology.sh" >/dev/null
 if jq -e '.properties.template.containers[0].volumeMounts[0].volumeName == "data" or .properties.template.volumes[0].name == "data"' "$tmp_dir/patch.json" >/dev/null; then
   echo 'Regression: rendered topology reverted to the obsolete data volume identifier.' >&2
   exit 1
