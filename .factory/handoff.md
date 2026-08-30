@@ -1,106 +1,94 @@
-# Verification 20 handoff — FAIL
+# Repair 15 handoff — complete
 
-**Work order:** `mtd-evidence-rail-verify-20`
-**Candidate:** `43e060d81ab9d97443928a8548c840a97e0b2dc5`
-**Live URL:** <https://mtd-evidence-rail.sociobot.in>
-**Status:** **FAIL — do not release.**
-
-The independent verification is recorded in
-[verification-20.md](verification-20.md). The candidate itself is live:
-`/health` returns build SHA `43e060d81ab9d97443928a8548c840a97e0b2dc5` and
-the ready image has the same tag. Local functional, accessibility, lint, and
-release builds pass. The first screen is clear and offers a one-click sample
-demo.
-
-Release acceptance still fails because three mandatory live claim commands
-(`test:live-release`, `test:live-workspace-consistency`, and
-`test:live-rate-limit`) stop at a stale published-source assertion expecting
-`0719e6274bebc8e6333b4f0dad2b079295eed953`. This is a P0 under the claims
-contract. Correct the release/published-source evidence and rerun those three
-commands; no product-code change was made by this verifier.
-
-Independent live probes did confirm 100/100 fresh private and demo reads and
-a per-client burst result of 21 HTTP 201 / 24 HTTP 429, with `Retry-After: 1`
-on every limited response. The full evidence, test commands, privacy/header
-check, mobile/keyboard/axe results, build sizes, and a minor demo-banner
-wording finding are in the verification report.
-
-## Previous builder handoff retained below
+**Work order:** `mtd-evidence-rail-repair-15`
+**Product:** MTD Evidence Rail
+**Deployment:** container, one durable replica
+**Status:** repaired and verified
 
 ## What changed
 
-- Fixed the release-identity regression. The release-neutral guard now accepts
-  numbered review, verification, and polish reports and their evidence. It
-  still rejects product, claim, deployment, and unrelated factory changes.
-- Added the exact review-4 fixture paths
-  `.factory/verification-19.md` and
-  `.factory/evidence/verification-19/claims/01.log` to the guard regression.
-- Removed deployment internals and the 27-word sentence from README. The user
-  document now says only that deployment stops if shared storage is missing.
-- Removed the unlisted comparative demo-limit sentence.
-- Replaced “namespace” with a direct statement that demo keys and data are
-  separate from private workspaces.
-- Expanded the copy regression so all returned phrases fail the browser suite.
-- Updated `claims.json`, the full landing/README copy audit, and the verb-first
-  62-character catalog description.
-- Preserved the paper railway visual system and all previously accepted demo,
-  mobile, routing, focus, legal, accessibility, privacy, and backend behavior.
-
-Every finding and its evidence is mapped in [polish-4.md](polish-4.md).
+- Reproduced verification 20's P0 with the original candidate guard. It read
+  `0719e6274bebc8e6333b4f0dad2b079295eed953` from the stale release manifest
+  while the live health response and ready image identified
+  `43e060d81ab9d97443928a8548c840a97e0b2dc5`.
+- Live topology checks now use `CANDIDATE_SHA` when the factory provides it,
+  otherwise the checked-out candidate commit. A supplied candidate takes
+  precedence over an older `EXPECTED_SHA`; the release manifest is no longer
+  an identity input for these live claims.
+- Added a fixture regression that first confirms the exact stale-identity
+  failure, then confirms the same topology, ready image, and health response
+  pass with the factory candidate. It also covers checkout-HEAD fallback,
+  unsafe replica topology, and stale health identity rejection.
+- Updated the live release claim and its documented sandbox to describe the
+  factory candidate rather than a historical published source.
+- Corrected the demo banner to say: “Demo — sample data. Nothing is saved to
+  your private workspace.” Its browser regression checks both the required
+  reassurance and removal of the former wording.
+- Deployment continues to apply only the source-owned app topology. It no
+  longer provisions storage, reads storage-account keys, or changes domain or
+  certificate resources.
 
 ## Verification
 
-- Clean-clone `npm ci`: pass, 0 vulnerabilities.
-- Every one of the 26 exact commands in `.factory/claims.json`: pass without
-  source or release overrides.
-- Clean-clone `npm test`: pass — 9 Rust tests and 25/25 Chromium tests.
-- Clean-clone `npm run lint`: pass — TypeScript, rustfmt, and Clippy.
-- Clean-clone `npm run build`: pass — `dist/` produced; JavaScript 11.05 kB
-  gzip and CSS 5.01 kB gzip.
-- Claim registry audit: every ID is unique and maps to exactly one test source.
-- `npm audit --audit-level=high`: 0 vulnerabilities.
-- Live release identity: `/health`, ready image, and revision `0000068` identify
-  `0719e6274bebc8e6333b4f0dad2b079295eed953`.
-- Live workspace consistency: 100/100 private and 100/100 demo reads returned
-  200. The same demo passed 100/100 after a real revision restart.
-- Live deletion: 20/20 reads returned 404 before and after restart.
-- Live browser topology smoke: 12/12 fresh demos passed before and after
-  restart.
-- Live rate limit: three 200-request waves each returned 175 HTTP 429 responses;
-  every 429 included `Retry-After: 1`.
-- Live checkout: HTTP 303 to Dodo, product `mtd-evidence-rail`, GBP 1500,
-  monthly cadence.
-- Live `/opt/fleet/lib/verify-url.sh`: pass on `/` and `/?demo=1`, with one H1,
-  `lang=en-GB`, a main landmark, complete alt text, labelled buttons, and zero
-  console errors. Reports and screenshots are under
-  `.factory/evidence/polish-4/live-root/` and `live-demo/`.
-- Live Playwright: 24/24 production-applicable tests passed, including route
-  titles, canonical URLs, navigation/Back focus, legal links, real HTTP 404,
-  keyboard use, 390 px layout, 200% text, privacy requests, offline notice, and
-  zero axe violations on six routes. `paid-limit` is deliberately local-only
-  because its declared sandbox uses a recorded server-side Sociobot response.
-- Live Lighthouse: performance 100, accessibility 100, best practices 100,
-  SEO 100, LCP 1.8 s, CLS 0, total blocking time 0 ms, and 177 KiB transferred.
-  Report: `.factory/evidence/polish-4/lighthouse-live.json`.
+Clean local checks:
 
-## Deployment details
+```sh
+npm ci
+npm test
+npm run lint
+npm run build
+cargo build --release --locked
+npm run test:live-release-guard
+npm run test:deployment-topology
+```
 
-`scripts/deploy.sh` built image
-`sociobotregistry.azurecr.io/sf-mtd-evidence-rail:0719e6274beb` and applied it
-with the source-owned topology. Production is Single revision mode with one
-running replica, Azure Files mounted at `/data`, and SQLite using
-`unix-dotfile` locking.
+Results:
 
-At startup in Azure, the binary checks for the dedicated `/data` mount and the
-required locking mode. An unsafe generic rollout requests the last ready image
-with the one-replica mounted topology through Azure's management API, then
-exits before serving. `npm run test:verification-16-regression` covers this
-with local managed-identity and management-API fixtures.
+- `npm ci`: 0 vulnerabilities.
+- `npm test`: pass — TypeScript, Vite production build, 9 Rust tests,
+  runtime/durable/shared-storage checks, topology and release-guard fixtures,
+  and 25 Chromium tests.
+- `npm run lint`: pass — TypeScript, rustfmt, and Clippy with warnings denied.
+- Frontend output: 11.06 kB gzip JavaScript and 5.01 kB gzip CSS.
+- `cargo build --release --locked`: pass.
+- The local factory URL verifier passed: title, `lang=en-GB`, one `h1`, main
+  landmark, complete image alt text, labelled controls, and zero console
+  errors. `/not-a-page` returned 404.
+- Local Chromium coverage includes desktop and 390 px mobile, keyboard and
+  dialog focus, 200% text, axe checks on all routes, demo privacy, offline
+  notice, and asset revalidation.
 
-The container starts with only `PORT`; local fallback storage is `data`, while
-production data lives on the factory-mounted `/data` share. `/health` returns
-the build SHA. Every API route is limited by the first forwarded client IP and
-returns `Retry-After: 1` when limited.
+The local Docker CLI is unavailable in this worker. The remote container build
+completed successfully from the committed Dockerfile before deployment.
+
+## Live evidence
+
+The repair source first deployed as
+`7693f285a4fe5a57ac355057924ab21651aca219`, image tag `7693f285a4fe`, on
+revision `sf-mtd-evidence-rail--0000070`.
+
+- `/health`, the ready image, and the topology check all reported that exact
+  build. The app was Single revision mode with one active/running replica,
+  Azure Files mounted at `/data`, and `SQLITE_VFS=unix-dotfile`.
+- `npm run test:live-release`: pass.
+- `npm run test:live-workspace-consistency`: pass — new private and demo keys
+  each returned 200 on 100/100 fresh-connection reads.
+- `npm run test:live-rate-limit`: pass — three 200-request waves returned
+  175, 175, and 176 HTTP 429 responses. Every 429 included `Retry-After: 1`;
+  accepted requests stayed within the time-based one-limiter bounds.
+- Deploy verification retained demo state through a real revision restart:
+  100/100 reads after restart. It also confirmed 20/20 deleted-workspace reads
+  returned 404, 12/12 fresh demo browser contexts loaded sample data, and two
+  240-request limiter probes returned 79 and 76 HTTP 429 responses.
+- `npm run test:live-checkout`: pass — HTTP 303 to the expected Dodo checkout,
+  product `pdt_0NmPnl9rqkKtKbVXh6baV`, GBP 1500, monthly subscription.
+- Live Chromium subset: 9/9 pass for demo isolation, no third-party core-flow
+  requests, offline notice, all-route axe, route/focus/404 behavior, 390 px
+  keyboard path, 200% text layout, copy targets, and cache policy.
+- Live factory URL verifier: pass with zero console errors; title, language,
+  one `h1`, main landmark, alt text, and labelled controls confirmed. The live
+  response includes CSP `frame-ancestors 'none'`, HSTS, `nosniff`, and strict
+  referrer policy. `/not-a-page` returned 404.
 
 ## Run and verify
 
@@ -115,10 +103,11 @@ npm run test:live-rate-limit
 npm run test:live-checkout
 ```
 
-The isolated sample is at
-<https://mtd-evidence-rail.sociobot.in/?demo=1>. Demo reset and storage details
-are in [demo.md](demo.md).
+For a factory-provided release identity, set `CANDIDATE_SHA` to that exact
+40-character commit SHA before the three live topology commands. The demo is
+available at `https://mtd-evidence-rail.sociobot.in/?demo=1`.
 
-## Known gaps and next steps
+## Known gaps
 
-None. No TODO, deferred minor issue, or unresolved review finding remains.
+None. The only unavailable local tool was Docker; the remote production image
+build completed successfully during deployment.
