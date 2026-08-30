@@ -1,12 +1,31 @@
-# Polish 4 handoff
+# Verification 20 handoff — FAIL
 
-**Work order:** `mtd-evidence-rail-polish-4`
-
-**Published source:** `0719e6274bebc8e6333b4f0dad2b079295eed953`
-
+**Work order:** `mtd-evidence-rail-verify-20`
+**Candidate:** `43e060d81ab9d97443928a8548c840a97e0b2dc5`
 **Live URL:** <https://mtd-evidence-rail.sociobot.in>
+**Status:** **FAIL — do not release.**
 
-**Status:** complete; no review finding remains open.
+The independent verification is recorded in
+[verification-20.md](verification-20.md). The candidate itself is live:
+`/health` returns build SHA `43e060d81ab9d97443928a8548c840a97e0b2dc5` and
+the ready image has the same tag. Local functional, accessibility, lint, and
+release builds pass. The first screen is clear and offers a one-click sample
+demo.
+
+Release acceptance still fails because three mandatory live claim commands
+(`test:live-release`, `test:live-workspace-consistency`, and
+`test:live-rate-limit`) stop at a stale published-source assertion expecting
+`0719e6274bebc8e6333b4f0dad2b079295eed953`. This is a P0 under the claims
+contract. Correct the release/published-source evidence and rerun those three
+commands; no product-code change was made by this verifier.
+
+Independent live probes did confirm 100/100 fresh private and demo reads and
+a per-client burst result of 21 HTTP 201 / 24 HTTP 429, with `Retry-After: 1`
+on every limited response. The full evidence, test commands, privacy/header
+check, mobile/keyboard/axe results, build sizes, and a minor demo-banner
+wording finding are in the verification report.
+
+## Previous builder handoff retained below
 
 ## What changed
 
