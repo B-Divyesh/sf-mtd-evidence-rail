@@ -1,0 +1,7 @@
+
+> mtd-evidence-rail@1.0.0 test:deployment-topology
+> bash scripts/test-deployment-topology.sh
+
+Verification 16 release guard regression PASS — the exact generic rollout is rejected and a reconciled published revision is accepted.
+Verification 16 self-repair integration PASS — the exact generic revision requested a durable replacement and exited without serving.
+@claim:production-topology PASS — an unsafe three-replica payload renders as one durable replica, and a later generic rollout requests that topology before it can serve

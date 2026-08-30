@@ -1,0 +1,104 @@
+{
+  "demoFlow": {
+    "rows": 8,
+    "invalidAmountRecovery": "£0.01 saved",
+    "csv": "one match skipped; one imported",
+    "oversizeRecovery": "5MB+1 rejected; text linked",
+    "export": "evidence-pack-2026-27-Q1.zip"
+  },
+  "apiBoundaries": {
+    "zero": {
+      "status": 400,
+      "body": "{\"error\":\"Enter an amount between £0.01 and £1,000,000.\"}"
+    },
+    "over-max": {
+      "status": 400,
+      "body": "{\"error\":\"Enter an amount between £0.01 and £1,000,000.\"}"
+    },
+    "impossible-date": {
+      "status": 400,
+      "body": "{\"error\":\"Enter a real calendar date.\"}"
+    },
+    "blank-description": {
+      "status": 400,
+      "body": "{\"error\":\"Enter a description under 120 characters.\"}"
+    },
+    "invalid-kind": {
+      "status": 400,
+      "body": "{\"error\":\"Choose expense or income.\"}"
+    }
+  },
+  "concurrency": {
+    "statuses": {
+      "201": 25,
+      "402": 5
+    },
+    "persisted": 25,
+    "unique": 25
+  },
+  "deletion": {
+    "delete": 204,
+    "after": 404
+  },
+  "network": {
+    "requestCount": 16,
+    "origins": [
+      "https://mtd-evidence-rail.sociobot.in"
+    ],
+    "failures": [],
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "accessibility": {
+    "axe": {
+      "/": {
+        "status": 200,
+        "h1": 1,
+        "seriousCritical": [],
+        "allViolations": [],
+        "overflow": 0
+      },
+      "/demo": {
+        "status": 200,
+        "h1": 1,
+        "seriousCritical": [],
+        "allViolations": [],
+        "overflow": 0
+      },
+      "/app": {
+        "status": 200,
+        "h1": 1,
+        "seriousCritical": [],
+        "allViolations": [],
+        "overflow": 0
+      },
+      "/privacy": {
+        "status": 200,
+        "h1": 1,
+        "seriousCritical": [],
+        "allViolations": [],
+        "overflow": 0
+      },
+      "/terms": {
+        "status": 200,
+        "h1": 1,
+        "seriousCritical": [],
+        "allViolations": [],
+        "overflow": 0
+      },
+      "/definitely-missing": {
+        "status": 404,
+        "h1": 1,
+        "seriousCritical": [],
+        "allViolations": [],
+        "overflow": 0
+      }
+    },
+    "keyboard": "skip, Enter, dialog focus, Escape return passed",
+    "reducedMotion": {
+      "animations": 0,
+      "scrollBehavior": "auto",
+      "trainAnimation": "none"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+candidate=02cc1ea96227310fa61d5e3a4b90b08c1b6ccc92
+published_source=b8408a552f17a2094e8e87f989cdab94d175af2f
+candidate_is_descendant=true
+candidate_product_diff_files=none
+health:
+{"build_sha":"b8408a552f17a2094e8e87f989cdab94d175af2f","status":"ok"}
+hashes local then live:
+cea54f1780d3a517c61c48dab4037230c28ee493ba9b18e8fdb1cae430c62fc1  dist/index.html
+acc28b29d9c348b7d8a28c0780d04f69ec77d1c98cecac83feafb556ddc2c16c  dist/assets/index-CbYEboLH.js
+ec6e1655c444db5663d63fd2ee6d86e66c881e1d3d9efdc7f066832210a3f991  dist/assets/index-B2Qaf5JO.css
+642baba64785883bcd9a28a08db1e17cc270a6f94e619132d9913ffbb0008818  dist/assets/evidence-rail-hero.webp
+e94d673cd8fb845ef726f8c78d0d2e189a3e74b30e12055cc5ec24445f37e7cc  dist/assets/evidence-rail-hero-768.webp
+cea54f1780d3a517c61c48dab4037230c28ee493ba9b18e8fdb1cae430c62fc1  /tmp/live-index.html
+acc28b29d9c348b7d8a28c0780d04f69ec77d1c98cecac83feafb556ddc2c16c  /tmp/live-index-CbYEboLH.js
+ec6e1655c444db5663d63fd2ee6d86e66c881e1d3d9efdc7f066832210a3f991  /tmp/live-index-B2Qaf5JO.css
+642baba64785883bcd9a28a08db1e17cc270a6f94e619132d9913ffbb0008818  /tmp/live-evidence-rail-hero.webp
+e94d673cd8fb845ef726f8c78d0d2e189a3e74b30e12055cc5ec24445f37e7cc  /tmp/live-evidence-rail-hero-768.webp

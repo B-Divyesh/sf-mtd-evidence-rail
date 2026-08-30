@@ -1,0 +1,10 @@
+
+> mtd-evidence-rail@1.0.0 lint
+> npm run typecheck && cargo fmt --check && cargo clippy --all-targets --all-features -- -D warnings
+
+
+> mtd-evidence-rail@1.0.0 typecheck
+> tsc --noEmit
+
+    Checking mtd-evidence-rail v1.0.0 (/tmp/mtd-evidence-rail-verification-19)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 3.67s

@@ -1,0 +1,16 @@
+JS raw/gzip
+33904 dist/assets/index-CbYEboLH.js
+11042
+CSS raw/gzip
+18132 dist/assets/index-B2Qaf5JO.css
+5010
+fonts
+ 17208 frontend/public/fonts/atkinson-400.woff2
+ 17524 frontend/public/fonts/atkinson-700.woff2
+ 67304 frontend/public/fonts/fraunces-600-700.woff2
+102036 total
+images
+ 61374 frontend/public/assets/evidence-rail-hero-768.webp
+173422 frontend/public/assets/evidence-rail-hero.webp
+165166 frontend/public/assets/social-card.webp
+399962 total

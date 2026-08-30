@@ -1,0 +1,79 @@
+
+> mtd-evidence-rail@1.0.0 test
+> npm run typecheck && npm run build && cargo test && cargo build && npm run test:runtime-defaults && npm run test:durable-storage && npm run test:shared-storage && npm run test:deployment-topology && npm run test:published-source-guard && playwright test --grep @claim:csv-matching
+
+
+> mtd-evidence-rail@1.0.0 typecheck
+> tsc --noEmit
+
+
+> mtd-evidence-rail@1.0.0 build
+> vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 4 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/index.html                  2.06 kB │ gzip:  0.75 kB
+../dist/assets/index-B2Qaf5JO.css  18.13 kB │ gzip:  5.01 kB
+../dist/assets/index-CbYEboLH.js   33.90 kB │ gzip: 11.05 kB │ map: 61.27 kB
+✓ built in 484ms
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.22s
+     Running unittests src/main.rs (target/debug/deps/mtd_evidence_rail-5a07e857f86d9def)
+
+running 9 tests
+test tests::api_rate_limit_returns_retry_after ... ok
+test tests::azure_runtime_accepts_the_durable_data_mount_and_required_vfs ... ok
+test tests::azure_runtime_rejects_a_durable_mount_without_the_required_vfs ... ok
+test tests::azure_runtime_rejects_the_generic_container_local_filesystem ... ok
+test tests::demo_provisioning_burst_returns_all_200_responses_without_overloading_storage ... ok
+test tests::health_reports_build_sha ... ok
+test tests::unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated ... ok
+test tests::verification_16_generic_rollout_is_reconciled_before_it_can_serve ... ok
+test tests::workspace_deletion_removes_records_evidence_and_audit ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.20s
+
+> mtd-evidence-rail@1.0.0 test:runtime-defaults
+> bash scripts/test-runtime-defaults.sh
+
+@claim:runtime-defaults PASS — server started with only PORT
+
+> mtd-evidence-rail@1.0.0 test:durable-storage
+> bash scripts/test-durable-storage.sh
+
+@claim:durable-storage PASS — workspace survived a server restart
+
+> mtd-evidence-rail@1.0.0 test:shared-storage
+> bash scripts/test-shared-storage.sh
+
+@claim:shared-state-boundary PASS — three processes returned 400/400 workspace reads before and after restart
+
+> mtd-evidence-rail@1.0.0 test:deployment-topology
+> bash scripts/test-deployment-topology.sh
+
+Verification 16 release guard regression PASS — the exact generic rollout is rejected and a reconciled published revision is accepted.
+Verification 16 self-repair integration PASS — the exact generic revision requested a durable replacement and exited without serving.
+@claim:production-topology PASS — an unsafe three-replica payload renders as one durable replica, and a later generic rollout requests that topology before it can serve
+
+> mtd-evidence-rail@1.0.0 test:published-source-guard
+> bash scripts/test-published-source-guard.sh
+
+Published-source guard PASS — exact source and release-neutral factory descendants are accepted; unrelated or product-changing candidates are rejected.
+[WebServer] (node:50910) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer]     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.49s
+[WebServer]      Running `target/debug/mtd-evidence-rail`
+
+Running 1 test using 1 worker
+
+(node:50925) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:50925) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/product.spec.ts:151:1 › @claim:csv-matching bank CSV review flags likely matches (1.4s)
+
+  1 passed (6.0s)

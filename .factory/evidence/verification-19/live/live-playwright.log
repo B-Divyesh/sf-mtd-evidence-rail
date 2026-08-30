@@ -1,0 +1,33 @@
+
+Running 24 tests using 1 worker
+
+(node:70360) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:70360) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/product.spec.ts:11:1 › @claim:demo-isolation demo isolates private workspace and subscription state for 24 hours (1.2s)
+  ✓   2 [chromium] › tests/product.spec.ts:49:1 › @claim:no-account starts without sign-in and keeps the key on this device (1.6s)
+  ✓   3 [chromium] › tests/product.spec.ts:62:1 › @claim:workspace-key-recovery copies a key and opens the same records on another device (2.8s)
+  ✓   4 [chromium] › tests/product.spec.ts:97:1 › @claim:workspace-key-auth every private API route rejects missing and wrong keys (2.2s)
+  ✓   5 [chromium] › tests/product.spec.ts:133:1 › @claim:quarter-capture saves income and expenses in the dated quarter (1.2s)
+  ✓   6 [chromium] › tests/product.spec.ts:151:1 › @claim:csv-matching bank CSV review flags likely matches (1.3s)
+  ✓   7 [chromium] › tests/product.spec.ts:165:1 › @claim:evidence-pack exports a ZIP with CSV and linked files (1.0s)
+  ✓   8 [chromium] › tests/product.spec.ts:179:1 › @claim:free-limit server stops a 26th free transaction (1.2s)
+  ✓   9 [chromium] › tests/product.spec.ts:215:1 › @claim:atomic-import rejects the whole file when one row is invalid (740ms)
+  ✓  10 [chromium] › tests/product.spec.ts:230:1 › @claim:calendar-dates rejects impossible dates at the API edge (758ms)
+  ✓  11 [chromium] › tests/product.spec.ts:241:1 › @claim:evidence-types accepts PDF, JPG, PNG, WebP, and text evidence (2.8s)
+  ✓  12 [chromium] › tests/product.spec.ts:263:1 › @claim:workspace-delete removes the workspace and its evidence (1.2s)
+  ✓  13 [chromium] › tests/product.spec.ts:279:1 › @claim:missing-review shows only transactions without evidence (1.6s)
+  ✓  14 [chromium] › tests/product.spec.ts:287:1 › @claim:demo-sample starts and resets with six transactions, four linked files, and two missing items (1.2s)
+  ✓  15 [chromium] › tests/product.spec.ts:303:1 › @claim:no-trackers demo core flow sends only same-origin requests (971ms)
+  ✓  16 [chromium] › tests/product.spec.ts:314:1 › offline connection gives a clear recovery notice (890ms)
+  ✓  17 [chromium] › tests/product.spec.ts:320:1 › @claim:license-return stores and verifies a returned licence (803ms)
+  ✓  18 [chromium] › tests/product.spec.ts:328:1 › all routes have one h1 and no accessibility violations (7.9s)
+  ✓  19 [chromium] › tests/product.spec.ts:342:1 › routes set titles, canonical URLs, focus, legal links, and a real 404 (2.7s)
+  ✓  20 [chromium] › tests/product.spec.ts:371:1 › 390px mobile and keyboard paths meet interaction requirements (1.6s)
+  ✓  21 [chromium] › tests/product.spec.ts:398:1 › 390px at 200% text size has no horizontal overflow (620ms)
+  ✓  22 [chromium] › tests/product.spec.ts:422:1 › subscription copy is monthly across the product, terms, and README (765ms)
+  ✓  23 [chromium] › tests/product.spec.ts:439:1 › release-blocking copy and 44px inline-link regressions stay fixed (1.2s)
+  ✓  24 [chromium] › tests/product.spec.ts:472:1 › unversioned assets revalidate instead of caching forever (13ms)
+
+  24 passed (41.3s)

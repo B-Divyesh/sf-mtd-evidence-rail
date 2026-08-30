@@ -1,0 +1,9 @@
+
+> mtd-evidence-rail@1.0.0 test:live-rate-limit
+> bash scripts/test-live-rate-limit.sh
+
+Live release: build=b8408a552f17a2094e8e87f989cdab94d175af2f; image=sociobotregistry.azurecr.io/sf-mtd-evidence-rail:b8408a552f17; revision=sf-mtd-evidence-rail--0000067; Single; replicas=1/1; running=1; mtd-data mounted at /data; VFS=unix-dotfile.
+wave=1 responses=200 created=30 limited=170 bound=35 elapsed=12056ms
+wave=2 responses=200 created=31 limited=169 bound=35 elapsed=12243ms
+wave=3 responses=200 created=29 limited=171 bound=35 elapsed=12136ms
+@claim:live-api-rate-limit PASS — all three 200-request waves completed; every limited response included Retry-After: 1.

@@ -1,0 +1,13 @@
+
+> mtd-evidence-rail@1.0.0 verify:live-topology
+> bash scripts/verify-live-topology.sh
+
+Live release: build=b8408a552f17a2094e8e87f989cdab94d175af2f; image=sociobotregistry.azurecr.io/sf-mtd-evidence-rail:b8408a552f17; revision=sf-mtd-evidence-rail--0000067; Single; replicas=1/1; running=1; mtd-data mounted at /data; VFS=unix-dotfile.
+private: 100/100 fresh-connection reads returned 200.
+demo: 100/100 fresh-connection reads returned 200.
+deleted workspace: 20/20 fresh reads returned 404.
+Live browser topology smoke passed: 12/12 fresh demo contexts loaded sample data.
+Limiter attempt 1 exceeded one-process bounds: accepted=240 rejected=0 bound=351 elapsed=15275ms
+Limiter attempt 2 exceeded one-process bounds: accepted=240 rejected=0 bound=349 elapsed=15173ms
+shared limiter: 33/240 requests returned 429; accepted=207 within one-limiter bound=354 over 15436ms.
+Live topology verification passed for build b8408a552f17a2094e8e87f989cdab94d175af2f.

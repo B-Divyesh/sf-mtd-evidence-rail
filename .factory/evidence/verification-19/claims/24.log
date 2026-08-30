@@ -1,0 +1,7 @@
+
+> mtd-evidence-rail@1.0.0 test:live-release
+> bash scripts/assert-published-source.sh && bash scripts/test-live-release.sh
+
+Candidate 02cc1ea96227310fa61d5e3a4b90b08c1b6ccc92 is a release-neutral descendant of published source b8408a552f17a2094e8e87f989cdab94d175af2f.
+Live release: build=b8408a552f17a2094e8e87f989cdab94d175af2f; image=sociobotregistry.azurecr.io/sf-mtd-evidence-rail:b8408a552f17; revision=sf-mtd-evidence-rail--0000067; Single; replicas=1/1; running=1; mtd-data mounted at /data; VFS=unix-dotfile.
+@claim:live-release-identity PASS — the candidate is tied to the published source; /health and the ready image identify that same safe release
