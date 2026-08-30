@@ -70,12 +70,11 @@ and runs Playwright in Chromium. Claim tests are listed in
 
 Workspace data remains available after a service restart. Production uses one
 app instance with shared durable storage. Every private API request must include
-the workspace's 64-character key. Demo keys use a separate browser and database
-namespace.
+the workspace's 64-character key. Demo keys and data are kept separate from
+private workspaces.
 
 The API temporarily blocks a client that sends too many requests. Behind a
 proxy, it identifies the client from the first forwarded IP address.
-Demo creation has a stricter limit because it writes the six sample records.
 
 There are no advertising trackers or third-party runtime scripts. The server
 enforces the free quarter limit even if browser storage is changed. See
@@ -86,17 +85,9 @@ enforces the free quarter limit even if browser storage is changed. See
 The root `Dockerfile` builds the Vite frontend and Rust server in separate
 stages. Run `scripts/deploy.sh` through the factory work order. It deploys the
 committed product and checks the live service before it finishes.
-The committed `.factory/release.json` records which source revision is live.
-The candidate is that revision or a descendant whose cumulative changes are
-limited to release evidence and the factory-generated code map.
+The deployment stops if shared storage is unavailable.
 The factory owns product registration and billing configuration.
 Deployment details are recorded in the handoff.
-
-An Azure revision never opens SQLite on the container filesystem. If a later
-factory rollout omits the storage settings, that replica asks Azure to restore
-the last ready image with the source-owned topology, then exits before serving.
-`npm run test:verification-16-regression` covers that complete recovery path
-with local managed-identity and management-API fixtures.
 
 If the work-order runner builds the image first, pass that image to the same
 script with `PREBUILT_IMAGE`.

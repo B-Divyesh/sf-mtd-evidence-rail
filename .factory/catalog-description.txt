@@ -1,1 +1,1 @@
-Link each transaction to evidence and export an MTD quarter pack.
+Link expenses to evidence and export a clear MTD quarter pack.

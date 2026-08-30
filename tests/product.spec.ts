@@ -467,6 +467,24 @@ test('release-blocking copy and 44px inline-link regressions stay fixed', async 
   await page.goto('/not-a-page');
   await expect(page.getByText('Page not found', { exact: true }).first()).toBeVisible();
   await expect(page.locator('main')).not.toContainText('The rail ends here');
+
+  const readme = readFileSync('README.md', 'utf8');
+  expect(readme).toContain('Demo keys and data are kept separate from\nprivate workspaces.');
+  expect(readme).toContain('The deployment stops if shared storage is unavailable.');
+  for (const removed of [
+    'Demo creation has a stricter limit',
+    'database namespace',
+    'Azure revision',
+    'container filesystem',
+    'source-owned topology',
+    'managed-identity',
+    'management-API fixtures',
+    'restrictive CSP',
+    'Use one workspace for every quarter',
+    'Start for real',
+  ]) {
+    expect(readme).not.toContain(removed);
+  }
 });
 
 test('unversioned assets revalidate instead of caching forever', async ({ request }) => {

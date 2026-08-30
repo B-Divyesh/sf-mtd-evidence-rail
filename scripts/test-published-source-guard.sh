@@ -23,6 +23,23 @@ git -C "$fixture" commit -qm 'release evidence'
 CANDIDATE_SHA=$(git -C "$fixture" rev-parse HEAD) \
   "$repo_dir/scripts/assert-published-source.sh" "$fixture" >/dev/null
 
+# Reproduce review 4 exactly: verification reports and their nested evidence
+# are release evidence, not product or deployment inputs. Review and polish
+# records use the same deliberately named path convention.
+mkdir -p "$fixture/.factory/evidence/verification-19/claims" \
+  "$fixture/.factory/evidence/review-4" \
+  "$fixture/.factory/evidence/polish-4"
+printf 'claim passed\n' > "$fixture/.factory/evidence/verification-19/claims/01.log"
+printf '# Verification 19\n' > "$fixture/.factory/verification-19.md"
+printf 'review evidence\n' > "$fixture/.factory/evidence/review-4/result.log"
+printf '# Review 4\n' > "$fixture/.factory/review-4.md"
+printf 'polish evidence\n' > "$fixture/.factory/evidence/polish-4/result.log"
+printf '# Polish 4\n' > "$fixture/.factory/polish-4.md"
+git -C "$fixture" add .factory
+git -C "$fixture" commit -qm 'verification review and polish evidence'
+CANDIDATE_SHA=$(git -C "$fixture" rev-parse HEAD) \
+  "$repo_dir/scripts/assert-published-source.sh" "$fixture" >/dev/null
+
 # Reproduce verification 18 exactly: the factory adds a generated code-map
 # commit after the release-evidence commit. The candidate still represents the
 # published bytes because its cumulative delta is release-neutral.

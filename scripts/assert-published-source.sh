@@ -23,8 +23,13 @@ if ! git -C "$repo_dir" merge-base --is-ancestor "$published_sha" "$candidate_sh
   exit 1
 fi
 
+# Factory verification can add a report and its captured evidence after the
+# product image has been published. Keep this list narrow: product contracts,
+# claims, source, deployment inputs, and unclassified factory files must still
+# force a new release. The fixture test covers every accepted path family.
+release_neutral_paths='^(\.factory/(handoff\.md|release\.json|(review|verification|polish)-[0-9]+\.md|evidence/(review|verification|polish)-[0-9]+/.*)|graphify-out/)'
 unexpected_paths=$(git -C "$repo_dir" diff --name-only "$published_sha..$candidate_sha" -- |
-  grep -Ev '^(\.factory/(handoff\.md|release\.json)|graphify-out/)' || true)
+  grep -Ev "$release_neutral_paths" || true)
 if [ -n "$unexpected_paths" ]; then
   echo "Release-neutral candidate $candidate_sha changes product or deployment inputs:" >&2
   printf '%s\n' "$unexpected_paths" >&2
