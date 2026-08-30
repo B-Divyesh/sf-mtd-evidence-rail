@@ -29,8 +29,8 @@ test "$(jq -r '[.properties.template.containers[0].env[] | select(.name == "BUIL
 grep -F 'assert-live-topology.sh' "$repo_dir/scripts/test-live-workspace-consistency.sh" >/dev/null
 grep -F 'assert-live-topology.sh' "$repo_dir/scripts/test-live-rate-limit.sh" >/dev/null
 grep -F 'one_limiter_max=' "$repo_dir/scripts/test-live-rate-limit.sh" >/dev/null
-grep -F '.factory/release.json' "$repo_dir/scripts/assert-live-topology.sh" >/dev/null
-jq -e '.source_commit | test("^[0-9a-f]{40}$")' "$repo_dir/.factory/release.json" >/dev/null
+grep -F 'candidate_sha=${CANDIDATE_SHA:-$(git -C "$repo_dir" rev-parse HEAD)}' "$repo_dir/scripts/assert-live-topology.sh" >/dev/null
+! grep -F '.factory/release.json' "$repo_dir/scripts/assert-live-topology.sh" >/dev/null
 "$repo_dir/scripts/test-live-release-guard.sh"
 
 # Verification 6 found that the live checker had a stale literal `data` even
@@ -57,6 +57,10 @@ grep -F 'deactivate_stale_revisions' "$repo_dir/scripts/deploy.sh" >/dev/null
 grep -F 'az containerapp revision deactivate' "$repo_dir/scripts/deploy.sh" >/dev/null
 if grep -F '/opt/fleet/lib/deploy-container.sh' "$repo_dir/scripts/deploy.sh" >/dev/null; then
   echo 'Regression: deployment delegates to the generic three-replica helper.' >&2
+  exit 1
+fi
+if grep -Eq 'az storage|containerapp env storage|storage account keys|managedCertificates|dnszones' "$repo_dir/scripts/deploy.sh"; then
+  echo 'Regression: product deployment reads or provisions factory-owned storage, certificates, or DNS.' >&2
   exit 1
 fi
 

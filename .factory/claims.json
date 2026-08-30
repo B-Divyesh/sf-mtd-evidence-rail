@@ -162,10 +162,10 @@
   },
   {
     "id": "live-release-identity",
-    "claim": "The live health response and ready image identify the published source; later candidate commits may change only release evidence or the generated code map",
+    "claim": "The live health response and ready image identify the factory candidate",
     "where": "deployment handoff",
     "test": "npm run test:live-release",
-    "sandbox": "clean candidate checkout, public deployed service, and Azure control plane; require the candidate to equal or descend from the published source with only handoff, release manifest, numbered review/verification/polish evidence, or generated-code-map changes, then require /health, ready image, latest revision, and durable topology to agree with that source"
+    "sandbox": "clean candidate checkout, public deployed service, and Azure control plane; use CANDIDATE_SHA when the factory supplies it and otherwise use the checkout HEAD, then require /health, ready image, latest revision, and durable topology to agree with that exact candidate"
   },
   {
     "id": "api-rate-limit",

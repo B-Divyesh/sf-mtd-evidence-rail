@@ -49,7 +49,7 @@ function landing(){
   if(licenseInactive())document.querySelector<HTMLParagraphElement>('#license-message')!.textContent='Your subscription is no longer active. Free limits apply.';
 }
 
-function appBanner(){return demoMode?`<aside class="demo-banner" aria-label="Demo controls"><div class="shell"><strong>Demo — sample data. Changes stay in this 24-hour demo.</strong><button type="button" id="reset-demo">Reset demo</button><a href="/app" data-route>Start a private workspace</a></div></aside>`:''}
+function appBanner(){return demoMode?`<aside class="demo-banner" aria-label="Demo controls"><div class="shell"><strong>Demo — sample data. Nothing is saved to your private workspace.</strong><button type="button" id="reset-demo">Reset demo</button><a href="/app" data-route>Start a private workspace</a></div></aside>`:''}
 
 function quarterFor(year:number,q:number):Quarter{
   const pad=(n:number)=>String(n).padStart(2,'0');

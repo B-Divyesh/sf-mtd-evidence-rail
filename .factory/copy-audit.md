@@ -66,7 +66,7 @@ banned marketing word remains.
 | Have a subscription token? | 4 | Clear prompt |
 | Paste it here. | 3 | Clear instruction |
 | Restore subscription access | 3 | Clear action |
-| Demo — sample data. Changes stay in this 24-hour demo. | 9 | `demo-isolation` banner |
+| Demo — sample data. Nothing is saved to your private workspace. | 10 | `demo-isolation` banner |
 | Reset demo | 2 | Clear action |
 | Start a private workspace | 4 | Clear action |
 | Link each expense to evidence before your quarterly update. | 9 | Footer summary |

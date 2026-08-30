@@ -4,14 +4,12 @@ set -euo pipefail
 # The factory's generic Container Apps deployer is deliberately not used here.
 # It starts from a three-replica, container-local template, which is unsafe for
 # this SQLite-backed product. Build the image, then apply the image and the
-# source-owned durable topology together as one revision.
+# source-owned durable topology together as one revision. The work order owns
+# the existing /data storage and domain; this script never provisions either
+# or reads a storage-account key.
 repo_dir=$(cd "$(dirname "$0")/.." && pwd)
 subscription=${AZURE_SUBSCRIPTION_ID:-283af945-693b-4a6e-b952-df928d0a18a9}
 resource_group=sociobot
-environment=factory-env
-storage_account=sociobotblob
-storage_name=mtd-evidence-rail-data
-share_name=sf-mtd-evidence-rail-data
 registry=sociobotregistry
 app_name=sf-mtd-evidence-rail
 hostname=mtd-evidence-rail.sociobot.in
@@ -84,33 +82,6 @@ wait_for_topology() {
   return 1
 }
 
-az storage share-rm create \
-  --resource-group "$resource_group" \
-  --storage-account "$storage_account" \
-  --name "$share_name" \
-  --quota 5 \
-  --enabled-protocols SMB \
-  --only-show-errors \
-  --output none
-
-storage_key=$(az storage account keys list \
-  --resource-group "$resource_group" \
-  --account-name "$storage_account" \
-  --query '[0].value' \
-  --output tsv)
-
-az containerapp env storage set \
-  --resource-group "$resource_group" \
-  --name "$environment" \
-  --storage-name "$storage_name" \
-  --access-mode ReadWrite \
-  --azure-file-account-name "$storage_account" \
-  --azure-file-account-key "$storage_key" \
-  --azure-file-share-name "$share_name" \
-  --only-show-errors \
-  --output none
-unset storage_key
-
 source_sha=$(git -C "$repo_dir" rev-parse HEAD)
 "$repo_dir/scripts/assert-build-inputs-committed.sh" "$repo_dir"
 expected_image="${registry}.azurecr.io/${app_name}:${source_sha:0:12}"
@@ -148,15 +119,6 @@ patch_app "$patch"
 wait_for_candidate_readiness
 deactivate_stale_revisions
 wait_for_topology
-
-domain_binding=$(az containerapp show --resource-group "$resource_group" --name "$app_name" --output json | jq -r --arg hostname "$hostname" '[.properties.configuration.ingress.customDomains[]? | select(.name == $hostname)][0].bindingType // ""')
-if [ "$domain_binding" != SniEnabled ]; then
-  disabled=$(jq -nc --arg hostname "$hostname" '{properties:{configuration:{ingress:{customDomains:[{name:$hostname,bindingType:"Disabled"}]}}}}')
-  patch_app "$disabled"
-  certificate_id="/subscriptions/${subscription}/resourceGroups/${resource_group}/providers/Microsoft.App/managedEnvironments/${environment}/managedCertificates/cert-mtd-evidence-rail"
-  enabled=$(jq -nc --arg hostname "$hostname" --arg certificate "$certificate_id" '{properties:{configuration:{ingress:{customDomains:[{name:$hostname,bindingType:"SniEnabled",certificateId:$certificate}]}}}}')
-  patch_app "$enabled"
-fi
 
 for _ in $(seq 1 60); do
   live_sha=$(curl -fsS --max-time 10 "https://${hostname}/health" 2>/dev/null | jq -r .build_sha 2>/dev/null || true)

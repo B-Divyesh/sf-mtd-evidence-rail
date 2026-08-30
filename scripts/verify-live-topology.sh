@@ -3,13 +3,17 @@ set -euo pipefail
 
 base_url=${BASE_URL:-https://mtd-evidence-rail.sociobot.in}
 repo_dir=$(cd "$(dirname "$0")/.." && pwd)
-release_manifest=${RELEASE_MANIFEST:-"$repo_dir/.factory/release.json"}
-published_sha=$(jq -er '.source_commit | select(test("^[0-9a-f]{40}$"))' "$release_manifest")
-expected_sha=${EXPECTED_SHA:-$published_sha}
+candidate_sha=${CANDIDATE_SHA:-$(git -C "$repo_dir" rev-parse HEAD)}
+expected_sha=${CANDIDATE_SHA:-${EXPECTED_SHA:-$candidate_sha}}
 restart=${1:-}
 resource_group=${AZURE_RESOURCE_GROUP:-sociobot}
 app_name=${AZURE_CONTAINER_APP:-sf-mtd-evidence-rail}
 contract_file=${TOPOLOGY_CONTRACT:-"$repo_dir/.factory/container-app.json"}
+
+if [[ ! "$expected_sha" =~ ^[0-9a-f]{40}$ ]]; then
+  echo "Expected candidate SHA must be a 40-character lowercase Git SHA, got: $expected_sha" >&2
+  exit 1
+fi
 
 # The Azure volume name is part of the deployment contract, not an incidental
 # implementation detail. Read it from the source-owned manifest so this probe

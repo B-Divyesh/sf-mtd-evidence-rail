@@ -2,17 +2,23 @@
 set -euo pipefail
 
 # A quiet multi-replica or stale-revision deployment can look healthy while an
-# older process serves traffic. Require control-plane topology and release
-# identity before any live data or limiter claim can run.
+# older process serves traffic. Require control-plane topology and the factory
+# candidate's identity before any live data or limiter claim can run.
 repo_dir=$(cd "$(dirname "$0")/.." && pwd)
 resource_group=${AZURE_RESOURCE_GROUP:-sociobot}
 app_name=${AZURE_CONTAINER_APP:-sf-mtd-evidence-rail}
 base_url=${BASE_URL:-https://mtd-evidence-rail.sociobot.in}
-release_manifest=${RELEASE_MANIFEST:-"$repo_dir/.factory/release.json"}
-published_sha=$(jq -er '.source_commit | select(test("^[0-9a-f]{40}$"))' "$release_manifest")
-expected_sha=${EXPECTED_SHA:-$published_sha}
+candidate_sha=${CANDIDATE_SHA:-$(git -C "$repo_dir" rev-parse HEAD)}
+# A factory-supplied candidate is the release under test and takes precedence
+# over legacy EXPECTED_SHA or release-manifest values left by earlier jobs.
+expected_sha=${CANDIDATE_SHA:-${EXPECTED_SHA:-$candidate_sha}}
 expected_image=${EXPECTED_IMAGE:-sociobotregistry.azurecr.io/${app_name}:${expected_sha:0:12}}
 contract_file=${TOPOLOGY_CONTRACT:-"$repo_dir/.factory/container-app.json"}
+
+if [[ ! "$expected_sha" =~ ^[0-9a-f]{40}$ ]]; then
+  echo "Expected candidate SHA must be a 40-character lowercase Git SHA, got: $expected_sha" >&2
+  exit 1
+fi
 
 command -v az >/dev/null || {
   echo 'Azure CLI is required to verify the live release.' >&2

@@ -25,7 +25,8 @@ test('@claim:demo-isolation demo isolates private workspace and subscription sta
   page.on('request', request => outgoing.push({url:request.url(),license:request.headers()['x-license-key']}));
   await openReady(page,'/?demo=1');
   await expect(page).toHaveURL(/\?demo=1$/);
-  await expect(page.getByText('Demo — sample data. Changes stay in this 24-hour demo.')).toBeVisible();
+  await expect(page.getByText('Demo — sample data. Nothing is saved to your private workspace.')).toBeVisible();
+  await expect(page.getByText('Changes stay in this 24-hour demo.')).toHaveCount(0);
   await expect(page.getByRole('link', { name: 'Start a private workspace' })).toHaveAttribute('href', '/app');
   await expect(page.getByText('6', { exact: true }).first()).toBeVisible();
   const firstKey = await page.evaluate(() => sessionStorage.getItem('demo:mtd-evidence-rail:workspace'));

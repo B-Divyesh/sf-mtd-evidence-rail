@@ -67,16 +67,66 @@ grep -F "expected_sha=$candidate live_sha=$older" "$identity_log" >/dev/null
 
 run_guard "$tmp_dir/safe-resource.json" "$tmp_dir/safe-ready.json" "$tmp_dir/safe-health.json" 1 1 "$candidate" "$candidate_image" >/dev/null
 
-# Review-only commits can follow a deployment. The exact claim command reads
-# the committed published revision instead of assuming repository HEAD is live.
-jq -n --arg sha "$candidate" '{source_commit:$sha}' > "$tmp_dir/release.json"
+# Reproduce verification 20 exactly. The committed release manifest named the
+# older 0719e627 build while the factory candidate, ready image, and /health
+# all named 43e060d8. The topology assertion must use the candidate supplied by
+# the factory instead of the stale published-source record.
+stale_published=0719e6274bebc8e6333b4f0dad2b079295eed953
+factory_candidate=43e060d81ab9d97443928a8548c840a97e0b2dc5
+factory_image="sociobotregistry.azurecr.io/sf-mtd-evidence-rail:${factory_candidate:0:12}"
+jq -n --arg sha "$stale_published" '{source_commit:$sha}' > "$tmp_dir/stale-release.json"
+jq -n --arg image "$factory_image" '{properties:{configuration:{activeRevisionsMode:"Single"},latestRevisionName:"sf-mtd-evidence-rail--0000069",latestReadyRevisionName:"sf-mtd-evidence-rail--0000069",template:{containers:[{image:$image,env:[{name:"PORT",value:"8080"},{name:"SQLITE_VFS",value:"unix-dotfile"}],volumeMounts:[{volumeName:"mtd-data",mountPath:"/data"}]}],scale:{minReplicas:1,maxReplicas:1},volumes:[{name:"mtd-data",storageName:"mtd-evidence-rail-data",storageType:"AzureFile"}]}}}' > "$tmp_dir/verification-20-resource.json"
+jq -n --arg image "$factory_image" '{properties:{active:true,template:{containers:[{image:$image}]}}}' > "$tmp_dir/verification-20-ready.json"
+jq -n --arg sha "$factory_candidate" '{status:"ok",build_sha:$sha}' > "$tmp_dir/verification-20-health.json"
+
+# Without the factory candidate, this is the report's failed assertion: the
+# stale release value becomes the expected identity even though every live
+# surface identifies 43e060d8. Keep the failure explicit so a precedence
+# regression cannot make the fixture pass for the wrong reason.
+verification_20_stale_log="$tmp_dir/verification-20-stale.log"
+if PATH="$tmp_dir:$PATH" \
+  EXPECTED_SHA="$stale_published" \
+  FAKE_RESOURCE="$tmp_dir/verification-20-resource.json" \
+  FAKE_READY="$tmp_dir/verification-20-ready.json" \
+  FAKE_HEALTH="$tmp_dir/verification-20-health.json" \
+  FAKE_ACTIVE=1 \
+  FAKE_RUNNING=1 \
+  "$repo_dir/scripts/assert-live-topology.sh" >"$verification_20_stale_log" 2>&1; then
+  echo 'Regression: verification 20 stale release identity passed without the factory candidate.' >&2
+  exit 1
+fi
+grep -F "expected_sha=$stale_published live_sha=$factory_candidate" "$verification_20_stale_log" >/dev/null
+
+# The factory candidate has authority over an older expected value left by an
+# earlier verification job. It makes the same complete live identity fixture
+# pass without consulting the stale release manifest.
 PATH="$tmp_dir:$PATH" \
-  RELEASE_MANIFEST="$tmp_dir/release.json" \
-  FAKE_RESOURCE="$tmp_dir/safe-resource.json" \
-  FAKE_READY="$tmp_dir/safe-ready.json" \
-  FAKE_HEALTH="$tmp_dir/safe-health.json" \
+  RELEASE_MANIFEST="$tmp_dir/stale-release.json" \
+  EXPECTED_SHA="$stale_published" \
+  CANDIDATE_SHA="$factory_candidate" \
+  FAKE_RESOURCE="$tmp_dir/verification-20-resource.json" \
+  FAKE_READY="$tmp_dir/verification-20-ready.json" \
+  FAKE_HEALTH="$tmp_dir/verification-20-health.json" \
   FAKE_ACTIVE=1 \
   FAKE_RUNNING=1 \
   "$repo_dir/scripts/assert-live-topology.sh" >/dev/null
 
-echo 'Verification 16 release guard regression PASS — the exact generic rollout is rejected and a reconciled published revision is accepted.'
+# Without an explicit factory value, a clean candidate checkout is itself the
+# candidate. This is the path used by the exact npm claim commands.
+checkout_candidate=$(git -C "$repo_dir" rev-parse HEAD)
+checkout_image="sociobotregistry.azurecr.io/sf-mtd-evidence-rail:${checkout_candidate:0:12}"
+jq --arg image "$checkout_image" '.properties.template.containers[0].image=$image' \
+  "$tmp_dir/verification-20-resource.json" > "$tmp_dir/checkout-resource.json"
+jq --arg image "$checkout_image" '.properties.template.containers[0].image=$image' \
+  "$tmp_dir/verification-20-ready.json" > "$tmp_dir/checkout-ready.json"
+jq -n --arg sha "$checkout_candidate" '{status:"ok",build_sha:$sha}' > "$tmp_dir/checkout-health.json"
+PATH="$tmp_dir:$PATH" \
+  RELEASE_MANIFEST="$tmp_dir/stale-release.json" \
+  FAKE_RESOURCE="$tmp_dir/checkout-resource.json" \
+  FAKE_READY="$tmp_dir/checkout-ready.json" \
+  FAKE_HEALTH="$tmp_dir/checkout-health.json" \
+  FAKE_ACTIVE=1 \
+  FAKE_RUNNING=1 \
+  "$repo_dir/scripts/assert-live-topology.sh" >/dev/null
+
+echo 'Live release guard regressions PASS — unsafe topology and stale identity fail; verification 20 uses the exact factory candidate instead of a stale release manifest.'
