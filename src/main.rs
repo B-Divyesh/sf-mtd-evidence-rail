@@ -352,8 +352,29 @@ pub fn app(state: AppState) -> Router {
             governor_limiter.retain_recent();
         }
     });
-    let api = Router::new()
+    // Provisioning a demo performs several durable writes. Keep its admission
+    // rate below the single SQLite writer's capacity so a connection burst is
+    // rejected immediately instead of waiting behind accepted work. The
+    // broader API limiter below still applies to this route as a second bound.
+    let demo_governor_conf = GovernorConfigBuilder::default()
+        .per_millisecond(1_000)
+        .burst_size(20)
+        .key_extractor(SmartIpKeyExtractor)
+        .finish()
+        .expect("valid demo provisioning rate limit");
+    let demo_governor_limiter = demo_governor_conf.limiter().clone();
+    tokio::spawn(async move {
+        let mut cleanup = tokio::time::interval(Duration::from_secs(60));
+        loop {
+            cleanup.tick().await;
+            demo_governor_limiter.retain_recent();
+        }
+    });
+    let demo_api = Router::new()
         .route("/demo", post(routes::create_demo))
+        .layer(GovernorLayer::new(demo_governor_conf).error_handler(|_| too_many_requests()));
+    let api = Router::new()
+        .merge(demo_api)
         .route("/records", post(routes::create_record))
         .route("/records/import", post(routes::import_records))
         .route(
@@ -372,15 +393,7 @@ pub fn app(state: AppState) -> Router {
                 .get(routes::get_workspace),
         )
         .layer(DefaultBodyLimit::max(8 * 1024 * 1024))
-        .layer(GovernorLayer::new(governor_conf).error_handler(|_| {
-            let mut response =
-                Response::new(Body::from("Too many requests. Try again in one second."));
-            *response.status_mut() = StatusCode::TOO_MANY_REQUESTS;
-            response
-                .headers_mut()
-                .insert(header::RETRY_AFTER, HeaderValue::from_static("1"));
-            response
-        }));
+        .layer(GovernorLayer::new(governor_conf).error_handler(|_| too_many_requests()));
 
     let static_dir = env::var("STATIC_DIR").unwrap_or_else(|_| "dist".into());
     let index = PathBuf::from(&static_dir).join("index.html");
@@ -392,6 +405,15 @@ pub fn app(state: AppState) -> Router {
         .layer(CompressionLayer::new())
         .layer(TraceLayer::new_for_http())
         .with_state(state)
+}
+
+fn too_many_requests() -> Response {
+    let mut response = Response::new(Body::from("Too many requests. Try again in one second."));
+    *response.status_mut() = StatusCode::TOO_MANY_REQUESTS;
+    response
+        .headers_mut()
+        .insert(header::RETRY_AFTER, HeaderValue::from_static("1"));
+    response
 }
 
 async fn health(State(state): State<AppState>) -> impl IntoResponse {
@@ -433,6 +455,10 @@ async fn security_headers(request: Request, next: Next) -> Response {
     headers.insert(
         "permissions-policy",
         HeaderValue::from_static("camera=(), microphone=(), geolocation=()"),
+    );
+    headers.insert(
+        "strict-transport-security",
+        HeaderValue::from_static("max-age=31536000; includeSubDomains"),
     );
     headers.insert("content-security-policy", HeaderValue::from_static("default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'"));
     headers.insert(
@@ -500,6 +526,10 @@ mod tests {
         assert_eq!(
             response.headers().get("x-content-type-options").unwrap(),
             "nosniff"
+        );
+        assert_eq!(
+            response.headers().get("strict-transport-security").unwrap(),
+            "max-age=31536000; includeSubDomains"
         );
     }
 
@@ -630,6 +660,53 @@ mod tests {
             .await
             .unwrap();
         assert_eq!(other_client.status(), StatusCode::UNAUTHORIZED);
+    }
+
+    #[tokio::test]
+    async fn demo_provisioning_burst_returns_all_200_responses_without_overloading_storage() {
+        let service = test_app().await;
+        let mut requests = tokio::task::JoinSet::new();
+        for _ in 0..200 {
+            let service = service.clone();
+            requests.spawn(async move {
+                service
+                    .oneshot(
+                        Request::builder()
+                            .method("POST")
+                            .uri("/api/demo")
+                            .header("x-forwarded-for", "198.51.100.9, 10.0.0.1")
+                            .body(Body::empty())
+                            .unwrap(),
+                    )
+                    .await
+                    .unwrap()
+            });
+        }
+
+        let mut created = 0;
+        let mut limited = 0;
+        while let Some(result) = requests.join_next().await {
+            let response = result.unwrap();
+            match response.status() {
+                StatusCode::CREATED => created += 1,
+                StatusCode::TOO_MANY_REQUESTS => {
+                    limited += 1;
+                    assert_eq!(response.headers().get(header::RETRY_AFTER).unwrap(), "1");
+                    assert_eq!(
+                        response.headers().get("strict-transport-security").unwrap(),
+                        "max-age=31536000; includeSubDomains"
+                    );
+                }
+                status => panic!("unexpected demo burst response: {status}"),
+            }
+        }
+
+        assert_eq!(created + limited, 200);
+        assert!(created <= 22, "demo limiter admitted {created} writes");
+        assert!(
+            limited >= 178,
+            "demo limiter rejected only {limited} requests"
+        );
     }
 
     #[tokio::test]

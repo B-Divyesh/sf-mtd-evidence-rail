@@ -53,7 +53,7 @@ proxies `/api` and `/health` to port 8080.
 npm test
 npm run build       # writes the frontend to dist/
 npm run test:deployment-topology # rejects the verifier's unsafe rollout shape
-npm run test:live-release # matches the published release to /health and its ready image
+npm run test:live-release # ties this candidate to the live source, health, and ready image
 npm run test:live-checkout # checks the live Dodo subscription contract
 npm run test:live-workspace-consistency # also rejects unsafe live replica/storage topology
 npm run test:live-rate-limit # repeats the deployed burst-limit probe
@@ -75,6 +75,7 @@ namespace.
 
 The API temporarily blocks a client that sends too many requests. Behind a
 proxy, it identifies the client from the first forwarded IP address.
+Demo creation has a stricter limit because it writes the six sample records.
 
 There are no advertising trackers or third-party runtime scripts. The server
 enforces the free quarter limit even if browser storage is changed. See
@@ -86,6 +87,7 @@ The root `Dockerfile` builds the Vite frontend and Rust server in separate
 stages. Run `scripts/deploy.sh` through the factory work order. It deploys the
 committed product and checks the live service before it finishes.
 The committed `.factory/release.json` records which source revision is live.
+The candidate is either that revision or its direct metadata-only child.
 The factory owns product registration and billing configuration.
 Deployment details are recorded in the handoff.
 

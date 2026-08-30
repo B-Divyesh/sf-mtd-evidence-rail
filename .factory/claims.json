@@ -162,10 +162,10 @@
   },
   {
     "id": "live-release-identity",
-    "claim": "The deployed health response and ready container image identify the exact published source revision",
+    "claim": "The live health response and ready image identify the published source; a later candidate may change only its release record and handoff",
     "where": "README and deployment handoff",
     "test": "npm run test:live-release",
-    "sandbox": "public deployed service and Azure control plane; read the committed release manifest and require its source revision, /health build_sha, the ready revision image tag, the latest revision, and the single durable topology to agree"
+    "sandbox": "clean candidate checkout, public deployed service, and Azure control plane; require the candidate to equal the published source or be its direct metadata-only child, then require /health, ready image, latest revision, and durable topology to agree with that source"
   },
   {
     "id": "api-rate-limit",
@@ -179,6 +179,6 @@
     "claim": "The deployed API enforces its per-client burst limit and sends Retry-After",
     "where": "deployment handoff",
     "test": "npm run test:live-rate-limit",
-    "sandbox": "public deployed service and Azure control plane; require the production topology, then send 200 fresh HTTP/1.1 POST /api/demo requests with the same X-Forwarded-For first hop; assert at least one 429, Retry-After: 1 on every limited response, and no more acceptances than one 40-token limiter plus its measured 20/second refill"
+    "sandbox": "public deployed service and Azure control plane; require the production topology, then run three waves of 200 fresh HTTP/1.1 POST /api/demo requests per forwarded client; require all 600 responses, Retry-After: 1 on every 429, and no more acceptances than the 20-token demo limiter plus its measured 1/second refill"
   }
 ]
