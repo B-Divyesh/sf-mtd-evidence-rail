@@ -16,6 +16,8 @@
 
 **Image digest:** `sha256:7cc21ca8b22d3c20d1492792dde9c95c9cdb0c7922e612d3ae41c4ed53ebd492`
 
+**Status:** **PASS — all verification 18 release blockers repaired**
+
 ## Findings reproduced and repaired
 
 ### The earlier work order named a commit that did not exist
@@ -93,8 +95,9 @@ after restart.
 ### Clean-clone claims
 
 A fresh clone of pushed release record `7553591…` ran every command declared
-in `.factory/claims.json` independently. Twenty-five claims passed. The live
-Sociobot checkout claim was retried separately and is recorded under Known gap.
+in `.factory/claims.json` independently. All 26 claims passed. The Sociobot
+billing gateway briefly returned HTTP 503, then its exact claim command passed
+from the same clean clone after service recovery at 03:01 UTC.
 
 The passing live claims include:
 
@@ -137,11 +140,9 @@ npm run test:live-rate-limit
 BASE_URL=https://mtd-evidence-rail.sociobot.in npx playwright test --grep-invert '@claim:paid-limit'
 ```
 
-## Known gap
+## Known gaps
 
-The product deployment is healthy, but the external Sociobot billing service
-returned HTTP 503 for the checkout and verification routes from 02:49 through
-02:59 UTC on 30 August 2026. Therefore the live hosted-checkout claim did not
-pass in this repair run. Repository rules forbid changing billing
-infrastructure from this product repository. Retry `npm run test:live-checkout`
-after the Sociobot billing service recovers; no product-side change is needed.
+None. The external Sociobot billing service returned HTTP 503 from 02:49
+through 03:00 UTC, then recovered without a product-side change. The clean
+clone rerun received HTTP 303 and verified the expected Dodo product, GBP 1500
+monthly price, and hosted checkout page.
