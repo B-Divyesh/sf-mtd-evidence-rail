@@ -1002,7 +1002,7 @@
       "label": "openReady()",
       "_callable": true,
       "_origin": "ast",
-      "community": 41,
+      "community": 43,
       "file_type": "code",
       "norm_label": "openready()",
       "source_file": "tests/product.spec.ts",
@@ -1156,7 +1156,7 @@
       "file_type": "code",
       "norm_label": "health()",
       "source_file": "src/main.rs",
-      "source_location": "L397"
+      "source_location": "L419"
     },
     {
       "id": "src_routes",
@@ -2759,7 +2759,7 @@
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "package.json",
-      "source_location": "L27"
+      "source_location": "L29"
     },
     {
       "id": "package_devdependencies_axe_core_playwright",
@@ -2769,7 +2769,7 @@
       "file_type": "code",
       "norm_label": "@axe-core/playwright",
       "source_file": "package.json",
-      "source_location": "L28"
+      "source_location": "L30"
     },
     {
       "id": "package_devdependencies_playwright_test",
@@ -2779,7 +2779,7 @@
       "file_type": "code",
       "norm_label": "@playwright/test",
       "source_file": "package.json",
-      "source_location": "L29"
+      "source_location": "L31"
     },
     {
       "id": "package_devdependencies_sharp",
@@ -2789,7 +2789,7 @@
       "file_type": "code",
       "norm_label": "sharp",
       "source_file": "package.json",
-      "source_location": "L31"
+      "source_location": "L33"
     },
     {
       "id": "package_devdependencies_types_node",
@@ -2799,7 +2799,7 @@
       "file_type": "code",
       "norm_label": "@types/node",
       "source_file": "package.json",
-      "source_location": "L30"
+      "source_location": "L32"
     },
     {
       "id": "package_devdependencies_typescript",
@@ -2809,7 +2809,7 @@
       "file_type": "code",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L32"
+      "source_location": "L34"
     },
     {
       "id": "package_devdependencies_vite",
@@ -2819,7 +2819,7 @@
       "file_type": "code",
       "norm_label": "vite",
       "source_file": "package.json",
-      "source_location": "L33"
+      "source_location": "L35"
     },
     {
       "id": "package_name",
@@ -2839,7 +2839,7 @@
       "file_type": "code",
       "norm_label": "overrides",
       "source_file": "package.json",
-      "source_location": "L35"
+      "source_location": "L37"
     },
     {
       "id": "package_overrides_playwright_core",
@@ -2849,7 +2849,7 @@
       "file_type": "code",
       "norm_label": "playwright-core",
       "source_file": "package.json",
-      "source_location": "L36"
+      "source_location": "L38"
     },
     {
       "id": "package_private",
@@ -2879,7 +2879,7 @@
       "file_type": "code",
       "norm_label": "assets",
       "source_file": "package.json",
-      "source_location": "L25"
+      "source_location": "L27"
     },
     {
       "id": "package_scripts_build",
@@ -2909,7 +2909,7 @@
       "file_type": "code",
       "norm_label": "lint",
       "source_file": "package.json",
-      "source_location": "L23"
+      "source_location": "L25"
     },
     {
       "id": "package_scripts_start",
@@ -2959,7 +2959,7 @@
       "file_type": "code",
       "norm_label": "test:e2e",
       "source_file": "package.json",
-      "source_location": "L24"
+      "source_location": "L26"
     },
     {
       "id": "package_scripts_test_live_checkout",
@@ -2969,7 +2969,7 @@
       "file_type": "code",
       "norm_label": "test:live-checkout",
       "source_file": "package.json",
-      "source_location": "L19"
+      "source_location": "L21"
     },
     {
       "id": "package_scripts_test_live_rate_limit",
@@ -2979,7 +2979,7 @@
       "file_type": "code",
       "norm_label": "test:live-rate-limit",
       "source_file": "package.json",
-      "source_location": "L21"
+      "source_location": "L23"
     },
     {
       "id": "package_scripts_test_live_release",
@@ -2989,7 +2989,7 @@
       "file_type": "code",
       "norm_label": "test:live-release",
       "source_file": "package.json",
-      "source_location": "L18"
+      "source_location": "L20"
     },
     {
       "id": "package_scripts_test_live_workspace_consistency",
@@ -2999,7 +2999,17 @@
       "file_type": "code",
       "norm_label": "test:live-workspace-consistency",
       "source_file": "package.json",
-      "source_location": "L20"
+      "source_location": "L22"
+    },
+    {
+      "id": "package_scripts_test_published_source_guard",
+      "label": "test:published-source-guard",
+      "_origin": "ast",
+      "community": 2,
+      "file_type": "code",
+      "norm_label": "test:published-source-guard",
+      "source_file": "package.json",
+      "source_location": "L19"
     },
     {
       "id": "package_scripts_test_runtime_defaults",
@@ -3042,6 +3052,16 @@
       "source_location": "L17"
     },
     {
+      "id": "package_scripts_test_verification_17_regression",
+      "label": "test:verification-17-regression",
+      "_origin": "ast",
+      "community": 2,
+      "file_type": "code",
+      "norm_label": "test:verification-17-regression",
+      "source_file": "package.json",
+      "source_location": "L18"
+    },
+    {
       "id": "package_scripts_typecheck",
       "label": "typecheck",
       "_origin": "ast",
@@ -3059,7 +3079,7 @@
       "file_type": "code",
       "norm_label": "verify:live-topology",
       "source_file": "package.json",
-      "source_location": "L22"
+      "source_location": "L24"
     },
     {
       "id": "package_type",
@@ -3089,7 +3109,7 @@
       "file_type": "concept",
       "norm_label": "@axe-core/playwright",
       "source_file": "package.json",
-      "source_location": "L28"
+      "source_location": "L30"
     },
     {
       "id": "playwright_test",
@@ -3099,7 +3119,7 @@
       "file_type": "concept",
       "norm_label": "@playwright/test",
       "source_file": "package.json",
-      "source_location": "L29"
+      "source_location": "L31"
     },
     {
       "id": "sharp",
@@ -3109,7 +3129,7 @@
       "file_type": "concept",
       "norm_label": "sharp",
       "source_file": "package.json",
-      "source_location": "L31"
+      "source_location": "L33"
     },
     {
       "id": "types_node",
@@ -3119,7 +3139,7 @@
       "file_type": "concept",
       "norm_label": "@types/node",
       "source_file": "package.json",
-      "source_location": "L30"
+      "source_location": "L32"
     },
     {
       "id": "typescript",
@@ -3129,7 +3149,7 @@
       "file_type": "concept",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L32"
+      "source_location": "L34"
     },
     {
       "id": "vite",
@@ -3139,7 +3159,7 @@
       "file_type": "concept",
       "norm_label": "vite",
       "source_file": "package.json",
-      "source_location": "L33"
+      "source_location": "L35"
     },
     {
       "id": "factory_verification_9",
@@ -3808,10 +3828,52 @@
       "source_location": "L9"
     },
     {
+      "id": "scripts_test_live_rate_limit",
+      "label": "test-live-rate-limit.sh",
+      "_origin": "ast",
+      "community": 30,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "test-live-rate-limit.sh",
+      "source_file": "scripts/test-live-rate-limit.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_test_live_rate_limit_probe_wave",
+      "label": "probe_wave()",
+      "_origin": "ast",
+      "community": 30,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "probe_wave()",
+      "source_file": "scripts/test-live-rate-limit.sh",
+      "source_location": "L15"
+    },
+    {
+      "id": "scripts_test_live_rate_limit_sh__entry",
+      "label": "test-live-rate-limit.sh script",
+      "_origin": "ast",
+      "community": 30,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "test-live-rate-limit.sh script",
+      "source_file": "scripts/test-live-rate-limit.sh",
+      "source_location": "L1"
+    },
+    {
       "id": "scripts_test_live_release_guard",
       "label": "test-live-release-guard.sh",
       "_origin": "ast",
-      "community": 30,
+      "community": 31,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3825,7 +3887,7 @@
       "id": "scripts_test_live_release_guard_run_guard",
       "label": "run_guard()",
       "_origin": "ast",
-      "community": 30,
+      "community": 31,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3839,7 +3901,7 @@
       "id": "scripts_test_live_release_guard_sh__entry",
       "label": "test-live-release-guard.sh script",
       "_origin": "ast",
-      "community": 30,
+      "community": 31,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3853,7 +3915,7 @@
       "id": "scripts_test_runtime_defaults",
       "label": "test-runtime-defaults.sh",
       "_origin": "ast",
-      "community": 31,
+      "community": 32,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3867,7 +3929,7 @@
       "id": "scripts_test_runtime_defaults_cleanup",
       "label": "cleanup()",
       "_origin": "ast",
-      "community": 31,
+      "community": 32,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3881,7 +3943,7 @@
       "id": "scripts_test_runtime_defaults_sh__entry",
       "label": "test-runtime-defaults.sh script",
       "_origin": "ast",
-      "community": 31,
+      "community": 32,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3895,7 +3957,7 @@
       "id": "factory_evidence_verification_5_live_audit",
       "label": "live-audit.mjs",
       "_origin": "ast",
-      "community": 32,
+      "community": 33,
       "file_type": "code",
       "norm_label": "live-audit.mjs",
       "source_file": ".factory/evidence/verification-5/live-audit.mjs",
@@ -3905,7 +3967,7 @@
       "id": "factory_evidence_verification_5_live_audit_report",
       "label": "report",
       "_origin": "ast",
-      "community": 32,
+      "community": 33,
       "file_type": "code",
       "norm_label": "report",
       "source_file": ".factory/evidence/verification-5/live-audit.mjs",
@@ -3915,7 +3977,7 @@
       "id": "factory_evidence_verification_5_live_browser_observation",
       "label": "live-browser-observation.mjs",
       "_origin": "ast",
-      "community": 33,
+      "community": 34,
       "file_type": "code",
       "norm_label": "live-browser-observation.mjs",
       "source_file": ".factory/evidence/verification-5/live-browser-observation.mjs",
@@ -3925,7 +3987,7 @@
       "id": "factory_evidence_verification_5_live_browser_observation_out",
       "label": "out",
       "_origin": "ast",
-      "community": 33,
+      "community": 34,
       "file_type": "code",
       "norm_label": "out",
       "source_file": ".factory/evidence/verification-5/live-browser-observation.mjs",
@@ -3935,7 +3997,7 @@
       "id": "scripts_assert_build_inputs_committed",
       "label": "assert-build-inputs-committed.sh",
       "_origin": "ast",
-      "community": 34,
+      "community": 35,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3949,7 +4011,7 @@
       "id": "scripts_assert_build_inputs_committed_sh__entry",
       "label": "assert-build-inputs-committed.sh script",
       "_origin": "ast",
-      "community": 34,
+      "community": 35,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3963,7 +4025,7 @@
       "id": "scripts_assert_live_topology",
       "label": "assert-live-topology.sh",
       "_origin": "ast",
-      "community": 35,
+      "community": 36,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3977,7 +4039,7 @@
       "id": "scripts_assert_live_topology_sh__entry",
       "label": "assert-live-topology.sh script",
       "_origin": "ast",
-      "community": 35,
+      "community": 36,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3988,10 +4050,38 @@
       "source_location": "L1"
     },
     {
+      "id": "scripts_assert_published_source",
+      "label": "assert-published-source.sh",
+      "_origin": "ast",
+      "community": 37,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "assert-published-source.sh",
+      "source_file": "scripts/assert-published-source.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_assert_published_source_sh__entry",
+      "label": "assert-published-source.sh script",
+      "_origin": "ast",
+      "community": 37,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "assert-published-source.sh script",
+      "source_file": "scripts/assert-published-source.sh",
+      "source_location": "L1"
+    },
+    {
       "id": "scripts_optimise_assets",
       "label": "optimise-assets.mjs",
       "_origin": "ast",
-      "community": 36,
+      "community": 38,
       "file_type": "code",
       "norm_label": "optimise-assets.mjs",
       "source_file": "scripts/optimise-assets.mjs",
@@ -4001,7 +4091,7 @@
       "id": "scripts_optimise_assets_source",
       "label": "source",
       "_origin": "ast",
-      "community": 36,
+      "community": 38,
       "file_type": "code",
       "norm_label": "source",
       "source_file": "scripts/optimise-assets.mjs",
@@ -4011,7 +4101,7 @@
       "id": "scripts_render_production_topology",
       "label": "render-production-topology.sh",
       "_origin": "ast",
-      "community": 37,
+      "community": 39,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -4025,7 +4115,7 @@
       "id": "scripts_render_production_topology_sh__entry",
       "label": "render-production-topology.sh script",
       "_origin": "ast",
-      "community": 37,
+      "community": 39,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -4033,62 +4123,6 @@
       },
       "norm_label": "render-production-topology.sh script",
       "source_file": "scripts/render-production-topology.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_test_deployment_topology",
-      "label": "test-deployment-topology.sh",
-      "_origin": "ast",
-      "community": 38,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "file"
-      },
-      "norm_label": "test-deployment-topology.sh",
-      "source_file": "scripts/test-deployment-topology.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_test_deployment_topology_sh__entry",
-      "label": "test-deployment-topology.sh script",
-      "_origin": "ast",
-      "community": 38,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_entrypoint"
-      },
-      "norm_label": "test-deployment-topology.sh script",
-      "source_file": "scripts/test-deployment-topology.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_test_live_rate_limit",
-      "label": "test-live-rate-limit.sh",
-      "_origin": "ast",
-      "community": 39,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "file"
-      },
-      "norm_label": "test-live-rate-limit.sh",
-      "source_file": "scripts/test-live-rate-limit.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_test_live_rate_limit_sh__entry",
-      "label": "test-live-rate-limit.sh script",
-      "_origin": "ast",
-      "community": 39,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_entrypoint"
-      },
-      "norm_label": "test-live-rate-limit.sh script",
-      "source_file": "scripts/test-live-rate-limit.sh",
       "source_location": "L1"
     },
     {
@@ -4199,7 +4233,7 @@
       "file_type": "code",
       "norm_label": "api_rate_limit_returns_retry_after()",
       "source_file": "src/main.rs",
-      "source_location": "L592"
+      "source_location": "L622"
     },
     {
       "id": "src_main_app",
@@ -4229,7 +4263,7 @@
       "file_type": "code",
       "norm_label": "azure_runtime_accepts_the_durable_data_mount_and_required_vfs()",
       "source_file": "src/main.rs",
-      "source_location": "L524"
+      "source_location": "L554"
     },
     {
       "id": "src_main_azure_runtime_rejects_a_durable_mount_without_the_required_vfs",
@@ -4239,7 +4273,7 @@
       "file_type": "code",
       "norm_label": "azure_runtime_rejects_a_durable_mount_without_the_required_vfs()",
       "source_file": "src/main.rs",
-      "source_location": "L514"
+      "source_location": "L544"
     },
     {
       "id": "src_main_azure_runtime_rejects_the_generic_container_local_filesystem",
@@ -4249,7 +4283,17 @@
       "file_type": "code",
       "norm_label": "azure_runtime_rejects_the_generic_container_local_filesystem()",
       "source_file": "src/main.rs",
-      "source_location": "L507"
+      "source_location": "L537"
+    },
+    {
+      "id": "src_main_demo_provisioning_burst_returns_all_200_responses_without_overloading_storage",
+      "label": "demo_provisioning_burst_returns_all_200_responses_without_overloading_storage()",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "demo_provisioning_burst_returns_all_200_responses_without_overloading_storage()",
+      "source_file": "src/main.rs",
+      "source_location": "L666"
     },
     {
       "id": "src_main_health_reports_build_sha",
@@ -4259,7 +4303,7 @@
       "file_type": "code",
       "norm_label": "health_reports_build_sha()",
       "source_file": "src/main.rs",
-      "source_location": "L488"
+      "source_location": "L514"
     },
     {
       "id": "src_main_main",
@@ -4299,7 +4343,7 @@
       "file_type": "code",
       "norm_label": "security_headers()",
       "source_file": "src/main.rs",
-      "source_location": "L401"
+      "source_location": "L423"
     },
     {
       "id": "src_main_shutdown_signal",
@@ -4309,7 +4353,7 @@
       "file_type": "code",
       "norm_label": "shutdown_signal()",
       "source_file": "src/main.rs",
-      "source_location": "L451"
+      "source_location": "L477"
     },
     {
       "id": "src_main_test_app",
@@ -4319,7 +4363,17 @@
       "file_type": "code",
       "norm_label": "test_app()",
       "source_file": "src/main.rs",
-      "source_location": "L471"
+      "source_location": "L497"
+    },
+    {
+      "id": "src_main_too_many_requests",
+      "label": "too_many_requests()",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "too_many_requests()",
+      "source_file": "src/main.rs",
+      "source_location": "L410"
     },
     {
       "id": "src_main_unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated",
@@ -4329,7 +4383,7 @@
       "file_type": "code",
       "norm_label": "unknown_page_is_a_real_404_and_unversioned_assets_are_revalidated()",
       "source_file": "src/main.rs",
-      "source_location": "L636"
+      "source_location": "L713"
     },
     {
       "id": "src_main_validate_azure_storage_contract",
@@ -4359,7 +4413,7 @@
       "file_type": "code",
       "norm_label": "verification_16_generic_rollout_is_reconciled_before_it_can_serve()",
       "source_file": "src/main.rs",
-      "source_location": "L533"
+      "source_location": "L563"
     },
     {
       "id": "src_main_workspace_deletion_removes_records_evidence_and_audit",
@@ -4369,13 +4423,41 @@
       "file_type": "code",
       "norm_label": "workspace_deletion_removes_records_evidence_and_audit()",
       "source_file": "src/main.rs",
-      "source_location": "L666"
+      "source_location": "L743"
+    },
+    {
+      "id": "scripts_test_deployment_topology",
+      "label": "test-deployment-topology.sh",
+      "_origin": "ast",
+      "community": 40,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "test-deployment-topology.sh",
+      "source_file": "scripts/test-deployment-topology.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_test_deployment_topology_sh__entry",
+      "label": "test-deployment-topology.sh script",
+      "_origin": "ast",
+      "community": 40,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "test-deployment-topology.sh script",
+      "source_file": "scripts/test-deployment-topology.sh",
+      "source_location": "L1"
     },
     {
       "id": "scripts_test_live_release",
       "label": "test-live-release.sh",
       "_origin": "ast",
-      "community": 40,
+      "community": 41,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -4389,7 +4471,7 @@
       "id": "scripts_test_live_release_sh__entry",
       "label": "test-live-release.sh script",
       "_origin": "ast",
-      "community": 40,
+      "community": 41,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -4400,10 +4482,38 @@
       "source_location": "L1"
     },
     {
+      "id": "scripts_test_published_source_guard",
+      "label": "test-published-source-guard.sh",
+      "_origin": "ast",
+      "community": 42,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "test-published-source-guard.sh",
+      "source_file": "scripts/test-published-source-guard.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_test_published_source_guard_sh__entry",
+      "label": "test-published-source-guard.sh script",
+      "_origin": "ast",
+      "community": 42,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "test-published-source-guard.sh script",
+      "source_file": "scripts/test-published-source-guard.sh",
+      "source_location": "L1"
+    },
+    {
       "id": "tests_product_spec",
       "label": "product.spec.ts",
       "_origin": "ast",
-      "community": 41,
+      "community": 43,
       "file_type": "code",
       "norm_label": "product.spec.ts",
       "source_file": "tests/product.spec.ts",
@@ -4413,7 +4523,7 @@
       "id": "pkg_mtd_evidence_rail",
       "label": "mtd-evidence-rail",
       "_origin": "ast",
-      "community": 42,
+      "community": 44,
       "ecosystem": "cargo",
       "file_type": "code",
       "norm_label": "mtd-evidence-rail",
@@ -4426,7 +4536,7 @@
       "id": "playwright_config",
       "label": "playwright.config.ts",
       "_origin": "ast",
-      "community": 43,
+      "community": 45,
       "file_type": "code",
       "norm_label": "playwright.config.ts",
       "source_file": "playwright.config.ts",
@@ -4436,7 +4546,7 @@
       "id": "scripts_license_fixture",
       "label": "license-fixture.mjs",
       "_origin": "ast",
-      "community": 44,
+      "community": 46,
       "file_type": "code",
       "norm_label": "license-fixture.mjs",
       "source_file": "scripts/license-fixture.mjs",
@@ -4446,7 +4556,7 @@
       "id": "scripts_live_browser_smoke",
       "label": "live-browser-smoke.mjs",
       "_origin": "ast",
-      "community": 45,
+      "community": 47,
       "file_type": "code",
       "norm_label": "live-browser-smoke.mjs",
       "source_file": "scripts/live-browser-smoke.mjs",
@@ -4456,7 +4566,7 @@
       "id": "src_main_rs_intoresponse",
       "label": "IntoResponse",
       "_origin": "ast",
-      "community": 46,
+      "community": 48,
       "file_type": "code",
       "norm_label": "intoresponse",
       "source_file": "",
@@ -4466,29 +4576,9 @@
       "id": "src_main_rs_response",
       "label": "Response",
       "_origin": "ast",
-      "community": 47,
-      "file_type": "code",
-      "norm_label": "response",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "src_main_rs_sqlitepool",
-      "label": "SqlitePool",
-      "_origin": "ast",
-      "community": 48,
-      "file_type": "code",
-      "norm_label": "sqlitepool",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "src_main_rs_state",
-      "label": "State",
-      "_origin": "ast",
       "community": 49,
       "file_type": "code",
-      "norm_label": "state",
+      "norm_label": "response",
       "source_file": "",
       "source_location": ""
     },
@@ -4790,10 +4880,30 @@
       "source_location": "L451"
     },
     {
+      "id": "src_main_rs_sqlitepool",
+      "label": "SqlitePool",
+      "_origin": "ast",
+      "community": 50,
+      "file_type": "code",
+      "norm_label": "sqlitepool",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "src_main_rs_state",
+      "label": "State",
+      "_origin": "ast",
+      "community": 51,
+      "file_type": "code",
+      "norm_label": "state",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "src_main_rs_string",
       "label": "String",
       "_origin": "ast",
-      "community": 50,
+      "community": 52,
       "file_type": "code",
       "norm_label": "string",
       "source_file": "",
@@ -4803,7 +4913,7 @@
       "id": "src_routes_rs_intoresponse",
       "label": "IntoResponse",
       "_origin": "ast",
-      "community": 51,
+      "community": 53,
       "file_type": "code",
       "norm_label": "intoresponse",
       "source_file": "",
@@ -4813,7 +4923,7 @@
       "id": "src_routes_rs_response",
       "label": "Response",
       "_origin": "ast",
-      "community": 52,
+      "community": 54,
       "file_type": "code",
       "norm_label": "response",
       "source_file": "",
@@ -4823,7 +4933,7 @@
       "id": "src_routes_rs_sqlitepool",
       "label": "SqlitePool",
       "_origin": "ast",
-      "community": 53,
+      "community": 55,
       "file_type": "code",
       "norm_label": "sqlitepool",
       "source_file": "",
@@ -4833,7 +4943,7 @@
       "id": "src_routes_rs_state",
       "label": "State",
       "_origin": "ast",
-      "community": 54,
+      "community": 56,
       "file_type": "code",
       "norm_label": "state",
       "source_file": "",
@@ -4843,7 +4953,7 @@
       "id": "src_routes_rs_string",
       "label": "String",
       "_origin": "ast",
-      "community": 55,
+      "community": 57,
       "file_type": "code",
       "norm_label": "string",
       "source_file": "",
@@ -4853,7 +4963,7 @@
       "id": "vite_config",
       "label": "vite.config.ts",
       "_origin": "ast",
-      "community": 56,
+      "community": 58,
       "file_type": "code",
       "norm_label": "vite.config.ts",
       "source_file": "vite.config.ts",
@@ -7757,6 +7867,18 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_test_live_rate_limit_sh__entry",
+      "target": "scripts_test_live_rate_limit_probe_wave",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/test-live-rate-limit.sh",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_test_live_release_guard_sh__entry",
       "target": "scripts_test_live_release_guard_run_guard",
       "relation": "calls",
@@ -7909,7 +8031,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/main.rs",
-      "source_location": "L593",
+      "source_location": "L623",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_app",
+      "target": "src_main_too_many_requests",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/main.rs",
+      "source_location": "L375",
       "weight": 1.0
     },
     {
@@ -7921,7 +8055,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/main.rs",
-      "source_location": "L529",
+      "source_location": "L559",
       "weight": 1.0
     },
     {
@@ -7933,7 +8067,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/main.rs",
-      "source_location": "L519",
+      "source_location": "L549",
       "weight": 1.0
     },
     {
@@ -7945,7 +8079,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/main.rs",
-      "source_location": "L509",
+      "source_location": "L539",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_demo_provisioning_burst_returns_all_200_responses_without_overloading_storage",
+      "target": "src_main_test_app",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/main.rs",
+      "source_location": "L667",
       "weight": 1.0
     },
     {
@@ -7957,7 +8103,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/main.rs",
-      "source_location": "L489",
+      "source_location": "L515",
       "weight": 1.0
     },
     {
@@ -8029,7 +8175,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/main.rs",
-      "source_location": "L478",
+      "source_location": "L504",
       "weight": 1.0
     },
     {
@@ -8041,7 +8187,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/main.rs",
-      "source_location": "L637",
+      "source_location": "L714",
       "weight": 1.0
     },
     {
@@ -8065,7 +8211,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/main.rs",
-      "source_location": "L555",
+      "source_location": "L585",
       "weight": 1.0
     },
     {
@@ -8857,7 +9003,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/main.rs",
-      "source_location": "L397",
+      "source_location": "L419",
       "weight": 1.0
     },
     {
@@ -9481,7 +9627,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -9493,7 +9639,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -9505,7 +9651,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -9517,7 +9663,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -9529,7 +9675,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -9541,7 +9687,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -9577,7 +9723,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/main.rs",
-      "source_location": "L397",
+      "source_location": "L419",
       "weight": 1.0
     },
     {
@@ -9589,7 +9735,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/main.rs",
-      "source_location": "L401",
+      "source_location": "L423",
       "weight": 1.0
     },
     {
@@ -9601,7 +9747,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/main.rs",
-      "source_location": "L401",
+      "source_location": "L423",
       "weight": 1.0
     },
     {
@@ -10081,7 +10227,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/main.rs",
-      "source_location": "L397",
+      "source_location": "L419",
       "weight": 1.0
     },
     {
@@ -10117,7 +10263,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/main.rs",
-      "source_location": "L401",
+      "source_location": "L423",
       "weight": 1.0
     },
     {
@@ -10129,7 +10275,19 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "src/main.rs",
-      "source_location": "L471",
+      "source_location": "L497",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_too_many_requests",
+      "target": "response",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "return_type",
+      "source_file": "src/main.rs",
+      "source_location": "L410",
       "weight": 1.0
     },
     {
@@ -13552,7 +13710,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -13574,7 +13732,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -13618,7 +13776,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -13629,7 +13787,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -13640,7 +13798,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -13651,7 +13809,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -13662,7 +13820,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -13673,7 +13831,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -13684,7 +13842,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L36",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -13777,7 +13935,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_live_release",
+      "target": "package_scripts_test_verification_17_regression",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13788,7 +13946,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_live_checkout",
+      "target": "package_scripts_test_published_source_guard",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13799,7 +13957,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_live_workspace_consistency",
+      "target": "package_scripts_test_live_release",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13810,7 +13968,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_live_rate_limit",
+      "target": "package_scripts_test_live_checkout",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13821,7 +13979,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_verify_live_topology",
+      "target": "package_scripts_test_live_workspace_consistency",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13832,7 +13990,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_lint",
+      "target": "package_scripts_test_live_rate_limit",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13843,7 +14001,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_e2e",
+      "target": "package_scripts_verify_live_topology",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13854,13 +14012,35 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_assets",
+      "target": "package_scripts_lint",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_e2e",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_assets",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -14007,6 +14187,17 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_assert_published_source",
+      "target": "scripts_assert_published_source_sh__entry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/assert-published-source.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_deploy",
       "target": "scripts_deploy_sh__entry",
       "relation": "contains",
@@ -14146,6 +14337,17 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/test-live-workspace-consistency.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_test_published_source_guard",
+      "target": "scripts_test_published_source_guard_sh__entry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/test-published-source-guard.sh",
       "source_location": "L1",
       "weight": 1.0
     },
@@ -14305,13 +14507,24 @@
     },
     {
       "source": "src_main",
+      "target": "src_main_too_many_requests",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main.rs",
+      "source_location": "L410",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main",
       "target": "src_main_health",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L397",
+      "source_location": "L419",
       "weight": 1.0
     },
     {
@@ -14322,18 +14535,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L401",
-      "weight": 1.0
-    },
-    {
-      "source": "src_main",
-      "target": "src_main_shutdown_signal",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/main.rs",
-      "source_location": "L451",
+      "source_location": "L423",
       "weight": 1.0
     },
     {
@@ -14349,13 +14551,24 @@
     },
     {
       "source": "src_main",
+      "target": "src_main_shutdown_signal",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main.rs",
+      "source_location": "L477",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main",
       "target": "src_main_test_app",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L471",
+      "source_location": "L497",
       "weight": 1.0
     },
     {
@@ -14366,7 +14579,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L488",
+      "source_location": "L514",
       "weight": 1.0
     },
     {
@@ -14377,7 +14590,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L507",
+      "source_location": "L537",
       "weight": 1.0
     },
     {
@@ -14388,7 +14601,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L514",
+      "source_location": "L544",
       "weight": 1.0
     },
     {
@@ -14399,7 +14612,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L524",
+      "source_location": "L554",
       "weight": 1.0
     },
     {
@@ -14410,7 +14623,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L533",
+      "source_location": "L563",
       "weight": 1.0
     },
     {
@@ -14421,7 +14634,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L592",
+      "source_location": "L622",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main",
+      "target": "src_main_demo_provisioning_burst_returns_all_200_responses_without_overloading_storage",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main.rs",
+      "source_location": "L666",
       "weight": 1.0
     },
     {
@@ -14432,7 +14656,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L636",
+      "source_location": "L713",
       "weight": 1.0
     },
     {
@@ -14443,7 +14667,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main.rs",
-      "source_location": "L666",
+      "source_location": "L743",
       "weight": 1.0
     },
     {
@@ -14975,6 +15199,17 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_test_live_rate_limit",
+      "target": "scripts_test_live_rate_limit_probe_wave",
+      "relation": "defines",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/test-live-rate-limit.sh",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_test_live_release_guard",
       "target": "scripts_test_live_release_guard_run_guard",
       "relation": "defines",
@@ -15401,5 +15636,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "89f6d2c36ab778eb5d7a72f7db594de088d55fdb"
+  "built_at_commit": "bb5132445c72488a0840631f7d060fc112254af3"
 }
