@@ -2759,7 +2759,7 @@
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "package.json",
-      "source_location": "L29"
+      "source_location": "L30"
     },
     {
       "id": "package_devdependencies_axe_core_playwright",
@@ -2769,7 +2769,7 @@
       "file_type": "code",
       "norm_label": "@axe-core/playwright",
       "source_file": "package.json",
-      "source_location": "L30"
+      "source_location": "L31"
     },
     {
       "id": "package_devdependencies_playwright_test",
@@ -2779,7 +2779,7 @@
       "file_type": "code",
       "norm_label": "@playwright/test",
       "source_file": "package.json",
-      "source_location": "L31"
+      "source_location": "L32"
     },
     {
       "id": "package_devdependencies_sharp",
@@ -2789,7 +2789,7 @@
       "file_type": "code",
       "norm_label": "sharp",
       "source_file": "package.json",
-      "source_location": "L33"
+      "source_location": "L34"
     },
     {
       "id": "package_devdependencies_types_node",
@@ -2799,7 +2799,7 @@
       "file_type": "code",
       "norm_label": "@types/node",
       "source_file": "package.json",
-      "source_location": "L32"
+      "source_location": "L33"
     },
     {
       "id": "package_devdependencies_typescript",
@@ -2809,7 +2809,7 @@
       "file_type": "code",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L34"
+      "source_location": "L35"
     },
     {
       "id": "package_devdependencies_vite",
@@ -2819,7 +2819,7 @@
       "file_type": "code",
       "norm_label": "vite",
       "source_file": "package.json",
-      "source_location": "L35"
+      "source_location": "L36"
     },
     {
       "id": "package_name",
@@ -2839,7 +2839,7 @@
       "file_type": "code",
       "norm_label": "overrides",
       "source_file": "package.json",
-      "source_location": "L37"
+      "source_location": "L38"
     },
     {
       "id": "package_overrides_playwright_core",
@@ -2849,7 +2849,7 @@
       "file_type": "code",
       "norm_label": "playwright-core",
       "source_file": "package.json",
-      "source_location": "L38"
+      "source_location": "L39"
     },
     {
       "id": "package_private",
@@ -2879,7 +2879,7 @@
       "file_type": "code",
       "norm_label": "assets",
       "source_file": "package.json",
-      "source_location": "L27"
+      "source_location": "L28"
     },
     {
       "id": "package_scripts_build",
@@ -2909,7 +2909,7 @@
       "file_type": "code",
       "norm_label": "lint",
       "source_file": "package.json",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "package_scripts_start",
@@ -2959,7 +2959,7 @@
       "file_type": "code",
       "norm_label": "test:e2e",
       "source_file": "package.json",
-      "source_location": "L26"
+      "source_location": "L27"
     },
     {
       "id": "package_scripts_test_live_checkout",
@@ -2969,7 +2969,7 @@
       "file_type": "code",
       "norm_label": "test:live-checkout",
       "source_file": "package.json",
-      "source_location": "L21"
+      "source_location": "L22"
     },
     {
       "id": "package_scripts_test_live_rate_limit",
@@ -2979,7 +2979,7 @@
       "file_type": "code",
       "norm_label": "test:live-rate-limit",
       "source_file": "package.json",
-      "source_location": "L23"
+      "source_location": "L24"
     },
     {
       "id": "package_scripts_test_live_release",
@@ -2989,7 +2989,7 @@
       "file_type": "code",
       "norm_label": "test:live-release",
       "source_file": "package.json",
-      "source_location": "L20"
+      "source_location": "L21"
     },
     {
       "id": "package_scripts_test_live_workspace_consistency",
@@ -2999,7 +2999,7 @@
       "file_type": "code",
       "norm_label": "test:live-workspace-consistency",
       "source_file": "package.json",
-      "source_location": "L22"
+      "source_location": "L23"
     },
     {
       "id": "package_scripts_test_published_source_guard",
@@ -3009,7 +3009,7 @@
       "file_type": "code",
       "norm_label": "test:published-source-guard",
       "source_file": "package.json",
-      "source_location": "L19"
+      "source_location": "L20"
     },
     {
       "id": "package_scripts_test_runtime_defaults",
@@ -3062,6 +3062,16 @@
       "source_location": "L18"
     },
     {
+      "id": "package_scripts_test_verification_18_regression",
+      "label": "test:verification-18-regression",
+      "_origin": "ast",
+      "community": 2,
+      "file_type": "code",
+      "norm_label": "test:verification-18-regression",
+      "source_file": "package.json",
+      "source_location": "L19"
+    },
+    {
       "id": "package_scripts_typecheck",
       "label": "typecheck",
       "_origin": "ast",
@@ -3079,7 +3089,7 @@
       "file_type": "code",
       "norm_label": "verify:live-topology",
       "source_file": "package.json",
-      "source_location": "L24"
+      "source_location": "L25"
     },
     {
       "id": "package_type",
@@ -3109,7 +3119,7 @@
       "file_type": "concept",
       "norm_label": "@axe-core/playwright",
       "source_file": "package.json",
-      "source_location": "L30"
+      "source_location": "L31"
     },
     {
       "id": "playwright_test",
@@ -3119,7 +3129,7 @@
       "file_type": "concept",
       "norm_label": "@playwright/test",
       "source_file": "package.json",
-      "source_location": "L31"
+      "source_location": "L32"
     },
     {
       "id": "sharp",
@@ -3129,7 +3139,7 @@
       "file_type": "concept",
       "norm_label": "sharp",
       "source_file": "package.json",
-      "source_location": "L33"
+      "source_location": "L34"
     },
     {
       "id": "types_node",
@@ -3139,7 +3149,7 @@
       "file_type": "concept",
       "norm_label": "@types/node",
       "source_file": "package.json",
-      "source_location": "L32"
+      "source_location": "L33"
     },
     {
       "id": "typescript",
@@ -3149,7 +3159,7 @@
       "file_type": "concept",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L34"
+      "source_location": "L35"
     },
     {
       "id": "vite",
@@ -3159,7 +3169,7 @@
       "file_type": "concept",
       "norm_label": "vite",
       "source_file": "package.json",
-      "source_location": "L35"
+      "source_location": "L36"
     },
     {
       "id": "factory_verification_9",
@@ -9627,7 +9637,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -9639,7 +9649,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -9651,7 +9661,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -9663,7 +9673,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -9675,7 +9685,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -9687,7 +9697,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -13704,17 +13714,6 @@
     },
     {
       "source": "package",
-      "target": "package_devdependencies",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "package.json",
-      "source_location": "L29",
-      "weight": 1.0
-    },
-    {
-      "source": "package",
       "target": "package_version",
       "relation": "contains",
       "_origin": "ast",
@@ -13726,13 +13725,24 @@
     },
     {
       "source": "package",
+      "target": "package_devdependencies",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "package",
       "target": "package_overrides",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L37",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -13776,7 +13786,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -13787,7 +13797,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -13798,7 +13808,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -13809,7 +13819,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -13820,7 +13830,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -13831,7 +13841,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -13842,7 +13852,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -13946,7 +13956,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_published_source_guard",
+      "target": "package_scripts_test_verification_18_regression",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13957,7 +13967,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_live_release",
+      "target": "package_scripts_test_published_source_guard",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13968,7 +13978,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_live_checkout",
+      "target": "package_scripts_test_live_release",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13979,7 +13989,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_live_workspace_consistency",
+      "target": "package_scripts_test_live_checkout",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13990,7 +14000,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_live_rate_limit",
+      "target": "package_scripts_test_live_workspace_consistency",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14001,7 +14011,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_verify_live_topology",
+      "target": "package_scripts_test_live_rate_limit",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14012,7 +14022,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_lint",
+      "target": "package_scripts_verify_live_topology",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14023,7 +14033,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_e2e",
+      "target": "package_scripts_lint",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14034,13 +14044,24 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_assets",
+      "target": "package_scripts_test_e2e",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_assets",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -15636,5 +15657,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "91aebfb252ae4933ee3406a1dd6544533b8c9b76"
+  "built_at_commit": "02cc1ea96227310fa61d5e3a4b90b08c1b6ccc92"
 }

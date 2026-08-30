@@ -137,6 +137,7 @@
       "package_scripts_test_verification_15_regression",
       "package_scripts_test_verification_16_regression",
       "package_scripts_test_verification_17_regression",
+      "package_scripts_test_verification_18_regression",
       "package_scripts_typecheck",
       "package_scripts_verify_live_topology",
       "package_type",
@@ -658,7 +659,7 @@
   "cohesion": {
     "0": 0.11611030478955008,
     "1": 0.18067632850241547,
-    "2": 0.047619047619047616,
+    "2": 0.046511627906976744,
     "3": 0.13974358974358975,
     "4": 0.11724137931034483,
     "5": 0.07407407407407407,
@@ -720,7 +721,7 @@
     {
       "id": "package_scripts",
       "label": "scripts",
-      "degree": 22
+      "degree": 23
     },
     {
       "id": "frontend_src_main_bindapp",
