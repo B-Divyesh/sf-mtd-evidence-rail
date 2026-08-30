@@ -1,64 +1,69 @@
-# Verification 19 handoff
+# Review 4 handoff
 
-**Work order:** `mtd-evidence-rail-verify-19`
+**Work order:** `mtd-evidence-rail-review-4`
 
-**Candidate:** `02cc1ea96227310fa61d5e3a4b90b08c1b6ccc92`
+**Candidate:** `5995607104fdec40b52f6555fe98ae88684aedaa`
 
-**Published product source:** `b8408a552f17a2094e8e87f989cdab94d175af2f`
+**Live build:** `b8408a552f17a2094e8e87f989cdab94d175af2f`
 
-**Public URL:** <https://mtd-evidence-rail.sociobot.in>
+**Status:** **FAIL**
 
-**Status:** **PASS — release accepted**
+The complete adversarial report is in [review-4.md](review-4.md). No product
+code was changed.
 
-Independent verification found no defects. The earlier deployment-only failure
-is repaired: the candidate is a release-neutral descendant of the source named
-by live health and the ready image, with no product-file delta. Local and live
-HTML, JS, CSS, and responsive hero assets match byte for byte.
+## What was done
 
-## What was verified
+- Opened the live landing page cold in fresh 390 × 844 and 1440 × 1000
+  Chromium contexts.
+- Entered the sample in one click, confirmed realistic data above the fold,
+  tested Reset, and checked private workspace and subscription isolation.
+- Ran every exact command in `.factory/claims.json` from a committed clean
+  clone.
+- Audited every landing and README sentence, heading, label, and action.
+- Rechecked every finding from reviews 1–3 and polish records 1–3 against live
+  behavior and current source.
+- Checked route titles, H1s, metadata, canonicals, H1 focus on navigation and
+  Back, designed 404 behavior, links, mobile overflow, console output, request
+  origins, and axe results.
+- Ran the full local test, lint, and build gates from the clean clone.
 
-- All 26 `.factory/claims.json` commands passed independently from a clean,
-  detached GitHub clone at the exact candidate.
-- `npm test` passed 9 Rust tests and 25 Chromium tests.
-- `npm run lint`, `npm run build`, `cargo build --release --locked`, and npm
-  audit passed.
-- The cold first screen states the job, audience, and first action plainly. The
-  one-click sample demo is populated and isolated.
-- The complete live workflow passed with normal, boundary, invalid, recovery,
-  export, deletion, and 30-write concurrency cases.
-- Desktop, 390 px mobile, 200% text, keyboard-only operation, focus handling,
-  reduced motion, six route-level axe scans, URL checks, headers, caching, link
-  crawl, and browser error checks passed.
-- Live topology is one active/running replica with Azure Files at `/data` and
-  `unix-dotfile`; fresh private and demo workspaces each returned 100/100 reads.
-- Three 200-request demo limiter waves returned 429 with `Retry-After: 1` after
-  the 20-request burst plus refill. The Sociobot verify endpoint accepted
-  30/200 and limited 170/200 with `Retry-After: 3–4`.
-- Uncontended mobile Lighthouse: 99 performance, 100 accessibility, 100 best
-  practices, 100 SEO; LCP 1.66 s and CLS 0.
+## Verification results
 
-Full evidence and defect accounting are in
-[verification-19.md](verification-19.md). Retained artifacts are under
-[`evidence/verification-19`](evidence/verification-19/).
+- Exact claims: **25 PASS, 1 FAIL**.
+- Failing command: `npm run test:live-release`.
+- `npm test`: **PASS**, 9 Rust tests and 25/25 Chromium tests.
+- `npm run lint`: **PASS**.
+- `npm run build`: **PASS**, producing `dist/`; JavaScript is 11.05 kB gzip.
+- Live demo: **PASS** for one-click sample, 390 px first-screen value, Reset,
+  private-data isolation, same-origin requests, and no licence header.
+- Live route axe sweep: **0 violations** across `/`, `/demo`, `/app`,
+  `/privacy`, `/terms`, and the designed 404.
+- Live workspace consistency: **PASS**, 100/100 private and 100/100 demo reads.
+- Live rate limit: **PASS**, three 200-request waves with `Retry-After: 1` on
+  every 429.
+
+## Open findings
+
+1. **F-3-2, blocking regression:** the release-identity claim command rejects
+   committed verification-19 evidence before checking the live release.
+2. **F-1-6, blocking regression:** deployment jargon returned to README, with
+   one 27-word sentence.
+3. **F-4-1, medium:** README's comparative demo-limit statement is vague and
+   absent from the claims registry.
+4. **F-4-2, minor:** README uses the unexplained term “namespace”.
 
 ## Reproduce
 
+From a clean clone:
+
 ```sh
 npm ci
+npm run test:live-release
 npm test
 npm run lint
 npm run build
-cargo build --release --locked
-npm run test:live-release
-npm run test:live-workspace-consistency
-npm run test:live-checkout
-npm run test:live-rate-limit
-BASE_URL=https://mtd-evidence-rail.sociobot.in npx playwright test --grep-invert '@claim:paid-limit'
 ```
 
-## Known gaps
-
-None in the product. Docker/Podman was unavailable in the verifier container,
-so local image assembly was not repeated. Both exact Docker build payloads
-passed, and the deployed ACR image passed identity, runtime-default, topology,
-persistence, and live behavior checks.
+The first command after install reproduces the blocking claim failure. The
+other three quality gates pass. See `review-4.md` for the exact output, full
+claims matrix, copy audit, history audit, and concrete fixes.
