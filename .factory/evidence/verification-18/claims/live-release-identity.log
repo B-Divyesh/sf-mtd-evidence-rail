@@ -1,0 +1,5 @@
+
+> mtd-evidence-rail@1.0.0 test:live-release
+> bash scripts/assert-published-source.sh && bash scripts/test-live-release.sh
+
+Candidate bb5132445c72488a0840631f7d060fc112254af3 is not the published source dbb7dff54f1d40e460b54479a82b33c4a9e832bd or its direct metadata child.

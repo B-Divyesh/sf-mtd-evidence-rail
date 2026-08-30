@@ -1,0 +1,19 @@
+
+> mtd-evidence-rail@1.0.0 build
+> vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 4 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/index.html                  2.06 kB │ gzip:  0.75 kB
+../dist/assets/index-B2Qaf5JO.css  18.13 kB │ gzip:  5.01 kB
+../dist/assets/index-CbYEboLH.js   33.90 kB │ gzip: 11.05 kB │ map: 61.27 kB
+✓ built in 368ms
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.17s
+
+> mtd-evidence-rail@1.0.0 test:runtime-defaults
+> bash scripts/test-runtime-defaults.sh
+
+@claim:runtime-defaults PASS — server started with only PORT

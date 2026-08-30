@@ -1,0 +1,15 @@
+{
+  "createStatus": 201,
+  "concurrentStatusCounts": {
+    "201": 25,
+    "402": 5
+  },
+  "retryAfter429": [],
+  "persisted": {
+    "missing": 25,
+    "total": 25
+  },
+  "uniqueDescriptions": 25,
+  "deleteStatus": 204,
+  "afterDeleteStatus": 404
+}

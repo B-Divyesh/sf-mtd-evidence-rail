@@ -1,0 +1,26 @@
+demo-isolation	0	194	npm test -- --grep @claim:demo-isolation
+no-account	0	18	npm test -- --grep @claim:no-account
+workspace-key-recovery	0	17	npm test -- --grep @claim:workspace-key-recovery
+workspace-key-auth	0	16	npm test -- --grep @claim:workspace-key-auth
+quarter-capture	0	16	npm test -- --grep @claim:quarter-capture
+csv-matching	0	17	npm test -- --grep @claim:csv-matching
+atomic-import	0	16	npm test -- --grep @claim:atomic-import
+calendar-dates	0	16	npm test -- --grep @claim:calendar-dates
+evidence-types	0	16	npm test -- --grep @claim:evidence-types
+missing-review	0	16	npm test -- --grep @claim:missing-review
+demo-sample	0	17	npm test -- --grep @claim:demo-sample
+evidence-pack	0	15	npm test -- --grep @claim:evidence-pack
+workspace-delete	0	17	npm test -- --grep @claim:workspace-delete
+free-limit	0	15	npm test -- --grep @claim:free-limit
+paid-limit	0	17	npm test -- --grep @claim:paid-limit
+hosted-checkout	0	2	npm run test:live-checkout
+license-return	0	16	npm test -- --grep @claim:license-return
+no-trackers	0	16	npm test -- --grep @claim:no-trackers
+runtime-defaults	0	1	npm run build && cargo build && npm run test:runtime-defaults
+durable-storage	0	2	npm run build && cargo build && npm run test:durable-storage
+shared-state-boundary	0	5	npm run build && cargo build && npm run test:shared-storage
+production-topology	0	1	npm run test:deployment-topology
+live-workspace-consistency	0	24	npm run test:live-workspace-consistency
+live-release-identity	1	0	npm run test:live-release
+api-rate-limit	0	0	cargo test api_rate_limit_returns_retry_after
+live-api-rate-limit	0	41	npm run test:live-rate-limit

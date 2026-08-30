@@ -1,0 +1,15 @@
+
+> mtd-evidence-rail@1.0.0 test:live-checkout
+> node scripts/test-live-checkout.mjs
+
+{
+  "claim": "hosted-checkout",
+  "endpoint": "https://api.sociobot.in/api/v1/products/mtd-evidence-rail/checkout",
+  "status": 303,
+  "hosted_checkout": "https://checkout.dodopayments.com/session/cks_0NmTyB3LK9f7Taz6xhDDW",
+  "product_slug": "mtd-evidence-rail",
+  "product_id": "pdt_0NmPnl9rqkKtKbVXh6baV",
+  "amount_minor": 1500,
+  "currency": "GBP",
+  "cadence": "monthly"
+}

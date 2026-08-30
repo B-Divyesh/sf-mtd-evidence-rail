@@ -1,0 +1,6 @@
+$ git fetch origin bb51321015e6489d85dd8b1102b18328cb87810d
+fatal: remote error: upload-pack: not our ref bb51321015e6489d85dd8b1102b18328cb87810d
+exit=128
+$ git ls-remote origin
+bb5132445c72488a0840631f7d060fc112254af3	HEAD
+bb5132445c72488a0840631f7d060fc112254af3	refs/heads/main
