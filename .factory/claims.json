@@ -162,10 +162,10 @@
   },
   {
     "id": "live-release-identity",
-    "claim": "The live health response and ready image identify the published source; a later candidate may change only its release record and handoff",
+    "claim": "The live health response and ready image identify the published source; later candidate commits may change only release evidence or the generated code map",
     "where": "README and deployment handoff",
     "test": "npm run test:live-release",
-    "sandbox": "clean candidate checkout, public deployed service, and Azure control plane; require the candidate to equal the published source or be its direct metadata-only child, then require /health, ready image, latest revision, and durable topology to agree with that source"
+    "sandbox": "clean candidate checkout, public deployed service, and Azure control plane; require the candidate to equal or descend from the published source with only release-evidence or generated-code-map changes, then require /health, ready image, latest revision, and durable topology to agree with that source"
   },
   {
     "id": "api-rate-limit",

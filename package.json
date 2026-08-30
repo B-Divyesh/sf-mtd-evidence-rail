@@ -16,6 +16,7 @@
     "test:verification-15-regression": "bash scripts/test-live-release-guard.sh",
     "test:verification-16-regression": "cargo build && node scripts/test-topology-self-repair.mjs && bash scripts/test-live-release-guard.sh && cargo test verification_16_generic_rollout_is_reconciled_before_it_can_serve",
     "test:verification-17-regression": "cargo test demo_provisioning_burst_returns_all_200_responses_without_overloading_storage && cargo test health_reports_build_sha && bash scripts/test-published-source-guard.sh",
+    "test:verification-18-regression": "bash scripts/test-published-source-guard.sh && bash scripts/test-live-release-guard.sh",
     "test:published-source-guard": "bash scripts/test-published-source-guard.sh",
     "test:live-release": "bash scripts/assert-published-source.sh && bash scripts/test-live-release.sh",
     "test:live-checkout": "node scripts/test-live-checkout.mjs",

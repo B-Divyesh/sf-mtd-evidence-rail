@@ -87,7 +87,8 @@ The root `Dockerfile` builds the Vite frontend and Rust server in separate
 stages. Run `scripts/deploy.sh` through the factory work order. It deploys the
 committed product and checks the live service before it finishes.
 The committed `.factory/release.json` records which source revision is live.
-The candidate is either that revision or its direct metadata-only child.
+The candidate is that revision or a descendant whose cumulative changes are
+limited to release evidence and the factory-generated code map.
 The factory owns product registration and billing configuration.
 Deployment details are recorded in the handoff.
 

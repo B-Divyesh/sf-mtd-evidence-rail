@@ -2,9 +2,9 @@
 set -euo pipefail
 
 # Bind a verification candidate to the bytes that are actually deployed. A
-# candidate may be the published source itself. When evidence must be recorded
-# after deployment, it may instead be one direct child that changes only the
-# release manifest and handoff. Longer or product-changing gaps are rejected.
+# candidate may be the published source itself. Post-deploy evidence and the
+# factory's generated code map may follow in one or more commits, but their
+# cumulative diff must not change any product or deployment input.
 repo_dir=${1:-$(cd "$(dirname "$0")/.." && pwd)}
 release_manifest=${RELEASE_MANIFEST:-"$repo_dir/.factory/release.json"}
 candidate_sha=${CANDIDATE_SHA:-$(git -C "$repo_dir" rev-parse HEAD)}
@@ -18,16 +18,15 @@ if [ "$candidate_sha" = "$published_sha" ]; then
   exit 0
 fi
 
-parent_sha=$(git -C "$repo_dir" rev-parse "${candidate_sha}^" 2>/dev/null || true)
-if [ "$parent_sha" != "$published_sha" ]; then
-  echo "Candidate $candidate_sha is not the published source $published_sha or its direct metadata child." >&2
+if ! git -C "$repo_dir" merge-base --is-ancestor "$published_sha" "$candidate_sha"; then
+  echo "Candidate $candidate_sha does not descend from published source $published_sha." >&2
   exit 1
 fi
 
-unexpected_paths=$(git -C "$repo_dir" diff-tree --no-commit-id --name-only -r "$candidate_sha" |
-  grep -Ev '^\.factory/(handoff\.md|release\.json)$' || true)
+unexpected_paths=$(git -C "$repo_dir" diff --name-only "$published_sha..$candidate_sha" -- |
+  grep -Ev '^(\.factory/(handoff\.md|release\.json)|graphify-out/)' || true)
 if [ -n "$unexpected_paths" ]; then
-  echo "Metadata-only candidate $candidate_sha changes release inputs:" >&2
+  echo "Release-neutral candidate $candidate_sha changes product or deployment inputs:" >&2
   printf '%s\n' "$unexpected_paths" >&2
   exit 1
 fi
@@ -39,4 +38,4 @@ if [ "$manifest_at_candidate" != "$published_sha" ]; then
   exit 1
 fi
 
-echo "Candidate $candidate_sha is the direct metadata-only child of published source $published_sha."
+echo "Candidate $candidate_sha is a release-neutral descendant of published source $published_sha."

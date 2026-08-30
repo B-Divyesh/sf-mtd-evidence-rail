@@ -23,14 +23,37 @@ git -C "$fixture" commit -qm 'release evidence'
 CANDIDATE_SHA=$(git -C "$fixture" rev-parse HEAD) \
   "$repo_dir/scripts/assert-published-source.sh" "$fixture" >/dev/null
 
-# Reproduce the verification-17 loophole: a manifest can name an older live
-# source while the candidate is no longer its direct evidence-only child.
+# Reproduce verification 18 exactly: the factory adds a generated code-map
+# commit after the release-evidence commit. The candidate still represents the
+# published bytes because its cumulative delta is release-neutral.
+mkdir -p "$fixture/graphify-out/cache"
+printf '{}\n' > "$fixture/graphify-out/cache/stat-index.json"
+printf '{}\n' > "$fixture/graphify-out/graph.json"
+printf '{}\n' > "$fixture/graphify-out/manifest.json"
+git -C "$fixture" add graphify-out
+git -C "$fixture" commit -qm 'factory code map'
+wrapped_candidate=$(git -C "$fixture" rev-parse HEAD)
+CANDIDATE_SHA="$wrapped_candidate" \
+  "$repo_dir/scripts/assert-published-source.sh" "$fixture" >/dev/null
+
+# A generated code-map commit is never allowed to hide a product change. The
+# cumulative source-to-candidate diff must still reject this later revision.
 printf 'changed product\n' >> "$fixture/src/main.rs"
 git -C "$fixture" add src/main.rs
 git -C "$fixture" commit -qm 'later product change'
 if CANDIDATE_SHA=$(git -C "$fixture" rev-parse HEAD) \
   "$repo_dir/scripts/assert-published-source.sh" "$fixture" >/dev/null 2>&1; then
   echo 'Regression: a stale published source accepted a later candidate.' >&2
+  exit 1
+fi
+
+# A candidate from another line of history must fail even when its visible
+# files happen to match the published source.
+unrelated_candidate=$(printf 'unrelated candidate\n' |
+  git -C "$fixture" commit-tree "${wrapped_candidate}^{tree}")
+if CANDIDATE_SHA="$unrelated_candidate" \
+  "$repo_dir/scripts/assert-published-source.sh" "$fixture" >/dev/null 2>&1; then
+  echo 'Regression: an unrelated candidate passed the ancestry guard.' >&2
   exit 1
 fi
 
@@ -46,4 +69,4 @@ if CANDIDATE_SHA=$(git -C "$fixture" rev-parse HEAD) \
   exit 1
 fi
 
-echo 'Published-source guard PASS — exact source and one direct evidence-only child are accepted; stale or product-changing candidates are rejected.'
+echo 'Published-source guard PASS — exact source and release-neutral factory descendants are accepted; unrelated or product-changing candidates are rejected.'
