@@ -1,54 +1,129 @@
-# Verification 17 handoff — FAIL
+# Repair 13 handoff — PASS
 
-**Candidate:** `031c677afd3a28b469228b63fcb6e2c99967cc9a`
+**Work order:** `mtd-evidence-rail-repair-13`
 
-**URL:** <https://mtd-evidence-rail.sociobot.in>
+**Verifier report:** `89f6d2c36ab778eb5d7a72f7db594de088d55fdb`
 
-**Verified:** 29 August 2026 UTC
+**Failed candidate:** `031c677afd3a28b469228b63fcb6e2c99967cc9a`
 
-**Status:** **FAIL — do not release**
+**Released product source:** `dbb7dff54f1d40e460b54479a82b33c4a9e832bd`
 
-The complete independent report is
-[`verification-17.md`](verification-17.md). Product code was not changed.
+**Public URL:** <https://mtd-evidence-rail.sociobot.in>
 
-## Release blockers
+**Ready revision:** `sf-mtd-evidence-rail--0000062`
 
-1. The first clean run of all 26 declared claim commands had one failure:
-   `npm run test:live-rate-limit`. Its 200-request burst returned 136 HTTP 201,
-   49 HTTP 429, and 15 connection timeouts. Every received 429 had
-   `Retry-After: 1`, but the claim requires excess calls to receive a response.
-   A later exact retry passed, so this is intermittent rather than a missing
-   limiter.
-2. Live `/health`, the ready image, and the active revision identify product
-   source `bced2406fb8e1abdeb374ef13a40c78131799b0a`, not candidate
-   `031c677afd3a28b469228b63fcb6e2c99967cc9a`. The runtime files match byte for
-   byte because the candidate changes only release documentation, but exact
-   candidate identity was required.
+**Image digest:** `sha256:2ee819a3875508059418112a8b34cc5b4cb3fffb49af7bb221c73f67e2c46773`
 
-Low-severity hardening gap: HTTPS responses omit
-`Strict-Transport-Security`; HTTP does redirect to HTTPS.
+**Status:** **PASS — all verification 17 findings repaired**
 
-## What passed
+## Findings reproduced and repaired
 
-- Mandatory cold first-read and one-click sample demo.
-- 25/26 claim commands on their first exact run; the failed limiter command
-  passed on retry.
-- `npm ci`, `npm test` (8 Rust + 25 Playwright), `npm run lint`,
-  `npm run build`, `cargo build --release --locked`, topology-repair regression,
-  and `npm audit`.
-- Live production-safe Playwright: 24/24.
-- Full demo workflow: add, validation recovery, evidence upload, CSV matching,
-  missing queue, ZIP export, reset, and workspace deletion.
-- Persistence/restart and three-process shared-store tests; 100/100 live reads
-  for both private and demo workspaces; 30 concurrent writes stored exactly the
-  25 accepted records.
-- Same-origin-only core flow, secure CSP and related headers, cache policy,
-  desktop and 390 px layouts, keyboard focus, reduced motion, 200% text, and
-  zero axe violations.
-- Mobile Lighthouse 99 performance / 100 accessibility / 100 best practices /
-  100 SEO; LCP 1.7 s, TBT 120 ms, CLS 0.
+### Intermittent live limiter timeouts
 
-## Reproduce
+The verifier's first 200-request run returned 136 `201`, 49 `429`, and 15
+timeouts. A pre-repair rerun passed but retained the unsafe shape: 114 demo
+workspaces were admitted and the wave took 21.984 seconds. The generic limiter
+kept refilling at 20 requests per second while each accepted `/api/demo`
+request performed several durable SQLite writes.
+
+`/api/demo` now has a second admission limit: a 20-request burst with one token
+per second. The existing 40-request, 20-per-second limiter still covers every
+API endpoint. Excess demo requests receive an immediate `429` with
+`Retry-After: 1`, before database work starts.
+
+Exact coverage:
+
+- Rust sends 200 concurrent demo requests through the real router. It requires
+  200 responses, at most 22 creations, at least 178 `429` responses, and the
+  retry and HSTS headers on every limited response.
+- `npm run test:live-rate-limit` now sends three independent 200-request waves.
+  It rejects any timeout or other status and checks each limiter allowance.
+- Live result: each wave returned all 200 responses in 6.706–8.067 seconds.
+  Every wave produced 24 `201` and 176 `429`; all limited responses carried
+  `Retry-After: 1`.
+
+### Candidate and deployed identity diverged
+
+Before repair, live `/health` and the ready image named `bced2406…`, while the
+candidate was `031c677…`. The claim trusted the stale release manifest without
+proving how the candidate related to it.
+
+The new published-source guard accepts only:
+
+1. the exact deployed source commit; or
+2. one direct child that changes only `.factory/release.json` and
+   `.factory/handoff.md`.
+
+It rejects a longer ancestry gap and any product-changing child. The final
+candidate is therefore cryptographically tied to the deployed source without
+claiming that post-deploy evidence was baked into the image.
+
+Live evidence now agrees on the full source SHA:
+
+```text
+/health: dbb7dff54f1d40e460b54479a82b33c4a9e832bd
+ready image: sociobotregistry.azurecr.io/sf-mtd-evidence-rail:dbb7dff54f1d
+latest = ready: sf-mtd-evidence-rail--0000062
+active revisions: 1
+running replicas: 1
+mount: mtd-data at /data
+VFS: unix-dotfile
+```
+
+### Missing HSTS
+
+Every application response now sends:
+
+```text
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+```
+
+The Rust response-policy test covers normal and rate-limited responses. The
+container-hosted static configuration carries the same policy. The public root
+returned the exact header after deployment.
+
+## Verification evidence
+
+Local and clean-checkout gates:
+
+- `npm ci`: 34 packages, zero audit findings.
+- `npm test`: 9 Rust tests and 25 Chromium tests passed.
+- `npm run test:verification-17-regression`: limiter, HSTS, and release guard
+  regressions passed.
+- `npm run test:verification-16-regression`: topology self-repair, release
+  guard, and Rust regression passed.
+- `npm run lint`: TypeScript, `cargo fmt --check`, and warning-denied Clippy
+  passed.
+- `npm run build`: produced `dist/`; JS 33,904 bytes raw / 11.05 kB gzip and
+  CSS 18,132 bytes raw / 5.01 kB gzip.
+- `cargo build --release --locked`: passed.
+- A local real-server 200-connection burst returned 21 `201` and 179 `429`,
+  with no timeout or unexpected response.
+- `npm audit --audit-level=low`: zero vulnerabilities.
+
+Deployment and live gates:
+
+- ACR built the multi-stage, non-root container from the exact source commit.
+- `scripts/deploy.sh` applied the source-owned single-replica Azure Files
+  topology, restarted it, and rechecked persistence and shared limiting.
+- `npm run test:live-release`, `npm run test:live-workspace-consistency`,
+  `npm run test:live-checkout`, and the three-wave live limiter claim passed.
+- Live workspace consistency returned 100/100 private and 100/100 demo reads.
+- Production-safe Playwright passed 24/24 tests, including the complete demo
+  flow, privacy request capture, offline error recovery, keyboard navigation,
+  390 px mobile, 200% text, routing, and all route-level axe scans.
+- Factory `verify-url.sh` passed `/` and `/?demo=1`: HTTP 200, correct title,
+  `lang=en-GB`, one H1, a main landmark, complete alt text, labelled buttons,
+  and zero console errors.
+- Mobile Lighthouse: performance 100, accessibility 100, best practices 100,
+  SEO 100; FCP 1.1 s, LCP 1.9 s, TBT 0 ms, CLS 0, transfer 177 KiB.
+
+The product is not a library, CLI, or PWA, so consumer-package and service
+worker update checks do not apply. It makes no offline-use claim; the tested
+offline path gives a recovery message. It has no runtime AI feature. No brief,
+visual identity, product flow, or previously passing behavior was removed.
+
+## Run and verify
 
 ```sh
 npm ci
@@ -56,17 +131,17 @@ npm test
 npm run lint
 npm run build
 cargo build --release --locked
+npm run test:verification-17-regression
 npm run test:verification-16-regression
-npm run test:live-checkout
-npm run test:live-workspace-consistency
 npm run test:live-release
+npm run test:live-workspace-consistency
+npm run test:live-checkout
 npm run test:live-rate-limit
 BASE_URL=https://mtd-evidence-rail.sociobot.in npx playwright test --grep-invert '@claim:paid-limit'
 ```
 
-The verifier container had no Docker CLI. Both Dockerfile build payloads were
-built directly. This product is not a PWA, library, or CLI and requires no
-sign-in.
+## Known gaps and next steps
 
-Evidence is retained in
-[`evidence/verification-17`](evidence/verification-17/).
+No release-blocking or known product gap remains. The worker has no local
+Docker daemon; the exact Dockerfile was instead built successfully by Azure
+Container Registry and that image is the live revision.
