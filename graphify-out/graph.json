@@ -2503,7 +2503,7 @@
       },
       "norm_label": "assert_control_plane()",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L42"
+      "source_location": "L46"
     },
     {
       "id": "scripts_verify_live_topology_assert_reads",
@@ -2517,7 +2517,7 @@
       },
       "norm_label": "assert_reads()",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L48"
+      "source_location": "L52"
     },
     {
       "id": "scripts_verify_live_topology_assert_shared_limiter",
@@ -2531,7 +2531,7 @@
       },
       "norm_label": "assert_shared_limiter()",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L102"
+      "source_location": "L106"
     },
     {
       "id": "scripts_verify_live_topology_assert_workspace_delete",
@@ -2545,7 +2545,7 @@
       },
       "norm_label": "assert_workspace_delete()",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L66"
+      "source_location": "L70"
     },
     {
       "id": "scripts_verify_live_topology_assert_workspace_is_deleted",
@@ -2559,7 +2559,7 @@
       },
       "norm_label": "assert_workspace_is_deleted()",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L87"
+      "source_location": "L91"
     },
     {
       "id": "scripts_verify_live_topology_sh__entry",
@@ -2587,7 +2587,7 @@
       },
       "norm_label": "wait_for_health()",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L29"
+      "source_location": "L33"
     },
     {
       "id": "scripts_verify_live_topology_workspace_id",
@@ -2601,7 +2601,7 @@
       },
       "norm_label": "workspace_id()",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L25"
+      "source_location": "L29"
     },
     {
       "id": "factory_copy_audit",
@@ -2759,7 +2759,7 @@
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "package.json",
-      "source_location": "L30"
+      "source_location": "L31"
     },
     {
       "id": "package_devdependencies_axe_core_playwright",
@@ -2769,7 +2769,7 @@
       "file_type": "code",
       "norm_label": "@axe-core/playwright",
       "source_file": "package.json",
-      "source_location": "L31"
+      "source_location": "L32"
     },
     {
       "id": "package_devdependencies_playwright_test",
@@ -2779,7 +2779,7 @@
       "file_type": "code",
       "norm_label": "@playwright/test",
       "source_file": "package.json",
-      "source_location": "L32"
+      "source_location": "L33"
     },
     {
       "id": "package_devdependencies_sharp",
@@ -2789,7 +2789,7 @@
       "file_type": "code",
       "norm_label": "sharp",
       "source_file": "package.json",
-      "source_location": "L34"
+      "source_location": "L35"
     },
     {
       "id": "package_devdependencies_types_node",
@@ -2799,7 +2799,7 @@
       "file_type": "code",
       "norm_label": "@types/node",
       "source_file": "package.json",
-      "source_location": "L33"
+      "source_location": "L34"
     },
     {
       "id": "package_devdependencies_typescript",
@@ -2809,7 +2809,7 @@
       "file_type": "code",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L35"
+      "source_location": "L36"
     },
     {
       "id": "package_devdependencies_vite",
@@ -2819,7 +2819,7 @@
       "file_type": "code",
       "norm_label": "vite",
       "source_file": "package.json",
-      "source_location": "L36"
+      "source_location": "L37"
     },
     {
       "id": "package_name",
@@ -2839,7 +2839,7 @@
       "file_type": "code",
       "norm_label": "overrides",
       "source_file": "package.json",
-      "source_location": "L38"
+      "source_location": "L39"
     },
     {
       "id": "package_overrides_playwright_core",
@@ -2849,7 +2849,7 @@
       "file_type": "code",
       "norm_label": "playwright-core",
       "source_file": "package.json",
-      "source_location": "L39"
+      "source_location": "L40"
     },
     {
       "id": "package_private",
@@ -2879,7 +2879,7 @@
       "file_type": "code",
       "norm_label": "assets",
       "source_file": "package.json",
-      "source_location": "L28"
+      "source_location": "L29"
     },
     {
       "id": "package_scripts_build",
@@ -2909,7 +2909,7 @@
       "file_type": "code",
       "norm_label": "lint",
       "source_file": "package.json",
-      "source_location": "L26"
+      "source_location": "L27"
     },
     {
       "id": "package_scripts_start",
@@ -2959,7 +2959,7 @@
       "file_type": "code",
       "norm_label": "test:e2e",
       "source_file": "package.json",
-      "source_location": "L27"
+      "source_location": "L28"
     },
     {
       "id": "package_scripts_test_live_checkout",
@@ -2969,7 +2969,7 @@
       "file_type": "code",
       "norm_label": "test:live-checkout",
       "source_file": "package.json",
-      "source_location": "L22"
+      "source_location": "L23"
     },
     {
       "id": "package_scripts_test_live_rate_limit",
@@ -2979,7 +2979,7 @@
       "file_type": "code",
       "norm_label": "test:live-rate-limit",
       "source_file": "package.json",
-      "source_location": "L24"
+      "source_location": "L25"
     },
     {
       "id": "package_scripts_test_live_release",
@@ -2988,6 +2988,16 @@
       "community": 2,
       "file_type": "code",
       "norm_label": "test:live-release",
+      "source_file": "package.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "package_scripts_test_live_release_guard",
+      "label": "test:live-release-guard",
+      "_origin": "ast",
+      "community": 2,
+      "file_type": "code",
+      "norm_label": "test:live-release-guard",
       "source_file": "package.json",
       "source_location": "L21"
     },
@@ -2999,7 +3009,7 @@
       "file_type": "code",
       "norm_label": "test:live-workspace-consistency",
       "source_file": "package.json",
-      "source_location": "L23"
+      "source_location": "L24"
     },
     {
       "id": "package_scripts_test_published_source_guard",
@@ -3089,7 +3099,7 @@
       "file_type": "code",
       "norm_label": "verify:live-topology",
       "source_file": "package.json",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "package_type",
@@ -3119,7 +3129,7 @@
       "file_type": "concept",
       "norm_label": "@axe-core/playwright",
       "source_file": "package.json",
-      "source_location": "L31"
+      "source_location": "L32"
     },
     {
       "id": "playwright_test",
@@ -3129,7 +3139,7 @@
       "file_type": "concept",
       "norm_label": "@playwright/test",
       "source_file": "package.json",
-      "source_location": "L32"
+      "source_location": "L33"
     },
     {
       "id": "sharp",
@@ -3139,7 +3149,7 @@
       "file_type": "concept",
       "norm_label": "sharp",
       "source_file": "package.json",
-      "source_location": "L34"
+      "source_location": "L35"
     },
     {
       "id": "types_node",
@@ -3149,7 +3159,7 @@
       "file_type": "concept",
       "norm_label": "@types/node",
       "source_file": "package.json",
-      "source_location": "L33"
+      "source_location": "L34"
     },
     {
       "id": "typescript",
@@ -3159,7 +3169,7 @@
       "file_type": "concept",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L35"
+      "source_location": "L36"
     },
     {
       "id": "vite",
@@ -3169,7 +3179,7 @@
       "file_type": "concept",
       "norm_label": "vite",
       "source_file": "package.json",
-      "source_location": "L36"
+      "source_location": "L37"
     },
     {
       "id": "factory_verification_9",
@@ -3438,7 +3448,7 @@
       },
       "norm_label": "deactivate_stale_revisions()",
       "source_file": "scripts/deploy.sh",
-      "source_location": "L61"
+      "source_location": "L59"
     },
     {
       "id": "scripts_deploy_patch_app",
@@ -3452,7 +3462,7 @@
       },
       "norm_label": "patch_app()",
       "source_file": "scripts/deploy.sh",
-      "source_location": "L20"
+      "source_location": "L18"
     },
     {
       "id": "scripts_deploy_sh__entry",
@@ -3480,7 +3490,7 @@
       },
       "norm_label": "wait_for_candidate_readiness()",
       "source_file": "scripts/deploy.sh",
-      "source_location": "L38"
+      "source_location": "L36"
     },
     {
       "id": "scripts_deploy_wait_for_topology",
@@ -3494,7 +3504,7 @@
       },
       "norm_label": "wait_for_topology()",
       "source_file": "scripts/deploy.sh",
-      "source_location": "L70"
+      "source_location": "L68"
     },
     {
       "id": "scripts_test_topology_self_repair",
@@ -7825,7 +7835,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/deploy.sh",
-      "source_location": "L147",
+      "source_location": "L118",
       "weight": 1.0
     },
     {
@@ -7837,7 +7847,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/deploy.sh",
-      "source_location": "L148",
+      "source_location": "L119",
       "weight": 1.0
     },
     {
@@ -7849,7 +7859,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/deploy.sh",
-      "source_location": "L149",
+      "source_location": "L120",
       "weight": 1.0
     },
     {
@@ -7861,7 +7871,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/deploy.sh",
-      "source_location": "L150",
+      "source_location": "L121",
       "weight": 1.0
     },
     {
@@ -7957,7 +7967,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L84",
+      "source_location": "L88",
       "weight": 1.0
     },
     {
@@ -7969,7 +7979,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L156",
+      "source_location": "L160",
       "weight": 1.0
     },
     {
@@ -7981,7 +7991,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L157",
+      "source_location": "L161",
       "weight": 1.0
     },
     {
@@ -7993,7 +8003,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L159",
+      "source_location": "L163",
       "weight": 1.0
     },
     {
@@ -8005,7 +8015,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L166",
+      "source_location": "L170",
       "weight": 1.0
     },
     {
@@ -8017,7 +8027,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L168",
+      "source_location": "L172",
       "weight": 1.0
     },
     {
@@ -8029,7 +8039,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L179",
+      "source_location": "L183",
       "weight": 1.0
     },
     {
@@ -9637,7 +9647,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -9649,7 +9659,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -9661,7 +9671,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -9673,7 +9683,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -9685,7 +9695,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -9697,7 +9707,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -13731,7 +13741,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -13742,7 +13752,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -13786,7 +13796,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -13797,7 +13807,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -13808,7 +13818,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -13819,7 +13829,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -13830,7 +13840,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -13841,7 +13851,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -13852,7 +13862,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -13978,7 +13988,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_live_release",
+      "target": "package_scripts_test_live_release_guard",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13989,7 +13999,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_live_checkout",
+      "target": "package_scripts_test_live_release",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14000,7 +14010,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_live_workspace_consistency",
+      "target": "package_scripts_test_live_checkout",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14011,7 +14021,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_live_rate_limit",
+      "target": "package_scripts_test_live_workspace_consistency",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14022,7 +14032,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_verify_live_topology",
+      "target": "package_scripts_test_live_rate_limit",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14033,7 +14043,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_lint",
+      "target": "package_scripts_verify_live_topology",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14044,7 +14054,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_test_e2e",
+      "target": "package_scripts_lint",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14055,13 +14065,24 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_assets",
+      "target": "package_scripts_test_e2e",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_assets",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -15161,7 +15182,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/deploy.sh",
-      "source_location": "L20",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -15172,7 +15193,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/deploy.sh",
-      "source_location": "L38",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -15183,7 +15204,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/deploy.sh",
-      "source_location": "L61",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
@@ -15194,7 +15215,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/deploy.sh",
-      "source_location": "L70",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -15337,7 +15358,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L102",
+      "source_location": "L106",
       "weight": 1.0
     },
     {
@@ -15348,7 +15369,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L25",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -15359,7 +15380,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L29",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -15370,7 +15391,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L42",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -15381,7 +15402,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L48",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -15392,7 +15413,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L66",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -15403,7 +15424,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/verify-live-topology.sh",
-      "source_location": "L87",
+      "source_location": "L91",
       "weight": 1.0
     },
     {
@@ -15657,5 +15678,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "bf6cff215897a9a0d3d820d207f2ca1bce228324"
+  "built_at_commit": "693a7609d2efb23c6567da5de0b425db92029e5c"
 }
