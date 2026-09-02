@@ -1,0 +1,66 @@
+{
+  "candidate": "693a7609d2efb23c6567da5de0b425db92029e5c",
+  "health_build": "693a7609d2efb23c6567da5de0b425db92029e5c",
+  "ready_image": "sociobotregistry.azurecr.io/sf-mtd-evidence-rail:693a7609d2ef",
+  "revision": "sf-mtd-evidence-rail--0000072",
+  "topology": {
+    "mode": "Single",
+    "replicas": "1/1",
+    "running": 1,
+    "mount": "mtd-data at /data",
+    "sqlite_vfs": "unix-dotfile"
+  },
+  "first_read": {
+    "headline": "Link each expense to evidence",
+    "audience": "UK sole traders, tutors, and small club operators preparing an MTD quarterly update",
+    "first_action": "Try it with sample data",
+    "one_click_demo": true
+  },
+  "demo_isolation": {
+    "expires_in_hours": 24,
+    "foreign_requests": 0,
+    "private_workspace_key_sent": false,
+    "subscription_token_sent": false,
+    "private_storage_preserved": true
+  },
+  "end_to_end": {
+    "starting_transactions": 6,
+    "starting_missing": 2,
+    "zero_amount_error": "Enter an amount greater than zero.",
+    "minimum_amount_saved_pence": 1,
+    "invalid_csv_recovered": true,
+    "csv_rows_reviewed": 2,
+    "likely_matches_skipped": 1,
+    "new_rows_imported": 1,
+    "oversize_evidence_rejected": true,
+    "valid_text_evidence_linked": true,
+    "export_name": "evidence-pack-2026-27-Q1.zip",
+    "export_zip_signature": "PK",
+    "export_contains_transactions_csv": true,
+    "export_contains_evidence": true,
+    "console_or_page_errors": 0
+  },
+  "concurrent_writes": {
+    "requests": 30,
+    "created": 25,
+    "free_limit_rejections": 5,
+    "persisted_unique_records": 25,
+    "delete_status": 204,
+    "read_after_delete_status": 404
+  },
+  "billing_rate_limit": {
+    "requests": 120,
+    "accepted": 30,
+    "limited": 90,
+    "retry_after": "4",
+    "missing_retry_after": 0
+  },
+  "accessibility": {
+    "axe_violations": 0,
+    "serious_or_critical": 0,
+    "mobile_horizontal_overflow": false,
+    "first_tab_target": "Skip to main content",
+    "focus_outline": "3px solid #e8bf62",
+    "reduced_motion_running_animations": 0
+  }
+}

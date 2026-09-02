@@ -1,0 +1,24 @@
+{
+  "url": "https://mtd-evidence-rail.sociobot.in",
+  "mode": "mobile",
+  "scores": {
+    "performance": 99,
+    "accessibility": 100,
+    "best_practices": 100,
+    "seo": 100
+  },
+  "metrics": {
+    "first_contentful_paint": "1.1 s",
+    "largest_contentful_paint": "1.9 s",
+    "total_blocking_time": "10 ms",
+    "cumulative_layout_shift": 0
+  },
+  "transfer_bytes": {
+    "total": 181706,
+    "javascript": 11164,
+    "css": 5113,
+    "fonts": 102396,
+    "images": 61460,
+    "third_party": 0
+  }
+}
