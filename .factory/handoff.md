@@ -8,7 +8,7 @@
 
 **Implementation SHA:** `f87a563751c31cd5ca612f396d86c59c6c5d76b9`
 
-**Documentation baseline tested:** `0a86918d231ce63e27757c77aa6b2259d41040d3`
+**Documentation baseline tested:** `bc7c440f961bec611820c35b4faae5e7382e354d`
 
 **Live URL:** <https://mtd-evidence-rail.sociobot.in>
 
@@ -88,7 +88,7 @@ three live claim commands resolve the implementation recorded in
 `.factory/release.json`; explicit `CANDIDATE_SHA` remains available only for
 verifying a newly deployed image before its later release record exists.
 
-From a clean detached checkout of documentation baseline `0a86918…`, `npm ci`
+From a clean detached checkout of documentation baseline `bc7c440…`, `npm ci`
 installed the locked dependencies and every declared claim command was run
 literally. All 26 passed. In particular:
 
@@ -121,9 +121,13 @@ offline recovery copy, and the rendered Terms regression passed.
 Fresh mobile Lighthouse scored 100 for performance, accessibility, best
 practices, and SEO. FCP was 1.05 s, LCP 1.88 s, TBT 22 ms, CLS 0, and transfer
 was 181,690 bytes. Worker evidence is under
-`/work/.evidence/repair-16-final-claims`, `repair-16-browser`,
+`/work/.evidence/repair-16-final-head-claims`,
+`repair-16-final-head-quality`, `repair-16-browser`,
 `repair-16-verify-root`, `repair-16-verify-demo`, and
-`repair-16-lighthouse.json`.
+`repair-16-lighthouse.json`. The earlier
+`repair-16-final-head-claims-setup-attempt1` directory records a discarded
+runner invocation where dependencies were installed in the wrong checkout; it
+is not product evidence.
 
 ## Paid offer
 
