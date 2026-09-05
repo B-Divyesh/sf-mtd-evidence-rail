@@ -1,154 +1,102 @@
-# Repair 16 handoff
+# Verification 22 handoff
 
-**Work order:** `mtd-evidence-rail-repair-16`
+**Work order:** `mtd-evidence-rail-verify-22`
 
 **Date:** 5 September 2026 UTC
 
-**Milestone:** M1 — evidence pack core; repair candidate deployed, independent acceptance pending
+**Milestone:** M1 — evidence pack core; independent acceptance failed on live
+release identity
 
-**Implementation SHA:** `f87a563751c31cd5ca612f396d86c59c6c5d76b9`
+**Implementation reviewed:** `f87a563751c31cd5ca612f396d86c59c6c5d76b9`
 
-**Documentation baseline tested:** `bc7c440f961bec611820c35b4faae5e7382e354d`
+**Clean documentation checkout tested:** `aafbf2ca327191b19f670303b1c0fd7450bd8410`
+
+**Supplied tested documentation baseline:** `bc7c440f961bec611820c35b4faae5e7382e354d`
 
 **Live URL:** <https://mtd-evidence-rail.sociobot.in>
 
 ## Outcome
 
-Review 5's two findings are fixed at their causes.
+**FAIL — 1 high finding, 0 untested claims.**
 
-- Live claim commands now validate a clean checkout against
-  `.factory/release.json`. A later numbered report, review evidence, venture
-  plan, handoff, or Graphify commit resolves the recorded implementation.
-- Product or deployment-input changes still fail the published-source guard
-  until that exact source is deployed and recorded.
-- Outcome fixtures reproduce the later `plan.md` documentation commit. They
-  accept the earlier live implementation and reject the documentation SHA as
-  runtime identity.
-- `/terms` no longer promises renewal, cancellation, or pre-payment billing
-  disclosures. It states only the tested £15 monthly checkout, active-limit
-  effect, and Dodo-through-Sociobot destination.
-- A browser regression checks the rendered Terms outcome. The copy audit now
-  includes every billing sentence on that page.
-- The required job, audience, sample action, and three plain facts now fit in a
-  1440 × 900 first screen. A browser test measures the rendered result.
+The public service now reports build/image `aafbf2ca…` on revision `0000075`,
+not recorded implementation `f87a563…` on revision `0000074`. Consequently
+the exact `live-workspace-consistency`, `live-release`, and `live-rate-limit`
+claim commands fail their identity guard. This is a release-control finding,
+not a product-code defect.
 
-The product still names the job as **Link each expense to evidence**, serves UK
-sole traders, tutors, and small club operators, and puts **Try it with sample
-data** first. No M2 or M3 feature was presented as shipped.
+The `f87a563…` to `aafbf2c…` diff is limited to reports, release/plan text, and
+Graphify output. Live JS and CSS hashes match the candidate build. Diagnostics
+using the observed wrapper SHA passed topology, workspace consistency,
+rate-limit, browser, and restart checks.
 
-## Deployment
+Full report: [verification-22.md](verification-22.md).
 
-`scripts/deploy.sh` built and pushed:
+## Verification completed
 
-```text
-sociobotregistry.azurecr.io/sf-mtd-evidence-rail:f87a563751c3
+- Fresh desktop and phone first screens showed the job, audience, sample
+  action, and three facts before scrolling.
+- One-click demo loaded 6 transactions, 4 linked files, and 2 missing items.
+- Persistent demo wording, reset, fresh-key behavior, same-origin traffic, and
+  private/subscription storage isolation passed.
+- Normal £0.01 capture, invalid £0 recovery, invalid CSV recovery, likely-match
+  skip, export, evidence boundaries, deletion, key recovery, and two-workspace
+  separation passed.
+- A product-only restart retained 100/100 demo reads and retained deletion for
+  20/20 reads. Twelve fresh browsers loaded before and after restart.
+- The current runtime is one replica with Azure Files at `/data` and
+  `SQLITE_VFS=unix-dotfile`.
+- Three 200-request diagnostic waves returned 176, 176, and 175 HTTP 429s,
+  every one with `Retry-After: 1`.
+- Live production-compatible Playwright passed 26/26. Axe found zero
+  violations across root, demo, app, legal, and designed 404 routes.
+- URL checks passed root and demo with no console errors.
+- Lighthouse scored 100 performance, accessibility, best practices, and SEO;
+  LCP was 1.9 s and transfer was 181,690 bytes.
+- Clean `npm test`, lint, build, locked Rust release build, and high-severity
+  npm audit passed.
+- Every earlier review and verification finding, including minor accessibility,
+  copy, cache, HSTS, and 404 findings, is dispositioned in the report.
+
+Evidence is under `/work/.evidence/verification-22`.
+
+## Claims
+
+All 26 declared commands were run literally from the clean checkout after
+`npm ci`:
+
+- 23 passed;
+- 3 failed on the same live identity mismatch; and
+- 0 public claims remain untested or unlisted.
+
+The current-wrapper diagnostics prove the three underlying runtime behaviors,
+but do not waive their failed declared commands.
+
+## Required next step
+
+Restore the recorded `f87a563…` image as the ready product image, or accept and
+record a different implementation through the normal release process. Then
+rerun:
+
+```sh
+npm run test:live-workspace-consistency
+npm run test:live-release
+npm run test:live-rate-limit
 ```
 
-The product-owned revision is `sf-mtd-evidence-rail--0000074`. Deployment
-kept Single revision mode, one running replica, and the existing Azure Files
-volume `mtd-data` mounted at `/data`. `SQLITE_VFS=unix-dotfile` remains set.
-No storage, DNS, certificate, secret, billing, or unrelated service setting
-was created or changed.
+No product-code repair is indicated by this verification.
 
-The deployment check proved:
+## External dependencies
 
-- live `/health` and the ready image identify the implementation SHA;
-- private and demo workspaces returned 100/100 fresh-connection reads;
-- the demo returned 100/100 reads after a product-only revision restart;
-- a deleted workspace returned 404 for 20/20 reads before and after restart;
-- 12/12 fresh browser contexts loaded the populated demo before and after
-  restart; and
-- the shared limiter returned 429 with `Retry-After: 1` within one-process
-  bounds.
-
-## Local verification
-
-The documented setup began with `npm ci` and installed 34 packages with zero
-vulnerabilities. These checks pass:
-
-```text
-npm test
-npm run lint
-npm run build
-cargo build --release --locked
-npm audit --audit-level=high
-npm run test:published-source-guard
-npm run test:live-release-guard
-```
-
-`npm test` includes 9 Rust tests, runtime/defaults, durable and shared storage,
-deployment topology, both release guards, and 27 Chromium tests. `dist/` is
-produced. The built JavaScript is 33.87 kB raw and 11.04 kB gzip; CSS is 18.13
-kB raw and 5.01 kB gzip.
-
-## Claims and browser evidence
-
-`.factory/claims.json` remains the canonical list of 26 current claims. The
-three live claim commands resolve the implementation recorded in
-`.factory/release.json`; explicit `CANDIDATE_SHA` remains available only for
-verifying a newly deployed image before its later release record exists.
-
-From a clean detached checkout of documentation baseline `bc7c440…`, `npm ci`
-installed the locked dependencies and every declared claim command was run
-literally. All 26 passed. In particular:
-
-- `test:live-workspace-consistency` returned 100/100 successful reads for new
-  private and demo workspaces;
-- `test:live-release` matched `/health`, the ready image, revision `0000074`,
-  one replica, the `/data` mount, and `unix-dotfile` to `f87a563…`; and
-- `test:live-rate-limit` completed three 200-request waves. Each accepted 24
-  demo requests and returned 176 HTTP 429 responses with `Retry-After: 1`.
-
-The release-guard fixtures accept a later venture-plan and handoff checkout,
-resolve the recorded implementation, and reject the documentation SHA as a
-runtime identity. Product, dependency, test, migration, and deployment-input
-changes still require a newly recorded implementation.
-
-Fresh 1440×900 and 390×844 browsers showed the job, full audience, sample
-action, and all three facts before scrolling. One click loaded the 6/4/2
-sample. The persistent banner stated that nothing is saved to the private
-workspace and retained Reset demo plus Start a private workspace. Reset and
-the isolation claim left seeded private workspace and subscription state
-unchanged.
-
-The root and demo URL verifier reports each contain the correct title,
-`lang=en-GB`, one H1, one main landmark, complete image alternatives, labelled
-buttons, and no console errors. The browser suite found zero axe violations on
-the landing, demo, app, privacy, terms, and designed HTTP 404 routes. Keyboard,
-focus return, 44 px targets, 200% text, reduced motion, route titles, links,
-offline recovery copy, and the rendered Terms regression passed.
-
-Fresh mobile Lighthouse scored 100 for performance, accessibility, best
-practices, and SEO. FCP was 1.05 s, LCP 1.88 s, TBT 22 ms, CLS 0, and transfer
-was 181,690 bytes. Worker evidence is under
-`/work/.evidence/repair-16-final-head-claims`,
-`repair-16-final-head-quality`, `repair-16-browser`,
-`repair-16-verify-root`, `repair-16-verify-demo`, and
-`repair-16-lighthouse.json`. The earlier
-`repair-16-final-head-claims-setup-attempt1` directory records a discarded
-runner invocation where dependencies were installed in the wrong checkout; it
-is not product evidence.
-
-## Paid offer
-
-The existing public offer remains £15 per month for more than 25 transactions
-in a quarter. The live Sociobot route already opens the registered Dodo-hosted
-subscription checkout for GBP 1500 with monthly cadence. No billing
-registration file is required by this repair. A checkout redirect is not
-recorded as proof of purchase or entitlement.
-
-## Known gaps and external dependencies
-
-- M2 is not shipped. Sociobot Entra registration and test identities are still
-  required for accounts and tenant ownership.
-- A controlled Sociobot billing lifecycle is still required to prove purchase,
-  renewal, cancellation or revocation, expiry, and later limit enforcement.
-- A fleet backup and isolated restore drill is still required for M2. Restart
-  persistence is not a backup.
-- M3 is not shipped. Pilot users and a consented redacted CSV corpus are still
-  needed for matching and readiness validation.
+- M2 accounts and tenant ownership still require Sociobot Entra registration
+  and test identities.
+- M2 paid-service acceptance still requires controlled purchase, renewal,
+  cancellation, expiry, and revocation proof.
+- M2 backup acceptance still requires a fleet backup and isolated restore
+  drill; restart persistence is not a backup.
+- M3 validation still requires pilot users and a consented redacted CSV corpus.
 - HMRC filing, certification, tax advice, payroll, and full accounting remain
-  out of scope. No offline-use claim or runtime AI feature is present.
+  out of scope.
 
 Pre-existing `graphify-out` working-tree changes remain untouched and
 uncommitted.
