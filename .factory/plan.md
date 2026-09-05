@@ -6,7 +6,7 @@
 
 **Public URL:** <https://mtd-evidence-rail.sociobot.in>
 
-**Current milestone:** M1 — repair candidate deployed; verification in progress
+**Current milestone:** M1 — repair evidence complete; independent acceptance pending
 
 **Next milestone:** M2 — accounts, tenant ownership, and proven subscription lifecycle
 
@@ -19,7 +19,7 @@ the active milestone.
 
 | Milestone | Status | Decision |
 | --- | --- | --- |
-| M1 — evidence pack core | **Passed; repair candidate deployed** | Verification 21 accepted `693a7609d2efb23c6567da5de0b425db92029e5c`. Repair 16 now deploys `f87a563751c31cd5ca612f396d86c59c6c5d76b9`; independent acceptance of that repair remains pending. |
+| M1 — evidence pack core | **Passed; repair evidence complete** | Verification 21 accepted `693a7609d2efb23c6567da5de0b425db92029e5c`. Repair 16 deploys `f87a563751c31cd5ca612f396d86c59c6c5d76b9`; its clean claim, browser, accessibility, performance, persistence, and topology checks pass. Independent acceptance remains pending. |
 | M2 — customer account and paid service | **Next; not started** | Sign-in and tenant ownership do not exist. Checkout metadata is live, but no successful payment, renewal, cancellation, expiry, or revocation journey has been verified. |
 | M3 — reconciled quarter readiness | **Planned; not started** | Current CSV matching and missing-evidence views are useful M1 functions. Persisted reconciliation decisions, import undo, close checks, and an audit manifest are not shipped. |
 
@@ -314,7 +314,7 @@ match decisions, readiness exceptions, and activity-manifest views.
 
 ### M1 — evidence pack core
 
-**Status:** Repair deployed. Review 5 findings are fixed; independent acceptance is pending.
+**Status:** Repair evidence complete. Review 5 findings are fixed; independent acceptance is pending.
 
 **Routes:** `/`, `/demo` and `/?demo=1`, `/app`, `/privacy`, `/terms`, designed
 404, `/health`, and current `/api/*` workspace/record/evidence/export routes.

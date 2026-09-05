@@ -8,6 +8,8 @@
 
 **Implementation SHA:** `f87a563751c31cd5ca612f396d86c59c6c5d76b9`
 
+**Documentation baseline tested:** `0a86918d231ce63e27757c77aa6b2259d41040d3`
+
 **Live URL:** <https://mtd-evidence-rail.sociobot.in>
 
 ## Outcome
@@ -86,9 +88,42 @@ three live claim commands resolve the implementation recorded in
 `.factory/release.json`; explicit `CANDIDATE_SHA` remains available only for
 verifying a newly deployed image before its later release record exists.
 
-Final clean-checkout claim results and cold desktop/phone evidence will be
-added to this handoff after the documentation baseline is committed and tested
-literally.
+From a clean detached checkout of documentation baseline `0a86918…`, `npm ci`
+installed the locked dependencies and every declared claim command was run
+literally. All 26 passed. In particular:
+
+- `test:live-workspace-consistency` returned 100/100 successful reads for new
+  private and demo workspaces;
+- `test:live-release` matched `/health`, the ready image, revision `0000074`,
+  one replica, the `/data` mount, and `unix-dotfile` to `f87a563…`; and
+- `test:live-rate-limit` completed three 200-request waves. Each accepted 24
+  demo requests and returned 176 HTTP 429 responses with `Retry-After: 1`.
+
+The release-guard fixtures accept a later venture-plan and handoff checkout,
+resolve the recorded implementation, and reject the documentation SHA as a
+runtime identity. Product, dependency, test, migration, and deployment-input
+changes still require a newly recorded implementation.
+
+Fresh 1440×900 and 390×844 browsers showed the job, full audience, sample
+action, and all three facts before scrolling. One click loaded the 6/4/2
+sample. The persistent banner stated that nothing is saved to the private
+workspace and retained Reset demo plus Start a private workspace. Reset and
+the isolation claim left seeded private workspace and subscription state
+unchanged.
+
+The root and demo URL verifier reports each contain the correct title,
+`lang=en-GB`, one H1, one main landmark, complete image alternatives, labelled
+buttons, and no console errors. The browser suite found zero axe violations on
+the landing, demo, app, privacy, terms, and designed HTTP 404 routes. Keyboard,
+focus return, 44 px targets, 200% text, reduced motion, route titles, links,
+offline recovery copy, and the rendered Terms regression passed.
+
+Fresh mobile Lighthouse scored 100 for performance, accessibility, best
+practices, and SEO. FCP was 1.05 s, LCP 1.88 s, TBT 22 ms, CLS 0, and transfer
+was 181,690 bytes. Worker evidence is under
+`/work/.evidence/repair-16-final-claims`, `repair-16-browser`,
+`repair-16-verify-root`, `repair-16-verify-demo`, and
+`repair-16-lighthouse.json`.
 
 ## Paid offer
 
