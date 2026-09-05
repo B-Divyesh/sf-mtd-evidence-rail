@@ -4,9 +4,9 @@
 
 **Date:** 5 September 2026 UTC
 
-**Milestone:** M1 — evidence pack core; repair deployed, independent acceptance pending
+**Milestone:** M1 — evidence pack core; repair candidate deployed, independent acceptance pending
 
-**Implementation SHA:** `0be1618935598c954d952c7a009344c98ad59610`
+**Implementation SHA:** `f87a563751c31cd5ca612f396d86c59c6c5d76b9`
 
 **Live URL:** <https://mtd-evidence-rail.sociobot.in>
 
@@ -27,6 +27,8 @@ Review 5's two findings are fixed at their causes.
   effect, and Dodo-through-Sociobot destination.
 - A browser regression checks the rendered Terms outcome. The copy audit now
   includes every billing sentence on that page.
+- The required job, audience, sample action, and three plain facts now fit in a
+  1440 × 900 first screen. A browser test measures the rendered result.
 
 The product still names the job as **Link each expense to evidence**, serves UK
 sole traders, tutors, and small club operators, and puts **Try it with sample
@@ -37,10 +39,10 @@ data** first. No M2 or M3 feature was presented as shipped.
 `scripts/deploy.sh` built and pushed:
 
 ```text
-sociobotregistry.azurecr.io/sf-mtd-evidence-rail:0be161893559
+sociobotregistry.azurecr.io/sf-mtd-evidence-rail:f87a563751c3
 ```
 
-The product-owned revision is `sf-mtd-evidence-rail--0000073`. Deployment
+The product-owned revision is `sf-mtd-evidence-rail--0000074`. Deployment
 kept Single revision mode, one running replica, and the existing Azure Files
 volume `mtd-data` mounted at `/data`. `SQLITE_VFS=unix-dotfile` remains set.
 No storage, DNS, certificate, secret, billing, or unrelated service setting
@@ -73,7 +75,7 @@ npm run test:live-release-guard
 ```
 
 `npm test` includes 9 Rust tests, runtime/defaults, durable and shared storage,
-deployment topology, both release guards, and 26 Chromium tests. `dist/` is
+deployment topology, both release guards, and 27 Chromium tests. `dist/` is
 produced. The built JavaScript is 33.87 kB raw and 11.04 kB gzip; CSS is 18.13
 kB raw and 5.01 kB gzip.
 
