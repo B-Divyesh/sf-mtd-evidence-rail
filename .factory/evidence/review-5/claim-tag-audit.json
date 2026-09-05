@@ -1,0 +1,111 @@
+{
+  "claims": 26,
+  "uniqueIds": 26,
+  "allExactlyOne": true,
+  "tagCounts": [
+    {
+      "id": "demo-isolation",
+      "count": 1
+    },
+    {
+      "id": "no-account",
+      "count": 1
+    },
+    {
+      "id": "workspace-key-recovery",
+      "count": 1
+    },
+    {
+      "id": "workspace-key-auth",
+      "count": 1
+    },
+    {
+      "id": "quarter-capture",
+      "count": 1
+    },
+    {
+      "id": "csv-matching",
+      "count": 1
+    },
+    {
+      "id": "atomic-import",
+      "count": 1
+    },
+    {
+      "id": "calendar-dates",
+      "count": 1
+    },
+    {
+      "id": "evidence-types",
+      "count": 1
+    },
+    {
+      "id": "missing-review",
+      "count": 1
+    },
+    {
+      "id": "demo-sample",
+      "count": 1
+    },
+    {
+      "id": "evidence-pack",
+      "count": 1
+    },
+    {
+      "id": "workspace-delete",
+      "count": 1
+    },
+    {
+      "id": "free-limit",
+      "count": 1
+    },
+    {
+      "id": "paid-limit",
+      "count": 1
+    },
+    {
+      "id": "hosted-checkout",
+      "count": 1
+    },
+    {
+      "id": "license-return",
+      "count": 1
+    },
+    {
+      "id": "no-trackers",
+      "count": 1
+    },
+    {
+      "id": "runtime-defaults",
+      "count": 1
+    },
+    {
+      "id": "durable-storage",
+      "count": 1
+    },
+    {
+      "id": "shared-state-boundary",
+      "count": 1
+    },
+    {
+      "id": "production-topology",
+      "count": 1
+    },
+    {
+      "id": "live-workspace-consistency",
+      "count": 1
+    },
+    {
+      "id": "live-release-identity",
+      "count": 1
+    },
+    {
+      "id": "api-rate-limit",
+      "count": 1
+    },
+    {
+      "id": "live-api-rate-limit",
+      "count": 1
+    }
+  ]
+}

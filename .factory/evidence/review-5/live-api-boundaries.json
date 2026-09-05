@@ -1,0 +1,71 @@
+{
+  "timestamp": "2026-09-05T20:43:17.679Z",
+  "cleanup": [
+    {
+      "withoutConfirmation": 400,
+      "confirmed": 204,
+      "after": 404
+    },
+    {
+      "withoutConfirmation": 400,
+      "confirmed": 204,
+      "after": 404
+    }
+  ],
+  "health": {
+    "status": 200,
+    "body": {
+      "build_sha": "693a7609d2efb23c6567da5de0b425db92029e5c",
+      "status": "ok"
+    },
+    "headers": {
+      "content-security-policy": "default-src 'self'; img-src 'self' data:; font-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.sociobot.in; object-src 'none'; base-uri 'self'; form-action 'self' https://api.sociobot.in; frame-ancestors 'none'",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "cache-control": "no-cache"
+    }
+  },
+  "boundaries": {
+    "aCount": 1,
+    "bCount": 0,
+    "crossDeleteStatus": 204,
+    "aCountAfterCrossDelete": 1,
+    "keyLengths": [
+      64,
+      64
+    ],
+    "missingKey": 401,
+    "malformedKey": 401,
+    "unknownKey": 404
+  },
+  "validation": {
+    "invalid": [
+      {
+        "name": "zero",
+        "status": 400,
+        "error": "Enter an amount between £0.01 and £1,000,000."
+      },
+      {
+        "name": "date",
+        "status": 400,
+        "error": "Enter a real calendar date."
+      },
+      {
+        "name": "kind",
+        "status": 400,
+        "error": "Choose expense or income."
+      },
+      {
+        "name": "description",
+        "status": 400,
+        "error": "Enter a description under 120 characters."
+      }
+    ],
+    "atomicStatus": 400,
+    "countAfterAtomic": 1,
+    "oversizeStatus": 413,
+    "recoveryEvidenceStatus": 200
+  }
+}

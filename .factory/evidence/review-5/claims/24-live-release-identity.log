@@ -1,0 +1,5 @@
+
+> mtd-evidence-rail@1.0.0 test:live-release
+> bash scripts/test-live-release.sh
+
+Unsafe live release: expected_sha=41a1e5262fdc5639ea907bfd4a776e35e4b27659 live_sha=693a7609d2efb23c6567da5de0b425db92029e5c expected_image=sociobotregistry.azurecr.io/sf-mtd-evidence-rail:41a1e5262fdc ready_image=sociobotregistry.azurecr.io/sf-mtd-evidence-rail:693a7609d2ef latest=sf-mtd-evidence-rail--0000072 ready=sf-mtd-evidence-rail--0000072 ready_active=true mode=Single min=1 max=1 containers=1 mount=/data volume=AzureFile:mtd-evidence-rail-data vfs=unix-dotfile active=1 running=1

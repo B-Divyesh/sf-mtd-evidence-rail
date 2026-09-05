@@ -1,0 +1,24 @@
+{
+  "public_route": "/terms",
+  "promises": [
+    {
+      "claim": "It renews monthly until you cancel.",
+      "present_in_public_source": true,
+      "listed_in_claims_json": false,
+      "asserted_by_hosted_checkout_test": false
+    },
+    {
+      "claim": "Subscription billing terms appear before you pay.",
+      "present_in_public_source": true,
+      "listed_in_claims_json": false,
+      "asserted_by_hosted_checkout_test": false
+    }
+  ],
+  "hosted_checkout_claim": {
+    "id": "hosted-checkout",
+    "claim": "The £15/month subscription starts on the hosted Dodo checkout",
+    "where": "pricing, terms, README",
+    "test": "npm run test:live-checkout",
+    "sandbox": "live Sociobot billing route; assert the Dodo session hostname, product slug and ID, GBP 1500 price, and monthly subscription cadence without completing payment"
+  }
+}

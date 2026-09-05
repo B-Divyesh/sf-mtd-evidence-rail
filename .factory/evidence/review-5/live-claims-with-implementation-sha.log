@@ -1,0 +1,24 @@
+=== live release with accepted implementation identity supplied ===
+
+> mtd-evidence-rail@1.0.0 test:live-release
+> bash scripts/test-live-release.sh
+
+Live release: build=693a7609d2efb23c6567da5de0b425db92029e5c; image=sociobotregistry.azurecr.io/sf-mtd-evidence-rail:693a7609d2ef; revision=sf-mtd-evidence-rail--0000072; Single; replicas=1/1; running=1; mtd-data mounted at /data; VFS=unix-dotfile.
+@claim:live-release-identity PASS — /health and the ready image identify the exact factory candidate and its safe topology
+=== live workspace with accepted implementation identity supplied ===
+
+> mtd-evidence-rail@1.0.0 test:live-workspace-consistency
+> bash scripts/test-live-workspace-consistency.sh
+
+Live release: build=693a7609d2efb23c6567da5de0b425db92029e5c; image=sociobotregistry.azurecr.io/sf-mtd-evidence-rail:693a7609d2ef; revision=sf-mtd-evidence-rail--0000072; Single; replicas=1/1; running=1; mtd-data mounted at /data; VFS=unix-dotfile.
+@claim:live-workspace-consistency PASS — private and demo workspaces each returned 200 on 100/100 fresh-connection reads
+=== live rate limit with accepted implementation identity supplied ===
+
+> mtd-evidence-rail@1.0.0 test:live-rate-limit
+> bash scripts/test-live-rate-limit.sh
+
+Live release: build=693a7609d2efb23c6567da5de0b425db92029e5c; image=sociobotregistry.azurecr.io/sf-mtd-evidence-rail:693a7609d2ef; revision=sf-mtd-evidence-rail--0000072; Single; replicas=1/1; running=1; mtd-data mounted at /data; VFS=unix-dotfile.
+wave=1 responses=200 created=25 limited=175 bound=29 elapsed=6283ms
+wave=2 responses=200 created=25 limited=175 bound=28 elapsed=5595ms
+wave=3 responses=200 created=25 limited=175 bound=28 elapsed=5988ms
+@claim:live-api-rate-limit PASS — all three 200-request waves completed; every limited response included Retry-After: 1.

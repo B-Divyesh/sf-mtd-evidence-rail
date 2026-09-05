@@ -1,0 +1,96 @@
+{
+  "mobile": {
+    "skip": "Skip to main content",
+    "ctaBox": {
+      "x": 12,
+      "y": 391.140625,
+      "width": 366,
+      "height": 54.796875
+    },
+    "sampleBox": {
+      "x": 165.59375,
+      "y": 339.96875,
+      "width": 200.40625,
+      "height": 22.5625
+    },
+    "overflow": false,
+    "undersized": [],
+    "initialFocus": "kind",
+    "returnedFocus": "add-record",
+    "animations": 0,
+    "errors": []
+  },
+  "zoom200": {
+    "overflow": false,
+    "widths": {
+      "client": 390,
+      "scroll": 390
+    }
+  },
+  "privacy": {
+    "preserved": {
+      "workspace": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "license": "review-real-token",
+      "cache": "{\"valid\":true,\"checked_at\":123}"
+    },
+    "sameOriginOnly": true,
+    "noLicenseHeader": true,
+    "requestCount": 8
+  },
+  "routes": [
+    {
+      "path": "/",
+      "status": 200,
+      "title": "MTD Evidence Rail — link expenses to evidence",
+      "h1": "Link each expense to evidence",
+      "h1Count": 1,
+      "mainCount": 1,
+      "violations": []
+    },
+    {
+      "path": "/demo",
+      "status": 200,
+      "title": "Demo — MTD Evidence Rail",
+      "h1": "Prepare your quarter record",
+      "h1Count": 1,
+      "mainCount": 1,
+      "violations": []
+    },
+    {
+      "path": "/app",
+      "status": 200,
+      "title": "Quarter — MTD Evidence Rail",
+      "h1": "Prepare your quarter record",
+      "h1Count": 1,
+      "mainCount": 1,
+      "violations": []
+    },
+    {
+      "path": "/privacy",
+      "status": 200,
+      "title": "Privacy — MTD Evidence Rail",
+      "h1": "Your records and privacy",
+      "h1Count": 1,
+      "mainCount": 1,
+      "violations": []
+    },
+    {
+      "path": "/terms",
+      "status": 200,
+      "title": "Terms — MTD Evidence Rail",
+      "h1": "Terms for using the record aid",
+      "h1Count": 1,
+      "mainCount": 1,
+      "violations": []
+    },
+    {
+      "path": "/review-5-missing",
+      "status": 404,
+      "title": "Page not found — MTD Evidence Rail",
+      "h1": "This page was not found",
+      "h1Count": 1,
+      "mainCount": 1,
+      "violations": []
+    }
+  ]
+}

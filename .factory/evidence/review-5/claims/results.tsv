@@ -1,0 +1,26 @@
+demo-isolation	PASS	npm test -- --grep @claim:demo-isolation
+no-account	PASS	npm test -- --grep @claim:no-account
+workspace-key-recovery	PASS	npm test -- --grep @claim:workspace-key-recovery
+workspace-key-auth	PASS	npm test -- --grep @claim:workspace-key-auth
+quarter-capture	PASS	npm test -- --grep @claim:quarter-capture
+csv-matching	PASS	npm test -- --grep @claim:csv-matching
+atomic-import	PASS	npm test -- --grep @claim:atomic-import
+calendar-dates	PASS	npm test -- --grep @claim:calendar-dates
+evidence-types	PASS	npm test -- --grep @claim:evidence-types
+missing-review	PASS	npm test -- --grep @claim:missing-review
+demo-sample	PASS	npm test -- --grep @claim:demo-sample
+evidence-pack	PASS	npm test -- --grep @claim:evidence-pack
+workspace-delete	PASS	npm test -- --grep @claim:workspace-delete
+free-limit	PASS	npm test -- --grep @claim:free-limit
+paid-limit	PASS	npm test -- --grep @claim:paid-limit
+hosted-checkout	PASS	npm run test:live-checkout
+license-return	PASS	npm test -- --grep @claim:license-return
+no-trackers	PASS	npm test -- --grep @claim:no-trackers
+runtime-defaults	PASS	npm run build && cargo build && npm run test:runtime-defaults
+durable-storage	PASS	npm run build && cargo build && npm run test:durable-storage
+shared-state-boundary	PASS	npm run build && cargo build && npm run test:shared-storage
+production-topology	PASS	npm run test:deployment-topology
+live-workspace-consistency	FAIL(1)	npm run test:live-workspace-consistency
+live-release-identity	FAIL(1)	npm run test:live-release
+api-rate-limit	PASS	cargo test api_rate_limit_returns_retry_after
+live-api-rate-limit	FAIL(1)	npm run test:live-rate-limit

@@ -1,0 +1,49 @@
+{
+  "status": 200,
+  "h1": "Link each expense to evidence",
+  "audience": "For UK sole traders, tutors, and small club operators preparing an MTD quarterly update.",
+  "action": "Try it with sample data",
+  "firstViewport": {
+    "h1": {
+      "x": 130,
+      "y": 258.359375,
+      "width": 509.390625,
+      "height": 259.171875
+    },
+    "audience": {
+      "x": 130,
+      "y": 541.53125,
+      "width": 509.390625,
+      "height": 57.59375
+    },
+    "action": {
+      "x": 130,
+      "y": 627.125,
+      "width": 250.390625,
+      "height": 56.609375
+    }
+  },
+  "banner": true,
+  "sampleBefore": {
+    "records": 6,
+    "missing": "2"
+  },
+  "amountError": "Enter an amount greater than zero.",
+  "csvError": "The CSV needs Date, Description, and Amount columns. Rename those headings and try again.",
+  "matchAndImport": true,
+  "export": {
+    "filename": "evidence-pack-2026-27-Q1.zip",
+    "zip": true
+  },
+  "reset": {
+    "keyChanged": true,
+    "records": 6,
+    "missing": "2",
+    "addedGone": true,
+    "importGone": true
+  },
+  "consoleErrors": [],
+  "requestOrigins": [
+    "https://mtd-evidence-rail.sociobot.in"
+  ]
+}

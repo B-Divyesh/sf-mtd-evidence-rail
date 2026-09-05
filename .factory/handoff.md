@@ -1,86 +1,83 @@
-# Venture plan handoff
+# Review 5 handoff
 
-**Work order:** `mtd-evidence-rail-plan-1`
+**Work order:** `mtd-evidence-rail-review-5`
 
-**Date:** 5 September 2026
+**Date:** 5 September 2026 UTC
 
-**Scope:** planning and verification only; no product code or deployment change
+**Verdict:** **FAIL — 2 findings and 2 untested public claims**
 
-## Outcome
+## What was reviewed
 
-Created [`.factory/plan.md`](plan.md) as the M1–M3 venture contract. It records
-M1 as the only accepted milestone, makes M2 the next milestone, and keeps M3
-future work. It separates accepted core behaviour from fixture-backed billing
-mechanics and from unavailable sign-in, messaging, and HMRC capabilities.
+The current venture milestone is M1. The deployed implementation is
+`693a7609d2efb23c6567da5de0b425db92029e5c`; the documentation baseline reviewed
+is `41a1e5262fdc5639ea907bfd4a776e35e4b27659`. No product source or deployment
+input changed after the implementation candidate.
 
-Also wrote `/work/.evidence/venture-plan.json` with the next milestone,
-external dependencies, and evidence paths for the known M1 pass.
+The live application completes the M1 evidence job. Fresh desktop and phone
+browsers passed the one-click sample, realistic populated output, persistent
+demo label, reset, private-state isolation, invalid-input recovery, CSV match
+review, evidence export, keyboard, focus, 200% text, reduced motion, routes,
+legal pages, designed 404, and axe checks.
 
-## Current milestone decision
+The backend returned build `693a7609…`, used one replica with its `/data` mount,
+kept workspace state across a product-only restart, separated two workspace
+keys, retained deletion, and returned 429 with `Retry-After: 1` under load.
+Local and live JS/CSS hashes match.
 
-- **M1 — passed:** verification 21 accepted the live core evidence workflow at
-  candidate `693a7609d2efb23c6567da5de0b425db92029e5c`.
-- **M2 — next, not started:** add Sociobot Entra sign-in, tenant ownership,
-  safe anonymous-workspace claiming, and an end-to-end proven £15/month
-  subscription lifecycle.
-- **M3 — planned, not started:** persist bank reconciliation decisions, support
-  import undo, calculate readiness exceptions, and export an evidence manifest.
+## Why the review failed
 
-Checkout destination, price, currency, and cadence are live and tested. No
-payment was completed, so real billing is not marked implemented. The current
-64-character workspace-key boundary is tested, but it is not called tenant
-isolation or sign-in.
+1. Three exact claim commands fail from a clean checkout at documentation HEAD.
+   They expect `41a1e526…` to be deployed instead of resolving the last product
+   implementation, `693a7609…`. The same probes pass when that implementation
+   SHA is supplied, so this is a claims/release-identity regression rather than
+   a broken live runtime.
+2. `/terms` promises monthly renewal until cancellation and says billing terms
+   appear before payment. Neither promise has a claim entry or test. The venture
+   plan correctly says that renewal and cancellation remain unproved M2 work.
 
-## Verification performed
+Full evidence and exact fixes are in [review-5.md](review-5.md).
 
-- Read the brief, visual thesis, current source, migrations, tests, claims,
-  demo documentation, README, all verification/review/polish reports, and the
-  retained QA evidence index.
-- `npm ci` — passed; 34 packages, zero vulnerabilities.
-- `npm test` — passed; 9 Rust tests and 25 Chromium tests. The Vite build wrote
-  `dist/` with 11.06 kB gzip JavaScript and 5.01 kB gzip CSS.
-- `npm run lint` — passed TypeScript, rustfmt, and Clippy with warnings denied.
-- Live `/health` on 5 September 2026 — HTTP 200, status `ok`, build
-  `693a7609d2efb23c6567da5de0b425db92029e5c`.
-- Live root headers — HTTP 200 with CSP, HSTS, `nosniff`, strict-origin referrer
-  policy, restricted permissions, and `no-cache`.
-- Live browser smoke — 12/12 fresh demo contexts loaded the named sample and
-  the explicit “nothing is saved to your private workspace” banner.
-- `npm run test:live-checkout` — HTTP 303 to hosted Dodo checkout for the
-  correct product, GBP 1500, monthly. This did not complete a purchase.
+## Verification summary
 
-Latest retained acceptance evidence:
+- All 26 declared claim commands were run literally: **23 pass, 3 fail**.
+- `npm test`: **PASS**, 9 Rust and 25 Chromium tests.
+- `npm run lint`: **PASS**.
+- `npm run build`: **PASS**, with `dist/` produced.
+- `cargo build --release --locked`: **PASS**.
+- `npm audit --audit-level=high`: **PASS**, zero vulnerabilities.
+- Live production-compatible Playwright: **24/24 pass**.
+- Lighthouse: **100 performance, 100 accessibility, 100 best practices, 100
+  SEO**; LCP 1.88 s, TBT 25 ms, CLS 0.
+- Live restart/topology: **PASS** with 100/100 demo reads after restart.
+- Live limiter: **PASS**; each 200-request demo wave returned 175 HTTP 429
+  responses, all with `Retry-After: 1`.
 
-- [verification report](verification-21.md)
-- [claim results](evidence/verification-21/claims/results.tsv)
-- [independent live audit](evidence/verification-21/independent-live-audit.json)
-- [local test log](evidence/verification-21/local/npm-test.log)
-- [lint log](evidence/verification-21/local/lint.log)
-- [Lighthouse summary](evidence/verification-21/lighthouse-summary.json)
+## Next action
 
-## Exact dependencies and gaps
+Keep product code unchanged until a repair work order. Then:
 
-- Sociobot Entra CIAM registration and factory test identities are unavailable;
-  sign-in and tenant ownership cannot be accepted until the platform provides
-  its supported configuration. Product workers must not request production
-  credentials.
-- The Sociobot checkout contract is reachable, but a successful non-production
-  payment, renewal/cancellation, expiry, and revocation lifecycle is not
-  verified. M2 billing remains blocked on factory-operated lifecycle access.
-- Restart persistence is accepted. A fleet backup restoration is not yet
-  proven and is part of M2's definition of done.
-- Messaging is unavailable and not needed in M1–M3. HMRC access and
-  certification are unavailable and deliberately out of scope.
-- Docker/Podman was unavailable in verification 21, so local image assembly
-  remains a next-Docker-capable-QA check. Locked frontend/backend builds and
-  the deployed image identity passed.
-- Historical deployment regressions repeatedly lost the single-replica durable
-  topology. Every later deployment must retain and rerun the exact topology,
-  restart, 100/100 workspace-read, multi-browser demo, and rate-limit checks.
+1. make live claim commands resolve the committed implementation SHA across
+   later plan, handoff, report, evidence, and Graphify-only commits;
+2. add a regression fixture for the current venture-plan descendant; and
+3. remove or test the two unsupported billing statements on `/terms`.
 
-## Repository note
+After that repair, rerun all 26 exact commands from a clean checkout and repeat
+the live identity, workspace, and rate-limit checks without an environment
+override.
 
-Pre-existing Graphify output changes were present before planning and were not
-edited or included in this work order's commit. No product source, runtime,
-infrastructure, DNS, secrets, or billing configuration was changed. This plan
-must not be deployed.
+## Milestones and dependencies
+
+- **M1:** implemented and healthy at runtime, but this review is not accepted
+  while the claims gate fails.
+- **M2:** not started. Sociobot Entra registration/test identities, a controlled
+  billing lifecycle, and a fleet backup/restore drill remain external
+  dependencies.
+- **M3:** not started. Pilot users and a consented redacted CSV corpus remain
+  external dependencies for matching and readiness validation.
+- Dodo remains behind Sociobot only. Messaging and HMRC access are unavailable,
+  not promised, and not required for these milestones.
+
+No application source, runtime configuration, billing configuration, DNS, or
+secrets were changed. The product's own existing revision was restarted only
+to verify persistence. Pre-existing `graphify-out` working-tree changes were
+left untouched.
