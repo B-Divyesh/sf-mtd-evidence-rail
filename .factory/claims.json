@@ -162,7 +162,7 @@
   },
   {
     "id": "live-release-identity",
-    "claim": "The live health response and ready image identify the factory candidate",
+    "claim": "The live health response and ready image identify the recorded implementation",
     "where": "deployment handoff",
     "test": "npm run test:live-release",
     "sandbox": "clean checkout, public deployed service, and Azure control plane; use an explicit CANDIDATE_SHA for a new image, otherwise prove the checkout is a release-neutral descendant and resolve .factory/release.json; require /health, ready image, latest revision, and durable topology to agree with the resolved implementation"

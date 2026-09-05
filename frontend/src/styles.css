@@ -31,7 +31,7 @@ h3{font-size:1.4rem}
 .site-nav{display:flex;align-items:center;gap:24px}
 .site-nav a{min-width:44px;min-height:44px;padding:10px 2px;color:var(--chalk);font-size:.95rem;text-decoration:none;border-bottom:2px solid transparent;display:inline-flex;align-items:center;justify-content:center}
 .site-nav a:hover,.site-nav a[aria-current="page"]{border-bottom-color:var(--brass)}
-.hero{position:relative;overflow:hidden;background:var(--night);color:var(--chalk);padding:64px 0 0;min-height:700px}
+.hero{position:relative;overflow:hidden;background:var(--night);color:var(--chalk);padding:56px 0 0;min-height:700px}
 .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,.9fr) minmax(480px,1.1fr);align-items:center;gap:48px}
 .eyebrow{text-transform:uppercase;letter-spacing:.15em;color:var(--brass);font-weight:700;font-size:.79rem;margin-bottom:16px}
 .hero-copy>p:not(.eyebrow){font-size:1.2rem;max-width:50ch;color:#e7ede6;margin-bottom:28px}

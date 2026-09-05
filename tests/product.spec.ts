@@ -420,6 +420,17 @@ test('390px at 200% text size has no horizontal overflow', async ({ page }) => {
   }
 });
 
+test('desktop first screen shows the job, audience, action, and three facts', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/');
+  await expect(page.getByRole('heading', { level: 1, name: 'Link each expense to evidence' })).toBeVisible();
+  await expect(page.getByText('For UK sole traders, tutors, and small club operators preparing an MTD quarterly update.')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Try it with sample data' })).toBeVisible();
+  const facts = await page.locator('.facts').boundingBox();
+  expect(facts).not.toBeNull();
+  expect(facts!.y + facts!.height).toBeLessThanOrEqual(900);
+});
+
 test('subscription copy is monthly across the product, terms, and README', async ({ page }) => {
   for (const [path, expected] of [
     ['/', '£15/month for more than 25 transactions.'],
