@@ -423,7 +423,7 @@ test('390px at 200% text size has no horizontal overflow', async ({ page }) => {
 test('subscription copy is monthly across the product, terms, and README', async ({ page }) => {
   for (const [path, expected] of [
     ['/', '£15/month for more than 25 transactions.'],
-    ['/terms', 'The subscription costs £15 per month and allows more than 25 transactions in a quarter.'],
+    ['/terms', 'The current checkout offers a £15 monthly subscription.'],
   ] as const) {
     await page.goto(path);
     const copy = await page.locator('main').innerText();
@@ -435,6 +435,17 @@ test('subscription copy is monthly across the product, terms, and README', async
   expect(readme).toContain('£15/month subscription');
   expect(readme).not.toContain('£15 once');
   expect(readme).not.toContain('one-time');
+});
+
+test('terms limit billing statements to checkout and active-access outcomes', async ({ page }) => {
+  await page.goto('/terms');
+  await expect(page.getByRole('heading', { level: 2, name: 'Monthly subscription' })).toBeVisible();
+  await expect(page.getByText('The current checkout offers a £15 monthly subscription.')).toBeVisible();
+  await expect(page.getByText('An active subscription allows more than 25 transactions in a quarter.')).toBeVisible();
+  const terms = (await page.locator('main').innerText()).toLowerCase();
+  expect(terms).not.toContain('renews monthly');
+  expect(terms).not.toContain('until you cancel');
+  expect(terms).not.toContain('billing terms appear before you pay');
 });
 
 test('release-blocking copy and 44px inline-link regressions stay fixed', async ({ page }) => {

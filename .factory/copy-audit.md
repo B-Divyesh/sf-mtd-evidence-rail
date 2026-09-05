@@ -1,6 +1,6 @@
 # Copy audit
 
-Audited 30 August 2026 for perfection-loop round 4. Counts use visible
+Audited 5 September 2026 for repair 16. Counts use visible
 word-like tokens. URLs and hyphenated terms count as one word. Commands are
 excluded. Every landing and README sentence is 22 words or fewer, and no
 banned marketing word remains.
@@ -137,6 +137,32 @@ audience, and first action in one breath.
 | MIT. | 1 | Licence |
 | Generated hero artwork is original to this product. | 8 | Provenance |
 | Its prompt and provenance are recorded in .factory/design.md. | 8 | Provenance location |
+
+## Terms page billing statements
+
+| Exact copy | Words | Result |
+| --- | ---: | --- |
+| Last updated 5 September 2026 | 5 | Date |
+| Terms for using the record aid | 6 | Plain H1 |
+| MTD Evidence Rail helps you organise records into an evidence pack. | 11 | Product purpose |
+| Your responsibility | 2 | Clear heading |
+| Review your records and evidence before sharing them. | 8 | Clear instruction |
+| Keep your workspace key private. | 5 | Safety instruction |
+| Monthly subscription | 2 | Clear heading |
+| The current checkout offers a £15 monthly subscription. | 8 | `hosted-checkout` |
+| An active subscription allows more than 25 transactions in a quarter. | 10 | `paid-limit` |
+| Checkout opens on Dodo through Sociobot. | 6 | `hosted-checkout` |
+| Availability | 1 | Clear heading |
+| We aim to keep the service available, but we cannot promise uninterrupted access. | 13 | Honest limitation |
+| Export your evidence pack before a deadline. | 7 | Recovery instruction |
+| Acceptable use | 2 | Clear heading |
+| Do not upload unlawful material or try to access another workspace. | 11 | Use restriction |
+| Files are limited to the supported types and sizes. | 9 | `evidence-types` |
+| Contact | 1 | Clear heading |
+| Questions about these terms can be sent to support@sociobot.in. | 9 | Contact route |
+
+The page does not promise renewal, cancellation, or pre-payment disclosures.
+Those subscription-lifecycle outcomes remain future M2 work.
 
 ## Results
 

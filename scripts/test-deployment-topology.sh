@@ -24,13 +24,10 @@ test "$(jq -r '[.properties.template.containers[0].env[] | select(.name == "PORT
 test "$(jq -r '[.properties.template.containers[0].env[] | select(.name == "SQLITE_VFS")] | length' "$tmp_dir/patch.json")" = 1
 test "$(jq -r '[.properties.template.containers[0].env[] | select(.name == "BUILD_SHA" or .name == "GIT_SHA" or .name == "SOURCE_COMMIT")] | length' "$tmp_dir/patch.json")" = 0
 
-# Live claim commands must reject a quiet but unsafe 1-3 deployment before a
-# request happens to hit its only warm replica.
-grep -F 'assert-live-topology.sh' "$repo_dir/scripts/test-live-workspace-consistency.sh" >/dev/null
-grep -F 'assert-live-topology.sh' "$repo_dir/scripts/test-live-rate-limit.sh" >/dev/null
-grep -F 'one_limiter_max=' "$repo_dir/scripts/test-live-rate-limit.sh" >/dev/null
-grep -F 'candidate_sha=${CANDIDATE_SHA:-$(git -C "$repo_dir" rev-parse HEAD)}' "$repo_dir/scripts/assert-live-topology.sh" >/dev/null
-! grep -F '.factory/release.json' "$repo_dir/scripts/assert-live-topology.sh" >/dev/null
+# Exercise the live guard with unsafe topology, stale identity, an explicit new
+# candidate, and a later documentation checkout that resolves its recorded
+# implementation. These outcome fixtures avoid coupling this test to shell
+# source text.
 "$repo_dir/scripts/test-live-release-guard.sh"
 
 # Verification 6 found that the live checker had a stale literal `data` even

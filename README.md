@@ -53,7 +53,7 @@ proxies `/api` and `/health` to port 8080.
 npm test
 npm run build       # writes the frontend to dist/
 npm run test:deployment-topology # rejects the verifier's unsafe rollout shape
-npm run test:live-release # ties this candidate to the live source, health, and ready image
+npm run test:live-release # checks the recorded implementation against live health and the ready image
 npm run test:live-checkout # checks the live Dodo subscription contract
 npm run test:live-workspace-consistency # also rejects unsafe live replica/storage topology
 npm run test:live-rate-limit # repeats the deployed burst-limit probe

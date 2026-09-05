@@ -40,6 +40,16 @@ git -C "$fixture" commit -qm 'verification review and polish evidence'
 CANDIDATE_SHA=$(git -C "$fixture" rev-parse HEAD) \
   "$repo_dir/scripts/assert-published-source.sh" "$fixture" >/dev/null
 
+# Reproduce review 5: a venture plan and a refreshed handoff may follow the
+# deployed implementation without changing any byte or setting in its image.
+printf '# M1-M3 venture plan\n' > "$fixture/.factory/plan.md"
+printf '\nPlan recorded after deployment.\n' >> "$fixture/.factory/handoff.md"
+git -C "$fixture" add .factory/plan.md .factory/handoff.md
+git -C "$fixture" commit -qm 'venture plan and handoff'
+plan_candidate=$(git -C "$fixture" rev-parse HEAD)
+CANDIDATE_SHA="$plan_candidate" \
+  "$repo_dir/scripts/assert-published-source.sh" "$fixture" >/dev/null
+
 # Reproduce verification 18 exactly: the factory adds a generated code-map
 # commit after the release-evidence commit. The candidate still represents the
 # published bytes because its cumulative delta is release-neutral.

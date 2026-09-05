@@ -5,13 +5,24 @@ set -euo pipefail
 # older process serves traffic. Require control-plane topology and the factory
 # candidate's identity before any live data or limiter claim can run.
 repo_dir=$(cd "$(dirname "$0")/.." && pwd)
+source_repo=${SOURCE_REPO:-$repo_dir}
 resource_group=${AZURE_RESOURCE_GROUP:-sociobot}
 app_name=${AZURE_CONTAINER_APP:-sf-mtd-evidence-rail}
 base_url=${BASE_URL:-https://mtd-evidence-rail.sociobot.in}
-candidate_sha=${CANDIDATE_SHA:-$(git -C "$repo_dir" rev-parse HEAD)}
-# A factory-supplied candidate is the release under test and takes precedence
-# over legacy EXPECTED_SHA or release-manifest values left by earlier jobs.
-expected_sha=${CANDIDATE_SHA:-${EXPECTED_SHA:-$candidate_sha}}
+candidate_sha=${CANDIDATE_SHA:-$(git -C "$source_repo" rev-parse HEAD)}
+release_manifest=${RELEASE_MANIFEST:-"$source_repo/.factory/release.json"}
+# A factory-supplied candidate or deploy-time expected SHA identifies a new
+# image before its release record exists. Normal claim commands first prove
+# that checkout HEAD is release-neutral, then use the recorded implementation.
+if [ -n "${CANDIDATE_SHA:-}" ]; then
+  expected_sha=$CANDIDATE_SHA
+elif [ -n "${EXPECTED_SHA:-}" ]; then
+  expected_sha=$EXPECTED_SHA
+else
+  CANDIDATE_SHA="$candidate_sha" RELEASE_MANIFEST="$release_manifest" \
+    "$repo_dir/scripts/assert-published-source.sh" "$source_repo" >/dev/null
+  expected_sha=$(jq -er '.source_commit | select(test("^[0-9a-f]{40}$"))' "$release_manifest")
+fi
 expected_image=${EXPECTED_IMAGE:-sociobotregistry.azurecr.io/${app_name}:${expected_sha:0:12}}
 contract_file=${TOPOLOGY_CONTRACT:-"$repo_dir/.factory/container-app.json"}
 

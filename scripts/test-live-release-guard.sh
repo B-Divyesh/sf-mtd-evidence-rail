@@ -111,22 +111,54 @@ PATH="$tmp_dir:$PATH" \
   FAKE_RUNNING=1 \
   "$repo_dir/scripts/assert-live-topology.sh" >/dev/null
 
-# Without an explicit factory value, a clean candidate checkout is itself the
-# candidate. This is the path used by the exact npm claim commands.
-checkout_candidate=$(git -C "$repo_dir" rev-parse HEAD)
-checkout_image="sociobotregistry.azurecr.io/sf-mtd-evidence-rail:${checkout_candidate:0:12}"
-jq --arg image "$checkout_image" '.properties.template.containers[0].image=$image' \
-  "$tmp_dir/verification-20-resource.json" > "$tmp_dir/checkout-resource.json"
-jq --arg image "$checkout_image" '.properties.template.containers[0].image=$image' \
-  "$tmp_dir/verification-20-ready.json" > "$tmp_dir/checkout-ready.json"
-jq -n --arg sha "$checkout_candidate" '{status:"ok",build_sha:$sha}' > "$tmp_dir/checkout-health.json"
+# Reproduce review 5 as an observable release outcome. A clean documentation
+# checkout containing plan.md must resolve its earlier implementation, and the
+# live image and health response must match that implementation rather than the
+# documentation commit.
+docs_repo="$tmp_dir/docs-repo"
+git -C "$tmp_dir" init -q docs-repo
+git -C "$docs_repo" config user.name 'Release guard fixture'
+git -C "$docs_repo" config user.email 'release-guard@example.invalid'
+mkdir -p "$docs_repo/.factory"
+printf '{"source_commit":"0000000000000000000000000000000000000000"}\n' > "$docs_repo/.factory/release.json"
+printf '# Initial handoff\n' > "$docs_repo/.factory/handoff.md"
+git -C "$docs_repo" add .factory
+git -C "$docs_repo" commit -qm 'implementation'
+recorded_implementation=$(git -C "$docs_repo" rev-parse HEAD)
+printf '{"source_commit":"%s"}\n' "$recorded_implementation" > "$docs_repo/.factory/release.json"
+printf '# M1-M3 venture plan\n' > "$docs_repo/.factory/plan.md"
+printf '\nImplementation verified.\n' >> "$docs_repo/.factory/handoff.md"
+git -C "$docs_repo" add .factory
+git -C "$docs_repo" commit -qm 'documentation after implementation'
+documentation_sha=$(git -C "$docs_repo" rev-parse HEAD)
+recorded_image="sociobotregistry.azurecr.io/sf-mtd-evidence-rail:${recorded_implementation:0:12}"
+jq --arg image "$recorded_image" '.properties.template.containers[0].image=$image' \
+  "$tmp_dir/verification-20-resource.json" > "$tmp_dir/docs-resource.json"
+jq --arg image "$recorded_image" '.properties.template.containers[0].image=$image' \
+  "$tmp_dir/verification-20-ready.json" > "$tmp_dir/docs-ready.json"
+jq -n --arg sha "$recorded_implementation" '{status:"ok",build_sha:$sha}' > "$tmp_dir/docs-health.json"
 PATH="$tmp_dir:$PATH" \
-  RELEASE_MANIFEST="$tmp_dir/stale-release.json" \
-  FAKE_RESOURCE="$tmp_dir/checkout-resource.json" \
-  FAKE_READY="$tmp_dir/checkout-ready.json" \
-  FAKE_HEALTH="$tmp_dir/checkout-health.json" \
+  SOURCE_REPO="$docs_repo" \
+  FAKE_RESOURCE="$tmp_dir/docs-resource.json" \
+  FAKE_READY="$tmp_dir/docs-ready.json" \
+  FAKE_HEALTH="$tmp_dir/docs-health.json" \
   FAKE_ACTIVE=1 \
   FAKE_RUNNING=1 \
   "$repo_dir/scripts/assert-live-topology.sh" >/dev/null
 
-echo 'Live release guard regressions PASS — unsafe topology and stale identity fail; verification 20 uses the exact factory candidate instead of a stale release manifest.'
+docs_identity_log="$tmp_dir/docs-identity.log"
+jq -n --arg sha "$documentation_sha" '{status:"ok",build_sha:$sha}' > "$tmp_dir/docs-wrong-health.json"
+if PATH="$tmp_dir:$PATH" \
+  SOURCE_REPO="$docs_repo" \
+  FAKE_RESOURCE="$tmp_dir/docs-resource.json" \
+  FAKE_READY="$tmp_dir/docs-ready.json" \
+  FAKE_HEALTH="$tmp_dir/docs-wrong-health.json" \
+  FAKE_ACTIVE=1 \
+  FAKE_RUNNING=1 \
+  "$repo_dir/scripts/assert-live-topology.sh" >"$docs_identity_log" 2>&1; then
+  echo 'Regression: documentation SHA passed as the deployed implementation.' >&2
+  exit 1
+fi
+grep -F "expected_sha=$recorded_implementation live_sha=$documentation_sha" "$docs_identity_log" >/dev/null
+
+echo 'Live release guard regressions PASS — unsafe topology and stale identity fail; explicit candidates and release-neutral documentation resolve the correct implementation.'

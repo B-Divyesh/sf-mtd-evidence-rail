@@ -27,7 +27,7 @@ fi
 # product image has been published. Keep this list narrow: product contracts,
 # claims, source, deployment inputs, and unclassified factory files must still
 # force a new release. The fixture test covers every accepted path family.
-release_neutral_paths='^(\.factory/(handoff\.md|release\.json|(review|verification|polish)-[0-9]+\.md|evidence/(review|verification|polish)-[0-9]+/.*)|graphify-out/)'
+release_neutral_paths='^(\.factory/(handoff\.md|plan\.md|release\.json|(review|verification|polish)-[0-9]+\.md|evidence/(review|verification|polish)-[0-9]+/.*)|graphify-out/)'
 unexpected_paths=$(git -C "$repo_dir" diff --name-only "$published_sha..$candidate_sha" -- |
   grep -Ev "$release_neutral_paths" || true)
 if [ -n "$unexpected_paths" ]; then

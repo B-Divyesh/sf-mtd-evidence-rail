@@ -3,8 +3,18 @@ set -euo pipefail
 
 base_url=${BASE_URL:-https://mtd-evidence-rail.sociobot.in}
 repo_dir=$(cd "$(dirname "$0")/.." && pwd)
-candidate_sha=${CANDIDATE_SHA:-$(git -C "$repo_dir" rev-parse HEAD)}
-expected_sha=${CANDIDATE_SHA:-${EXPECTED_SHA:-$candidate_sha}}
+source_repo=${SOURCE_REPO:-$repo_dir}
+candidate_sha=${CANDIDATE_SHA:-$(git -C "$source_repo" rev-parse HEAD)}
+release_manifest=${RELEASE_MANIFEST:-"$source_repo/.factory/release.json"}
+if [ -n "${CANDIDATE_SHA:-}" ]; then
+  expected_sha=$CANDIDATE_SHA
+elif [ -n "${EXPECTED_SHA:-}" ]; then
+  expected_sha=$EXPECTED_SHA
+else
+  CANDIDATE_SHA="$candidate_sha" RELEASE_MANIFEST="$release_manifest" \
+    "$repo_dir/scripts/assert-published-source.sh" "$source_repo" >/dev/null
+  expected_sha=$(jq -er '.source_commit | select(test("^[0-9a-f]{40}$"))' "$release_manifest")
+fi
 restart=${1:-}
 resource_group=${AZURE_RESOURCE_GROUP:-sociobot}
 app_name=${AZURE_CONTAINER_APP:-sf-mtd-evidence-rail}
