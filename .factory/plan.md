@@ -6,7 +6,7 @@
 
 **Public URL:** <https://mtd-evidence-rail.sociobot.in>
 
-**Current milestone:** M1 — accepted
+**Current milestone:** M1 — repair deployed; independent acceptance pending
 
 **Next milestone:** M2 — accounts, tenant ownership, and proven subscription lifecycle
 
@@ -314,7 +314,7 @@ match decisions, readiness exceptions, and activity-manifest views.
 
 ### M1 — evidence pack core
 
-**Status:** Passed and live. Do not reopen without a regression.
+**Status:** Repair deployed. Review 5 findings are fixed; independent acceptance is pending.
 
 **Routes:** `/`, `/demo` and `/?demo=1`, `/app`, `/privacy`, `/terms`, designed
 404, `/health`, and current `/api/*` workspace/record/evidence/export routes.
